@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>TD1 - Séance du 09 Octobre 2020</title>
+<!-- Material Design fonts -->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/magnific-popup-1.1.0/magnific-popup.css" rel="stylesheet" />
+<script src="site_libs/magnific-popup-1.1.0/jquery.magnific-popup.min.js"></script>
+<link href="site_libs/bootstrap_material-0.1/bootstrap-material-design.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap_material-0.1/ripples.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap_material-0.1/material.min.js"></script>
+<script src="site_libs/bootstrap_material-0.1/ripples.min.js"></script>
+<link href="site_libs/material-0.1/material.css" rel="stylesheet" />
+<script src="site_libs/material-0.1/material.js"></script>
+
+
+
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("toc");
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="header-panel shadow z-2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3">
+        <div id="header">
+    <h1 class="title">TD1 - Séance du 09 Octobre 2020</h1>
+        <h1 class="subtitle">Présentation des attentes du projet - Découverte du site de l’OCDE - Chargement d’une base dans R</h1>
+                </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid main-container">
+    <div class="row">
+      <nav class="col-xs-3 menu">
+        <div id="toc">
+        <ul>
+        <li><a href="#le-projet-deconometrie">Le projet d’Econometrie</a></li>
+        <li><a href="#découverte-du-site-web-de-locde">Découverte du site web de l’OCDE</a></li>
+        <li><a href="#chargement-dune-base-dans-r">Chargement d’une base dans R</a></li>
+        </ul>
+        </div>
+        
+        
+        
+      </nav>
+     <div class="pages col-xs-9">
+     <div class="row">
+       <div class="col-xs-10">
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Accueil</a>
+</li>
+<li>
+  <a href="td1.html">TD1 - 09/10</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+
+<div id="le-projet-deconometrie" class="section level1">
+<h1>Le projet d’Econometrie</h1>
+<div id="objectifs-du-projet-déconométrie" class="section level2">
+<h2>Objectifs du projet d’économétrie</h2>
+<p>L’objectif de ces 30 heures de TD est de vous accompagner dans la rédaction d’un mini-mémoire de ~10 pages sur le sujet de votre choix à partir des données de l’OCDE.</p>
+<p>L’évaluation sera basée sur :</p>
+<ul>
+<li><ol style="list-style-type: lower-roman">
+<li>la pertinence du modèle économétrique et votre regard critique sur ses limitations</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: lower-roman">
+<li>la qualité de données utilisées et votre connaissance de leurs limites</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: lower-roman">
+<li>la réplicabilité de vos résultats (votre script R doit être compréhensible et exécutable par une personne tiers)</li>
+</ol></li>
+</ul>
+<p>L’idée de ces trois heures est de vous permettre de maîtriser ces trois composantes, donc tout va bien se passer !</p>
+</div>
+<div id="le-contenu-de-votre-mini-mémoire" class="section level2">
+<h2>Le contenu de votre mini-mémoire</h2>
+<p>Vous allez rédiger un rapport en partant du <a href="https://drive.google.com/file/d/1XygGQ6zAySNSlDuNanrAViAthdfj7kBf/view?usp=sharing">modèle défini</a> qui sera <a href="https://drive.google.com/file/d/1A3hbPaYh1Qc_wGsny_ayK9ErteymIybI/view?usp=sharing">organisé comme suit</a> :</p>
+<ul>
+<li><strong>Introduction</strong></li>
+<li><strong>Présentation des données</strong>: Soyez précis sur les sources et les modalités d’échantillonage et de création de ces données, présentez les variables utilisez *<strong>Modèle</strong>: Le coeur de votre mémoire. Justifiez vos choix et expliquez en les implications.</li>
+<li>__Résultats_: Présentez vos statistiques descriptives ainsi que vos tableaux de régression. Attention à la mise en page: titre + numérotation. Soyez bavards: commentez vos résultats dans le corps du texte + ajoutez une petite légende sous chaque tableau et graph.</li>
+<li><strong>Conclusion</strong>: Résumé, limites (il y en a toujours, soyez exhaustif, c’est des points bonus), proposez une perspective de recherche</li>
+<li><strong>Bibliographie</strong>: C’est un mini-mémoire de recherche, la bibliographie est donc très importante. Respectez les règles de mise en page bibliographique. (Petit conseil: utilisez <a href="https://www.zotero.org/">Zotero</a> sur word).</li>
+</ul>
+</div>
+</div>
+<div id="découverte-du-site-web-de-locde" class="section level1">
+<h1>Découverte du site web de l’OCDE</h1>
+</div>
+<div id="chargement-dune-base-dans-r" class="section level1">
+<h1>Chargement d’une base dans R</h1>
+</div>
+
+    </div>
+    <div class="col-xs-2">
+        <div class="btn-toolbar">
+    <div class="btn-group">
+    <a href="#" class="btn btn-raised btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="text-muted">Code</span> <span class="text-muted caret"></span></a>
+    <ul class="dropdown-menu" style="min-width: 50px;">
+    <li><a id="rmd-show-all-code" href="#">Show All</a></li>
+    <li><a id="rmd-hide-all-code" href="#">Hide All</a></li>
+    </ul>
+    </div>
+    </div>
+        </div>
+  </div>
+  </div>
+  </div>
+  <div class="row">
+    </div>
+  </div>
+
+<script>
+$(document).ready(function () {
+  // add bootstrap table styles to pandoc tables
+  $('tr.header').parent('thead').parent('table').addClass('table table-striped table-hover');
+
+    var images = $('.pages img');
+  images.filter(function() {
+      if ($(this).parent().attr("class") == "figure") {
+          return(false)
+      } else {
+          return(true);
+      }
+  }).wrap("<div class='figure'></div>");
+  images.addClass("image-thumb").wrap("<div class='panel-body'></div>");
+  $('.figure p.caption').wrap("<div class='panel-footer'></div>");
+  $('.figure').addClass('panel panel-default');
+  
+    $('.pages img')
+ 	  .addClass("image-lb");
+  $('.pages').magnificPopup({
+	      type:'image',
+	      closeOnContentClick: false,
+	      closeBtnInside: false,
+        delegate: 'img',
+	      gallery: {enabled: true },
+          removalDelay: 500,
+          callbacks: {
+              beforeOpen: function() {
+                // just a hack that adds mfp-anim class to markup
+                this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+              }
+          },
+          mainClass: 'mfp-move-from-top',
+	      image: {
+	        verticalFit: true,
+            titleSrc: 'alt'
+	      }
+ 	    });
+ 	
+    
+    $('#toc ul li').first().addClass("active");
+    $('#toc ul li').attr("data-target", function() {
+        return($(this).children("a").attr("href"));
+    })
+    $('body .section.level1').first().addClass("active");
+    $('body .section.level1').not('.active').hide();
+    
+    $('#toc a[href*="#"]').click(function() {
+
+      var id = $(this).attr("href");
+      if (id === "#") return;
+      if (id.substring(0, 8) === "#dyntab-") return;
+      toggle_page(id);
+
+      // Menu
+      var menu_entry = $(".menu li[data-target='"+id+"']");
+      menu_entry.addClass("active");
+      $(".menu li").not(menu_entry).removeClass("active"); 
+      
+
+    });
+
+    function toggle_page(id) {
+      $(".page").not(page).removeClass("active").hide();
+      window.page = id;
+      var page = $(window.page);
+      window.location.hash = window.page;
+      //$(this).addClass("active");
+
+      page.show();
+
+      var totop = setInterval(function () {
+        $(".pages").animate({scrollTop: 0}, 0);
+      }, 10);
+
+      setTimeout(function () {
+        page.addClass("active");
+        setTimeout(function () {
+          clearInterval(totop);
+        }, 1000);
+      }, 100);
+
+      window.dispatchEvent(new Event('resize'));
+
+    }
+
+
+    $(".menu li").click(function () {
+
+      toggle_page($(this).data("target"));
+
+      // Menu
+      if (!$(this).data("target")) return;
+      if ($(this).is(".active")) return;
+      $(".menu li").not($(this)).removeClass("active");
+      $(this).addClass("active");
+
+    });
+  
+    
+
+
+    window.page = window.location.hash;
+    if (window.page != "") {
+      $(".menu").find("li[data-target=" + window.page + "]").trigger("click");
+    }
+
+    /* init material bootstrap js */
+    $.material.init();
+});
+</script>
+
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
