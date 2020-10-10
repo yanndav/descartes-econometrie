@@ -1,4 +1,5 @@
-name: "descartes_econometrie"
+name: "descartes-econometrie"
+output_dir: "docs"
 navbar:
   title: ""
   left:

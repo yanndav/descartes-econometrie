@@ -1,5 +1,5 @@
 ---
-title: "TD1 - Séance du 09 Octobre 2020"
+title: "TD1 - Seance du 09 Octobre 2020"
 subtitle: "Site de l'OCDE & chargement d'une base dans R"
 ---
 
@@ -19,11 +19,11 @@ L'idée de ces trois heures est de vous permettre de maîtriser ces trois compos
 Vous allez rédiger un rapport en partant du [modèle défini](https://drive.google.com/file/d/1XygGQ6zAySNSlDuNanrAViAthdfj7kBf/view?usp=sharing) qui sera [organisé comme suit](https://drive.google.com/file/d/1A3hbPaYh1Qc_wGsny_ayK9ErteymIybI/view?usp=sharing) :
 
 * __Introduction__
-* __Présentation des données__: Soyez précis sur les sources et les modalités d'échantillonage et de création de ces données, présentez les variables utilisez
-*__Modèle__: Le coeur de votre mémoire. Justifiez vos choix et expliquez en les implications.
-* __Résultats_: Présentez vos statistiques descriptives ainsi que vos tableaux de régression. Attention à la mise en page: titre + numérotation. Soyez bavards: commentez vos résultats dans le corps du texte + ajoutez une petite légende sous chaque tableau et graph.
-* __Conclusion__: Résumé, limites (il y en a toujours, soyez exhaustif, c'est des points bonus), proposez une perspective de recherche
-* __Bibliographie__: C'est un mini-mémoire de recherche, la bibliographie est donc très importante. Respectez les règles de mise en page bibliographique. (Petit conseil: utilisez [Zotero](https://www.zotero.org/) sur word).
+* __Présentation des données__ : Soyez précis sur les sources et les modalités d'échantillonage et de création de ces données, présentez les variables utilisez
+*__Modèle__ : Le coeur de votre mémoire. Justifiez vos choix et expliquez en les implications.
+* __Résultats__ : Présentez vos statistiques descriptives ainsi que vos tableaux de régression. Attention à la mise en page: titre + numérotation. Soyez bavards: commentez vos résultats dans le corps du texte + ajoutez une petite légende sous chaque tableau et graph.
+* __Conclusion__ : Résumé, limites (il y en a toujours, soyez exhaustif, c'est des points bonus), proposez une perspective de recherche
+* __Bibliographie__ : C'est un mini-mémoire de recherche, la bibliographie est donc très importante. Respectez les règles de mise en page bibliographique. (Petit conseil: utilisez [Zotero](https://www.zotero.org/) sur word).
 
 
 # Découverte du site web de l'OCDE

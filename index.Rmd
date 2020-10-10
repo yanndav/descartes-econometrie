@@ -1,8 +1,7 @@
 ---
-title: "Suivi de projet d'économétrie - 2020"
+title: "Bienvenue"
 ---
-# Bienvenue
-
+# Présentation
 Ce site web sert de ressource annexe aux TDs qui ont lieu tous les vendredi de 17h à 20h. Vous pouvez y trouver le résumé de tous les exercices réalisés en cours et certaines extensions qui couvrent les difficultés rencontrées ensemble.
 
 N'hésitez pas à m'envoyer un [mail](yann.collindavid@gmail.com) si vous souhaitez que j'ajoute des ressources supplémentaires.
