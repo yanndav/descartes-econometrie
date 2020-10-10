@@ -117,7 +117,7 @@ J'exécute la commande pour créer l'objet. Pas d'erreur, et le chemin est charg
 setwd(chemin)
 ````
 J'éxecute la commande en cliquant sur 'Run' ou en utilisant le raccourci clavier 'Ctrl + Entrer'. On vérifie dans que tout est à jour:
-```{r setup}
+```{r setup, echo=FALSE}
 knitr::opts_knit$set(root.dir = chemin)
 ```
 

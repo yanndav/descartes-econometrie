@@ -273,8 +273,7 @@ $(document).ready(function () {
 <p>J’exécute la commande pour créer l’objet. Pas d’erreur, et le chemin est chargé dans mon environnement, parfait ! <img src="td1/cheminchargee.jpg" alt="Le chemin est dans mon environnement" /> À présent il faut dire à R que l’on va travailler avec les fichiers présents dans ce dossier. On va donc assigner le dossier de travail (‘setting the working directory’) en utilisant la fonction <em>setwd()</em>:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">setwd</span>(chemin)</a></code></pre></div>
 <p>J’éxecute la commande en cliquant sur ‘Run’ ou en utilisant le raccourci clavier ‘Ctrl + Entrer’. On vérifie dans que tout est à jour:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">knitr<span class="op">::</span>opts_knit<span class="op">$</span><span class="kw">set</span>(<span class="dt">root.dir =</span> chemin)</a></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">getwd</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">getwd</span>()</a></code></pre></div>
 <pre><code>## [1] &quot;D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut&quot;</code></pre>
 <p>Succès !</p>
 </div>
@@ -283,24 +282,24 @@ $(document).ready(function () {
 <p>Tout d’abord un grand merci à Océane Coudrieu d’avoir pris le temps de trouver une solution pour les utilisateurs de Mac, mais aussi d’avoir pris le temps d’enregistrer la vidéo ci-dessous.</p>
 <p>Sur <strong>Mac</strong> les choses sont en effet un peu différentes que sur Windows. Pour obtenir le chemin d’accès au fichier, il suffit d’ouvrir le Terminal et d’y faire glisser le fichier de la base de données. Le chemin d’accès à l’emplacement du fichier s’affiche. On le copie-colle directement dans le script.</p>
 <p><img src="td1/macemplacement.gif" alt="Obtenir le chemin d’accès au fichier sur Mac" /> Comme pour windows on crée un <em>objet</em> ‘chemin’ auquel on assigne la valeur du lien vers l’emplacement au fichier. Attention, n’oubliez pas d’enlever le nom du fichier à la fin du chemin ! Il ne faut pas non plus oublier de mettre le lien entre guillemets. Enfin, pour créer l’objet il faut exécuter la ligne de commande, avec ‘Run’ en haut à droite du script, ou bien avec ‘Cmd + Entrer’ :</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">chemin =<span class="st"> &quot;/Users/oceanecoudrieu/Documents/L3 SEG/S1/ECONOMETRIE/Recherche/Bases&quot;</span></a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="kw">print</span>(chemin)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">chemin =<span class="st"> &quot;/Users/oceanecoudrieu/Documents/L3 SEG/S1/ECONOMETRIE/Recherche/Bases&quot;</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="kw">print</span>(chemin)</a></code></pre></div>
 <pre><code>## [1] &quot;/Users/oceanecoudrieu/Documents/L3 SEG/S1/ECONOMETRIE/Recherche/Bases&quot;</code></pre>
 <p>(Les plus attentif.ve.s auront remarqué que je n’ai pas gardé les ‘é’ majuscules dans ‘ECONOMETRIE’. Cela est une erreur de ma part qui entraînerait l’impossibilité pour R de charger le fichier puisque ECONOMETRIE n’existe pas.)</p>
 <p>On assigne maintenant le chemin à la fonction ‘setwd()’ qui nous permet de défnir le dossier dans lequel R doit chercher les bases de données: c’est le ‘working directory’</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># Je crée l&#39;environnement de travail</span></a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="kw">setwd</span>(chemin)</a>
-<a class="sourceLine" id="cb10-3" title="3"></a>
-<a class="sourceLine" id="cb10-4" title="4"><span class="co"># Je vérifie que le working directory est bien à jour</span></a>
-<a class="sourceLine" id="cb10-5" title="5"><span class="kw">getwd</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># Je crée l&#39;environnement de travail</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="kw">setwd</span>(chemin)</a>
+<a class="sourceLine" id="cb9-3" title="3"></a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="co"># Je vérifie que le working directory est bien à jour</span></a>
+<a class="sourceLine" id="cb9-5" title="5"><span class="kw">getwd</span>()</a></code></pre></div>
 </div>
 <div id="le-moment-du-chargement" class="section level3">
 <h3>Le moment du chargement</h3>
 <p>Ok, tout est bon, on a défini notre environnement de travail: le working directory. Il ne nous reste plus qu’à charger le fichier dans R. Pour ce faire, on va utiliser la fonction ‘read.csv()’ dans R.</p>
 <p>Les fonctions sont nos plus grandes alliées, car elles nous permettent de faire des trucs vraiments cools, comme par exemple transformer l’<em>objet</em> ‘chemin’ en une base de donnée. Pour comprendre comment fonctionne une fonction, on peut demander à R de nous l’expliquer :</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># Pour demander à R de nous donner des infos sur une fonction</span></a>
-<a class="sourceLine" id="cb11-2" title="2"><span class="co"># on exécute ?fonction</span></a>
-<a class="sourceLine" id="cb11-3" title="3">?read.csv</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># Pour demander à R de nous donner des infos sur une fonction</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="co"># on exécute ?fonction</span></a>
+<a class="sourceLine" id="cb10-3" title="3">?read.csv</a></code></pre></div>
 <p>La fenêtre ‘Help’ s’ouvre : <img src="td1/help.jpg" alt="La fenêtre d’aide à l’utilisation de la fonction read.csv" /> L’aide nous explique que cette fonction lit les fichiers au format ‘table’ et les transforme en ‘dataframe’, c’est-à-dire une base de donnée dans le langage de R. On peut voir qu’il existe plusieurs variantes de la fonction en fonction de l’extension du fichier.</p>
 <p>Nous sommes intéressés par les paramètres de la fonction read.csv:</p>
 <ul>
@@ -314,11 +313,11 @@ $(document).ready(function () {
 <p class="caption">On observe que les colonnes sont bien séparées par “,”</p>
 </div>
 <p>Donc si l’on récapitule, le seul paramètre qu’il nous faut spécifier est l’emplacement du fichier. Le fameux <em>file</em>. Je charge la base de donnée dans un object que j’appelle, sans originalité, ‘base’:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># Chargement d&#39;une base de donnée</span></a>
-<a class="sourceLine" id="cb12-2" title="2">base =<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;GIDDB2014_10102020163601177.csv&#39;</span>)</a>
-<a class="sourceLine" id="cb12-3" title="3"></a>
-<a class="sourceLine" id="cb12-4" title="4"><span class="co"># Impression des premières lignes</span></a>
-<a class="sourceLine" id="cb12-5" title="5"><span class="kw">head</span>(base)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># Chargement d&#39;une base de donnée</span></a>
+<a class="sourceLine" id="cb11-2" title="2">base =<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;GIDDB2014_10102020163601177.csv&#39;</span>)</a>
+<a class="sourceLine" id="cb11-3" title="3"></a>
+<a class="sourceLine" id="cb11-4" title="4"><span class="co"># Impression des premières lignes</span></a>
+<a class="sourceLine" id="cb11-5" title="5"><span class="kw">head</span>(base)</a></code></pre></div>
 <pre><code>##   ï..REG                 RÃ.gion LOCATION     Pays INC
 ## 1    ECA Europe and Central Asia      BEL Belgique HIO
 ## 2    ECA Europe and Central Asia      BEL Belgique HIO
