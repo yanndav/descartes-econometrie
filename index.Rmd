@@ -36,11 +36,11 @@ Vous allez rédiger un rapport en partant du [modèle défini](https://drive.goo
 
 ## Organisation du semestre
  * __Séance 1__ : Présentation des consignes relatives au projet d'économétrie, découverte des bases de données de l'OCDE, importation d'une base dans R.
-*__Séance 2__ : Création des groupes et exploration des données et analyses descriptives
-*__Séance 3__ : Recherche bibliographique pour alimenter la réflexion sur le thème retenu. Définition question de recherche.
-*__Séance 4__ : Arriver en début de séance avec une question de recherche finalisée. Séance de réflexion sur le modèle: première approche par analyse bivariée
-*__Séance 4__ : Séance d'élaboration du modèle. Analyses multivariées. Présentations des résultats préliminaires.
-*__Séance 6__ : Point méthodo contenu du rapport + tests de robustesse du modèle retenu.
-*__Séance 7__ : Point méthodo contenu présentation orale + analyses de sensibilité.
-*__Séance 8__ : Structuration des résultats finaux, questions/réponses
-*__Séances 9 et 10__ : Remise du rapport final + présentations orales
+* __Séance 2__ : Création des groupes et exploration des données et analyses descriptives
+* __Séance 3__ : Recherche bibliographique pour alimenter la réflexion sur le thème retenu. Définition question de recherche.
+* __Séance 4__ : Arriver en début de séance avec une question de recherche finalisée. Séance de réflexion sur le modèle: première approche par analyse bivariée
+* __Séance 4__ : Séance d'élaboration du modèle. Analyses multivariées. Présentations des résultats préliminaires.
+* __Séance 6__ : Point méthodo contenu du rapport + tests de robustesse du modèle retenu.
+* __Séance 7__ : Point méthodo contenu présentation orale + analyses de sensibilité.
+* __Séance 8__ : Structuration des résultats finaux, questions/réponses
+* __Séances 9 et 10__ : Remise du rapport final + présentations orales
