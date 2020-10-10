@@ -31,6 +31,73 @@
 <script src="site_libs/material-0.1/material.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #ffffff;
+    color: #a0a0a0;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+div.sourceCode
+  { color: #1f1c1b; background-color: #ffffff; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span. { color: #1f1c1b; } /* Normal */
+code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+code span.an { color: #ca60ca; } /* Annotation */
+code span.at { color: #0057ae; } /* Attribute */
+code span.bn { color: #b08000; } /* BaseN */
+code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #924c9d; } /* Char */
+code span.cn { color: #aa5500; } /* Constant */
+code span.co { color: #898887; } /* Comment */
+code span.cv { color: #0095ff; } /* CommentVar */
+code span.do { color: #607880; } /* Documentation */
+code span.dt { color: #0057ae; } /* DataType */
+code span.dv { color: #b08000; } /* DecVal */
+code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code span.fl { color: #b08000; } /* Float */
+code span.fu { color: #644a9b; } /* Function */
+code span.im { color: #ff5500; } /* Import */
+code span.in { color: #b08000; } /* Information */
+code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code span.op { color: #1f1c1b; } /* Operator */
+code span.ot { color: #006e28; } /* Other */
+code span.pp { color: #006e28; } /* Preprocessor */
+code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+code span.sc { color: #3daee9; } /* SpecialChar */
+code span.ss { color: #ff5500; } /* SpecialString */
+code span.st { color: #bf0303; } /* String */
+code span.va { color: #0057ae; } /* Variable */
+code span.vs { color: #bf0303; } /* VerbatimString */
+code span.wa { color: #bf0303; } /* Warning */
+</style>
 
 
 <!-- tabsets -->
@@ -70,8 +137,8 @@ $(document).ready(function () {
       <nav class="col-xs-3 menu">
         <div id="toc">
         <ul>
-        <li><a href="#le-projet-deconometrie">Le projet d’Econometrie</a></li>
         <li><a href="#découverte-du-site-web-de-locde">Découverte du site web de l’OCDE</a></li>
+        <li><a href="#organisation-des-dossiers-sur-votre-ordinateur">Organisation des dossiers sur votre ordinateur</a></li>
         <li><a href="#chargement-dune-base-dans-r">Chargement d’une base dans R</a></li>
         </ul>
         </div>
@@ -111,42 +178,180 @@ $(document).ready(function () {
 </div><!--/.navbar -->
 
 
-<div id="le-projet-deconometrie" class="section level1">
-<h1>Le projet d’Econometrie</h1>
-<div id="objectifs-du-projet-déconométrie" class="section level2">
-<h2>Objectifs du projet d’économétrie</h2>
-<p>L’objectif de ces 30 heures de TD est de vous accompagner dans la rédaction d’un mini-mémoire de ~10 pages sur le sujet de votre choix à partir des données de l’OCDE.</p>
-<p>L’évaluation sera basée sur :</p>
-<ul>
-<li><ol style="list-style-type: lower-roman">
-<li>la pertinence du modèle économétrique et votre regard critique sur ses limitations</li>
-</ol></li>
-<li><ol start="2" style="list-style-type: lower-roman">
-<li>la qualité de données utilisées et votre connaissance de leurs limites</li>
-</ol></li>
-<li><ol start="3" style="list-style-type: lower-roman">
-<li>la réplicabilité de vos résultats (votre script R doit être compréhensible et exécutable par une personne tiers)</li>
-</ol></li>
-</ul>
-<p>L’idée de ces trois heures est de vous permettre de maîtriser ces trois composantes, donc tout va bien se passer !</p>
-</div>
-<div id="le-contenu-de-votre-mini-mémoire" class="section level2">
-<h2>Le contenu de votre mini-mémoire</h2>
-<p>Vous allez rédiger un rapport en partant du <a href="https://drive.google.com/file/d/1XygGQ6zAySNSlDuNanrAViAthdfj7kBf/view?usp=sharing">modèle défini</a> qui sera <a href="https://drive.google.com/file/d/1A3hbPaYh1Qc_wGsny_ayK9ErteymIybI/view?usp=sharing">organisé comme suit</a> :</p>
-<ul>
-<li><strong>Introduction</strong></li>
-<li><strong>Présentation des données</strong> : Soyez précis sur les sources et les modalités d’échantillonage et de création de ces données, présentez les variables utilisez *<strong>Modèle</strong> : Le coeur de votre mémoire. Justifiez vos choix et expliquez en les implications.</li>
-<li><strong>Résultats</strong> : Présentez vos statistiques descriptives ainsi que vos tableaux de régression. Attention à la mise en page: titre + numérotation. Soyez bavards: commentez vos résultats dans le corps du texte + ajoutez une petite légende sous chaque tableau et graph.</li>
-<li><strong>Conclusion</strong> : Résumé, limites (il y en a toujours, soyez exhaustif, c’est des points bonus), proposez une perspective de recherche</li>
-<li><strong>Bibliographie</strong> : C’est un mini-mémoire de recherche, la bibliographie est donc très importante. Respectez les règles de mise en page bibliographique. (Petit conseil: utilisez <a href="https://www.zotero.org/">Zotero</a> sur word).</li>
-</ul>
-</div>
-</div>
 <div id="découverte-du-site-web-de-locde" class="section level1">
 <h1>Découverte du site web de l’OCDE</h1>
+<div id="accéder-à-une-base-de-données-de-locde" class="section level2">
+<h2>Accéder à une base de données de l’OCDE</h2>
+<p>Pour accéder au catalogue des bases de données de l’OCDE, cliquez <a href="https://data.oecd.org/fr/resultatrecherche/">sur ce lien</a>. Vous devriez atterir sur la page suivant: <img src="td1/dataoecd.jpg" alt="Page d’accueil des bases de données OCDE" /></p>
+<p>Dans le cadre du TD, nous avons cliqué sur le thème <a href="https://data.oecd.org/fr/resultatrecherche/?hf=20&amp;b=0&amp;r=%2Bf%2Ftopics_fr%2Fdeveloppement&amp;l=fr&amp;s=score">Développement</a> puis nous avons sélectionné la base <a href="https://www.oecd-ilibrary.org/development/data/statistiques-de-l-ocde-sur-le-developpement-international/egalite-homme-femme-institutions-et-developpement-2014_data-00728-fr"><em>Egalité homme-femme</em></a>. Nous avons atteri sur une page de présentation de la base de données: <img src="td1/page_femme_homme.JPG" alt="Page de présentation de la base de données Egalité homme-femme, institutions et développement (Edition 2014)" /></p>
+<p>Pour afficher la base de donnée en intégralité, nous avons cliqué sur le lien <a href="https://stats.oecd.org/viewhtml.aspx?datasetcode=GIDDB2014&amp;lang=fr">DONNEES</a> en bas de la page. Nous voilà enfin face à la base femme-homme en plein écran : <img src="td1/base_femme_homme.JPG" alt="Base de donnée en plein écran" /></p>
+</div>
+<div id="sélectionner-les-variables-et-les-valeurs-dintérêt" class="section level2">
+<h2>Sélectionner les variables et les valeurs d’intérêt</h2>
+<p>Nous sommes maintenant sur le site de la base de données. L’objectif est à présent de sélectionner les données qui nous intéresse. Pour l’exemple on va ici considérer que l’on est intéressé par les données de la France, de la Belgique et de la République Tchèque ainsi que par le groupe de données sur les atteintes à l’intégrité physique.</p>
+<p>Ici, on cherche ainsi à la fois à <strong>filtrer</strong> les <em>valeurs</em> “Belgique”, “France” et “République Tchèque” de la <em>variable</em> pays et à <strong>sélectionner</strong> les <em>variables</em> “Atteintes à l’intégrité physique”, “Violence contre les femmes”, “Attitude envers la violence”, “Prévalence au cours de la vie”, “Loi sur la violence domestique”, “Loi sur le viol”, “Loi sur le harcèlement sexuel”, “Mutilations génitales féminines”, “Autonomie reproductive” et “Avortement”.</p>
+<p>Pour sélectionner les variables et les valeurs d’intérêt on clique sur ‘Personaliser’ (1) en haut à gauche, puis sur ‘Sélection’ (2) puis finalement sur “Variables” (3). <img src="td1/parametres.jpg" alt="OUverture de la fenêtre de sélection des variables" /></p>
+<p>La fenêtre de la ‘Sélection des dimensions’ s’ouvre. On est dans l’onglet ‘Variables’ (1). Par défaut, toutes les variables sont sélectionnées. Puisque l’on est intéressé que par une minorité de variables, on clique sur ‘Désélectionner tout’ (2) puis on clique sur chacune des variables que l’on souhaite garder (3).</p>
+<div class="figure">
+<img src="td1/selection_variables.JPG" alt="Sélection des variables" />
+<p class="caption">Sélection des variables</p>
+</div>
+<p>La dernière étape qu’il nous reste à réaliser avant de télécharger la base sur notre ordinateur est de <strong>filtrer</strong> les pays que l’on souhaite étudier. Sans fermer la fenêtre de ‘Sélection des dimensions’, on clique sur l’onglet ‘Pays’ (1) puis l’on sélectionne/désélectionne les pays qui nous intéressent (2). Afin d’afficher la base de donnée contenant les variables et les pays que l’on a choisi, on clique sur ‘Afficher les données’ (3).</p>
+<div class="figure">
+<img src="td1/filtre_pays.JPG" alt="Sélection des pays" />
+<p class="caption">Sélection des pays</p>
+</div>
+<p>Notre base est prête à être téléchargée. <img src="td1/base_prete.jpg" alt="La base finale" /></p>
+</div>
+<div id="télécharger-la-base-sur-votre-ordinateur" class="section level2">
+<h2>Télécharger la base sur votre ordinateur</h2>
+<p>Maintenant que l’on a sélectionné les éléments de la base de données qui nous intéresse, il ne nous reste plus qu’à télécharger cette base et à l’intégrer à R. Procédons à la première étape de ce beau programme.</p>
+<p>Pour télécharger cette base de données, on clique sur ‘Exporter’ (1) puis sur ‘Fichier texte (CSV)’ (2). <img src="td1/telechargement1.jpg" alt="Première étape pour le téléchargement de la base" /></p>
+<p>Finalement, on ne change rien au format par défaut (1) et on clique sur ‘Téléchargement’ (2).</p>
+<div class="figure">
+<img src="td1/telechargement2" alt="Il ne reste plus qu’à télécharger" />
+<p class="caption">Il ne reste plus qu’à télécharger</p>
+</div>
+</div>
+</div>
+<div id="organisation-des-dossiers-sur-votre-ordinateur" class="section level1">
+<h1>Organisation des dossiers sur votre ordinateur</h1>
+<p>Je vous avais promis que la prochaine étape était le chargement de la base de donnée dans R. En fait, il peut d’abord être de bonne augure de prendre le temps d’organiser son projet de recherche sur son ordinateur. Ainsi, je vous conseille vivement de structurer votre dossier contenant vos fichiers scripts, bases de données, graphes, tableaux…</p>
+<p>Un vieux professeur avait un jour conseillé à ma classe d’organiser son dossier comme suit:</p>
+<ul>
+<li>Projet
+<ul>
+<li>donnees
+<ul>
+<li>brut</li>
+<li>propre</li>
+</ul></li>
+<li>scripts</li>
+<li>resultats</li>
+<li>bibliographie</li>
+</ul></li>
+</ul>
+<p>Evidemment, rien ne vous oblige à reprendre cette organisation précise, c’est simplement une suggestion de présentation. Vous ne serez pas notés là dessus. Considérez simplement que mon dossier de TD sera ainsi structuré lorsque je présenterai comment charger une base de données sur R. <img src="td1/dossier.jpg" alt="Le dossier du projet" /></p>
+<p>J’ai placé la base de données téléchargée sur le site de l’ocde dans le sous-dossier ‘brut’ du dossier ‘donnees’ (1)</p>
+<div class="figure">
+<img src="td1/base_dossier.jpg" alt="Le dossier du projet" />
+<p class="caption">Le dossier du projet</p>
+</div>
 </div>
 <div id="chargement-dune-base-dans-r" class="section level1">
 <h1>Chargement d’une base dans R</h1>
+<p>On commence à s’approcher du but, encore un petit effort !</p>
+<div id="linterface-de-rstudio" class="section level2">
+<h2>L’interface de RStudio</h2>
+<p>Afin de s’assurer que l’on parle tous de la même chose, je vais quand même brièvement vous présenter l’interface de RStudio - que vous avez normalement vu lors de votre TD informatique.</p>
+<p><img src="td1/rstudio.jpg" alt="Bienvenue sur RStudio" /> Bienvenue sur RStudio ! Bon, mon interface est probablement d’une autre couleur que la votre car j’ai choisi un thème ‘sombre’ dans les options du logiciel. Ca fait moins mal aux yeux quand l’on passe un peu de temps dessus.</p>
+<p>Mais ce n’est pas l’important. Ce qu’il faut retenir c’est que votre interface de RStudio est composée de 4 parties qui ont toutes un rôle bien précis :</p>
+<ul>
+<li>Dans la partie (1) vous écrivez vos scripts. Et d’ailleurs peut-être ne voyez vous pas cette partie de l’interface si vous ouvrez RStudio pour la première fois. C’est normal, car vous n’avez pas encore créée votre premier script. Pour ce faire, il vous suffit d’aller dans ‘File’ et de créer un ‘New File’ en format ‘R Script’. Pour les plus préssé.e.s, il est aussi possible de créer ce script à l’aide du raccourci clavier ‘Ctrl + Maj + N’. Chose importante, n’oubliez pas de sauvegarder votre script (dans le sous-dossier ‘script’ de votre projet) en cliquant sur ‘File’ puis ‘Save’ ou bien à l’aide d’un bon vieux ‘Ctrl + S’. <strong>Pour les utilisateurs de Mac, il me semble que tous ces raccourcis fonctionnent en remplacant ‘Ctrl’ par ‘Cmd’. Tenez moi au courant.</strong></li>
+<li>Dans la partie (2) de l’écran vous avez votre ‘Environnement’. C’est ici que va se charger la base de données que nous aurons bientôt chargée dans R.</li>
+<li>Dans la partie (3) de votre écran, vous retrouvez la ‘Console’ de R dans laquelle s’affiche l’ensemble des commandes effectuées ainsi que les résultats de ces commandes.</li>
+<li>Finalement, dans la partie (4) de votre interface, vous pouvez accéder aux graphes que vous créérez dans l’onglet ‘Plot’, mais également à la liste de tous les Packages téléchargés dans l’onglet ‘Packages’. L’onglet ‘Help’ sert quand à lui à vous donner des informations sur les paramètres des différentes fonctions lorsque vous le demander. Nous verrons dans les prochains TDs comment se servir de ces différentes fenêtres.</li>
+</ul>
+</div>
+<div id="le-chargement-dune-base-au-format-csv" class="section level2">
+<h2>Le chargement d’une base au format csv</h2>
+<p>Ok, on passe à présent à l’étape finale, le chargement de la base de donnée dans R. Une fois que l’on a créée son script R et que on l’a enregistré dans le sous-dossier <em>scripts</em> du dossier <em>Projet</em>, il faut commencer par dire à R quel est l’emplacement du fichier.</p>
+<p>Je crois que je n’ai pas été très clair en cours sur ce point, alors je vais détailler d’avantage la démarche ici et adopter une approche plus transparente. Pour charger le fichier, on va réaliser deux étapes importantes:</p>
+<ol style="list-style-type: decimal">
+<li>Définir le dossier ou est le fichier : ce que R appelle le ‘working directory’</li>
+<li>Ouvrir le fichier avec la fonction read.csv</li>
+</ol>
+<p>Tout d’abord il faut trouver quel est le chemin d’accès au fichier.</p>
+<div id="sur-windows" class="section level3">
+<h3>Sur Windows</h3>
+<p>Sur <strong>Windows</strong> il suffit de se rendre dans ce dossier et de cliquer sur la barre de navigation (1), ensuite on fait un copier coller de ce chemin d’accès dans R. <img src="td1/barre_navig_windows.jpg" alt="Il suffit de copier-coller le chemin d’accès à l’emplacement du dossier" /> Avec ce chemin d’accès, je crée un <em>object</em> que je dénomme ‘chemin’. <strong>Important</strong> : je place le chemin d’accès au fichier entre guillemets, sinon ça ne marchera pas. Ensuite j’exécute la commande. Pour le faire, soit je sélectionne ma ligne et j’appuie sur ‘Run’ en haut à droite du script, soit j’utilise le raccourci clavier ‘Ctrl + Entrer’.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">chemin =<span class="st"> &quot;D:\OneDrive - sciencespo.fr\Suivi Descartes\Projet\donnees</span><span class="ch">\b</span><span class="st">rut&quot;</span></a></code></pre></div>
+<p>Ah ! Une erreur ? En fait R n’aime pas le sens des barres obliques qui sont données par Windows lorsque l’on fait un copier-coller. Pour résoudre ce problème on remplace juste toutes les barres obliques par une barre oblique, mais dans l’autre sens :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">chemin =<span class="st"> &quot;D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut&quot;</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">print</span>(chemin)</a></code></pre></div>
+<pre><code>## [1] &quot;D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut&quot;</code></pre>
+<p>J’exécute la commande pour créer l’objet. Pas d’erreur, et le chemin est chargé dans mon environnement, parfait ! <img src="td1/cheminchargee.jpg" alt="Le chemin est dans mon environnement" /> À présent il faut dire à R que l’on va travailler avec les fichiers présents dans ce dossier. On va donc assigner le dossier de travail (‘setting the working directory’) en utilisant la fonction <em>setwd()</em>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">setwd</span>(chemin)</a></code></pre></div>
+<p>J’éxecute la commande en cliquant sur ‘Run’ ou en utilisant le raccourci clavier ‘Ctrl + Entrer’. On vérifie dans que tout est à jour:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">knitr<span class="op">::</span>opts_knit<span class="op">$</span><span class="kw">set</span>(<span class="dt">root.dir =</span> chemin)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">getwd</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut&quot;</code></pre>
+<p>Succès !</p>
+</div>
+<div id="sur-mac" class="section level3">
+<h3>Sur Mac</h3>
+<p>Tout d’abord un grand merci à Océane Coudrieu d’avoir pris le temps de trouver une solution pour les utilisateurs de Mac, mais aussi d’avoir pris le temps d’enregistrer la vidéo ci-dessous.</p>
+<p>Sur <strong>Mac</strong> les choses sont en effet un peu différentes que sur Windows. Pour obtenir le chemin d’accès au fichier, il suffit d’ouvrir le Terminal et d’y faire glisser le fichier de la base de données. Le chemin d’accès à l’emplacement du fichier s’affiche. On le copie-colle directement dans le script.</p>
+<p><img src="td1/macemplacement.gif" alt="Obtenir le chemin d’accès au fichier sur Mac" /> Comme pour windows on crée un <em>objet</em> ‘chemin’ auquel on assigne la valeur du lien vers l’emplacement au fichier. Attention, n’oubliez pas d’enlever le nom du fichier à la fin du chemin ! Il ne faut pas non plus oublier de mettre le lien entre guillemets. Enfin, pour créer l’objet il faut exécuter la ligne de commande, avec ‘Run’ en haut à droite du script, ou bien avec ‘Cmd + Entrer’ :</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">chemin =<span class="st"> &quot;/Users/oceanecoudrieu/Documents/L3 SEG/S1/ECONOMETRIE/Recherche/Bases&quot;</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="kw">print</span>(chemin)</a></code></pre></div>
+<pre><code>## [1] &quot;/Users/oceanecoudrieu/Documents/L3 SEG/S1/ECONOMETRIE/Recherche/Bases&quot;</code></pre>
+<p>(Les plus attentif.ve.s auront remarqué que je n’ai pas gardé les ‘é’ majuscules dans ‘ECONOMETRIE’. Cela est une erreur de ma part qui entraînerait l’impossibilité pour R de charger le fichier puisque ECONOMETRIE n’existe pas.)</p>
+<p>On assigne maintenant le chemin à la fonction ‘setwd()’ qui nous permet de défnir le dossier dans lequel R doit chercher les bases de données: c’est le ‘working directory’</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co"># Je crée l&#39;environnement de travail</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="kw">setwd</span>(chemin)</a>
+<a class="sourceLine" id="cb10-3" title="3"></a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="co"># Je vérifie que le working directory est bien à jour</span></a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="kw">getwd</span>()</a></code></pre></div>
+</div>
+<div id="le-moment-du-chargement" class="section level3">
+<h3>Le moment du chargement</h3>
+<p>Ok, tout est bon, on a défini notre environnement de travail: le working directory. Il ne nous reste plus qu’à charger le fichier dans R. Pour ce faire, on va utiliser la fonction ‘read.csv()’ dans R.</p>
+<p>Les fonctions sont nos plus grandes alliées, car elles nous permettent de faire des trucs vraiments cools, comme par exemple transformer l’<em>objet</em> ‘chemin’ en une base de donnée. Pour comprendre comment fonctionne une fonction, on peut demander à R de nous l’expliquer :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># Pour demander à R de nous donner des infos sur une fonction</span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="co"># on exécute ?fonction</span></a>
+<a class="sourceLine" id="cb11-3" title="3">?read.csv</a></code></pre></div>
+<p>La fenêtre ‘Help’ s’ouvre : <img src="td1/help.jpg" alt="La fenêtre d’aide à l’utilisation de la fonction read.csv" /> L’aide nous explique que cette fonction lit les fichiers au format ‘table’ et les transforme en ‘dataframe’, c’est-à-dire une base de donnée dans le langage de R. On peut voir qu’il existe plusieurs variantes de la fonction en fonction de l’extension du fichier.</p>
+<p>Nous sommes intéressés par les paramètres de la fonction read.csv:</p>
+<ul>
+<li><em>file</em> : Ce paramètre est important pour nous, car c’est grâce à celui-ci que l’on va dire à R où ce situe notre fichier. Vous vous souvenez ? C’est le fameux objet ‘chemin’ que l’on va mettre comme valeur pour ce paramètre.</li>
+<li><em>header</em> : C’est un paramètre qui prend la valeur ‘TRUE’ par défaut et qui défini si la première ligne de la base de donnée au format csv contient le nom des colonnes. Comme c’est le cas pour la base que l’on a téléchargé on peut ne pas se soucier de ce paramètre. Si au contraire, la première ligne contenait directement des valeurs observées et pas le nom des colonnes il faudrait spécifier ‘header=FALSE’.</li>
+<li><em>sep</em> : Ce paramètre défini le séprateur entre les colonnes. Si on ouvre la base sur excel, on observe que les colonnes sont séparées par “,”. Ca tombe bien, la fenêtre ‘Help’ nous indique que c’est la valeur que prend le paramètre par défaut. (Souvenez-vous également que c’était l’option par défaut sur le site de l’OCDE lors de l’étape de téléchargement).</li>
+<li>etc…</li>
+</ul>
+<div class="figure">
+<img src="td1/base_dans_excel.jpg" alt="On observe que les colonnes sont bien séparées par “,”" />
+<p class="caption">On observe que les colonnes sont bien séparées par “,”</p>
+</div>
+<p>Donc si l’on récapitule, le seul paramètre qu’il nous faut spécifier est l’emplacement du fichier. Le fameux <em>file</em>. Je charge la base de donnée dans un object que j’appelle, sans originalité, ‘base’:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># Chargement d&#39;une base de donnée</span></a>
+<a class="sourceLine" id="cb12-2" title="2">base =<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;GIDDB2014_10102020163601177.csv&#39;</span>)</a>
+<a class="sourceLine" id="cb12-3" title="3"></a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="co"># Impression des premières lignes</span></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="kw">head</span>(base)</a></code></pre></div>
+<pre><code>##   ï..REG                 RÃ.gion LOCATION     Pays INC
+## 1    ECA Europe and Central Asia      BEL Belgique HIO
+## 2    ECA Europe and Central Asia      BEL Belgique HIO
+## 3    ECA Europe and Central Asia      BEL Belgique HIO
+## 4    ECA Europe and Central Asia      BEL Belgique HIO
+## 5    ECA Europe and Central Asia      BEL Belgique HIO
+## 6    ECA Europe and Central Asia      BEL Belgique HIO
+##           Groupe.de.revenus    VAR                                Variables
+## 1 Pays Ã  haut revenu: OCDE RP_1_2           PrÃ©valence au cours de la vie
+## 2 Pays Ã  haut revenu: OCDE RP_1_3           Loi sur la violence domestique
+## 3 Pays Ã  haut revenu: OCDE RP_1_4                          Loi sur le viol
+## 4 Pays Ã  haut revenu: OCDE RP_1_5           Loi sur le harcÃ©lement sexuel
+## 5 Pays Ã  haut revenu: OCDE   RP_2 Mutilations gÃ©nitales fÃ©minines (MGF) 
+## 6 Pays Ã  haut revenu: OCDE   RP_3                   Autonomie reproductive
+##   TIME AnnÃ.e Value Flag.Codes Flags
+## 1 2014   2014  0.24         NA    NA
+## 2 2014   2014  0.00         NA    NA
+## 3 2014   2014  0.00         NA    NA
+## 4 2014   2014  0.00         NA    NA
+## 5 2014   2014  0.00         NA    NA
+## 6 2014   2014  0.03         NA    NA</code></pre>
+<p>La base est chargée dans R !</p>
+<p>Avant de conclure, je dois vous préciser que la création de l’objet ‘chemin’ n’était pas nécessaire à strictement parler pour charger le fichier. Il aurait été possible de coller l’emplacement du fichier entre guillement directement dans setwd() lors de la définition du ‘working directory’ :</p>
+<p>Pourquoi me compliquer la vie ?</p>
+<ul>
+<li>Pour vous montrer qu’un <em>objet</em> dans R peut contenir différents types d’informations: des valeurs numériques ou des charactères, mais également une base de donnée ou bien un liste.</li>
+<li>Car il est de coutûme d’assigner la valeur des différents paramètres à des objets en dehors de la fonction, afin de rendre la lisibilité des scripts meilleure.</li>
+</ul>
+<p>La semaine prochaine, nous verrons ensemble comment (1) manipuler cette base de donnée et (2) en tirer des statistiques descriptives.</p>
+<p>Vous pouvez télécharger le script de cette séance <a href="https://drive.google.com/file/d/1RthxcIYQmHvXA1Km_GVcM3rVaACaKbRn/view?usp=sharing">ici</a> ainsi que la base de données <a href="https://drive.google.com/file/d/1kuKMcEGaaqfsOFnn8Mvqgma2BItIQEFE/view?usp=sharing">là</a>.</p>
+<p>À la semaine prochaine.</p>
+</div>
+</div>
 </div>
 
     </div>
