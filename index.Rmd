@@ -4,5 +4,43 @@ title: "Bienvenue"
 # Présentation
 Ce site web sert de ressource annexe aux TDs qui ont lieu tous les vendredi de 17h à 20h. Vous pouvez y trouver le résumé de tous les exercices réalisés en cours et certaines extensions qui couvrent les difficultés rencontrées ensemble.
 
-N'hésitez pas à m'envoyer un [mail](yann.collindavid@gmail.com) si vous souhaitez que j'ajoute des ressources supplémentaires.
+N'hésitez pas à m'envoyer un [mail](mailto:yann.collindavid@gmail.com?subject=[TD Descartes]) si vous souhaitez que j'ajoute des ressources supplémentaires.
 
+# Le projet d'Econometrie
+## Objectifs du projet d'économétrie
+L'objectif de ces 30 heures de TD est de vous accompagner dans la rédaction d'un mini-mémoire de ~10 pages sur le sujet de votre choix à partir des données de l'OCDE. 
+
+L'évaluation sera basée sur :
+
+* (i) la pertinence du modèle économétrique et votre regard critique sur ses limitations
+* (ii) la qualité de données utilisées et votre connaissance de leurs limites
+* (iii) la réplicabilité de vos résultats (votre script R doit être compréhensible et exécutable par une personne tiers)
+
+L'idée de ces trois heures est de vous permettre de maîtriser ces trois composantes, donc tout va bien se passer !
+
+## Le contenu de votre mini-mémoire
+Vous allez rédiger un rapport en partant du [modèle défini](https://drive.google.com/file/d/1XygGQ6zAySNSlDuNanrAViAthdfj7kBf/view?usp=sharing) qui sera [organisé comme suit](https://drive.google.com/file/d/1A3hbPaYh1Qc_wGsny_ayK9ErteymIybI/view?usp=sharing) :
+
+* __Introduction__
+* __Présentation des données__ : Soyez précis sur les sources et les modalités d'échantillonage et de création de ces données, présentez les variables utilisez
+* __Modèle__ : Le coeur de votre mémoire. Justifiez vos choix et expliquez en les implications.
+* __Résultats__ : Présentez vos statistiques descriptives ainsi que vos tableaux de régression. Attention à la mise en page: titre + numérotation. Soyez bavards: commentez vos résultats dans le corps du texte + ajoutez une petite légende sous chaque tableau et graph.
+* __Conclusion__ : Résumé, limites (il y en a toujours, soyez exhaustif, c'est des points bonus), proposez une perspective de recherche
+* __Bibliographie__ : C'est un mini-mémoire de recherche, la bibliographie est donc très importante. Respectez les règles de mise en page bibliographique. (Petit conseil: utilisez [Zotero](https://www.zotero.org/) sur word).
+
+## Rendus finaux et notation :
+
+* Votre projet est noté sur 20: 10 points pour le rapport et 10 points pour la présentation orale (15 minutes).
+* La date de rendu des mini-mémoires est la séance 9. Les présentations ont lieu en séance 9 et 10. 
+* Structure du mémoire et des oraux: point méthodologique en début des séances 6 et 7 lorsque le contenu de votre rendu final sera plus concret.
+
+## Organisation du semestre
+ * __Séance 1__ : Présentation des consignes relatives au projet d'économétrie, découverte des bases de données de l'OCDE, importation d'une base dans R.
+*__Séance 2__ : Création des groupes et exploration des données et analyses descriptives
+*__Séance 3__ : Recherche bibliographique pour alimenter la réflexion sur le thème retenu. Définition question de recherche.
+*__Séance 4__ : Arriver en début de séance avec une question de recherche finalisée. Séance de réflexion sur le modèle: première approche par analyse bivariée
+*__Séance 4__ : Séance d'élaboration du modèle. Analyses multivariées. Présentations des résultats préliminaires.
+*__Séance 6__ : Point méthodo contenu du rapport + tests de robustesse du modèle retenu.
+*__Séance 7__ : Point méthodo contenu présentation orale + analyses de sensibilité.
+*__Séance 8__ : Structuration des résultats finaux, questions/réponses
+*__Séances 9 et 10__ : Remise du rapport final + présentations orales
