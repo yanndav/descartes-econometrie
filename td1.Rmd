@@ -28,7 +28,7 @@ La fenêtre de la 'Sélection des dimensions' s'ouvre. On est dans l'onglet 'Var
 
 La dernière étape qu'il nous reste à réaliser avant de télécharger la base sur notre ordinateur est de __filtrer__ les pays que l'on souhaite étudier. Sans fermer la fenêtre de 'Sélection des dimensions', on clique sur l'onglet 'Pays' (1) puis l'on sélectionne/désélectionne les pays qui nous intéressent (2). Afin d'afficher la base de donnée contenant les variables et les pays que l'on a choisi, on clique sur 'Afficher les données' (3).
 
-![Sélection des pays](td1/filtre_pays.JPG)
+![Sélection des pays](td1/filtre_pays.jpg)
 
 Notre base est prête à être téléchargée.
 ![La base finale](td1/base_prete.jpg)
@@ -43,7 +43,7 @@ Pour télécharger cette base de données, on clique sur 'Exporter' (1) puis sur
 
 Finalement, on ne change rien au format par défaut (1) et on clique sur 'Téléchargement' (2).
 
-![Il ne reste plus qu'à télécharger](td1/telechargement2)
+![Il ne reste plus qu'à télécharger](td1/telechargement2.jpg)
 
 # Organisation des dossiers sur votre ordinateur
 Je vous avais promis que la prochaine étape était le chargement de la base de donnée dans R. En fait, il peut d'abord être de bonne augure de prendre le temps d'organiser son projet de recherche sur son ordinateur. Ainsi, je vous conseille vivement de structurer votre dossier contenant vos fichiers scripts, bases de données, graphes, tableaux... 
@@ -120,7 +120,6 @@ J'éxecute la commande en cliquant sur 'Run' ou en utilisant le raccourci clavie
 ```{r setup, echo=FALSE}
 knitr::opts_knit$set(root.dir = chemin)
 ```
-
 ````{r}
 getwd()
 
