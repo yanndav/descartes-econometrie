@@ -140,7 +140,7 @@ Comme pour windows on crée un _objet_ 'chemin' auquel on assigne la valeur du l
 chemin = "/Users/oceanecoudrieu/Documents/L3 SEG/S1/ECONOMETRIE/Recherche/Bases"
 print(chemin)
 ````
-(Les plus attentif.ve.s auront remarqué que je n'ai pas gardé les 'é' majuscules dans 'ECONOMETRIE'. Cela est une erreur de ma part qui entraînerait l'impossibilité pour R de charger le fichier puisque ECONOMETRIE n'existe pas.)
+(Les plus attentif.ve.s auront remarqué que je n'ai pas gardé les 'é' majuscules dans 'ECONOMETRIE'. Cela est une erreur de ma part qui entraînerait l'impossibilité pour R de charger le fichier puisque le dossier ECONOMETRIE n'existe pas.)
 
 On assigne maintenant le chemin à la fonction 'setwd()' qui nous permet de défnir le dossier dans lequel R doit chercher les bases de données: c'est le 'working directory'
 ````{r, eval=F, echo=T}
@@ -154,7 +154,7 @@ getwd()
 ### Le moment du chargement
 Ok, tout est bon, on a défini notre environnement de travail: le working directory. Il ne nous reste plus qu'à charger le fichier dans R. Pour ce faire, on va utiliser la fonction 'read.csv()' dans R.
 
-Les fonctions sont nos plus grandes alliées, car elles nous permettent de faire des trucs vraiments cools, comme par exemple transformer l'_objet_ 'chemin' en une base de donnée. Pour comprendre comment fonctionne une fonction, on peut demander à R de nous l'expliquer :
+Les fonctions sont nos plus grandes alliées, car elles nous permettent de faire des trucs vraiments cools, comme par exemple charger une base de données - mais aussi effectuer des modifications sur cette base, ou encore créer des graphes etc... Pour comprendre comment fonctionne une fonction, on peut demander à R de nous l'expliquer :
 
 
 ````{r, eval=F, echo=T}
@@ -168,14 +168,14 @@ L'aide nous explique que cette fonction lit les fichiers au format 'table' et le
 
 Nous sommes intéressés par les paramètres de la fonction read.csv:
 
-* _file_ : Ce paramètre est important pour nous, car c'est grâce à celui-ci que l'on va dire à R où ce situe notre fichier. Vous vous souvenez ? C'est le fameux objet 'chemin' que l'on va mettre comme valeur pour ce paramètre.
+* _file_ : Ce paramètre est important pour nous, car c'est grâce à celui-ci que l'on va dire à R où ce situe notre fichier. Comme on a précédemment défini notre 'working directory' (dossier de travail), il ne nous reste plus qu'à signaler à R le nom du fichier à charger.
 * _header_ : C'est un paramètre qui prend la valeur 'TRUE' par défaut et qui défini si la première ligne de la base de donnée au format csv contient le nom des colonnes. Comme c'est le cas pour la base que l'on a téléchargé on peut ne pas se soucier de ce paramètre. Si au contraire, la première ligne contenait directement des valeurs observées et pas le nom des colonnes il faudrait spécifier 'header=FALSE'.
 * _sep_ : Ce paramètre défini le séprateur entre les colonnes. Si on ouvre la base sur excel, on observe que les colonnes sont séparées par ",". Ca tombe bien, la fenêtre 'Help' nous indique que c'est la valeur que prend le paramètre par défaut. (Souvenez-vous également que c'était l'option par défaut sur le site de l'OCDE lors de l'étape de téléchargement).
 * etc...
 
 ![On observe que les colonnes sont bien séparées par ","](td1/base_dans_excel.jpg)
 
-Donc si l'on récapitule, le seul paramètre qu'il nous faut spécifier est l'emplacement du fichier. Le fameux _file_. Je charge la base de donnée dans un object que j'appelle, sans originalité, 'base':
+Donc si l'on récapitule, le seul paramètre qu'il nous faut spécifier est le nom du fichier. Je charge la base de donnée dans un object que j'appelle, sans originalité, 'base' :
 ````{r}
 # Chargement d'une base de donnée
 base = read.csv(file = 'GIDDB2014_10102020163601177.csv')
@@ -186,7 +186,20 @@ head(base)
 
 La base est chargée dans R !
 
-Avant de conclure, je dois vous préciser que la création de l'objet 'chemin' n'était pas nécessaire à strictement parler pour charger le fichier. Il aurait été possible de coller l'emplacement du fichier entre guillement directement dans setwd() lors de la définition du 'working directory' : 
+Vous pouvez essayer de charger la base sans l'assigner à un objet, elle s'ouvrira alors dans votre console mais ne sera pas enregistrée dans l'environnement.
+
+````{r}
+# Ouverture de la base sans sa sauvergarde dans l'environnement
+read.csv(file = 'GIDDB2014_10102020163601177.csv')
+````
+
+Avant de conclure, je dois vous préciser que la création de l'objet 'chemin' n'était pas nécessaire à strictement parler pour charger le fichier. Il aurait été possible de coller l'emplacement du dossier entre guillement directement dans setwd() lors de la définition du 'working directory' : 
+
+````{r, eval=F, echo=T}
+# Je crée l'environnement de travail
+setwd("D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut")
+````
+
 
 Pourquoi me compliquer la vie ?
 
