@@ -28,15 +28,15 @@ Vous allez rédiger un rapport en partant du [modèle défini](https://drive.goo
 * __Conclusion__ : Résumé, limites (il y en a toujours, soyez exhaustif, c'est des points bonus), proposez une perspective de recherche
 * __Bibliographie__ : C'est un mini-mémoire de recherche, la bibliographie est donc très importante. Respectez les règles de mise en page bibliographique. (Petit conseil: utilisez [Zotero](https://www.zotero.org/) sur word).
 
-## Rendus finaux et notation :
+## Rendus finaux et notation
 
 * Votre projet est noté sur 20: 10 points pour le rapport et 10 points pour la présentation orale (15 minutes).
 * La date de rendu des mini-mémoires est la séance 9. Les présentations ont lieu en séance 9 et 10. 
 * Structure du mémoire et des oraux: point méthodologique en début des séances 6 et 7 lorsque le contenu de votre rendu final sera plus concret.
 
 ## Organisation du semestre
- * __Séance 1__ : Présentation des consignes relatives au projet d'économétrie, découverte des bases de données de l'OCDE, importation d'une base dans R.
-* __Séance 2__ : Création des groupes et exploration des données et analyses descriptives
+ * [__Séance 1__](https://yanndav.github.io/descartes-econometrie/td1.html) : Présentation des consignes relatives au projet d'économétrie, découverte des bases de données de l'OCDE, importation d'une base dans R.
+* [__Séance 2__](https://yanndav.github.io/descartes-econometrie/td2.html) : Création des groupes et exploration des données et analyses descriptives
 * __Séance 3__ : Recherche bibliographique pour alimenter la réflexion sur le thème retenu. Définition question de recherche.
 * __Séance 4__ : Arriver en début de séance avec une question de recherche finalisée. Séance de réflexion sur le modèle: première approche par analyse bivariée
 * __Séance 4__ : Séance d'élaboration du modèle. Analyses multivariées. Présentations des résultats préliminaires.

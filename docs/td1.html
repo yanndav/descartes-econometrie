@@ -1,38 +1,104 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
 
 
 
 <title>TD1 - Seance du 09 Octobre 2020</title>
-<!-- Material Design fonts -->
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
-<link href="site_libs/magnific-popup-1.1.0/magnific-popup.css" rel="stylesheet" />
-<script src="site_libs/magnific-popup-1.1.0/jquery.magnific-popup.min.js"></script>
-<link href="site_libs/bootstrap_material-0.1/bootstrap-material-design.min.css" rel="stylesheet" />
-<link href="site_libs/bootstrap_material-0.1/ripples.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap_material-0.1/material.min.js"></script>
-<script src="site_libs/bootstrap_material-0.1/ripples.min.js"></script>
-<link href="site_libs/material-0.1/material.css" rel="stylesheet" />
-<script src="site_libs/material-0.1/material.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      a.sourceLine { display: inline-block; line-height: 1.25; }
+  a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+  a.sourceLine:empty { height: 1.2em; }
+  .sourceCode { overflow: visible; }
+  code.sourceCode { white-space: pre; position: relative; }
+  div.sourceCode { margin: 1em 0; }
+  pre.sourceCode { margin: 0; }
+  @media screen {
+  div.sourceCode { overflow: auto; }
+  }
+  @media print {
+  code.sourceCode { white-space: pre-wrap; }
+  a.sourceLine { text-indent: -1em; padding-left: 1em; }
+  }
+  pre.numberSource a.sourceLine
+    { position: relative; left: -4em; }
+  pre.numberSource a.sourceLine::before
+    { content: attr(title);
+      position: relative; left: -1em; text-align: right; vertical-align: baseline;
+      border: none; pointer-events: all; display: inline-block;
+      -webkit-touch-callout: none; -webkit-user-select: none;
+      -khtml-user-select: none; -moz-user-select: none;
+      -ms-user-select: none; user-select: none;
+      padding: 0 4px; width: 4em;
+      color: #aaaaaa;
+    }
+  pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+  div.sourceCode
+    {  }
+  @media screen {
+  a.sourceLine::before { text-decoration: underline; }
+  }
+  code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+  code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+  code span.at { color: #7d9029; } /* Attribute */
+  code span.bn { color: #40a070; } /* BaseN */
+  code span.bu { } /* BuiltIn */
+  code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+  code span.ch { color: #4070a0; } /* Char */
+  code span.cn { color: #880000; } /* Constant */
+  code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+  code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+  code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+  code span.dt { color: #902000; } /* DataType */
+  code span.dv { color: #40a070; } /* DecVal */
+  code span.er { color: #ff0000; font-weight: bold; } /* Error */
+  code span.ex { } /* Extension */
+  code span.fl { color: #40a070; } /* Float */
+  code span.fu { color: #06287e; } /* Function */
+  code span.im { } /* Import */
+  code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+  code span.op { color: #666666; } /* Operator */
+  code span.ot { color: #007020; } /* Other */
+  code span.pp { color: #bc7a00; } /* Preprocessor */
+  code span.sc { color: #4070a0; } /* SpecialChar */
+  code span.ss { color: #bb6688; } /* SpecialString */
+  code span.st { color: #4070a0; } /* String */
+  code span.va { color: #19177c; } /* Variable */
+  code span.vs { color: #4070a0; } /* VerbatimString */
+  code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
+<style type="text/css" data-origin="pandoc">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
@@ -57,98 +123,362 @@ pre.numberSource a.sourceLine::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    background-color: #ffffff;
-    color: #a0a0a0;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  { color: #1f1c1b; background-color: #ffffff; }
+  {  }
 @media screen {
 a.sourceLine::before { text-decoration: underline; }
 }
-code span. { color: #1f1c1b; } /* Normal */
-code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
-code span.an { color: #ca60ca; } /* Annotation */
-code span.at { color: #0057ae; } /* Attribute */
-code span.bn { color: #b08000; } /* BaseN */
-code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
-code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #924c9d; } /* Char */
-code span.cn { color: #aa5500; } /* Constant */
-code span.co { color: #898887; } /* Comment */
-code span.cv { color: #0095ff; } /* CommentVar */
-code span.do { color: #607880; } /* Documentation */
-code span.dt { color: #0057ae; } /* DataType */
-code span.dv { color: #b08000; } /* DecVal */
-code span.er { color: #bf0303; text-decoration: underline; } /* Error */
-code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
-code span.fl { color: #b08000; } /* Float */
-code span.fu { color: #644a9b; } /* Function */
-code span.im { color: #ff5500; } /* Import */
-code span.in { color: #b08000; } /* Information */
-code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
-code span.op { color: #1f1c1b; } /* Operator */
-code span.ot { color: #006e28; } /* Other */
-code span.pp { color: #006e28; } /* Preprocessor */
-code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
-code span.sc { color: #3daee9; } /* SpecialChar */
-code span.ss { color: #ff5500; } /* SpecialString */
-code span.st { color: #bf0303; } /* String */
-code span.va { color: #0057ae; } /* Variable */
-code span.vs { color: #bf0303; } /* VerbatimString */
-code span.wa { color: #bf0303; } /* Warning */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
 </style>
 
 
-<!-- tabsets -->
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
 <script>
+// manage active state of menu based on current page
 $(document).ready(function () {
-  window.buildTabsets("toc");
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
 });
 </script>
 
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <!-- code folding -->
-<script>
-$(document).ready(function () {
-  window.initializeCodeFolding("show" === "show");
-});
-</script>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
 <body>
 
-<div class="header-panel shadow z-2">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-3">
-        <div id="header">
-    <h1 class="title">TD1 - Seance du 09 Octobre 2020</h1>
-        <h1 class="subtitle">Site de l’OCDE &amp; chargement d’une base dans R</h1>
-                </div>
-    </div>
-</div>
-</div>
-</div>
-
 
 <div class="container-fluid main-container">
-    <div class="row">
-      <nav class="col-xs-3 menu">
-        <div id="toc">
-        <ul>
-        <li><a href="#découverte-du-site-web-de-locde">Découverte du site web de l’OCDE</a></li>
-        <li><a href="#organisation-des-dossiers-sur-votre-ordinateur">Organisation des dossiers sur votre ordinateur</a></li>
-        <li><a href="#chargement-dune-base-dans-r">Chargement d’une base dans R</a></li>
-        </ul>
-        </div>
-        
-        
-        
-      </nav>
-     <div class="pages col-xs-9">
-     <div class="row">
-       <div class="col-xs-10">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -169,6 +499,9 @@ $(document).ready(function () {
 <li>
   <a href="td1.html">TD1 - 09/10</a>
 </li>
+<li>
+  <a href="td2.html">TD2 - 16/10</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -176,6 +509,15 @@ $(document).ready(function () {
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">TD1 - Seance du 09 Octobre 2020</h1>
+<h3 class="subtitle">Site de l’OCDE &amp; chargement d’une base dans R</h3>
+
+</div>
 
 
 <div id="découverte-du-site-web-de-locde" class="section level1">
@@ -318,301 +660,23 @@ $(document).ready(function () {
 <a class="sourceLine" id="cb11-3" title="3"></a>
 <a class="sourceLine" id="cb11-4" title="4"><span class="co"># Impression des premières lignes</span></a>
 <a class="sourceLine" id="cb11-5" title="5"><span class="kw">head</span>(base)</a></code></pre></div>
-<pre><code>##   ï..REG                 RÃ.gion LOCATION     Pays INC
-## 1    ECA Europe and Central Asia      BEL Belgique HIO
-## 2    ECA Europe and Central Asia      BEL Belgique HIO
-## 3    ECA Europe and Central Asia      BEL Belgique HIO
-## 4    ECA Europe and Central Asia      BEL Belgique HIO
-## 5    ECA Europe and Central Asia      BEL Belgique HIO
-## 6    ECA Europe and Central Asia      BEL Belgique HIO
-##           Groupe.de.revenus    VAR                                Variables
-## 1 Pays Ã  haut revenu: OCDE RP_1_2           PrÃ©valence au cours de la vie
-## 2 Pays Ã  haut revenu: OCDE RP_1_3           Loi sur la violence domestique
-## 3 Pays Ã  haut revenu: OCDE RP_1_4                          Loi sur le viol
-## 4 Pays Ã  haut revenu: OCDE RP_1_5           Loi sur le harcÃ©lement sexuel
-## 5 Pays Ã  haut revenu: OCDE   RP_2 Mutilations gÃ©nitales fÃ©minines (MGF) 
-## 6 Pays Ã  haut revenu: OCDE   RP_3                   Autonomie reproductive
-##   TIME AnnÃ.e Value Flag.Codes Flags
-## 1 2014   2014  0.24         NA    NA
-## 2 2014   2014  0.00         NA    NA
-## 3 2014   2014  0.00         NA    NA
-## 4 2014   2014  0.00         NA    NA
-## 5 2014   2014  0.00         NA    NA
-## 6 2014   2014  0.03         NA    NA</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["ï..REG"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["RÃ.gion"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["LOCATION"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["Pays"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["INC"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["Groupe.de.revenus"],"name":[6],"type":["fctr"],"align":["left"]},{"label":["VAR"],"name":[7],"type":["fctr"],"align":["left"]},{"label":["Variables"],"name":[8],"type":["fctr"],"align":["left"]},{"label":["TIME"],"name":[9],"type":["int"],"align":["right"]},{"label":["AnnÃ.e"],"name":[10],"type":["int"],"align":["right"]},{"label":["Value"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Flag.Codes"],"name":[12],"type":["lgl"],"align":["right"]},{"label":["Flags"],"name":[13],"type":["lgl"],"align":["right"]}],"data":[{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.24","12":"NA","13":"NA","_rn_":"1"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA","_rn_":"2"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA","_rn_":"3"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA","_rn_":"4"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA","_rn_":"5"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.03","12":"NA","13":"NA","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <p>La base est chargée dans R !</p>
 <p>Vous pouvez essayer de charger la base sans l’assigner à un objet, elle s’ouvrira alors dans votre console mais ne sera pas enregistrée dans l’environnement.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Ouverture de la base sans sa sauvergarde dans l&#39;environnement</span></a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;GIDDB2014_10102020163601177.csv&#39;</span>)</a></code></pre></div>
-<pre><code>##    ï..REG                 RÃ.gion LOCATION                 Pays INC
-## 1     ECA Europe and Central Asia      BEL             Belgique HIO
-## 2     ECA Europe and Central Asia      BEL             Belgique HIO
-## 3     ECA Europe and Central Asia      BEL             Belgique HIO
-## 4     ECA Europe and Central Asia      BEL             Belgique HIO
-## 5     ECA Europe and Central Asia      BEL             Belgique HIO
-## 6     ECA Europe and Central Asia      BEL             Belgique HIO
-## 7     ECA Europe and Central Asia      BEL             Belgique HIO
-## 8     ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que HIO
-## 9     ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que HIO
-## 10    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que HIO
-## 11    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que HIO
-## 12    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que HIO
-## 13    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que HIO
-## 14    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que HIO
-## 15    ECA Europe and Central Asia      FRA               France HIO
-## 16    ECA Europe and Central Asia      FRA               France HIO
-## 17    ECA Europe and Central Asia      FRA               France HIO
-## 18    ECA Europe and Central Asia      FRA               France HIO
-## 19    ECA Europe and Central Asia      FRA               France HIO
-## 20    ECA Europe and Central Asia      FRA               France HIO
-## 21    ECA Europe and Central Asia      FRA               France HIO
-## 22    ECA Europe and Central Asia      FRA               France HIO
-## 23    ALL     Toutes les rÃ©gions      BEL             Belgique AIC
-## 24    ALL     Toutes les rÃ©gions      BEL             Belgique AIC
-## 25    ALL     Toutes les rÃ©gions      BEL             Belgique AIC
-## 26    ALL     Toutes les rÃ©gions      BEL             Belgique AIC
-## 27    ALL     Toutes les rÃ©gions      BEL             Belgique AIC
-## 28    ALL     Toutes les rÃ©gions      BEL             Belgique AIC
-## 29    ALL     Toutes les rÃ©gions      BEL             Belgique AIC
-## 30    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que AIC
-## 31    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que AIC
-## 32    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que AIC
-## 33    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que AIC
-## 34    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que AIC
-## 35    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que AIC
-## 36    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que AIC
-## 37    ALL     Toutes les rÃ©gions      FRA               France AIC
-## 38    ALL     Toutes les rÃ©gions      FRA               France AIC
-## 39    ALL     Toutes les rÃ©gions      FRA               France AIC
-## 40    ALL     Toutes les rÃ©gions      FRA               France AIC
-## 41    ALL     Toutes les rÃ©gions      FRA               France AIC
-## 42    ALL     Toutes les rÃ©gions      FRA               France AIC
-## 43    ALL     Toutes les rÃ©gions      FRA               France AIC
-## 44    ALL     Toutes les rÃ©gions      FRA               France AIC
-## 45    ALL     Toutes les rÃ©gions      BEL             Belgique HIO
-## 46    ALL     Toutes les rÃ©gions      BEL             Belgique HIO
-## 47    ALL     Toutes les rÃ©gions      BEL             Belgique HIO
-## 48    ALL     Toutes les rÃ©gions      BEL             Belgique HIO
-## 49    ALL     Toutes les rÃ©gions      BEL             Belgique HIO
-## 50    ALL     Toutes les rÃ©gions      BEL             Belgique HIO
-## 51    ALL     Toutes les rÃ©gions      BEL             Belgique HIO
-## 52    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que HIO
-## 53    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que HIO
-## 54    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que HIO
-## 55    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que HIO
-## 56    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que HIO
-## 57    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que HIO
-## 58    ALL     Toutes les rÃ©gions      CZE RÃ©publique tchÃ¨que HIO
-## 59    ALL     Toutes les rÃ©gions      FRA               France HIO
-## 60    ALL     Toutes les rÃ©gions      FRA               France HIO
-## 61    ALL     Toutes les rÃ©gions      FRA               France HIO
-## 62    ALL     Toutes les rÃ©gions      FRA               France HIO
-## 63    ALL     Toutes les rÃ©gions      FRA               France HIO
-## 64    ALL     Toutes les rÃ©gions      FRA               France HIO
-## 65    ALL     Toutes les rÃ©gions      FRA               France HIO
-## 66    ALL     Toutes les rÃ©gions      FRA               France HIO
-## 67    ECA Europe and Central Asia      BEL             Belgique AIC
-## 68    ECA Europe and Central Asia      BEL             Belgique AIC
-## 69    ECA Europe and Central Asia      BEL             Belgique AIC
-## 70    ECA Europe and Central Asia      BEL             Belgique AIC
-## 71    ECA Europe and Central Asia      BEL             Belgique AIC
-## 72    ECA Europe and Central Asia      BEL             Belgique AIC
-## 73    ECA Europe and Central Asia      BEL             Belgique AIC
-## 74    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que AIC
-## 75    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que AIC
-## 76    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que AIC
-## 77    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que AIC
-## 78    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que AIC
-## 79    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que AIC
-## 80    ECA Europe and Central Asia      CZE RÃ©publique tchÃ¨que AIC
-## 81    ECA Europe and Central Asia      FRA               France AIC
-## 82    ECA Europe and Central Asia      FRA               France AIC
-## 83    ECA Europe and Central Asia      FRA               France AIC
-## 84    ECA Europe and Central Asia      FRA               France AIC
-## 85    ECA Europe and Central Asia      FRA               France AIC
-## 86    ECA Europe and Central Asia      FRA               France AIC
-## 87    ECA Europe and Central Asia      FRA               France AIC
-## 88    ECA Europe and Central Asia      FRA               France AIC
-##                   Groupe.de.revenus    VAR
-## 1         Pays Ã  haut revenu: OCDE RP_1_2
-## 2         Pays Ã  haut revenu: OCDE RP_1_3
-## 3         Pays Ã  haut revenu: OCDE RP_1_4
-## 4         Pays Ã  haut revenu: OCDE RP_1_5
-## 5         Pays Ã  haut revenu: OCDE   RP_2
-## 6         Pays Ã  haut revenu: OCDE   RP_3
-## 7         Pays Ã  haut revenu: OCDE   RP_4
-## 8         Pays Ã  haut revenu: OCDE RP_1_2
-## 9         Pays Ã  haut revenu: OCDE RP_1_3
-## 10        Pays Ã  haut revenu: OCDE RP_1_4
-## 11        Pays Ã  haut revenu: OCDE RP_1_5
-## 12        Pays Ã  haut revenu: OCDE   RP_2
-## 13        Pays Ã  haut revenu: OCDE   RP_3
-## 14        Pays Ã  haut revenu: OCDE   RP_4
-## 15        Pays Ã  haut revenu: OCDE RP_1_1
-## 16        Pays Ã  haut revenu: OCDE RP_1_2
-## 17        Pays Ã  haut revenu: OCDE RP_1_3
-## 18        Pays Ã  haut revenu: OCDE RP_1_4
-## 19        Pays Ã  haut revenu: OCDE RP_1_5
-## 20        Pays Ã  haut revenu: OCDE   RP_2
-## 21        Pays Ã  haut revenu: OCDE   RP_3
-## 22        Pays Ã  haut revenu: OCDE   RP_4
-## 23 Toutes les catÃ©gories de revenu RP_1_2
-## 24 Toutes les catÃ©gories de revenu RP_1_3
-## 25 Toutes les catÃ©gories de revenu RP_1_4
-## 26 Toutes les catÃ©gories de revenu RP_1_5
-## 27 Toutes les catÃ©gories de revenu   RP_2
-## 28 Toutes les catÃ©gories de revenu   RP_3
-## 29 Toutes les catÃ©gories de revenu   RP_4
-## 30 Toutes les catÃ©gories de revenu RP_1_2
-## 31 Toutes les catÃ©gories de revenu RP_1_3
-## 32 Toutes les catÃ©gories de revenu RP_1_4
-## 33 Toutes les catÃ©gories de revenu RP_1_5
-## 34 Toutes les catÃ©gories de revenu   RP_2
-## 35 Toutes les catÃ©gories de revenu   RP_3
-## 36 Toutes les catÃ©gories de revenu   RP_4
-## 37 Toutes les catÃ©gories de revenu RP_1_1
-## 38 Toutes les catÃ©gories de revenu RP_1_2
-## 39 Toutes les catÃ©gories de revenu RP_1_3
-## 40 Toutes les catÃ©gories de revenu RP_1_4
-## 41 Toutes les catÃ©gories de revenu RP_1_5
-## 42 Toutes les catÃ©gories de revenu   RP_2
-## 43 Toutes les catÃ©gories de revenu   RP_3
-## 44 Toutes les catÃ©gories de revenu   RP_4
-## 45        Pays Ã  haut revenu: OCDE RP_1_2
-## 46        Pays Ã  haut revenu: OCDE RP_1_3
-## 47        Pays Ã  haut revenu: OCDE RP_1_4
-## 48        Pays Ã  haut revenu: OCDE RP_1_5
-## 49        Pays Ã  haut revenu: OCDE   RP_2
-## 50        Pays Ã  haut revenu: OCDE   RP_3
-## 51        Pays Ã  haut revenu: OCDE   RP_4
-## 52        Pays Ã  haut revenu: OCDE RP_1_2
-## 53        Pays Ã  haut revenu: OCDE RP_1_3
-## 54        Pays Ã  haut revenu: OCDE RP_1_4
-## 55        Pays Ã  haut revenu: OCDE RP_1_5
-## 56        Pays Ã  haut revenu: OCDE   RP_2
-## 57        Pays Ã  haut revenu: OCDE   RP_3
-## 58        Pays Ã  haut revenu: OCDE   RP_4
-## 59        Pays Ã  haut revenu: OCDE RP_1_1
-## 60        Pays Ã  haut revenu: OCDE RP_1_2
-## 61        Pays Ã  haut revenu: OCDE RP_1_3
-## 62        Pays Ã  haut revenu: OCDE RP_1_4
-## 63        Pays Ã  haut revenu: OCDE RP_1_5
-## 64        Pays Ã  haut revenu: OCDE   RP_2
-## 65        Pays Ã  haut revenu: OCDE   RP_3
-## 66        Pays Ã  haut revenu: OCDE   RP_4
-## 67 Toutes les catÃ©gories de revenu RP_1_2
-## 68 Toutes les catÃ©gories de revenu RP_1_3
-## 69 Toutes les catÃ©gories de revenu RP_1_4
-## 70 Toutes les catÃ©gories de revenu RP_1_5
-## 71 Toutes les catÃ©gories de revenu   RP_2
-## 72 Toutes les catÃ©gories de revenu   RP_3
-## 73 Toutes les catÃ©gories de revenu   RP_4
-## 74 Toutes les catÃ©gories de revenu RP_1_2
-## 75 Toutes les catÃ©gories de revenu RP_1_3
-## 76 Toutes les catÃ©gories de revenu RP_1_4
-## 77 Toutes les catÃ©gories de revenu RP_1_5
-## 78 Toutes les catÃ©gories de revenu   RP_2
-## 79 Toutes les catÃ©gories de revenu   RP_3
-## 80 Toutes les catÃ©gories de revenu   RP_4
-## 81 Toutes les catÃ©gories de revenu RP_1_1
-## 82 Toutes les catÃ©gories de revenu RP_1_2
-## 83 Toutes les catÃ©gories de revenu RP_1_3
-## 84 Toutes les catÃ©gories de revenu RP_1_4
-## 85 Toutes les catÃ©gories de revenu RP_1_5
-## 86 Toutes les catÃ©gories de revenu   RP_2
-## 87 Toutes les catÃ©gories de revenu   RP_3
-## 88 Toutes les catÃ©gories de revenu   RP_4
-##                                   Variables TIME AnnÃ.e Value Flag.Codes Flags
-## 1            PrÃ©valence au cours de la vie 2014   2014  0.24         NA    NA
-## 2            Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 3                           Loi sur le viol 2014   2014  0.00         NA    NA
-## 4            Loi sur le harcÃ©lement sexuel 2014   2014  0.00         NA    NA
-## 5  Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 6                    Autonomie reproductive 2014   2014  0.03         NA    NA
-## 7                                Avortement 2014   2014  0.00         NA    NA
-## 8            PrÃ©valence au cours de la vie 2014   2014  0.21         NA    NA
-## 9            Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 10                          Loi sur le viol 2014   2014  0.75         NA    NA
-## 11           Loi sur le harcÃ©lement sexuel 2014   2014  0.25         NA    NA
-## 12 Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 13                   Autonomie reproductive 2014   2014  0.04         NA    NA
-## 14                               Avortement 2014   2014  0.00         NA    NA
-## 15             Attitudes envers la violence 2014   2014  0.07         NA    NA
-## 16           PrÃ©valence au cours de la vie 2014   2014  0.26         NA    NA
-## 17           Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 18                          Loi sur le viol 2014   2014  0.00         NA    NA
-## 19           Loi sur le harcÃ©lement sexuel 2014   2014  0.00         NA    NA
-## 20 Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 21                   Autonomie reproductive 2014   2014  0.02         NA    NA
-## 22                               Avortement 2014   2014  0.00         NA    NA
-## 23           PrÃ©valence au cours de la vie 2014   2014  0.24         NA    NA
-## 24           Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 25                          Loi sur le viol 2014   2014  0.00         NA    NA
-## 26           Loi sur le harcÃ©lement sexuel 2014   2014  0.00         NA    NA
-## 27 Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 28                   Autonomie reproductive 2014   2014  0.03         NA    NA
-## 29                               Avortement 2014   2014  0.00         NA    NA
-## 30           PrÃ©valence au cours de la vie 2014   2014  0.21         NA    NA
-## 31           Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 32                          Loi sur le viol 2014   2014  0.75         NA    NA
-## 33           Loi sur le harcÃ©lement sexuel 2014   2014  0.25         NA    NA
-## 34 Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 35                   Autonomie reproductive 2014   2014  0.04         NA    NA
-## 36                               Avortement 2014   2014  0.00         NA    NA
-## 37             Attitudes envers la violence 2014   2014  0.07         NA    NA
-## 38           PrÃ©valence au cours de la vie 2014   2014  0.26         NA    NA
-## 39           Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 40                          Loi sur le viol 2014   2014  0.00         NA    NA
-## 41           Loi sur le harcÃ©lement sexuel 2014   2014  0.00         NA    NA
-## 42 Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 43                   Autonomie reproductive 2014   2014  0.02         NA    NA
-## 44                               Avortement 2014   2014  0.00         NA    NA
-## 45           PrÃ©valence au cours de la vie 2014   2014  0.24         NA    NA
-## 46           Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 47                          Loi sur le viol 2014   2014  0.00         NA    NA
-## 48           Loi sur le harcÃ©lement sexuel 2014   2014  0.00         NA    NA
-## 49 Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 50                   Autonomie reproductive 2014   2014  0.03         NA    NA
-## 51                               Avortement 2014   2014  0.00         NA    NA
-## 52           PrÃ©valence au cours de la vie 2014   2014  0.21         NA    NA
-## 53           Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 54                          Loi sur le viol 2014   2014  0.75         NA    NA
-## 55           Loi sur le harcÃ©lement sexuel 2014   2014  0.25         NA    NA
-## 56 Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 57                   Autonomie reproductive 2014   2014  0.04         NA    NA
-## 58                               Avortement 2014   2014  0.00         NA    NA
-## 59             Attitudes envers la violence 2014   2014  0.07         NA    NA
-## 60           PrÃ©valence au cours de la vie 2014   2014  0.26         NA    NA
-## 61           Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 62                          Loi sur le viol 2014   2014  0.00         NA    NA
-## 63           Loi sur le harcÃ©lement sexuel 2014   2014  0.00         NA    NA
-## 64 Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 65                   Autonomie reproductive 2014   2014  0.02         NA    NA
-## 66                               Avortement 2014   2014  0.00         NA    NA
-## 67           PrÃ©valence au cours de la vie 2014   2014  0.24         NA    NA
-## 68           Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 69                          Loi sur le viol 2014   2014  0.00         NA    NA
-## 70           Loi sur le harcÃ©lement sexuel 2014   2014  0.00         NA    NA
-## 71 Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 72                   Autonomie reproductive 2014   2014  0.03         NA    NA
-## 73                               Avortement 2014   2014  0.00         NA    NA
-## 74           PrÃ©valence au cours de la vie 2014   2014  0.21         NA    NA
-## 75           Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 76                          Loi sur le viol 2014   2014  0.75         NA    NA
-## 77           Loi sur le harcÃ©lement sexuel 2014   2014  0.25         NA    NA
-## 78 Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 79                   Autonomie reproductive 2014   2014  0.04         NA    NA
-## 80                               Avortement 2014   2014  0.00         NA    NA
-## 81             Attitudes envers la violence 2014   2014  0.07         NA    NA
-## 82           PrÃ©valence au cours de la vie 2014   2014  0.26         NA    NA
-## 83           Loi sur la violence domestique 2014   2014  0.00         NA    NA
-## 84                          Loi sur le viol 2014   2014  0.00         NA    NA
-## 85           Loi sur le harcÃ©lement sexuel 2014   2014  0.00         NA    NA
-## 86 Mutilations gÃ©nitales fÃ©minines (MGF)  2014   2014  0.00         NA    NA
-## 87                   Autonomie reproductive 2014   2014  0.02         NA    NA
-## 88                               Avortement 2014   2014  0.00         NA    NA</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># Ouverture de la base sans sa sauvergarde dans l&#39;environnement</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;GIDDB2014_10102020163601177.csv&#39;</span>)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["ï..REG"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["RÃ.gion"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["LOCATION"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["Pays"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["INC"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["Groupe.de.revenus"],"name":[6],"type":["fctr"],"align":["left"]},{"label":["VAR"],"name":[7],"type":["fctr"],"align":["left"]},{"label":["Variables"],"name":[8],"type":["fctr"],"align":["left"]},{"label":["TIME"],"name":[9],"type":["int"],"align":["right"]},{"label":["AnnÃ.e"],"name":[10],"type":["int"],"align":["right"]},{"label":["Value"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Flag.Codes"],"name":[12],"type":["lgl"],"align":["right"]},{"label":["Flags"],"name":[13],"type":["lgl"],"align":["right"]}],"data":[{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.24","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.03","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.21","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.75","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.25","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.04","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_1","8":"Attitudes envers la violence","9":"2014","10":"2014","11":"0.07","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.26","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.02","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.24","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.03","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.21","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.75","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.25","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.04","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_1","8":"Attitudes envers la violence","9":"2014","10":"2014","11":"0.07","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.26","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.02","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.24","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.03","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.21","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.75","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.25","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.04","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_1","8":"Attitudes envers la violence","9":"2014","10":"2014","11":"0.07","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.26","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.02","12":"NA","13":"NA"},{"1":"ALL","2":"Toutes les rÃ©gions","3":"FRA","4":"France","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.24","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.03","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.21","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.75","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.25","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.04","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"CZE","4":"RÃ©publique tchÃ¨que","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_1","8":"Attitudes envers la violence","9":"2014","10":"2014","11":"0.07","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.26","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.02","12":"NA","13":"NA"},{"1":"ECA","2":"Europe and Central Asia","3":"FRA","4":"France","5":"AIC","6":"Toutes les catÃ©gories de revenu","7":"RP_4","8":"Avortement","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <p>Avant de conclure, je dois vous préciser que la création de l’objet ‘chemin’ n’était pas nécessaire à strictement parler pour charger le fichier. Il aurait été possible de coller l’emplacement du dossier entre guillement directement dans setwd() lors de la définition du ‘working directory’ :</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="co"># Je crée l&#39;environnement de travail</span></a>
-<a class="sourceLine" id="cb15-2" title="2"><span class="kw">setwd</span>(<span class="st">&quot;D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="co"># Je crée l&#39;environnement de travail</span></a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="kw">setwd</span>(<span class="st">&quot;D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut&quot;</span>)</a></code></pre></div>
 <p>Pourquoi me compliquer la vie ?</p>
 <ul>
 <li>Pour vous montrer qu’un <em>objet</em> dans R peut contenir différents types d’informations: des valeurs numériques ou des charactères, mais également une base de donnée ou bien un liste.</li>
@@ -625,146 +689,75 @@ $(document).ready(function () {
 </div>
 </div>
 
-    </div>
-    <div class="col-xs-2">
-        <div class="btn-toolbar">
-    <div class="btn-group">
-    <a href="#" class="btn btn-raised btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="text-muted">Code</span> <span class="text-muted caret"></span></a>
-    <ul class="dropdown-menu" style="min-width: 50px;">
-    <li><a id="rmd-show-all-code" href="#">Show All</a></li>
-    <li><a id="rmd-hide-all-code" href="#">Hide All</a></li>
-    </ul>
-    </div>
-    </div>
-        </div>
-  </div>
-  </div>
-  </div>
-  <div class="row">
-    </div>
-  </div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
 
 <script>
 $(document).ready(function () {
-  // add bootstrap table styles to pandoc tables
-  $('tr.header').parent('thead').parent('table').addClass('table table-striped table-hover');
+  window.buildTabsets("TOC");
+});
 
-    var images = $('.pages img');
-  images.filter(function() {
-      if ($(this).parent().attr("class") == "figure") {
-          return(false)
-      } else {
-          return(true);
-      }
-  }).wrap("<div class='figure'></div>");
-  images.addClass("image-thumb").wrap("<div class='panel-body'></div>");
-  $('.figure p.caption').wrap("<div class='panel-footer'></div>");
-  $('.figure').addClass('panel panel-default');
-  
-    $('.pages img')
- 	  .addClass("image-lb");
-  $('.pages').magnificPopup({
-	      type:'image',
-	      closeOnContentClick: false,
-	      closeBtnInside: false,
-        delegate: 'img',
-	      gallery: {enabled: true },
-          removalDelay: 500,
-          callbacks: {
-              beforeOpen: function() {
-                // just a hack that adds mfp-anim class to markup
-                this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-              }
-          },
-          mainClass: 'mfp-move-from-top',
-	      image: {
-	        verticalFit: true,
-            titleSrc: 'alt'
-	      }
- 	    });
- 	
-    
-    $('#toc ul li').first().addClass("active");
-    $('#toc ul li').attr("data-target", function() {
-        return($(this).children("a").attr("href"));
-    })
-    $('body .section.level1').first().addClass("active");
-    $('body .section.level1').not('.active').hide();
-    
-    $('#toc a[href*="#"]').click(function() {
-
-      var id = $(this).attr("href");
-      if (id === "#") return;
-      if (id.substring(0, 8) === "#dyntab-") return;
-      toggle_page(id);
-
-      // Menu
-      var menu_entry = $(".menu li[data-target='"+id+"']");
-      menu_entry.addClass("active");
-      $(".menu li").not(menu_entry).removeClass("active"); 
-      
-
-    });
-
-    function toggle_page(id) {
-      $(".page").not(page).removeClass("active").hide();
-      window.page = id;
-      var page = $(window.page);
-      window.location.hash = window.page;
-      //$(this).addClass("active");
-
-      page.show();
-
-      var totop = setInterval(function () {
-        $(".pages").animate({scrollTop: 0}, 0);
-      }, 10);
-
-      setTimeout(function () {
-        page.addClass("active");
-        setTimeout(function () {
-          clearInterval(totop);
-        }, 1000);
-      }, 100);
-
-      window.dispatchEvent(new Event('resize'));
-
-    }
-
-
-    $(".menu li").click(function () {
-
-      toggle_page($(this).data("target"));
-
-      // Menu
-      if (!$(this).data("target")) return;
-      if ($(this).is(".active")) return;
-      $(".menu li").not($(this)).removeClass("active");
-      $(this).addClass("active");
-
-    });
-  
-    
-
-
-    window.page = window.location.hash;
-    if (window.page != "") {
-      $(".menu").find("li[data-target=" + window.page + "]").trigger("click");
-    }
-
-    /* init material bootstrap js */
-    $.material.init();
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
+<!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
 
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

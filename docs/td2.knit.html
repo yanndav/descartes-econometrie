@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>TD2 - Seance du 16 Octobre 2020</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      a.sourceLine { display: inline-block; line-height: 1.25; }
+  a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+  a.sourceLine:empty { height: 1.2em; }
+  .sourceCode { overflow: visible; }
+  code.sourceCode { white-space: pre; position: relative; }
+  div.sourceCode { margin: 1em 0; }
+  pre.sourceCode { margin: 0; }
+  @media screen {
+  div.sourceCode { overflow: auto; }
+  }
+  @media print {
+  code.sourceCode { white-space: pre-wrap; }
+  a.sourceLine { text-indent: -1em; padding-left: 1em; }
+  }
+  pre.numberSource a.sourceLine
+    { position: relative; left: -4em; }
+  pre.numberSource a.sourceLine::before
+    { content: attr(title);
+      position: relative; left: -1em; text-align: right; vertical-align: baseline;
+      border: none; pointer-events: all; display: inline-block;
+      -webkit-touch-callout: none; -webkit-user-select: none;
+      -khtml-user-select: none; -moz-user-select: none;
+      -ms-user-select: none; user-select: none;
+      padding: 0 4px; width: 4em;
+      color: #aaaaaa;
+    }
+  pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+  div.sourceCode
+    {  }
+  @media screen {
+  a.sourceLine::before { text-decoration: underline; }
+  }
+  code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+  code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+  code span.at { color: #7d9029; } /* Attribute */
+  code span.bn { color: #40a070; } /* BaseN */
+  code span.bu { } /* BuiltIn */
+  code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+  code span.ch { color: #4070a0; } /* Char */
+  code span.cn { color: #880000; } /* Constant */
+  code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+  code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+  code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+  code span.dt { color: #902000; } /* DataType */
+  code span.dv { color: #40a070; } /* DecVal */
+  code span.er { color: #ff0000; font-weight: bold; } /* Error */
+  code span.ex { } /* Extension */
+  code span.fl { color: #40a070; } /* Float */
+  code span.fu { color: #06287e; } /* Function */
+  code span.im { } /* Import */
+  code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+  code span.op { color: #666666; } /* Operator */
+  code span.ot { color: #007020; } /* Other */
+  code span.pp { color: #bc7a00; } /* Preprocessor */
+  code span.sc { color: #4070a0; } /* SpecialChar */
+  code span.ss { color: #bb6688; } /* SpecialString */
+  code span.st { color: #4070a0; } /* String */
+  code span.va { color: #19177c; } /* Variable */
+  code span.vs { color: #4070a0; } /* VerbatimString */
+  code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Accueil</a>
+</li>
+<li>
+  <a href="td1.html">TD1 - 09/10</a>
+</li>
+<li>
+  <a href="td2.html">TD2 - 16/10</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">TD2 - Seance du 16 Octobre 2020</h1>
+<h3 class="subtitle">Explorer, modifier et synthétiser des données</h3>
+
+</div>
+
+
+<div id="chargement-de-la-base-tourisme-emploi" class="section level1">
+<h1>Chargement de la base Tourisme Emploi</h1>
+<div id="téléchargement-de-la-base" class="section level2">
+<h2>Téléchargement de la base</h2>
+<p>Cette semaine, nous allons utiliser une nouvelle base de données Tourisme Emploi <a href="https://stats.oecd.org/BrandedView.aspx?oecd_bv_id=d2b36bc8-fr&amp;doi=fd945dec-fr">trouvée sur le site de l’OCDE</a> mais que vous pouvez directement télécharger dans la version que j’utilise en cliquant sur <a href="https://drive.google.com/file/d/1jl4PE7LC-pZj5Gac2kYs0E19tzL8RC5i/view?usp=sharing">le lien ici.</a>.</p>
+<p>Petite parenthèse, je vous conseille de chercher les données directement via ce site dont l’interface est moins jolie mais qui est bien plus efficace pour accéder aux données rapidement dans le menu de gauche : <a href="https://stats.oecd.org/index.aspx?r=647489">cliquez ici</a></p>
+<div class="figure">
+<img src="td2/ocde.JPG" alt="Capture d’écran du site données" />
+<p class="caption">Capture d’écran du site données</p>
+</div>
+<p>Enfin, je vous propose de retrouver le script de cette séance <a href="https://drive.google.com/file/d/1COVtXes910oz2ViOeZHfkC2ns0xfsfnL/view?usp=sharing">ici</a>.</p>
+</div>
+<div id="chargement-dans-r" class="section level2">
+<h2>Chargement dans R</h2>
+<p>Comme la semaine dernière, j’utilise le dossier de projet que j’ai créée. J’ai donc mis la base de données dans mon sous-dossier Projet/donnees/brut. Comme la semaine dernière, j’indique à R que ce sous-dossier est mon ‘working directory’.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">chemin =<span class="st"> &quot;D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut&quot;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">setwd</span>(chemin)</a></code></pre></div>
+<p>Je vérifie ensuite qu’il a bien mis à jour le working directory:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">getwd</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut&quot;</code></pre>
+<p>Ok on est tout bon, maintenant il ne nous reste plus qu’à charger la nouvelle base de données. Pour ce faire, j’indique simplement à R le nom du fichier dans la fonction read.csv :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Chargement d&#39;une base de donnée</span></a>
+<a class="sourceLine" id="cb4-2" title="2">base =<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;TOURISM_ENTR_EMPL_10102020213924949.csv&#39;</span>)</a>
+<a class="sourceLine" id="cb4-3" title="3"></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="co"># Impression des premières lignes pour vois si tout est bon</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="kw">head</span>(base)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["ï..COUNTRY"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Pays"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["INDUSTRY"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["Industrie.du.tourisme"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["VARIABLE"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["Variable"],"name":[6],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[7],"type":["int"],"align":["right"]},{"label":["AnnÃ.e"],"name":[8],"type":["int"],"align":["right"]},{"label":["Unit.Code"],"name":[9],"type":["fctr"],"align":["left"]},{"label":["Unit"],"name":[10],"type":["fctr"],"align":["left"]},{"label":["PowerCode.Code"],"name":[11],"type":["int"],"align":["right"]},{"label":["PowerCode"],"name":[12],"type":["fctr"],"align":["left"]},{"label":["Reference.Period.Code"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["Reference.Period"],"name":[14],"type":["lgl"],"align":["right"]},{"label":["Value"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["Flag.Codes"],"name":[16],"type":["fctr"],"align":["left"]},{"label":["Flags"],"name":[17],"type":["fctr"],"align":["left"]}],"data":[{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2008","8":"2008","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"506400","16":"","17":"","_rn_":"1"},{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2009","8":"2009","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"506100","16":"","17":"","_rn_":"2"},{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2010","8":"2010","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"517700","16":"","17":"","_rn_":"3"},{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2011","8":"2011","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"522200","16":"","17":"","_rn_":"4"},{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2012","8":"2012","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"534200","16":"","17":"","_rn_":"5"},{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2013","8":"2013","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"543400","16":"","17":"","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>La base est chargée dans R ! On s’était arrêté à ça la semaine dernière, ce qui était un peu frustrant. Dans la prochaine section on va à présent aller plus loin.</p>
+</div>
+</div>
+<div id="première-analyse-de-la-base" class="section level1">
+<h1>Première analyse de la base</h1>
+<p>La base est donc chargée dans notre environnement de travail: <img src="td2/base_environnement.jpg" alt="La base est bien chargée" /> La première chose que l’on a sans doute envie de faire c’est de voir à quoi cette base ressemble. Si l’on écrit dans la console le nom de base et que l’on éxecute la commande, la base de données s’imprime dans la console. Bon c’est un début, mais ce n’est pas très pratique.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">base</a></code></pre></div>
+<p>C’est là que R Studio propose une fonctionnalité intéressante : ce logiciel nous offre la possibilité d’ouvrir la base dans une fenêtre séparée. Pour ce faire, deux options:</p>
+<ul>
+<li>On clique sur l’objet base dans la fenêtre <em>Environment</em> en haut à droite du logiciel</li>
+<li>On écrit et on exécute la commande suivante (attention à la majuscule sur le V):</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">View</span>(base)<span class="co"># Ouvrir la base de donnée:</span></a></code></pre></div>
+<p>La base s’ouvre dans un nouvel onglet: <img src="td2/base_ouverte.jpg" alt="La base ouverte" /> Comme vous pouvez le voir, on peut filtrer les informations contenu dans les colonnes et les classer par ordre ascendant on descendant.</p>
+<p>De retour sur notre script R, on peut demander à la console de nous afficher le nom des colonnes de la base:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">colnames</span>(base)<span class="co">#Noms des colonnes</span></a></code></pre></div>
+<pre><code>##  [1] &quot;ï..COUNTRY&quot;            &quot;Pays&quot;                  &quot;INDUSTRY&quot;             
+##  [4] &quot;Industrie.du.tourisme&quot; &quot;VARIABLE&quot;              &quot;Variable&quot;             
+##  [7] &quot;YEAR&quot;                  &quot;AnnÃ.e&quot;                &quot;Unit.Code&quot;            
+## [10] &quot;Unit&quot;                  &quot;PowerCode.Code&quot;        &quot;PowerCode&quot;            
+## [13] &quot;Reference.Period.Code&quot; &quot;Reference.Period&quot;      &quot;Value&quot;                
+## [16] &quot;Flag.Codes&quot;            &quot;Flags&quot;</code></pre>
+<p>Comme vous pouvez le voir, ces noms de colonne ne sont pas très élégants, nous verrons dans la section suivante comment les modifier pour rendre l’utilisation de la base plus plaisante.</p>
+<p>Une commande qui est également utile est la fonction table() qui permet d’avoir accès au décompte des différentes valeurs que prend un variable. Par exemple, pour savoir quels sont les années que couvre la base - information contenu dans la variable YEAR - on écrit:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="co"># Informatoions sur le nombre de valeurs par colonne</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="kw">table</span>(base<span class="op">$</span>YEAR) <span class="co"># années contenues dans la base</span></a></code></pre></div>
+<pre><code>## 
+## 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 
+##  767  844  836  841  865  858  872  882  838  827  419</code></pre>
+<p>Dans la console s’imprime la table des résultats. La base contient 767 observations pour l’année 2008 et 419 pour l’année 2018.</p>
+<p>Vous avez remarqué un truc bizarre avec le <em>$</em> ? En effet, pour signaler à R que je ne veux des informations que sur la colonne <em>YEAR</em> de la <em>base</em> il faut que j’utilise le signe dollar entre le nom de la base et le nom de la variable. Cela s’applique dès que j’applique des fonctions à une colonne.</p>
+<p>Ainsi, pour obtenir un tableau du nombre d’observation par indicateur - information contenue dans la variable <em>VARIABLE</em> - j’exécute la commande suivante :</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">table</span>(base<span class="op">$</span>VARIABLE) <span class="co"># indicateurs</span></a></code></pre></div>
+<pre><code>## 
+## EMPL ENTR 
+## 4691 4158</code></pre>
+<p>Ici, R nous délivre l’information suivante : la base contient 4 691 observations sur l’indicateur du nombre d’emplois et 4 158 observations sur l’indicateur du nombre d’entreprises.</p>
+<p>Avant de continuer, je dois vous signaler qu’il est possible d’indiquer à R que vous souhaitez effectuer des opérations sur une colonne de deux façons:</p>
+<ul>
+<li>Avec le signe dollar tel que vous l’avez déjà vu juste avant</li>
+<li>En indiquant le nom de la colonne entre double crochets et entre guillemets</li>
+<li>En indiquant à R le numéro de la colonne entre simple crochets et après une virgule</li>
+<li>En indiquant à R le nom de la colone entre simple crochets et après une virgule</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">base<span class="op">$</span>VARIABLE</a>
+<a class="sourceLine" id="cb13-2" title="2">base[[<span class="st">&quot;VARIABLE&quot;</span>]]</a>
+<a class="sourceLine" id="cb13-3" title="3">base[,<span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb13-4" title="4">base[,<span class="st">&quot;VARIABLE&quot;</span>]</a></code></pre></div>
+<p>Pas mal de possibilités, donc, pour aboutir au même résultat. Je vous conseille tout de même d’utiliser le signe dollar, cela rend votre script plus lisible.</p>
+<p>Ok, vous avez compris comment la fonction table fonctionne et comment on l’éxecute sur une colonne particulière. On peut aussi l’utiliser pour faire une table croisée du décompte des observations par rapport à deux variables. Ici on cherche à s’avoir combien la base contient d’observation par indicateur par année :</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">table</span>(base<span class="op">$</span>YEAR, base<span class="op">$</span>VARIABLE) <span class="co"># Nombre d&#39;observations par indicateur par année</span></a></code></pre></div>
+<pre><code>##       
+##        EMPL ENTR
+##   2008  409  358
+##   2009  446  398
+##   2010  435  401
+##   2011  439  402
+##   2012  463  402
+##   2013  460  398
+##   2014  466  406
+##   2015  480  402
+##   2016  433  405
+##   2017  431  396
+##   2018  229  190</code></pre>
+<p>Finalement, on peut regarder quelles valeurs prennent les variables Pays et Industrie.du.tourisme afin de mieux comprendre notre base :</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">table</span>(base<span class="op">$</span>Industrie.du.tourisme)</a></code></pre></div>
+<pre><code>## 
+##                                                                              Autres industries 
+##                                                                                            157 
+##               Autres industries caractÃ©ristiques du tourisme spÃ©cifiques au pays considÃ©rÃ© 
+##                                                                                            165 
+## Commerce de dÃ©tail de produits caractÃ©ristiques du tourisme spÃ©cifiques au pays considÃ©rÃ© 
+##                                                                                            131 
+##                                                          HÃ´tels et Ã©tablissements assimilÃ©s 
+##                                                                                            573 
+##                           Industrie de services de restauration et de consommation de boissons 
+##                                                                                            822 
+##                                                           Industrie des activitÃ©s culturelles 
+##                                                                                            518 
+##                                               Industrie des activitÃ©s sportives et de loisirs 
+##                                                                                            542 
+##                        Industrie des agences de voyages et des autres services de rÃ©servation 
+##                                                                                            857 
+##                                                                        Industries touristiques 
+##                                                                                            831 
+##                                                            Location d&#39;Ã©quipement de transport 
+##                                                                                            479 
+##                                                      Service d&#39;hÃ©bergement pour les visiteurs 
+##                                                                                            799 
+##                                                       Services liÃ©s au transport de voyageurs 
+##                                                                                            223 
+##                                                                              Total du tourisme 
+##                                                                                            175 
+##                                                                 Transport aÃ©rien de voyageurs 
+##                                                                                            513 
+##                                                                         Transport de voyageurs 
+##                                                                                            599 
+##                                                       Transport par chemin de fer de voyageurs 
+##                                                                                            444 
+##                                                                 Transport par eau de voyageurs 
+##                                                                                            485 
+##                                                                 Transport routier de voyageurs 
+##                                                                                            536</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">table</span>(base<span class="op">$</span>Pays)</a></code></pre></div>
+<pre><code>## 
+##                          Ã‰gypte                      Ã‰tats-Unis 
+##                              117                              259 
+##                   Afrique du Sud                        Allemagne 
+##                              273                              141 
+##                        Argentine                        Australie 
+##                               40                              217 
+##                         Autriche                         Belgique 
+##                              128                               11 
+##                          BrÃ©sil                         Bulgarie 
+##                              200                               38 
+##                           Canada                            Chili 
+##                              154                              320 
+## Chine (RÃ©publique populaire de)                         Colombie 
+##                               20                              143 
+##                           CorÃ©e                       Costa Rica 
+##                              120                              131 
+##                          Croatie                         Danemark 
+##                              129                              248 
+##                          Espagne                          Estonie 
+##                              297                               60 
+##                         Finlande                         Flandres 
+##                              242                               11 
+##                           France                           GrÃ¨ce 
+##                              289                               95 
+##                          Hongrie                             Inde 
+##                              287                               29 
+##                       IndonÃ©sie                          Irlande 
+##                               24                              100 
+##                          Islande                          IsraÃ«l 
+##                              253                              154 
+##                           Italie                            Japon 
+##                               48                              134 
+##                       Kazakhstan                         Lettonie 
+##                              286                              247 
+##                         Lituanie                       Luxembourg 
+##                              270                               44 
+##                            Malte                            Maroc 
+##                              259                               98 
+##                          Mexique                         NorvÃ¨ge 
+##                              220                              228 
+##                Nouvelle-ZÃ©lande                           PÃ©rou 
+##                              154                              113 
+##                         Pays-Bas                      Philippines 
+##                               37                               69 
+##                          Pologne                         Portugal 
+##                               66                              159 
+##    RÃ©gion de Bruxelles-Capitale             RÃ©publique slovaque 
+##                               11                              144 
+##             RÃ©publique tchÃ¨que                         Roumanie 
+##                              170                              264 
+##                      Royaume-Uni                           Russie 
+##                              280                              134 
+##                           Serbie                        SlovÃ©nie 
+##                               80                              308 
+##                           SuÃ¨de                           Suisse 
+##                              119                              204 
+##                          Turquie                         Wallonie 
+##                              162                               11</code></pre>
+<p>Dans la prochaine section, nous allons voir comment modifier la base de données.</p>
+</div>
+<div id="modification-de-la-base-dplyr" class="section level1">
+<h1>Modification de la base: <em>dplyr</em></h1>
+<p>Pour modifier votre base de données, je vais vous présenter un package qui fait la magie de R: <em>dplyr</em>. Cette librairie, dont vous pouvez trouver un guide d’utilisation plus que complet <a href="http://larmarange.github.io/analyse-R/manipuler-les-donnees-avec-dplyr.html">ici</a>, vous permet de modifier votre base de donnée à votre convenance tout en rendant lisible vos manipulations à travers une grammaire simple.</p>
+<div id="linstallation-de-dplyr" class="section level2">
+<h2>L’installation de dplyr</h2>
+<p>Première étape, l’installation de la librairie. Pour ce faire, il faut utiliser la commande <em>install.packages()</em> et placer le nom du package d’intérêt entre guillemets entre les parenthèses de la fonction. Vous éxecutez et R s’occupe du reste: il télécharge et intalle la librairie pour vous.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</a></code></pre></div>
+<p>Une fois que cela est fait, il faut dire à R que l’on souhaite activer le package pour pouvoir l’utiliser. Pour cela, on utilise la fonction <em>library()</em> et l’on place le nom du package sans guillemet entre les parenthèses. On exécute. Le package peut à présent être utilisé, ce qui nous permet d’accéder à toutes ses fonctions.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">library</span>(dplyr)</a></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<p>Avant de commencer les modifications de notre base, j’aimerais souligner l’importance de bien charger vos packages à chaque fois que vous réouvrez R. À l’ouverture, R ne charge que les packages de base du langage. Il faut donc systématiquement lui rappeler de charger les packages qui vous intéressent lorsque vous le redémarrez. Pour ne pas oublier de le faire, je vous conseille de placer vos chargements de package en haut du script systématiquement.</p>
+</div>
+<div id="modifications-de-la-base" class="section level2">
+<h2>Modifications de la base</h2>
+<p>Nous allons à présent procéder à des modifications de la base. On va tout d’abord modifier le nom d’une colonne, car certaines d’entre elles ont un nom bizarre.</p>
+<div id="modification-des-noms-de-colonne" class="section level3">
+<h3>Modification des noms de colonne</h3>
+<p>Je me remémore du nom des colonnes en demandant à R de me les imprimer de nouveau :</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">colnames</span>(base)</a></code></pre></div>
+<pre><code>##  [1] &quot;ï..COUNTRY&quot;            &quot;Pays&quot;                  &quot;INDUSTRY&quot;             
+##  [4] &quot;Industrie.du.tourisme&quot; &quot;VARIABLE&quot;              &quot;Variable&quot;             
+##  [7] &quot;YEAR&quot;                  &quot;AnnÃ.e&quot;                &quot;Unit.Code&quot;            
+## [10] &quot;Unit&quot;                  &quot;PowerCode.Code&quot;        &quot;PowerCode&quot;            
+## [13] &quot;Reference.Period.Code&quot; &quot;Reference.Period&quot;      &quot;Value&quot;                
+## [16] &quot;Flag.Codes&quot;            &quot;Flags&quot;</code></pre>
+<p>Bon, on va modifier le nom de la première colonne, car la variable “ï..COUNTRY” ne va pas être très pratique à utiliser avec cette dénomination.</p>
+<p>Pour ce faire, je vais utiliser la fonction <em>rename()</em> du package <em>dplyr</em> :</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="co"># Modification du nom d&#39;une colonne</span></a>
+<a class="sourceLine" id="cb27-2" title="2">base_propre &lt;-<span class="st">  </span>base <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb27-3" title="3"><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;PAYS&quot;</span>=<span class="st">&quot;ï..COUNTRY&quot;</span> )</a></code></pre></div>
+<p>Ok, on va décortiquer ce qu’il se passe dans cette ligne étape par étape :</p>
+<ul>
+<li>Premièrement je dénomme <em>base_propre</em> l’objet dans lequel je vais enregistrer les modifications apportées à la base.</li>
+<li>Ici j’utilise une flèche " &lt;- " pour dire à R que je vais enregistrer dans <em>base_propre</em> les modifications apportées à <em>base</em>.</li>
+<li>Ensuite j’appelle <em>base</em>, l’objet auquel je vais assigner des modifications</li>
+<li>À présent j’appelle la “pipe” %&gt;% qui, dans le langage uniquement compris par dplyr, permet d’assigner à l’objet <em>base</em> une modification à partir d’une fonction de <em>dplyr</em>. Le raccourci clavier pour obtenir une pipe rapidement est “Ctrl + Maj + M” sur windows et “Cmd + Shift + M” sur Mac.</li>
+<li>Ca tombe bien, je souhaite appliquer à l’objet <em>base</em> une modification de nom de colonne grâce à une fonction de <em>dplyr</em>. Pour ce faire, une fois que j’ai écrit la “pipe”, j’écris le nom de la fonction <em>dplyr</em> que je souhaite appliquer à l’objet <em>base</em>. Ici j’applique la fonction <em>rename()</em> à la base. La grammaire de la fonction est assez simple : entre guillemets toujours, j’écris le nouveau nom de la colonne d’abord, puis le signe égal, et enfin le nom initial de la colonne.</li>
+</ul>
+<p>Vérifions si tout a bien fonctionné en demandant à R de nous imprimer le nom des colonnes de la <em>base_propre</em> à laquelle j’ai assigné les modifications:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">colnames</span>(base_propre)</a></code></pre></div>
+<pre><code>##  [1] &quot;PAYS&quot;                  &quot;Pays&quot;                  &quot;INDUSTRY&quot;             
+##  [4] &quot;Industrie.du.tourisme&quot; &quot;VARIABLE&quot;              &quot;Variable&quot;             
+##  [7] &quot;YEAR&quot;                  &quot;AnnÃ.e&quot;                &quot;Unit.Code&quot;            
+## [10] &quot;Unit&quot;                  &quot;PowerCode.Code&quot;        &quot;PowerCode&quot;            
+## [13] &quot;Reference.Period.Code&quot; &quot;Reference.Period&quot;      &quot;Value&quot;                
+## [16] &quot;Flag.Codes&quot;            &quot;Flags&quot;</code></pre>
+<p>Succès !</p>
+</div>
+<div id="filtrer-les-données" class="section level3">
+<h3>Filtrer les données</h3>
+<p>On va à présent repartir de la <em>base_propre</em> que l’on vient de créer et ne conserver que les informations pour la France.</p>
+<p>Petit rappel d’abord sur le nom exact de la valeur “France” dans la base:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="co"># Filtrer la base pour ne garder que les données françaises</span></a>
+<a class="sourceLine" id="cb30-2" title="2"><span class="kw">table</span>(base<span class="op">$</span>Pays)</a></code></pre></div>
+<pre><code>## 
+##                          Ã‰gypte                      Ã‰tats-Unis 
+##                              117                              259 
+##                   Afrique du Sud                        Allemagne 
+##                              273                              141 
+##                        Argentine                        Australie 
+##                               40                              217 
+##                         Autriche                         Belgique 
+##                              128                               11 
+##                          BrÃ©sil                         Bulgarie 
+##                              200                               38 
+##                           Canada                            Chili 
+##                              154                              320 
+## Chine (RÃ©publique populaire de)                         Colombie 
+##                               20                              143 
+##                           CorÃ©e                       Costa Rica 
+##                              120                              131 
+##                          Croatie                         Danemark 
+##                              129                              248 
+##                          Espagne                          Estonie 
+##                              297                               60 
+##                         Finlande                         Flandres 
+##                              242                               11 
+##                           France                           GrÃ¨ce 
+##                              289                               95 
+##                          Hongrie                             Inde 
+##                              287                               29 
+##                       IndonÃ©sie                          Irlande 
+##                               24                              100 
+##                          Islande                          IsraÃ«l 
+##                              253                              154 
+##                           Italie                            Japon 
+##                               48                              134 
+##                       Kazakhstan                         Lettonie 
+##                              286                              247 
+##                         Lituanie                       Luxembourg 
+##                              270                               44 
+##                            Malte                            Maroc 
+##                              259                               98 
+##                          Mexique                         NorvÃ¨ge 
+##                              220                              228 
+##                Nouvelle-ZÃ©lande                           PÃ©rou 
+##                              154                              113 
+##                         Pays-Bas                      Philippines 
+##                               37                               69 
+##                          Pologne                         Portugal 
+##                               66                              159 
+##    RÃ©gion de Bruxelles-Capitale             RÃ©publique slovaque 
+##                               11                              144 
+##             RÃ©publique tchÃ¨que                         Roumanie 
+##                              170                              264 
+##                      Royaume-Uni                           Russie 
+##                              280                              134 
+##                           Serbie                        SlovÃ©nie 
+##                               80                              308 
+##                           SuÃ¨de                           Suisse 
+##                              119                              204 
+##                          Turquie                         Wallonie 
+##                              162                               11</code></pre>
+<p>La commande ci-dessus me permet d’être certains de la manière donc la valeur “France” est écrite dans la base. Si je n’utilise pas cette valeure précise, alors je ne vais pas pouvoir filtrer de donnée.</p>
+<p>Pour filtrer les données, on va utiliser la fonction <em>filter()</em> de dplyr. Cette-ci fonctionne à partir de “tests”. C’est-à-dire qu’on lui demande de vérifier une condition et la fonction ne conservera à la fin que les valeurs pour laquelle cette condition est remplie. Par exemple pour ne conserver que les données pour lesquels la variable Pays prend la valeur “France” on écrit:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1">base_france &lt;-<span class="st"> </span>base_propre <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb32-2" title="2"><span class="st">  </span><span class="kw">filter</span>(Pays <span class="op">==</span><span class="st"> &quot;France&quot;</span>)</a></code></pre></div>
+<p>Petit zoom sur ce qu’il se passe ici:</p>
+<ul>
+<li>On remarque la même structure de commande qu’avec <em>rename</em> pour assigner une fonction <em>dplyr</em> à un objet. La seule chose qui change c’est le nom des objets et le nom de la fonction qu’on applique, ici <em>filter()</em>, mais la flèche d’assignation et la “pipe” sont toujours présentes.</li>
+<li>La fonction <em>filter()</em> fonctionne avec des conditions. Elle ne conserve les observations que pour lesquelles la condition vaut TRUE.</li>
+<li>Il est possible d’appliquer d’autres arguments pour votre test, je vous laisse consulter la ressource <a href="https://juba.github.io/tidyverse/10-dplyr.html">ici</a> pour plus d’information.</li>
+</ul>
+<p>On vérifie si notre filtre a bien été appliqué en regardant quelles valeurs prend la variable Pays de la base <em>base_france</em> que l’on vient de créer:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1"><span class="kw">table</span>(base_france<span class="op">$</span>Pays)</a></code></pre></div>
+<pre><code>## 
+##                          Ã‰gypte                      Ã‰tats-Unis 
+##                                0                                0 
+##                   Afrique du Sud                        Allemagne 
+##                                0                                0 
+##                        Argentine                        Australie 
+##                                0                                0 
+##                         Autriche                         Belgique 
+##                                0                                0 
+##                          BrÃ©sil                         Bulgarie 
+##                                0                                0 
+##                           Canada                            Chili 
+##                                0                                0 
+## Chine (RÃ©publique populaire de)                         Colombie 
+##                                0                                0 
+##                           CorÃ©e                       Costa Rica 
+##                                0                                0 
+##                          Croatie                         Danemark 
+##                                0                                0 
+##                          Espagne                          Estonie 
+##                                0                                0 
+##                         Finlande                         Flandres 
+##                                0                                0 
+##                           France                           GrÃ¨ce 
+##                              289                                0 
+##                          Hongrie                             Inde 
+##                                0                                0 
+##                       IndonÃ©sie                          Irlande 
+##                                0                                0 
+##                          Islande                          IsraÃ«l 
+##                                0                                0 
+##                           Italie                            Japon 
+##                                0                                0 
+##                       Kazakhstan                         Lettonie 
+##                                0                                0 
+##                         Lituanie                       Luxembourg 
+##                                0                                0 
+##                            Malte                            Maroc 
+##                                0                                0 
+##                          Mexique                         NorvÃ¨ge 
+##                                0                                0 
+##                Nouvelle-ZÃ©lande                           PÃ©rou 
+##                                0                                0 
+##                         Pays-Bas                      Philippines 
+##                                0                                0 
+##                          Pologne                         Portugal 
+##                                0                                0 
+##    RÃ©gion de Bruxelles-Capitale             RÃ©publique slovaque 
+##                                0                                0 
+##             RÃ©publique tchÃ¨que                         Roumanie 
+##                                0                                0 
+##                      Royaume-Uni                           Russie 
+##                                0                                0 
+##                           Serbie                        SlovÃ©nie 
+##                                0                                0 
+##                           SuÃ¨de                           Suisse 
+##                                0                                0 
+##                          Turquie                         Wallonie 
+##                                0                                0</code></pre>
+<p>De la même manière, je filtre les données de la base que je vient de créer pour ne conserver que les données concernant l’emploi (j’enlève les données qui concernent le nombre d’entreprises) :</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="co"># Filtrer la base pour ne garder que les donn?es d&#39;emploi</span></a>
+<a class="sourceLine" id="cb35-2" title="2"><span class="kw">table</span>(base<span class="op">$</span>VARIABLE)</a></code></pre></div>
+<pre><code>## 
+## EMPL ENTR 
+## 4691 4158</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">base_france &lt;-<span class="st"> </span>base_france <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Je pars de la base que j&#39;ai créée précédement</span></a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="st">  </span><span class="kw">filter</span>(VARIABLE <span class="op">==</span><span class="st"> &quot;EMPL&quot;</span>)</a></code></pre></div>
+</div>
+<div id="sélectionner-certaines-colonnes" class="section level3">
+<h3>Sélectionner certaines colonnes</h3>
+<p>Je vous propose de découvrir à présent un type d’opération qui est important. La fonction <em>select()</em> de <em>dplyr</em> vous permet de sélectionner les colonnes que vous souhaitez conserver.</p>
+<p>Première étape, je me remémore le nom des colonnes de ma base :</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="co"># Sélectionner seulement certaines variables/colonnes</span></a>
+<a class="sourceLine" id="cb38-2" title="2"><span class="kw">colnames</span>(base_france)</a></code></pre></div>
+<pre><code>##  [1] &quot;PAYS&quot;                  &quot;Pays&quot;                  &quot;INDUSTRY&quot;             
+##  [4] &quot;Industrie.du.tourisme&quot; &quot;VARIABLE&quot;              &quot;Variable&quot;             
+##  [7] &quot;YEAR&quot;                  &quot;AnnÃ.e&quot;                &quot;Unit.Code&quot;            
+## [10] &quot;Unit&quot;                  &quot;PowerCode.Code&quot;        &quot;PowerCode&quot;            
+## [13] &quot;Reference.Period.Code&quot; &quot;Reference.Period&quot;      &quot;Value&quot;                
+## [16] &quot;Flag.Codes&quot;            &quot;Flags&quot;</code></pre>
+<p>Je ne souhaite conserver que les colonnes “INDUSTRY”, “Industrie.du.tourisme”, “YEAR” et “Value”. Pour ce faire, j’utilise la fonction <em>select()</em> :</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">base_france &lt;-<span class="st"> </span>base_france <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb40-2" title="2"><span class="st">  </span><span class="kw">select</span>(INDUSTRY, <span class="st">`</span><span class="dt">Industrie.du.tourisme</span><span class="st">`</span>, YEAR, Value)</a></code></pre></div>
+<p>Comme pour les deux fonctions présentées ci-dessus, la flèche et la “pipe” sont de la partie. Dans la fonction select() j’écris simplement le nom des colonnes.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">colnames</span>(base_france)</a></code></pre></div>
+<pre><code>## [1] &quot;INDUSTRY&quot;              &quot;Industrie.du.tourisme&quot; &quot;YEAR&quot;                 
+## [4] &quot;Value&quot;</code></pre>
+</div>
+<div id="créer-ou-modifier-une-colonne" class="section level3">
+<h3>Créer ou modifier une colonne</h3>
+<p>Finalement, une fonction assez pratique de <em>dplyr</em> vous permet de modifier ou de créer une colonne. Il s’agit de la fonction <em>mutate()</em>.</p>
+<p>Admettons par exemple que je souhaite créer des colonnes qui ne prennent les valeurs maximum, minimum et moyenne d’emploi, alors j’écris:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1">base_france &lt;-<span class="st"> </span>base_france <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb43-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">mean_emploi =</span> <span class="kw">mean</span>(Value, <span class="dt">na.rm=</span>T),</a>
+<a class="sourceLine" id="cb43-3" title="3">         <span class="dt">max_emploi =</span> <span class="kw">max</span>(Value, <span class="dt">na.rm=</span>T),</a>
+<a class="sourceLine" id="cb43-4" title="4">         <span class="dt">min_emploi =</span> <span class="kw">min</span>(Value, <span class="dt">na.rm=</span>T))</a></code></pre></div>
+<p>Dans la même idée, je peux créer une variable qui prendra pour valeur la moyenne du nombre d’emploi moyens par année. Pour se faire, je vais ajouter une ligne de commande avant d’éxecuter <em>mutate()</em> et je vais indiquer à R qu’il doit grouper ses modifications par rapport à la variable “YEAR”. Cette fonction de groupement s’appelle <em>group_by()</em> :</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1">base_france &lt;-<span class="st"> </span>base_france <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb44-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(YEAR)</a>
+<a class="sourceLine" id="cb44-3" title="3">  <span class="kw">mutate</span>(<span class="dt">mean_emploi_annee =</span> <span class="kw">mean</span>(<span class="st">`</span><span class="dt">Value</span><span class="st">`</span>, <span class="dt">na.rm=</span>T))</a></code></pre></div>
+<p>Pour utiliser <em>group_by()</em> j’indique simplement entre les parenthèses le nom de la ou des variables de groupement.</p>
+<p>Voici quelques bases d’utilisation de dplyr. Je vous invite fortement à en apprendre d’avantage de votre côté, et notamment en utilisant cette <a href="http://larmarange.github.io/analyse-R/manipuler-les-donnees-avec-dplyr.html">excellente ressource</a>,.</p>
+</div>
+</div>
+</div>
+<div id="analyses-statistiques-des-données" class="section level1">
+<h1>Analyses statistiques des données</h1>
+<p>Ok, on a modifié notre base de donnée afin de créer une plus petit base de données avec uniquement des informations sur l’emploi touristique en France.</p>
+<p>Nous allons à présent voir brièvement comment obtenir des statistiques descriptives de ces données d’emploi. Nous avons déjà vu les fonctions <em>mean()</em>, <em>max()</em> et <em>min()</em> dans la section précédente. Nous pouvons les réutiliser hors de la fonction mutate pour obtenir des données sur un colonne :</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="kw">mean</span>(base_france<span class="op">$</span>Value) </a></code></pre></div>
+<pre><code>## [1] 286882.3</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1"><span class="kw">min</span>(base_france<span class="op">$</span>Value)</a></code></pre></div>
+<pre><code>## [1] 9317</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1"><span class="kw">max</span>(base_france<span class="op">$</span>Value)</a></code></pre></div>
+<pre><code>## [1] 1382831</code></pre>
+<p>Une manière plus rapide d’obtenir cette information est d’utiliser la fonction <em>summary()</em> :</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="kw">summary</span>(base_france<span class="op">$</span>Value)</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    9317   15697   84673  286882  271747 1382831</code></pre>
+<p>Si vous souhaitez obtenir la variance ou l’écart-type, des fonctions existent également:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1"><span class="kw">sd</span>(base_france<span class="op">$</span>Value)</a></code></pre></div>
+<pre><code>## [1] 420909.5</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1"><span class="kw">var</span>(base_france<span class="op">$</span>Value)</a></code></pre></div>
+<pre><code>## [1] 177164831577</code></pre>
+<p>Notez au passage que vous pouvez tester l’égalité entre deux valeurs:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1"><span class="kw">sd</span>(base_france<span class="op">$</span>Value)<span class="op">^</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="kw">var</span>(base_france<span class="op">$</span>Value)</a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1"><span class="kw">sd</span>(base_france<span class="op">$</span>Value) <span class="op">==</span><span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">var</span>(base_france<span class="op">$</span>Value))</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>On peut également être intéressé de n’obtenir ces informations que pour une branche particulière du tourisme. Dans ce cas, on peut soit filtrer la base en utilisant la fonction <em>filter()</em> du packages <em>dplyr</em> tel que nous l’avons vu précédement, soit en utilisant une fonctionnalité intégrée à R. Je m’explique. Comme avec <em>filter()</em> on va utiliser les conditions pour filtrer un sous-ensemble de la base. Je regarde d’abord quels sont les valeurs possibles pour les branches de l’industrie du tourisme:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1"><span class="kw">table</span>(base_france<span class="op">$</span>Industrie.du.tourisme)</a></code></pre></div>
+<pre><code>## 
+##                                                                              Autres industries 
+##                                                                                             11 
+##               Autres industries caractÃ©ristiques du tourisme spÃ©cifiques au pays considÃ©rÃ© 
+##                                                                                              0 
+## Commerce de dÃ©tail de produits caractÃ©ristiques du tourisme spÃ©cifiques au pays considÃ©rÃ© 
+##                                                                                              0 
+##                                                          HÃ´tels et Ã©tablissements assimilÃ©s 
+##                                                                                             11 
+##                           Industrie de services de restauration et de consommation de boissons 
+##                                                                                             11 
+##                                                           Industrie des activitÃ©s culturelles 
+##                                                                                             11 
+##                                               Industrie des activitÃ©s sportives et de loisirs 
+##                                                                                             11 
+##                        Industrie des agences de voyages et des autres services de rÃ©servation 
+##                                                                                             11 
+##                                                                        Industries touristiques 
+##                                                                                             11 
+##                                                            Location d&#39;Ã©quipement de transport 
+##                                                                                             11 
+##                                                      Service d&#39;hÃ©bergement pour les visiteurs 
+##                                                                                             11 
+##                                                       Services liÃ©s au transport de voyageurs 
+##                                                                                              0 
+##                                                                              Total du tourisme 
+##                                                                                             11 
+##                                                                 Transport aÃ©rien de voyageurs 
+##                                                                                             11 
+##                                                                         Transport de voyageurs 
+##                                                                                             11 
+##                                                       Transport par chemin de fer de voyageurs 
+##                                                                                             11 
+##                                                                 Transport par eau de voyageurs 
+##                                                                                             11 
+##                                                                 Transport routier de voyageurs 
+##                                                                                             11</code></pre>
+<p>Je vais m’intéresser aux chiffres du Total du tourisme. Pour obtenir la moyenne du nombre d’emplois, j’exécute:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" title="1"><span class="kw">mean</span>(base_france<span class="op">$</span>Value[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>])</a></code></pre></div>
+<pre><code>## [1] 1290079</code></pre>
+<p>Que se passe-t-il dans cette ligne ?</p>
+<ul>
+<li>Tout d’abord on reconnaît la fonction <em>mean()</em> et jusqu’à “base_france$Value” tout est normal.</li>
+<li>Seulement ensuite, j’ajoute entre crochets une condition. Cette condition va définir le sous-ensemble de valeurs sur lesquels je souhaite que R applique la fonction <em>mean()</em></li>
+</ul>
+<p>De la même façon, on peut obtenir :</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1"><span class="kw">sd</span>(base_france<span class="op">$</span>Value[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>])</a></code></pre></div>
+<pre><code>## [1] 59342.3</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1"><span class="kw">max</span>(base_france<span class="op">$</span>Value[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>])</a></code></pre></div>
+<pre><code>## [1] 1382831</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1"><span class="kw">min</span>(base_france<span class="op">$</span>Value[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>])</a></code></pre></div>
+<pre><code>## [1] 1210438</code></pre>
+<p>Et si l’on veut l’ensemble de ces informations d’un coup, alors la fonction <em>summary()</em> fait son grand retour :</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" title="1"><span class="kw">summary</span>(base_france<span class="op">$</span>Value[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>])</a></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## 1210438 1257560 1266421 1290080 1339513 1382831</code></pre>
+<p>Si à présent je souhaite connaître l’année pour laquelle le nombre d’employés totaux du tourisme a été le minimum, comment faire ?</p>
+<p>La condition que l’on va tester est la suivante : la valeur d’emploi doit être le minimum sur tout la série. Cette valeur minimale on peut l’enregistrer dans un premier objet :</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" title="1">val_min =<span class="st"> </span><span class="kw">min</span>(base_france<span class="op">$</span>Value[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>])</a></code></pre></div>
+<p>Ensuite on veut l’année qui correspond à cette valeur, alors on va simplement sélectionner le sous-ensemble d’année(s) pour laquelle ou lesquelles le nombre d’employés totaux du tourisme prend cette valeur minimale.</p>
+<p>On exécute la commande suivante :</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" title="1">year_min =<span class="st"> </span>base_france<span class="op">$</span>YEAR[base_france<span class="op">$</span>Value <span class="op">==</span>val_min ] </a></code></pre></div>
+<p>On peut procéder de la même manière, en une ligne, pour obtenir l’année qui a connu le plus grand nombre d’employés du tourisme :</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1">year_max =<span class="st"> </span>base_france<span class="op">$</span>YEAR[base_france<span class="op">$</span>Value <span class="op">==</span><span class="st"> </span><span class="kw">max</span>(base_france<span class="op">$</span>Value[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>])]</a></code></pre></div>
+<p>Vous avez maintenant tous les outils pour analyser votre base de données. Tous les outils, ou presque, car parfois, un graph vaut mieux que mille mesures dans un tableau pour la compréhension de vos lecteurs. Dans la prochaine section j’ai donc le plaisir de vous présenter le fonctionnement des graphs sur R.</p>
+</div>
+<div id="analyses-graphiques-des-données-ggplot" class="section level1">
+<h1>Analyses graphiques des données: <em>ggplot</em></h1>
+<p>C’est la dernière étape de notre TD du jour. La partie la plus intéressante, car vous pourrez à la fin obtenir de beaux graphs colorés qui rendront vos rapports plus agréables à lire.</p>
+<p>Accrochez vous pour cette dernière ligne droite car les choses se compliquent légèrement.</p>
+<div id="les-graphs-basiques-sur-r" class="section level2">
+<h2>Les graphs basiques sur R</h2>
+<p>La première étape de cette présentation des graphs et de vous montrer la fonction basique intégrée à R vous permettant d’en faire. Ici, je vais réaliser un graphique de points dont les répères sont l’année en abcisse (x) et le nombre d’emplois en ordonnée (y).</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> base_france<span class="op">$</span>YEAR[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>],</a>
+<a class="sourceLine" id="cb76-2" title="2">     <span class="dt">y =</span> base_france<span class="op">$</span>Value[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>],</a>
+<a class="sourceLine" id="cb76-3" title="3">     <span class="dt">xlab=</span><span class="st">&#39;Année&#39;</span>, <span class="dt">ylab=</span><span class="st">&#39;Emplois&#39;</span>, <span class="dt">main=</span><span class="st">&quot;Evolution du nombre d&#39;emplois totaux dans le tourisme&quot;</span>,</a>
+<a class="sourceLine" id="cb76-4" title="4">     <span class="dt">sub=</span><span class="st">&#39;2008-2018&#39;</span>)</a></code></pre></div>
+<p><img src="td2_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p>Comme vous pouvez le lire, cette fonction me permet de choisir :</p>
+<ul>
+<li>La valeur de x, la valeur de y</li>
+<li>La légende de x et de y</li>
+<li>Le titre du graph</li>
+<li>Le sous-titre du graph</li>
+</ul>
+<p>Pour plus d’options vous pouvez utiliser le classique :</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" title="1">?plot</a></code></pre></div>
+<p>D’autres fonctions basiques existent comme <em>hist()</em> ou <em>barplot()</em>, qui reprennent le même type de fonctionnement que <em>plot()</em>.</p>
+</div>
+<div id="les-graphs-ggplot" class="section level2">
+<h2>Les graphs ggplot</h2>
+<p>J’aimerais maintenant vous présenter un des joyaux de la famille des packages de R. La librairie <em>ggplot2</em>. Elle vous permettra de personnaliser vos graphs presque à l’infini, et ce de manière relativement facile. L’excellente <a href="https://juba.github.io/tidyverse/08-ggplot2.html">ressource écrite par Julien Barnier</a> vous offrira un tour d’horizon plus que complet de ces possibilités, que je ne pourrai égaler dans cette courte introduction.</p>
+<p>Nous allons donc commencer par installer la librairie et intialiser le package :</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" title="1"><span class="kw">library</span>(ggplot2)</a></code></pre></div>
+<p>Nous somme à présent prêts pour réaliser notre premier graph. Pour refaire le graph que nous avons réalisé juste avant en utilisant <em>plot()</em>, il nous faut les lignes suivantes :</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> base_france[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>,],</a>
+<a class="sourceLine" id="cb80-2" title="2">       <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">factor</span>(YEAR), <span class="dt">y =</span>Value))<span class="op">+</span></a>
+<a class="sourceLine" id="cb80-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb80-4" title="4"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&#39;Année&#39;</span>,</a>
+<a class="sourceLine" id="cb80-5" title="5">       <span class="dt">y=</span><span class="st">&#39;Emplois&#39;</span>,</a>
+<a class="sourceLine" id="cb80-6" title="6">       <span class="dt">title =</span> <span class="st">&quot;Nombre d&#39;emplois totaux dans le tourisme (2008-2019)&quot;</span>)</a></code></pre></div>
+<p><img src="td2_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p>Décortiquons à présent ce code:</p>
+<ul>
+<li>Dans la première ligne nous créons un objet <em>ggplot</em>. Nous déclarons à la fonction que la donnée utilisée provient de la base <em>base_france</em>, et encore une fois nous n’en utilisons qu’un sous-échantillon.</li>
+<li>La deuxième ligne définit l’<em>aes()</em>. Cette sous-fonction de ggplot est en fait l’endroit dans lequel vous allez définir la valeur que prendra x et que prendra y. Ici, vous remarquez que j’ai demandé à la fonction de considérer la variable YEAR comme un facteur, cela permet simplement que ces valeurs soient considérées comme discrètes par ggplot. Essayer d’écrire x=YEAR tout simplement et de ré-exécuter la commande, vous comprendrez la différence.</li>
+<li>Ensuite, on ajoute à notre objet ggplot de base un <em>geom</em> qui dans ce cas sera <em>geom_point</em>. C’est en fait une fonction comprise par ggplot et qui dans ce cas précis lui indique qu’il doit afficher les valeurs sous forme de point.</li>
+<li>Finalement j’ajoute à ce graph les labels que je définis dans la sous-fonction <em>labs()</em></li>
+<li>Vous remarquerez qu’ici les fonctions s’additionnent avec un “+”.</li>
+</ul>
+<p>Bon jusqu’ici vous ne devez pas nécessairement trouver que ce package soit plus intéressant que la fonction basique intégrée à R. Laissez-moi vous montrer comment il est facile d’ajouter une ligne qui reliera les différents points que vous voyez tracés à l’écran. Il vous suffit d’ajouter <em>geom_line()</em> à votre code.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> base_france[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>,],</a>
+<a class="sourceLine" id="cb81-2" title="2">       <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">factor</span>(YEAR), <span class="dt">y =</span>Value))<span class="op">+</span></a>
+<a class="sourceLine" id="cb81-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb81-4" title="4"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">group=</span><span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb81-5" title="5"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&#39;Ann?e&#39;</span>,</a>
+<a class="sourceLine" id="cb81-6" title="6">       <span class="dt">y=</span><span class="st">&#39;Emplois&#39;</span>,</a>
+<a class="sourceLine" id="cb81-7" title="7">       <span class="dt">title =</span> <span class="st">&quot;Nombre d&#39;emplois totaux dans le tourisme (2008-2019)&quot;</span>)</a></code></pre></div>
+<p><img src="td2_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p>Vous pouvez également personnaliser le thème de votre gaph, afin notamment d’enlever ce fond gris un peu ideux en ajoutant <em>theme_classic()</em> à votre graph par exemple:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> base_france[base_france<span class="op">$</span>Industrie.du.tourisme<span class="op">==</span><span class="st">&#39;Total du tourisme&#39;</span>,],</a>
+<a class="sourceLine" id="cb82-2" title="2">       <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">factor</span>(YEAR), <span class="dt">y =</span>Value))<span class="op">+</span></a>
+<a class="sourceLine" id="cb82-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb82-4" title="4"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">group=</span><span class="dv">1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb82-5" title="5"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&#39;Ann?e&#39;</span>,</a>
+<a class="sourceLine" id="cb82-6" title="6">       <span class="dt">y=</span><span class="st">&#39;Emplois&#39;</span>,</a>
+<a class="sourceLine" id="cb82-7" title="7">       <span class="dt">title =</span> <span class="st">&quot;Nombre d&#39;emplois totaux dans le tourisme (2008-2019)&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb82-8" title="8"><span class="st">  </span><span class="kw">theme_classic</span>()</a></code></pre></div>
+<p><img src="td2_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p>Pour finir cette séance, voici un autre type de graph que l’on peut réaliser avec ggplot. À présent, je vais créer un graph à barres, dont la taille de la barre équivaut au nombre d’emplois totaux par année. De plus, je vais utiliser le paramètre <em>fill</em> dans la sous fonction <em>aes</em> de la fonction <em>ggplot</em> pour faire en sorte que chaque barre soit divisée en sous-régions dont la taille sera proportionnelle au nombres d’emplois par branche.</p>
+<p>Première étape, je modifie la base de donnée pour enlever toutes les catégories qui représentent des aggrégats des différentes branches:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" title="1">base_france2 &lt;-<span class="st"> </span>base_france <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb83-2" title="2"><span class="st">  </span><span class="kw">filter</span>(INDUSTRY <span class="op">!=</span><span class="st"> &quot;TOURISM&quot;</span>,</a>
+<a class="sourceLine" id="cb83-3" title="3">         INDUSTRY<span class="op">!=</span><span class="st">&#39;TOURISM_IND&#39;</span>,</a>
+<a class="sourceLine" id="cb83-4" title="4">         INDUSTRY <span class="op">!=</span><span class="st">&#39;TOURISM_IND_TRANSPORT&#39;</span>,</a>
+<a class="sourceLine" id="cb83-5" title="5">         INDUSTRY <span class="op">!=</span><span class="st"> &#39;TOURISM_IND_ACCOMM_SVCS_HOTELS&#39;</span>)</a></code></pre></div>
+<p>Je réalise à présent un premier graph en utilisant <em>geom_col()</em>. Ce premier graph présente le nombre total d’emplois du tourisme par année.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" title="1"><span class="kw">ggplot</span>(base_france2,</a>
+<a class="sourceLine" id="cb84-2" title="2">       <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">factor</span>(YEAR),</a>
+<a class="sourceLine" id="cb84-3" title="3">           <span class="dt">y=</span>Value,</a>
+<a class="sourceLine" id="cb84-4" title="4">           <span class="dt">group=</span><span class="kw">factor</span>(YEAR)))<span class="op">+</span></a>
+<a class="sourceLine" id="cb84-5" title="5"><span class="st">  </span><span class="kw">geom_col</span>()</a></code></pre></div>
+<p><img src="td2_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<p>À présent, je vais vous montrer comment en assignant au paramètre <em>fill</em> de l’<em>aes()</em> le nom de la variable des différentes branches, j’obtiens une découpe de chaque barre en sous-région dont la hauteur est proportionnelle au nombres d’employés concernés :</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1"><span class="kw">ggplot</span>(base_france2,</a>
+<a class="sourceLine" id="cb85-2" title="2">       <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">factor</span>(YEAR),</a>
+<a class="sourceLine" id="cb85-3" title="3">           <span class="dt">y=</span>Value,</a>
+<a class="sourceLine" id="cb85-4" title="4">           <span class="dt">group=</span><span class="kw">factor</span>(YEAR),</a>
+<a class="sourceLine" id="cb85-5" title="5">           <span class="dt">fill=</span>INDUSTRY))<span class="op">+</span></a>
+<a class="sourceLine" id="cb85-6" title="6"><span class="st">  </span><span class="kw">geom_col</span>()</a></code></pre></div>
+<p><img src="td2_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p>Voilà pour la présentation des différentes fonctions aujourd’hui.</p>
+<p>Vous avez à présent toutes les bases pour commencer l’analyse de votre base de données. N’hésitez pas à m’intérroger et à me demander d’avantages de précisions si des doutes subsistent.</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
