@@ -9,13 +9,13 @@ subtitle: "Explorer, modifier et synthétiser des données"
 
 # Chargement de la base Tourisme Emploi
 ## Téléchargement de la base
-Cette semaine, nous allons utiliser une nouvelle base de données Tourisme Emploi [trouvée sur le site de l'OCDE](https://stats.oecd.org/BrandedView.aspx?oecd_bv_id=d2b36bc8-fr&doi=fd945dec-fr) mais que vous pouvez directement télécharger dans la version que j'utilise en cliquant sur [le lien ici.](https://drive.google.com/file/d/1jl4PE7LC-pZj5Gac2kYs0E19tzL8RC5i/view?usp=sharing). 
+Cette semaine, nous allons utiliser une nouvelle base de données Tourisme Emploi [trouvée sur le site de l'OCDE](https://stats.oecd.org/BrandedView.aspx?oecd_bv_id=d2b36bc8-fr&doi=fd945dec-fr). Vous pouvez directement la télécharger dans la version que j'utilise en cliquant sur [le lien ici.](https://drive.google.com/file/d/1jl4PE7LC-pZj5Gac2kYs0E19tzL8RC5i/view?usp=sharing). 
 
-Petite parenthèse, je vous conseille de chercher les données directement via ce site dont l'interface est moins jolie mais qui est bien plus efficace pour accéder aux données rapidement dans le menu de gauche : [cliquez ici](https://stats.oecd.org/index.aspx?r=647489)
+Petite parenthèse. Je vous conseille de chercher les données directement via  [ce site de l'OCDE](https://stats.oecd.org/index.aspx?r=647489) dont l'interface est moins jolie que celui vu la semaine dernière, mais qui est bien plus efficace pour accéder aux données rapidement via le menu de gauche :
 
 ![Capture d'écran du site données](td2/ocde.jpg)
 
-Enfin, je vous propose de retrouver le script de cette séance [ici](https://drive.google.com/file/d/1COVtXes910oz2ViOeZHfkC2ns0xfsfnL/view?usp=sharing).
+Enfin, je vous propose de retrouver le script de cette séance [ici](https://drive.google.com/file/d/1COVtXes910oz2ViOeZHfkC2ns0xfsfnL/view?usp=sharing). Vous pouvez également télécharger directement la base de donnée du jour au format RDS, facilement compréhensible par R, [au lien suivant](https://drive.google.com/file/d/10VIxzKGB0aCNcdJ8wtHvbUEKs_ADeVCz/view?usp=sharing).
 
 ## Chargement dans R
 Comme la semaine dernière, j'utilise le dossier de projet que j'ai créée. J'ai donc mis la base de données dans mon sous-dossier Projet/donnees/brut. Comme la semaine dernière, j'indique à R que ce sous-dossier est mon 'working directory'.
