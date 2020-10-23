@@ -1,0 +1,53 @@
+---
+title: "TD3 - Seance du 23 Octobre 2020"
+subtitle: "Trouver sa question de recherche"
+
+---
+
+
+
+L'objectif de la séance du jour est pour vous de trouver votre question de recherche. Pour ce faire, nous allons d'abord voir comment définir un thème de recherche puis comment nourrir votre réflexion d'une recherche bibliographique.
+
+## Du thème de recherche à la question de recherche en économie
+### Etape 0: __Trouver un thème de recherche__
+Vous avez normalement réalisé cette étape la semaine dernière lors de vos travaux de groupe.
+_Exemple: L'impact environnemental de l'agriculture_
+
+### Etape 1: __Construire un cadre conceptuel__
+Définir les concepts théoriques auquels se rattache le sujet d'intérêt. Comment la recherche économique aborde-t-elle ce sujet ?
+
+_Exemple: En économie environnementale le concept d'externalité négative_
+
+### Etape 2: __Définir (la) les hypothèses à tester__
+Il s'agit à présent de se focaliser sur une seule des théories existantes dans la littérature économique. Quelle hypothèse peut-on formuler concernant les données que l'on cherche à analyser ? L'objectif va être d'émettre des hypothèses sur les relations causales entre les paramètres du modèle que l'on estime. 
+
+_Exemple: L'intensité du traitement aux produits phytopharmaceutiques réduit l'abondance de la biodiversité_
+
+### Etape 3: __Définir la question de recherche__
+Pour définir notre question de recherche, on peut adopter trois stratégies:
+
+ 1. Construire un nouveau modèle d'analyse
+ 2. S'inspirer et approfondir un modèle existant
+ 3. Adapater un modèle déjà existant aux réalités du problème
+
+La question de recherche doit répondre à plusieurs caractéristiques :
+
+* _"Orienté problème"_ : la question doit être ouverte afin de permettre une réflexion autour des mécanismes que l'on cherche à expliquer
+* _Analytique_ : la question pousse à expliquer plutôt que de décrire le mécanisme
+* _Intéressante et pertinente_ : la question apporte une réponse qui constitue un apport à la science économique
+
+_Exemple: Comment l'intensité de traitement en produits phytosanitaires influe-t-elle sur la biodiversité ?_
+
+
+## Réaliser une recherche bibliographique à l'appui des étapes 1 et 2
+Pour réaliser vos recherches, les outils à disposition:
+
+* [Google scholar](https://scholar.google.com/): très utile pour trouver la littérature scientifique disponible sur le thème qui vous intéresse
+* [BU Paris Descartes](http://www.bu.parisdescartes.fr/)
+* [Cairn](https://ezproxy.u-paris.fr/login?url=https://www.cairn.info/)
+
+
+## Références 
+
+* [De la méthode de recherche économique, Dimitri Uzunidis, 2007](https://www.cairn.info/revue-marche-et-organisations-2007-3-page-101.htm#s1n2https://www.cairn.info/revue-marche-et-organisations-2007-3-page-101.htm#s1n2)
+* [The Form of the Research Process](https://www.economicsnetwork.ac.uk/handbook/ugresearch/31)
