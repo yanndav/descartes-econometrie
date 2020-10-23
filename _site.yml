@@ -9,6 +9,8 @@ navbar:
       href: td1.html
     - text: "TD2 - 16/10"
       href: td2.html
+    - text: "TD3 - 23/10"
+      href: td3.html
 output: 
   html_document:
     toc: true
