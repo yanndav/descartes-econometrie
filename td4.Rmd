@@ -23,7 +23,10 @@ On va donc chercher ces données sur le site de l'OCDE pour les assembler. On va
 
 ![Bases de données dans leur format initial](td4/bdds.jpg)
 Notre objectif va être de transformer ces deux bases et de les assembler pour obtenir une base finale au format suivant:
+
+
 ![La base de données finale que l'on souhaite obtenir](td4/bddfinale.jpg)
+
 Que remarque-t-on ?
 
 * Tout d'abord qu'il existe deux types de variable. Les variables __identifiant__ qui définissent l'unité d'observation. Ici, nous avons une observation par pays-année. Les deux variables d'identifiant sont donc _PAYS_ et _ANNÉE_. Le deuxième type de variable et ce que nous pouvons appeler les facteurs du modèle. Ici, ces variables sont le _CO2_ et le _PIB_. Les variables __identifiant__ nous servent donc de référence pour assembler les informations contenues dans les variables __facteurs__ du modèle.
@@ -31,8 +34,10 @@ Que remarque-t-on ?
 
 Cette dernière remarque m'amène à vous présenter une autre manière dont nous aurions pu assembler les deux bases de donnée initiales: 
 ![La même base de données dans un format "Long"](td4/bdd_long.jpg)
+
 Il est important de noter que cet autre format de base de données contient exactement les mêmes informations que l'assemblage des deux bases de donnée présenté précédemment. La différence est que dans ce dernier cas, nous conservons le format original des deux bases de données. Nous réalisons dès lors un assemblage vertical des deux bases de données. Cela nous donne une base de donnée au format "Long":
 ![La base de données "Longue" est le résultat d'un assemblage vertical](td4/assemblage_vertical.jpg)
+
 Il est très facile de réaliser cet assemblage vertical de deux bases de données puisqu'il ne s'agit que de les superposer. Seul soucis: ce format n'est pas adapté aux régressions comme expliqué plus haut. Nous avons en effet besoin d'un assemblage horizontal des bases de données initiale afin d'obtenir une base de données finale au format "Large".
 
 Mais alors comment l'obtenir ? Deux possibilités !
@@ -44,6 +49,7 @@ La première : on part de la base de donnée au format "Long" que l'on a obtenu 
 La deuxième possibilité est de réaliser d'abord le pivotement sur chaque base de donnée initiale et de réaliser ensuite un assemblage horizontal de ces bases de données. Pour réaliser cet assemblage on utilisera alors la famille de fonction _all\_join()_, _left\_join()_ et _inner\_join()_ en fonction du type d'assemblage que l'on souhaite réaliser. Mais je reviendrai sur ce point au moment venu.
 
 ![Possibilité deux: pivotement puis assemblage horizontal](td4/methode2.jpg)
+
 Voilà pour la théorie. Passons à la pratique à partir de deux bases de données que nous avons déjà utilisées lors des deux premiers TDs.
 
 ### Place à la pratique: initialisation du script

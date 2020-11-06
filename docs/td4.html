@@ -540,12 +540,19 @@ div.tocify {
 </ul>
 <p>Pour simplifier les explications, nous allons commencer par réaliser une analyse bivariée. Cela veut dire que nous allons considérer uniquement la relation entre la pollution et le PIB.</p>
 <p>On va donc chercher ces données sur le site de l’OCDE pour les assembler. On va se retrouver avec deux bases de données qui ressembleront à ceci:</p>
-<p><img src="td4/bdds.jpg" alt="Bases de données dans leur format initial" /> Notre objectif va être de transformer ces deux bases et de les assembler pour obtenir une base finale au format suivant: <img src="td4/bddfinale.jpg" alt="La base de données finale que l’on souhaite obtenir" /> Que remarque-t-on ?</p>
+<p><img src="td4/bdds.jpg" alt="Bases de données dans leur format initial" /> Notre objectif va être de transformer ces deux bases et de les assembler pour obtenir une base finale au format suivant:</p>
+<div class="figure">
+<img src="td4/bddfinale.jpg" alt="La base de données finale que l’on souhaite obtenir" />
+<p class="caption">La base de données finale que l’on souhaite obtenir</p>
+</div>
+<p>Que remarque-t-on ?</p>
 <ul>
 <li>Tout d’abord qu’il existe deux types de variable. Les variables <strong>identifiant</strong> qui définissent l’unité d’observation. Ici, nous avons une observation par pays-année. Les deux variables d’identifiant sont donc <em>PAYS</em> et <em>ANNÉE</em>. Le deuxième type de variable et ce que nous pouvons appeler les facteurs du modèle. Ici, ces variables sont le <em>CO2</em> et le <em>PIB</em>. Les variables <strong>identifiant</strong> nous servent donc de référence pour assembler les informations contenues dans les variables <strong>facteurs</strong> du modèle.</li>
 <li>Nous observons aussi que nous avons combiné en une seule colonne ce qui était autrefois combiné dans deux colonnes dans les bases de donnée initiales. C’est-à-dire que nous avons crée une colonne par facteur du modèle, alors que dans les bases de données initiales il y avait une colonne pour la valeur et une colonne pour le nom du facteur.</li>
 </ul>
-<p>Cette dernière remarque m’amène à vous présenter une autre manière dont nous aurions pu assembler les deux bases de donnée initiales: <img src="td4/bdd_long.jpg" alt="La même base de données dans un format “Long”" /> Il est important de noter que cet autre format de base de données contient exactement les mêmes informations que l’assemblage des deux bases de donnée présenté précédemment. La différence est que dans ce dernier cas, nous conservons le format original des deux bases de données. Nous réalisons dès lors un assemblage vertical des deux bases de données. Cela nous donne une base de donnée au format “Long”: <img src="td4/assemblage_vertical.jpg" alt="La base de données “Longue” est le résultat d’un assemblage vertical" /> Il est très facile de réaliser cet assemblage vertical de deux bases de données puisqu’il ne s’agit que de les superposer. Seul soucis: ce format n’est pas adapté aux régressions comme expliqué plus haut. Nous avons en effet besoin d’un assemblage horizontal des bases de données initiale afin d’obtenir une base de données finale au format “Large”.</p>
+<p>Cette dernière remarque m’amène à vous présenter une autre manière dont nous aurions pu assembler les deux bases de donnée initiales: <img src="td4/bdd_long.jpg" alt="La même base de données dans un format “Long”" /></p>
+<p>Il est important de noter que cet autre format de base de données contient exactement les mêmes informations que l’assemblage des deux bases de donnée présenté précédemment. La différence est que dans ce dernier cas, nous conservons le format original des deux bases de données. Nous réalisons dès lors un assemblage vertical des deux bases de données. Cela nous donne une base de donnée au format “Long”: <img src="td4/assemblage_vertical.jpg" alt="La base de données “Longue” est le résultat d’un assemblage vertical" /></p>
+<p>Il est très facile de réaliser cet assemblage vertical de deux bases de données puisqu’il ne s’agit que de les superposer. Seul soucis: ce format n’est pas adapté aux régressions comme expliqué plus haut. Nous avons en effet besoin d’un assemblage horizontal des bases de données initiale afin d’obtenir une base de données finale au format “Large”.</p>
 <p>Mais alors comment l’obtenir ? Deux possibilités !</p>
 <p>La première : on part de la base de donnée au format “Long” que l’on a obtenu en réalisant un assemblage vertical, et il s’agit de faire “pivoter” la base pour que celle-ci contienne par <em>PAYS</em> et <em>ANNEE</em> une observation pour chacun des facteurs qui nous intéresse. On utilisera la fonction <em>pivot_wider()</em> dans R.</p>
 <div class="figure">
@@ -553,7 +560,11 @@ div.tocify {
 <p class="caption">Possibilité une: assemblage vertical puis pivotement</p>
 </div>
 <p>La deuxième possibilité est de réaliser d’abord le pivotement sur chaque base de donnée initiale et de réaliser ensuite un assemblage horizontal de ces bases de données. Pour réaliser cet assemblage on utilisera alors la famille de fonction <em>all_join()</em>, <em>left_join()</em> et <em>inner_join()</em> en fonction du type d’assemblage que l’on souhaite réaliser. Mais je reviendrai sur ce point au moment venu.</p>
-<p><img src="td4/methode2.jpg" alt="Possibilité deux: pivotement puis assemblage horizontal" /> Voilà pour la théorie. Passons à la pratique à partir de deux bases de données que nous avons déjà utilisées lors des deux premiers TDs.</p>
+<div class="figure">
+<img src="td4/methode2.jpg" alt="Possibilité deux: pivotement puis assemblage horizontal" />
+<p class="caption">Possibilité deux: pivotement puis assemblage horizontal</p>
+</div>
+<p>Voilà pour la théorie. Passons à la pratique à partir de deux bases de données que nous avons déjà utilisées lors des deux premiers TDs.</p>
 </div>
 <div id="place-à-la-pratique-initialisation-du-script" class="section level3">
 <h3>Place à la pratique: initialisation du script</h3>
@@ -569,11 +580,12 @@ div.tocify {
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># install.packages(&#39;tidyverse&#39;)</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 <pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.6.3</code></pre>
-<pre><code>## -- Attaching packages -------------------</code></pre>
-<pre><code>## v tibble  2.1.3     v purrr   0.3.3
+<pre><code>## -- Attaching packages -------------------------------------------------- tidyverse 1.3.0 --</code></pre>
+<pre><code>## v ggplot2 3.2.1     v purrr   0.3.3
+## v tibble  2.1.3     v dplyr   0.8.3
 ## v tidyr   1.0.0     v stringr 1.4.0
 ## v readr   1.3.1     v forcats 0.4.0</code></pre>
-<pre><code>## -- Conflicts --- tidyverse_conflicts() --
+<pre><code>## -- Conflicts ----------------------------------------------------- tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 </div>
