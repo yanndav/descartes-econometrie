@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>TD4 - Seance du 30 Octobre 2020</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      a.sourceLine { display: inline-block; line-height: 1.25; }
+  a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+  a.sourceLine:empty { height: 1.2em; }
+  .sourceCode { overflow: visible; }
+  code.sourceCode { white-space: pre; position: relative; }
+  div.sourceCode { margin: 1em 0; }
+  pre.sourceCode { margin: 0; }
+  @media screen {
+  div.sourceCode { overflow: auto; }
+  }
+  @media print {
+  code.sourceCode { white-space: pre-wrap; }
+  a.sourceLine { text-indent: -1em; padding-left: 1em; }
+  }
+  pre.numberSource a.sourceLine
+    { position: relative; left: -4em; }
+  pre.numberSource a.sourceLine::before
+    { content: attr(title);
+      position: relative; left: -1em; text-align: right; vertical-align: baseline;
+      border: none; pointer-events: all; display: inline-block;
+      -webkit-touch-callout: none; -webkit-user-select: none;
+      -khtml-user-select: none; -moz-user-select: none;
+      -ms-user-select: none; user-select: none;
+      padding: 0 4px; width: 4em;
+      color: #aaaaaa;
+    }
+  pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+  div.sourceCode
+    {  }
+  @media screen {
+  a.sourceLine::before { text-decoration: underline; }
+  }
+  code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+  code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+  code span.at { color: #7d9029; } /* Attribute */
+  code span.bn { color: #40a070; } /* BaseN */
+  code span.bu { } /* BuiltIn */
+  code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+  code span.ch { color: #4070a0; } /* Char */
+  code span.cn { color: #880000; } /* Constant */
+  code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+  code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+  code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+  code span.dt { color: #902000; } /* DataType */
+  code span.dv { color: #40a070; } /* DecVal */
+  code span.er { color: #ff0000; font-weight: bold; } /* Error */
+  code span.ex { } /* Extension */
+  code span.fl { color: #40a070; } /* Float */
+  code span.fu { color: #06287e; } /* Function */
+  code span.im { } /* Import */
+  code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+  code span.op { color: #666666; } /* Operator */
+  code span.ot { color: #007020; } /* Other */
+  code span.pp { color: #bc7a00; } /* Preprocessor */
+  code span.sc { color: #4070a0; } /* SpecialChar */
+  code span.ss { color: #bb6688; } /* SpecialString */
+  code span.st { color: #4070a0; } /* String */
+  code span.va { color: #19177c; } /* Variable */
+  code span.vs { color: #4070a0; } /* VerbatimString */
+  code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Accueil</a>
+</li>
+<li>
+  <a href="td1.html">TD1 - 09/10</a>
+</li>
+<li>
+  <a href="td2.html">TD2 - 16/10</a>
+</li>
+<li>
+  <a href="td3.html">TD3 - 23/10</a>
+</li>
+<li>
+  <a href="td4.html">TD4 - 30/10</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">TD4 - Seance du 30 Octobre 2020</h1>
+<h3 class="subtitle">Assembler des bases de données et effectuer une régression bivariée</h3>
+
+</div>
+
+
+<p>Cette semaine, nous allons voir comment assembler les différentes bases de donnée que vous avez collecté jusqu’à présent. L’objectif est d’obtenir une table de donnée qui vous permettre de réaliser vos régressions.</p>
+<p>(Edit 06/11 : Vous pouvez retrouver le script de ce que nous avons fait durant la séance 4 au <a href="https://drive.google.com/file/d/1Xrw_gRVCN9D5Cc8z2CgdhehQJS4rqM0N/view?usp=sharing">lien suivant</a>.)</p>
+<div id="une-base-de-donnée-pour-réaliser-une-régression" class="section level2">
+<h2>Une base de donnée pour réaliser une régression</h2>
+<div id="la-forme-de-la-base-de-donnée-que-lon-souhaite-obtenir" class="section level3">
+<h3>La forme de la base de donnée que l’on souhaite obtenir</h3>
+<p>Admettons que nous souhaitons comprendre quels sont les déterminants de la quantité d’émissions de gaz à effet de serre. Pour réaliser cette analyse on peut faire l’hypothèse que différents facteurs vont entraîner ces émissions :</p>
+<ul>
+<li>Le nombre d’habitants</li>
+<li>La valeur produite par l’économie: le PIB</li>
+<li>Le nombre de voitures</li>
+</ul>
+<p>Pour simplifier les explications, nous allons commencer par réaliser une analyse bivariée. Cela veut dire que nous allons considérer uniquement la relation entre la pollution et le PIB.</p>
+<p>On va donc chercher ces données sur le site de l’OCDE pour les assembler. On va se retrouver avec deux bases de données qui ressembleront à ceci:</p>
+<p><img src="td4/bdds.jpg" alt="Bases de données dans leur format initial" /> Notre objectif va être de transformer ces deux bases et de les assembler pour obtenir une base finale au format suivant: <img src="td4/bddfinale.jpg" alt="La base de données finale que l’on souhaite obtenir" /> Que remarque-t-on ?</p>
+<ul>
+<li>Tout d’abord qu’il existe deux types de variable. Les variables <strong>identifiant</strong> qui définissent l’unité d’observation. Ici, nous avons une observation par pays-année. Les deux variables d’identifiant sont donc <em>PAYS</em> et <em>ANNÉE</em>. Le deuxième type de variable et ce que nous pouvons appeler les facteurs du modèle. Ici, ces variables sont le <em>CO2</em> et le <em>PIB</em>. Les variables <strong>identifiant</strong> nous servent donc de référence pour assembler les informations contenues dans les variables <strong>facteurs</strong> du modèle.</li>
+<li>Nous observons aussi que nous avons combiné en une seule colonne ce qui était autrefois combiné dans deux colonnes dans les bases de donnée initiales. C’est-à-dire que nous avons crée une colonne par facteur du modèle, alors que dans les bases de données initiales il y avait une colonne pour la valeur et une colonne pour le nom du facteur.</li>
+</ul>
+<p>Cette dernière remarque m’amène à vous présenter une autre manière dont nous aurions pu assembler les deux bases de donnée initiales: <img src="td4/bdd_long.jpg" alt="La même base de données dans un format “Long”" /> Il est important de noter que cet autre format de base de données contient exactement les mêmes informations que l’assemblage des deux bases de donnée présenté précédemment. La différence est que dans ce dernier cas, nous conservons le format original des deux bases de données. Nous réalisons dès lors un assemblage vertical des deux bases de données. Cela nous donne une base de donnée au format “Long”: <img src="td4/assemblage_vertical.jpg" alt="La base de données “Longue” est le résultat d’un assemblage vertical" /> Il est très facile de réaliser cet assemblage vertical de deux bases de données puisqu’il ne s’agit que de les superposer. Seul soucis: ce format n’est pas adapté aux régressions comme expliqué plus haut. Nous avons en effet besoin d’un assemblage horizontal des bases de données initiale afin d’obtenir une base de données finale au format “Large”.</p>
+<p>Mais alors comment l’obtenir ? Deux possibilités !</p>
+<p>La première : on part de la base de donnée au format “Long” que l’on a obtenu en réalisant un assemblage vertical, et il s’agit de faire “pivoter” la base pour que celle-ci contienne par <em>PAYS</em> et <em>ANNEE</em> une observation pour chacun des facteurs qui nous intéresse. On utilisera la fonction <em>pivot_wider()</em> dans R.</p>
+<div class="figure">
+<img src="td4/methode1.jpg" alt="Possibilité une: assemblage vertical puis pivotement" />
+<p class="caption">Possibilité une: assemblage vertical puis pivotement</p>
+</div>
+<p>La deuxième possibilité est de réaliser d’abord le pivotement sur chaque base de donnée initiale et de réaliser ensuite un assemblage horizontal de ces bases de données. Pour réaliser cet assemblage on utilisera alors la famille de fonction <em>all_join()</em>, <em>left_join()</em> et <em>inner_join()</em> en fonction du type d’assemblage que l’on souhaite réaliser. Mais je reviendrai sur ce point au moment venu.</p>
+<p><img src="td4/methode2.jpg" alt="Possibilité deux: pivotement puis assemblage horizontal" /> Voilà pour la théorie. Passons à la pratique à partir de deux bases de données que nous avons déjà utilisées lors des deux premiers TDs.</p>
+</div>
+<div id="place-à-la-pratique-initialisation-du-script" class="section level3">
+<h3>Place à la pratique: initialisation du script</h3>
+<p>Pour rappel, les bases de données que nous avions utilisées étaient des bases de données sur les violences sexistes et sexuelles (TD1) et sur l’emploi dans le tourisme (TD2).</p>
+<p>Avant de commencer la pratique, nous allons d’abord lancer les packages dont nous allons avoir besoin et définir le chemin d’accès au dossier contenant les deux bases de données dont nous avons besoin. Nous allons également charge les deux bases de données. C’est une bonne pratique de commencer vos scripts en réalisant ces trois étapes - elles sont la clé de la réplicabilité de vos résultats.</p>
+<p>Les liens d’accès aux deux bases de données sont : <a href="https://drive.google.com/file/d/1_aNiyTrLlpJ3S7mpXw8Q2CP_U2vVEyu_/view?usp=sharing">celui-ci</a> et <a href="https://drive.google.com/file/d/1F-sFfkrEYsyHIE9KTXQc66kxqokpdrPI/view?usp=sharing">ceui-là</a>.</p>
+<p>Comme les semaines précédentes, je charge les données dans R après avoir indiqué le chemin d’accès au dossier.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">chemin =<span class="st"> &quot;D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut&quot;</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">setwd</span>(chemin)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">emploi =<span class="st"> </span><span class="kw">readRDS</span>(<span class="dt">file =</span> <span class="st">&#39;emploi.RDS&#39;</span>)</a>
+<a class="sourceLine" id="cb2-2" title="2">violence =<span class="st"> </span><span class="kw">readRDS</span>(<span class="dt">file =</span> <span class="st">&#39;violences.RDS&#39;</span>)</a></code></pre></div>
+<p>J’initialise également le package <em>tidyverse</em> que je vais utiliser.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># install.packages(&#39;tidyverse&#39;)</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.6.3</code></pre>
+<pre><code>## -- Attaching packages -------------------</code></pre>
+<pre><code>## v tibble  2.1.3     v purrr   0.3.3
+## v tidyr   1.0.0     v stringr 1.4.0
+## v readr   1.3.1     v forcats 0.4.0</code></pre>
+<pre><code>## -- Conflicts --- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+</div>
+<div id="méthode-1-assemblage-vertical-puis-pivotement" class="section level3">
+<h3>Méthode 1 : Assemblage vertical puis pivotement</h3>
+<p>Pour cette première méthode d’assemblage vertical, il nous faut d’abord nous assurer que les bases de données contiennent bien la même structure de variables : le même nombre de colonnes et les mêmes noms de colonnes. On procède tout d’abord à un nettoyage des bases de données. #### Etape 1 : Nettoyage des bases de données Après avoir regardé les différents noms de colonnes, je décide de ne conserver que les colonnes:</p>
+<ul>
+<li>“Pays”, (variable <em>identifiant</em>)</li>
+<li>“ï..COUNTRY”, (variable <em>identifiant</em>)</li>
+<li>“Variable”, (variable <em>facteur</em>)</li>
+<li>“YEAR”, (variable <em>identifiant</em>)</li>
+<li>et “Value” (variable <em>facteur</em>)</li>
+</ul>
+<p>Par mesure de précaution, j’assigne les modifications de la base dans un objet que j’appelle <em>emploi_net</em>. Ainsi, si j’effectue une modification qui ne me plaît pas, je peux revenir dessus en modifiant différement la base originale à laquelle je ne touche pas.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">colnames</span>(emploi)</a></code></pre></div>
+<pre><code>##  [1] &quot;ï..COUNTRY&quot;            &quot;Pays&quot;                  &quot;INDUSTRY&quot;             
+##  [4] &quot;Industrie.du.tourisme&quot; &quot;VARIABLE&quot;              &quot;Variable&quot;             
+##  [7] &quot;YEAR&quot;                  &quot;AnnÃ.e&quot;                &quot;Unit.Code&quot;            
+## [10] &quot;Unit&quot;                  &quot;PowerCode.Code&quot;        &quot;PowerCode&quot;            
+## [13] &quot;Reference.Period.Code&quot; &quot;Reference.Period&quot;      &quot;Value&quot;                
+## [16] &quot;Flag.Codes&quot;            &quot;Flags&quot;</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">emploi_net =<span class="st">  </span>emploi <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="st">  </span><span class="kw">select</span>(<span class="st">&quot;Pays&quot;</span>,<span class="st">&quot;ï..COUNTRY&quot;</span>,</a>
+<a class="sourceLine" id="cb10-3" title="3">         <span class="st">&quot;Variable&quot;</span>,<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;Value&quot;</span></a>
+<a class="sourceLine" id="cb10-4" title="4">         )</a></code></pre></div>
+<p>La prochaine étape consiste à modifier les noms des variables pour une raison purement cosmétique mais également pour s’assurer que les colonnes des deux bases de données que l’on va assembler auront bien les mêmes noms. Ici, je ne renomme que les variables “ï..COUNTRY” et “Variable” grâce à la fonction <em>rename</em> que je vous ai présenté lors du <a href="https://yanndav.github.io/descartes-econometrie/td2.html#Modification_des_noms_de_colonne">TD2</a>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">emploi_net =<span class="st">  </span>emploi <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="st">  </span><span class="kw">select</span>(<span class="st">&quot;Pays&quot;</span>,<span class="st">&quot;ï..COUNTRY&quot;</span>,</a>
+<a class="sourceLine" id="cb11-3" title="3">         <span class="st">&quot;Variable&quot;</span>,<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;Value&quot;</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb11-4" title="4"><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;LOCATION&quot;</span>=<span class="st">&quot;ï..COUNTRY&quot;</span>,</a>
+<a class="sourceLine" id="cb11-5" title="5">         <span class="st">&quot;Variables&quot;</span>=<span class="st">&quot;Variable&quot;</span>)</a></code></pre></div>
+<p>Comme vous pouvez le remarquer, j’ai inséré toutes les étapes à la suite - grâce à la magie de la pipe de <em>dplyr</em>. Cela signifie donc que le code ci-dessus inclut l’étape de sélection des colonnes que je vous avais présenté juste avant. Il n’est donc pas nécessaire d’intégrer les deux bouts de code dans votre script, mais uniquement ce dernier bout de code. Je vous laisse essayer.</p>
+<p>À présent, j’effectue le même travail de sélection de données et de changement de nom sur la deuxième base de données:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">colnames</span>(violence)</a></code></pre></div>
+<pre><code>##  [1] &quot;ï..REG&quot;            &quot;RÃ.gion&quot;           &quot;LOCATION&quot;         
+##  [4] &quot;Pays&quot;              &quot;INC&quot;               &quot;Groupe.de.revenus&quot;
+##  [7] &quot;VAR&quot;               &quot;Variables&quot;         &quot;TIME&quot;             
+## [10] &quot;AnnÃ.e&quot;            &quot;Value&quot;             &quot;Flag.Codes&quot;       
+## [13] &quot;Flags&quot;</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">violence_net =<span class="st"> </span>violence <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="st">  </span><span class="kw">select</span>( <span class="st">&quot;LOCATION&quot;</span>,<span class="st">&quot;Pays&quot;</span>,</a>
+<a class="sourceLine" id="cb14-3" title="3">          <span class="st">&quot;Value&quot;</span>,<span class="st">&quot;Variables&quot;</span>,<span class="st">&quot;TIME&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-4" title="4"><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;YEAR&quot;</span>=<span class="st">&quot;TIME&quot;</span>) </a></code></pre></div>
+<p>Nous avons à présent deux bases de données qui ont les mêmes noms de colonne. L’ordre n’est pas le même, mais R ne s’en souciera pas lors de l’assemblage.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">colnames</span>(violence_net)</a></code></pre></div>
+<pre><code>## [1] &quot;LOCATION&quot;  &quot;Pays&quot;      &quot;Value&quot;     &quot;Variables&quot; &quot;YEAR&quot;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">colnames</span>(emploi_net)</a></code></pre></div>
+<pre><code>## [1] &quot;Pays&quot;      &quot;LOCATION&quot;  &quot;Variables&quot; &quot;YEAR&quot;      &quot;Value&quot;</code></pre>
+<div id="etape-2-assemblage-vertical-des-bases-de-données" class="section level4">
+<h4>Etape 2 : Assemblage vertical des bases de données</h4>
+<p>Génial ! Si l’on se rappelle ce qui était expliqué plus haut, cela signifie qu’il faut à présent procéder à l’assemblage vertical. Pour ce faire on utilise la fonction <em>rbind</em> qui est le diminutif de “row bind”, c’est à dire “assemblage par les lignes”.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">base_verticale =<span class="st"> </span><span class="kw">rbind</span>(emploi_net, </a>
+<a class="sourceLine" id="cb19-2" title="2">                       violence_net)</a>
+<a class="sourceLine" id="cb19-3" title="3"><span class="kw">head</span>(base_verticale)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Pays"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["LOCATION"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["Variables"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[4],"type":["int"],"align":["right"]},{"label":["Value"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Australie","2":"AUS","3":"Emploi","4":"2008","5":"506400","_rn_":"1"},{"1":"Australie","2":"AUS","3":"Emploi","4":"2009","5":"506100","_rn_":"2"},{"1":"Australie","2":"AUS","3":"Emploi","4":"2010","5":"517700","_rn_":"3"},{"1":"Australie","2":"AUS","3":"Emploi","4":"2011","5":"522200","_rn_":"4"},{"1":"Australie","2":"AUS","3":"Emploi","4":"2012","5":"534200","_rn_":"5"},{"1":"Australie","2":"AUS","3":"Emploi","4":"2013","5":"543400","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Notre base verticale est créée ! La dernière étape va être de faire pivoter la base afin d’obtenir un base au format “large”.</p>
+</div>
+<div id="etape-3-le-pivotement-de-la-base" class="section level4">
+<h4>Etape 3 : Le pivotement de la base</h4>
+<p>Pour faire pivoter la base de données, nous allons utiliser la fonction <em>pivot_wider</em> qui provient du package <em>dplyr</em> qui est lui même chargé lorsque l’on charge <em>tidyverse</em>. Cette fonction, <em>pivot_wider</em> peut prendre plusieurs paramètres qui vont lui expliquer quelles variables elle doit faire pivoter et autour de quel axe. Nous allons n’avoir besoin que de quelques paramètres :</p>
+<ul>
+<li><em>id_cols</em> : ce paramètre défini l’axe de pivot ! Et notre axe de pivot n’est rien d’autre que nos variables <em>identifiant</em> puisque ce qui nous intéresse c’est d’avoir une observation par Pays par année pour chacune des variables <em>facteur</em> de notre base. Comme nos variables pivots sont plusieurs, il faut les indiquer à R dans un vecteur. C’est pourquoi nous les insérons dans le vecteur “c(…)”</li>
+<li><em>names_from</em> : ce paramètre va définir le nom des différentes colonnes <em>facteur</em>. Dans la structuration de notre base, tous les noms de facteurs sont définis dans la colonne “Variables”.</li>
+<li><em>values_from</em> : ce dernier paramètre désigne à R la colonne dont il va devoir extraire les valeurs qu’il assignera aux différents <em>facteurs</em> pour chaque pays et année.</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">base_large =<span class="st"> </span>base_verticale <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">id_cols =</span> <span class="kw">c</span>(<span class="st">&quot;Pays&quot;</span>,<span class="st">&quot;LOCATION&quot;</span>,<span class="st">&quot;YEAR&quot;</span> ),</a>
+<a class="sourceLine" id="cb20-3" title="3">              <span class="dt">names_from =</span> <span class="st">&quot;Variables&quot;</span>, </a>
+<a class="sourceLine" id="cb20-4" title="4">              <span class="dt">values_from =</span> <span class="st">&quot;Value&quot;</span>)</a></code></pre></div>
+<pre><code>## Warning: Values in `Value` are not uniquely identified; output will contain list-cols.
+## * Use `values_fn = list(Value = list)` to suppress this warning.
+## * Use `values_fn = list(Value = length)` to identify where the duplicates arise
+## * Use `values_fn = list(Value = summary_fun)` to summarise duplicates</code></pre>
+<p>On vient d’exécuter le script, et là… “patatra” : ERREUR. R nous indique que les valeurs dans la colonne ‘Value’ ne sont pas uniquement identifiées. Cela signifie que pour chaque pays, pour chaque année, nous avons plusieurs valeurs possibles pour certains facteurs que nous voulons étudier.</p>
+<p>En effet, je suis allé un peu vite en besogne pour vous montrer les différentes étapes clés et ne pas alourdir mes explications, mais il va falloir que nous revenions à présent sensiblement en arrière.</p>
+<p>Dans la base de données sur le tourisme, j’ai sélectionné les colonnes qui m’intéressait en omettant l’existence d’une variable très importante qui définit à quelle sous-branche du secteur touristique les données se rattachent. C’est la colonne “Industrie.du.tourisme”.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">colnames</span>(emploi)</a></code></pre></div>
+<pre><code>##  [1] &quot;ï..COUNTRY&quot;            &quot;Pays&quot;                  &quot;INDUSTRY&quot;             
+##  [4] &quot;Industrie.du.tourisme&quot; &quot;VARIABLE&quot;              &quot;Variable&quot;             
+##  [7] &quot;YEAR&quot;                  &quot;AnnÃ.e&quot;                &quot;Unit.Code&quot;            
+## [10] &quot;Unit&quot;                  &quot;PowerCode.Code&quot;        &quot;PowerCode&quot;            
+## [13] &quot;Reference.Period.Code&quot; &quot;Reference.Period&quot;      &quot;Value&quot;                
+## [16] &quot;Flag.Codes&quot;            &quot;Flags&quot;</code></pre>
+<p>Par conséquent, puisque j’ai supprimé cette information, R découvre lorsque j’essaie de faire pivoter la base que pour chaque pays chaque année, j’ai plusieurs informations disponibles concernant l’emploi touristique ou le nombre d’entreprises. Dans le cadre de cet exemple, la solution va consister à ne sélectionner que la branche de l’industrie touristique qui nous intéresse. ici, le “Total du tourisme” :</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1">  emploi_net =<span class="st">  </span>emploi <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="st">  </span><span class="kw">filter</span>(Industrie.du.tourisme<span class="op">==</span><span class="st">&quot;Total du tourisme&quot;</span>)<span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb24-3" title="3"><span class="st">  </span><span class="kw">select</span>(<span class="st">&quot;Pays&quot;</span>,<span class="st">&quot;ï..COUNTRY&quot;</span>,</a>
+<a class="sourceLine" id="cb24-4" title="4">         <span class="st">&quot;Variable&quot;</span>,<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;Value&quot;</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb24-5" title="5"><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;LOCATION&quot;</span>=<span class="st">&quot;ï..COUNTRY&quot;</span>,</a>
+<a class="sourceLine" id="cb24-6" title="6">         <span class="st">&quot;Variables&quot;</span>=<span class="st">&quot;Variable&quot;</span>) </a></code></pre></div>
+<p>Ma base emploi_net est à présent “propre” ! Elle ne contient plus qu’une observation par pays par année pour l’emploi et une autre pour le nombre d’entreprises. Vous avez remarqué que j’ai recrée la base “emploi_net” et repartant de la base originale “emploi” : d’où l’importance de ne pas modifier directement la base que vous chargez dans R.</p>
+<p>Réassemblons cette nouvelle version de la base “emploi_net” avec la base “violence_net”, puis réessayons le pivotement:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">base_verticale =<span class="st"> </span><span class="kw">rbind</span>(emploi_net, </a>
+<a class="sourceLine" id="cb25-2" title="2">                       violence_net)</a>
+<a class="sourceLine" id="cb25-3" title="3"></a>
+<a class="sourceLine" id="cb25-4" title="4">base_large =<span class="st"> </span>base_verticale <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb25-5" title="5"><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">id_cols =</span> <span class="kw">c</span>(<span class="st">&quot;Pays&quot;</span>,<span class="st">&quot;LOCATION&quot;</span>,<span class="st">&quot;YEAR&quot;</span> ),</a>
+<a class="sourceLine" id="cb25-6" title="6">              <span class="dt">names_from =</span> <span class="st">&quot;Variables&quot;</span>, </a>
+<a class="sourceLine" id="cb25-7" title="7">              <span class="dt">values_from =</span> <span class="st">&quot;Value&quot;</span>)</a></code></pre></div>
+<pre><code>## Warning: Values in `Value` are not uniquely identified; output will contain list-cols.
+## * Use `values_fn = list(Value = list)` to suppress this warning.
+## * Use `values_fn = list(Value = length)` to identify where the duplicates arise
+## * Use `values_fn = list(Value = summary_fun)` to summarise duplicates</code></pre>
+<p>La même erreur que tout à l’heure… Mais pas de panique, c’est normal ! En effet, la base de données “violence” nous réserve elle aussi une belle surprise. Et pour le coup, ce n’est pas notre faute. Elle a été encodée bizarrement. Pour chaque pays-année on observe en effet 4 fois la même valeur pour chaque facteur. On est face à ce que l’on appelle un “duplicata”. La bonne nouvelle c’est que l’on peut facilement filtrer la fameuse colonne “Value” qui pose problème pour ne conserver qu’une seule valeur par pays par année par facteur. Pour ce faire, on va demander à R de grouper son analyse par “YEAR”, “Pays” et “Variables” pour ne conserver que les valeurs qui ne sont pas des duplicata.</p>
+<p>Pour grouper l’analyse autour de variables on utilise <em>group_by()</em>. Pour filter on utilise <em>filter()</em>, et comme vous le savez cette fonction prend pour paramètre un test logique : ici nous allons demander à R de ne pas conserver les valeurs qui remplissent la condition d’être un doublon. Pour indiquer que l’on ne conserve pas les valeurs qui remplissent le test logique on utilise le point d’exclamation “!”. Pour que R test les doublons on utilise la fonction <em>duplicated()</em> qui prend pour paramètre le nom de la colonne sur laquelle on veut effectuer le test. Ici, comme on a groupé l’analyse, duplicated ne testera l’existence de doublon que pour chaque groupe de pays/année/facteur indépendemment. En d’autres termes, on ne vas conserver qu’une seule valeur par année, pays et facteur.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1">violence_net =<span class="st"> </span>violence <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="st">  </span><span class="kw">select</span>( <span class="st">&quot;LOCATION&quot;</span>,<span class="st">&quot;Pays&quot;</span>,</a>
+<a class="sourceLine" id="cb27-3" title="3">          <span class="st">&quot;Value&quot;</span>,<span class="st">&quot;Variables&quot;</span>,<span class="st">&quot;TIME&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb27-4" title="4"><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;YEAR&quot;</span>=<span class="st">&quot;TIME&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb27-5" title="5"><span class="st">  </span><span class="kw">group_by</span>(YEAR,Pays,Variables) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb27-6" title="6"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">duplicated</span>(Value)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb27-7" title="7"><span class="st">  </span><span class="kw">ungroup</span>()</a></code></pre></div>
+<p>C’est peut être un détail pour vous, mais pour R ça veut dire beaucoup: n’oubliez pas de dire à R d’arrêter d’effectuer son analyse par groupe de variables en lui indiquant la condition <em>ungoup()</em>. Ca veut dire que R est libre, heureux d’être là malgré tout…</p>
+<p>Bon trêve de plaisanterie, ça n’a pas que du bon de passer trop de temps sur R comme vous pouvez le voir.</p>
+<p>Ok, on devrait normalement être parés au décollage ! Nos deux bases ne contiennent plus qu’une observation par année-pays-facteur. On va donc réassembler ces deux versions finales puis les faire pivoter et le tour sera joué. Ready? go!</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1">base_verticale =<span class="st"> </span><span class="kw">rbind</span>(emploi_net, </a>
+<a class="sourceLine" id="cb28-2" title="2">                       violence_net)</a>
+<a class="sourceLine" id="cb28-3" title="3"></a>
+<a class="sourceLine" id="cb28-4" title="4">base_large =<span class="st"> </span>base_verticale <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb28-5" title="5"><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">id_cols =</span> <span class="kw">c</span>(<span class="st">&quot;Pays&quot;</span>,<span class="st">&quot;LOCATION&quot;</span>,<span class="st">&quot;YEAR&quot;</span> ),</a>
+<a class="sourceLine" id="cb28-6" title="6">              <span class="dt">names_from =</span> <span class="st">&quot;Variables&quot;</span>, </a>
+<a class="sourceLine" id="cb28-7" title="7">              <span class="dt">values_from =</span> <span class="st">&quot;Value&quot;</span>)</a></code></pre></div>
+<p>Pas d’erreur. Et si l’on regarde le résultat:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">head</span>(base_large)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Pays"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["LOCATION"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[3],"type":["int"],"align":["right"]},{"label":["Emploi"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Entreprises"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["PrÃ©valence au cours de la vie"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Loi sur la violence domestique"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Loi sur le viol"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Loi sur le harcÃ©lement sexuel"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Mutilations gÃ©nitales fÃ©minines (MGF) "],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Autonomie reproductive"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Avortement"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["Attitudes envers la violence"],"name":[13],"type":["dbl"],"align":["right"]}],"data":[{"1":"Australie","2":"AUS","3":"2008","4":"506400","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA"},{"1":"Australie","2":"AUS","3":"2009","4":"506100","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA"},{"1":"Australie","2":"AUS","3":"2010","4":"517700","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA"},{"1":"Australie","2":"AUS","3":"2011","4":"522200","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA"},{"1":"Australie","2":"AUS","3":"2012","4":"534200","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA"},{"1":"Australie","2":"AUS","3":"2013","4":"543400","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Des NA ? Qu’est ce que c’est ? Et bien pour R NA signifie “donnée manquante”. Mais cela ne veut pas dire que vous avez mal fait votre boulot. Seulement voilà, dans aucune des bases il n’y avait d’information pour les violences sexistes et sexuelles en Australie en 2008, ni même d’information sur le nombre d’entreprises. Pour enlever les données manquantes, on va utiliser <em>filter()</em> à nouveau sur la base que l’on vient de créer. On va l’appliquer à la colonne “Loi sur la violence domestique”. Cette fois on va utiliser le test logique <em>is.na()</em>. C’est parti, denière étape :</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1">base_large_fin =<span class="st"> </span>base_large <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb30-2" title="2"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(<span class="st">`</span><span class="dt">Loi sur la violence domestique</span><span class="st">`</span>))</a>
+<a class="sourceLine" id="cb30-3" title="3"><span class="kw">head</span>(base_large_fin)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Pays"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["LOCATION"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[3],"type":["int"],"align":["right"]},{"label":["Emploi"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Entreprises"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["PrÃ©valence au cours de la vie"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Loi sur la violence domestique"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Loi sur le viol"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Loi sur le harcÃ©lement sexuel"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Mutilations gÃ©nitales fÃ©minines (MGF) "],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Autonomie reproductive"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Avortement"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["Attitudes envers la violence"],"name":[13],"type":["dbl"],"align":["right"]}],"data":[{"1":"RÃ©publique tchÃ¨que","2":"CZE","3":"2014","4":"225006.4","5":"NA","6":"0.21","7":"0","8":"0.75","9":"0.25","10":"0","11":"0.04","12":"0","13":"NA"},{"1":"France","2":"FRA","3":"2014","4":"1266421.0","5":"NA","6":"0.26","7":"0","8":"0.00","9":"0.00","10":"0","11":"0.02","12":"0","13":"0.07"},{"1":"Belgique","2":"BEL","3":"2014","4":"NA","5":"NA","6":"0.24","7":"0","8":"0.00","9":"0.00","10":"0","11":"0.03","12":"0","13":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>VOilà qui est mieux, même si notre base est réduite à peau de chagrin car elle ne contient des informations sur les violences sexistes et sexuelles que pour trois pays sur une unique année. Ce n’est pas la meilleur base pour faire une analayse économétrique - mais c’était une super base pour vous montrer plein d’opérations sur R !</p>
+</div>
+</div>
+<div id="méthode-2" class="section level3">
+<h3>Méthode 2:</h3>
+<p>Comme promis dans la partie introductive de ce TD, il existe une deuxième façon d’assembler deux bases de données : en réalisant d’abord le pivotement puis en assemblant les bases horizontalement. Je prends le temps de vous présenter cette autre méthode car je pense qu’elle a le potentiel de vous être utile en temps voulu. Le raisonnement peut aussi sembler moins compliqué que l’autre méthode pour certaines et certains.</p>
+<p>Je pars du principe que vous avez initialisé le package <em>tidyverse</em> et que vos bases de données sont chargées.</p>
+<div id="etape-1-pivotement" class="section level4">
+<h4>Etape 1 : Pivotement</h4>
+<p>Ok, la première étape consiste donc à faire pivoter les bases de données. Ainsi, on va créer directement une base contenant nos variables <em>identifiant</em> et nos variables <em>facteurs</em> qui seront aussi nombreuses que le nombre de facteur que l’on souhaite analyser.</p>
+<p>Pour rappel, regardons tout d’abord le format des deux bases de données avant de commencer.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">head</span>(violence)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["ï..REG"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["RÃ.gion"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["LOCATION"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["Pays"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["INC"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["Groupe.de.revenus"],"name":[6],"type":["fctr"],"align":["left"]},{"label":["VAR"],"name":[7],"type":["fctr"],"align":["left"]},{"label":["Variables"],"name":[8],"type":["fctr"],"align":["left"]},{"label":["TIME"],"name":[9],"type":["int"],"align":["right"]},{"label":["AnnÃ.e"],"name":[10],"type":["int"],"align":["right"]},{"label":["Value"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Flag.Codes"],"name":[12],"type":["lgl"],"align":["right"]},{"label":["Flags"],"name":[13],"type":["lgl"],"align":["right"]}],"data":[{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_2","8":"PrÃ©valence au cours de la vie","9":"2014","10":"2014","11":"0.24","12":"NA","13":"NA","_rn_":"1"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_3","8":"Loi sur la violence domestique","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA","_rn_":"2"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_4","8":"Loi sur le viol","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA","_rn_":"3"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_1_5","8":"Loi sur le harcÃ©lement sexuel","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA","_rn_":"4"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_2","8":"Mutilations gÃ©nitales fÃ©minines (MGF)","9":"2014","10":"2014","11":"0.00","12":"NA","13":"NA","_rn_":"5"},{"1":"ECA","2":"Europe and Central Asia","3":"BEL","4":"Belgique","5":"HIO","6":"Pays Ã  haut revenu: OCDE","7":"RP_3","8":"Autonomie reproductive","9":"2014","10":"2014","11":"0.03","12":"NA","13":"NA","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1"><span class="kw">head</span>(emploi)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["ï..COUNTRY"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Pays"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["INDUSTRY"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["Industrie.du.tourisme"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["VARIABLE"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["Variable"],"name":[6],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[7],"type":["int"],"align":["right"]},{"label":["AnnÃ.e"],"name":[8],"type":["int"],"align":["right"]},{"label":["Unit.Code"],"name":[9],"type":["fctr"],"align":["left"]},{"label":["Unit"],"name":[10],"type":["fctr"],"align":["left"]},{"label":["PowerCode.Code"],"name":[11],"type":["int"],"align":["right"]},{"label":["PowerCode"],"name":[12],"type":["fctr"],"align":["left"]},{"label":["Reference.Period.Code"],"name":[13],"type":["lgl"],"align":["right"]},{"label":["Reference.Period"],"name":[14],"type":["lgl"],"align":["right"]},{"label":["Value"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["Flag.Codes"],"name":[16],"type":["fctr"],"align":["left"]},{"label":["Flags"],"name":[17],"type":["fctr"],"align":["left"]}],"data":[{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2008","8":"2008","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"506400","16":"","17":"","_rn_":"1"},{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2009","8":"2009","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"506100","16":"","17":"","_rn_":"2"},{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2010","8":"2010","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"517700","16":"","17":"","_rn_":"3"},{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2011","8":"2011","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"522200","16":"","17":"","_rn_":"4"},{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2012","8":"2012","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"534200","16":"","17":"","_rn_":"5"},{"1":"AUS","2":"Australie","3":"TOURISM","4":"Total du tourisme","5":"EMPL","6":"Emploi","7":"2013","8":"2013","9":"EMPLOYED","10":"Actifs occupÃ©s","11":"0","12":"UnitÃ©s","13":"NA","14":"NA","15":"543400","16":"","17":"","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Encore une fois, nous allons tout d’abord supprimer les colonnes qui ne nous intéressent pas en ne sélectionnant que celles qui nous intéressent. Nous allons ensuite filter les données pour le garder qu’une valeur par facteur par année. Comme ce que nous avons fait avant en somme, donc faisons un simple copier-coller :</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">violence_wide =<span class="st"> </span>violence <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-2" title="2"><span class="st">  </span><span class="kw">select</span>( <span class="st">&quot;LOCATION&quot;</span>,<span class="st">&quot;Pays&quot;</span>,</a>
+<a class="sourceLine" id="cb33-3" title="3">          <span class="st">&quot;Value&quot;</span>,<span class="st">&quot;Variables&quot;</span>,<span class="st">&quot;TIME&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-4" title="4"><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;YEAR&quot;</span>=<span class="st">&quot;TIME&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-5" title="5"><span class="st">  </span><span class="kw">group_by</span>(YEAR,Pays,Variables) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-6" title="6"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">duplicated</span>(Value)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-7" title="7"><span class="st">  </span><span class="kw">ungroup</span>()</a>
+<a class="sourceLine" id="cb33-8" title="8"></a>
+<a class="sourceLine" id="cb33-9" title="9">emploi_wide =<span class="st">  </span>emploi <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-10" title="10"><span class="st">  </span><span class="kw">filter</span>(Industrie.du.tourisme<span class="op">==</span><span class="st">&quot;Total du tourisme&quot;</span>)<span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb33-11" title="11"><span class="st">  </span><span class="kw">select</span>(<span class="st">&quot;Pays&quot;</span>,<span class="st">&quot;ï..COUNTRY&quot;</span>,</a>
+<a class="sourceLine" id="cb33-12" title="12">         <span class="st">&quot;Variable&quot;</span>,<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;Value&quot;</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb33-13" title="13"><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;LOCATION&quot;</span>=<span class="st">&quot;ï..COUNTRY&quot;</span>,</a>
+<a class="sourceLine" id="cb33-14" title="14">         <span class="st">&quot;Variables&quot;</span>=<span class="st">&quot;Variable&quot;</span>) </a></code></pre></div>
+<p>Jusqu’à présent rien de nouveau. Maintenant nous pouvons déjà réaliser le pivotement. Encore une fois, il nous suffit de reprendre les valeurs de paramètres que nous avions assignées plus haut à la fonction <em>pivot_wider()</em> puisque la structure des deux bases de données initiales est exactement identique à celle de la base longue que nous avions créée.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1">violence_wide =<span class="st"> </span>violence <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb34-2" title="2"><span class="st">  </span><span class="kw">select</span>( <span class="st">&quot;LOCATION&quot;</span>,<span class="st">&quot;Pays&quot;</span>,</a>
+<a class="sourceLine" id="cb34-3" title="3">          <span class="st">&quot;Value&quot;</span>,<span class="st">&quot;Variables&quot;</span>,<span class="st">&quot;TIME&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb34-4" title="4"><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;YEAR&quot;</span>=<span class="st">&quot;TIME&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb34-5" title="5"><span class="st">  </span><span class="kw">group_by</span>(YEAR,Pays,Variables) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb34-6" title="6"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">duplicated</span>(Value)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb34-7" title="7"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb34-8" title="8"><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">id_cols =</span> <span class="kw">c</span>(<span class="st">&quot;Pays&quot;</span>,<span class="st">&quot;LOCATION&quot;</span>,<span class="st">&quot;YEAR&quot;</span> ),</a>
+<a class="sourceLine" id="cb34-9" title="9">              <span class="dt">names_from =</span> <span class="st">&quot;Variables&quot;</span>, </a>
+<a class="sourceLine" id="cb34-10" title="10">              <span class="dt">values_from =</span> <span class="st">&quot;Value&quot;</span>)</a>
+<a class="sourceLine" id="cb34-11" title="11"></a>
+<a class="sourceLine" id="cb34-12" title="12">emploi_wide =<span class="st">  </span>emploi <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb34-13" title="13"><span class="st">  </span><span class="kw">filter</span>(Industrie.du.tourisme<span class="op">==</span><span class="st">&quot;Total du tourisme&quot;</span>)<span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb34-14" title="14"><span class="st">  </span><span class="kw">select</span>(<span class="st">&quot;Pays&quot;</span>,<span class="st">&quot;ï..COUNTRY&quot;</span>,</a>
+<a class="sourceLine" id="cb34-15" title="15">         <span class="st">&quot;Variable&quot;</span>,<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;Value&quot;</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb34-16" title="16"><span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;LOCATION&quot;</span>=<span class="st">&quot;ï..COUNTRY&quot;</span>,</a>
+<a class="sourceLine" id="cb34-17" title="17">         <span class="st">&quot;Variables&quot;</span>=<span class="st">&quot;Variable&quot;</span>)<span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb34-18" title="18"><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">id_cols =</span> <span class="kw">c</span>(<span class="st">&quot;Pays&quot;</span>,<span class="st">&quot;LOCATION&quot;</span>,<span class="st">&quot;YEAR&quot;</span> ),</a>
+<a class="sourceLine" id="cb34-19" title="19">              <span class="dt">names_from =</span> <span class="st">&quot;Variables&quot;</span>, </a>
+<a class="sourceLine" id="cb34-20" title="20">              <span class="dt">values_from =</span> <span class="st">&quot;Value&quot;</span>)</a></code></pre></div>
+<p>Nous avons nos deux bases large :</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">head</span>(violence_wide)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Pays"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["LOCATION"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[3],"type":["int"],"align":["right"]},{"label":["PrÃ©valence au cours de la vie"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Loi sur la violence domestique"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["Loi sur le viol"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Loi sur le harcÃ©lement sexuel"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Mutilations gÃ©nitales fÃ©minines (MGF) "],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Autonomie reproductive"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Avortement"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Attitudes envers la violence"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"Belgique","2":"BEL","3":"2014","4":"0.24","5":"0","6":"0.00","7":"0.00","8":"0","9":"0.03","10":"0","11":"NA"},{"1":"RÃ©publique tchÃ¨que","2":"CZE","3":"2014","4":"0.21","5":"0","6":"0.75","7":"0.25","8":"0","9":"0.04","10":"0","11":"NA"},{"1":"France","2":"FRA","3":"2014","4":"0.26","5":"0","6":"0.00","7":"0.00","8":"0","9":"0.02","10":"0","11":"0.07"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">head</span>(emploi_wide)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Pays"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["LOCATION"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[3],"type":["int"],"align":["right"]},{"label":["Emploi"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Entreprises"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Australie","2":"AUS","3":"2008","4":"506400","5":"NA"},{"1":"Australie","2":"AUS","3":"2009","4":"506100","5":"NA"},{"1":"Australie","2":"AUS","3":"2010","4":"517700","5":"NA"},{"1":"Australie","2":"AUS","3":"2011","4":"522200","5":"NA"},{"1":"Australie","2":"AUS","3":"2012","4":"534200","5":"NA"},{"1":"Australie","2":"AUS","3":"2013","4":"543400","5":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Première étape réalisée, passons à présent à l’étape de l’assemblage horizontal.</p>
+</div>
+<div id="etape-2-assemblage-horizontal" class="section level4">
+<h4>Etape 2 : Assemblage horizontal</h4>
+<p>Jusqu’à présent avec cette deuxième méthode, nous n’avons rien vu de nouveau. Jusqu’à présent, oui.</p>
+<p>La nouveauté maintenant, c’est l’utilisation de la famille de fonction <em>join</em>. Cette famille de fonction permet de réaliser des assemblages horizontaux en fonction du type d’assemblage que vous souhaitez réaliser. Je pense que le plus simple et d’expliquer tout cela à travers un schéma que j’ai trouvé sur un <a href="https://statisticsglobe.com/r-dplyr-join-inner-left-right-full-semi-anti">site très utile si vous souhaitez plus de détails</a> : <img src="td4/join.png" alt="La famille join" /> Au départ, nous avons donc deux bases de données (bleue et verte) qui contiennent chacune deux colonnes: une <em>identifiant</em>, l’autre <em>facteur</em>. La famille des join nous permet de les assembler :</p>
+<ul>
+<li><em>inner_join()</em> permet de joindre uniquement les observations qui ont un identifiant en commun : ici 2</li>
+<li><em>left_join()</em> permet de conserver tous les identifiant de la base de gauche (bleue) et d’y associer les données de la base de droite (verte) à conditions qu’elles existent. Pour l’identifiant 1 on observe qu’il n’y a pas de donnée, R affiche donc un NA</li>
+<li><em>right_join()</em> est comme vous l’imaginez, l’inverse de <em>left_join()</em></li>
+<li><em>full_join()</em> va assembler les deux bases de données indépemment de l’existence ou non de valeur associée à chaque identifiant pour chaque facteur</li>
+<li><em>semi_join()</em> et <em>anti_join()</em> ne nous seront pas utiles, mais je suppose que vous pouvez déduire leur fonctionnement du schéma.</li>
+</ul>
+<p>Pour en revenir à nos deux bases de données, nous allons pouvoir utiliser la fonction <em>inner_join()</em> afin de résoudre le problème de données manquantes que nous observions avec la première méthode de l’assemblage vertical.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">base_large_inner =<span class="st"> </span><span class="kw">inner_join</span>(emploi_wide,violence_wide)</a></code></pre></div>
+<pre><code>## Joining, by = c(&quot;Pays&quot;, &quot;LOCATION&quot;, &quot;YEAR&quot;)</code></pre>
+<pre><code>## Warning: Column `Pays` joining factors with different levels, coercing to
+## character vector</code></pre>
+<pre><code>## Warning: Column `LOCATION` joining factors with different levels, coercing to
+## character vector</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">head</span>(base_large_inner)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Pays"],"name":[1],"type":["chr"],"align":["left"]},{"label":["LOCATION"],"name":[2],"type":["chr"],"align":["left"]},{"label":["YEAR"],"name":[3],"type":["int"],"align":["right"]},{"label":["Emploi"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Entreprises"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["PrÃ©valence au cours de la vie"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["Loi sur la violence domestique"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Loi sur le viol"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Loi sur le harcÃ©lement sexuel"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["Mutilations gÃ©nitales fÃ©minines (MGF) "],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Autonomie reproductive"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["Avortement"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["Attitudes envers la violence"],"name":[13],"type":["dbl"],"align":["right"]}],"data":[{"1":"RÃ©publique tchÃ¨que","2":"CZE","3":"2014","4":"225006.4","5":"NA","6":"0.21","7":"0","8":"0.75","9":"0.25","10":"0","11":"0.04","12":"0","13":"NA"},{"1":"France","2":"FRA","3":"2014","4":"1266421.0","5":"NA","6":"0.26","7":"0","8":"0.00","9":"0.00","10":"0","11":"0.02","12":"0","13":"0.07"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Un message d’erreur qui n’en est pas vraiment un s’affiche: il nous indique quelles sont les colonnes que R a considéré comme identifiant et comment il a modifié leur format pour les rendre compatibles entre les deux bases de données. Ce qu’il y a de magique ici c’est que R est capable de reconnaître nos variables <em>identifiant</em> sans même que l’on ne lui indique, à condition qu’elles aient le même nom dans les deux bases. Si vous êtes trop fatigués pour modifier les noms des variables dans les deux bases de données initiales, vous pouvez également indiquer dans la fonction <em>inner_join()</em> quelles colonnes contiennent les mêmes informations <em>identifiant</em> dans les deux bases. Si vous êtes intéressé.e.s, je vous laisse regarder par vous même.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1"><span class="kw">help</span>(inner_join)</a></code></pre></div>
+<pre><code>## starting httpd help server ... done</code></pre>
+<p>De la même manière, je vous conseille de vous amuser avec les variantes de la famille <em>join</em> afin de vous familiariser avec les différentes spécificités de chacune et adapter votre usage à votre besoin précis.</p>
+<p>Nous avons donc appris à assembler des bases de données.</p>
+</div>
+</div>
+</div>
+<div id="réaliser-une-régression-bivariée" class="section level2">
+<h2>Réaliser une régression bivariée</h2>
+<p>Ceci est un très bref rappel, car vous avez déjà vu tout cela en TD. Pour réaliser une régression sur R on utilise la fonction <em>lm()</em>.</p>
+<p>Pour vous faire une rapide démonstration, je vais utiliser une des base de données contenue nativement dans R. La base <em>cars</em>.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1"><span class="kw">colnames</span>(cars)</a></code></pre></div>
+<pre><code>## [1] &quot;speed&quot; &quot;dist&quot;</code></pre>
+<p>Ainsi, pour faire une régression de la distance sur la vitesse, j’applique la fonction:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">lm</span>(dist <span class="op">~</span><span class="st"> </span>speed , cars)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Coefficients:
+## (Intercept)        speed  
+##     -17.579        3.932</code></pre>
+<p>Pour obtenir un résumé des différentes informations statistiques associées à cette régression, j’utilise las fonction summary :</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1">reg =<span class="st"> </span><span class="kw">lm</span>(dist <span class="op">~</span><span class="st"> </span>speed , cars)</a>
+<a class="sourceLine" id="cb48-2" title="2"><span class="kw">summary</span>(reg)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -29.069  -9.525  -2.272   9.215  43.201 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -17.5791     6.7584  -2.601   0.0123 *  
+## speed         3.9324     0.4155   9.464 1.49e-12 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 15.38 on 48 degrees of freedom
+## Multiple R-squared:  0.6511, Adjusted R-squared:  0.6438 
+## F-statistic: 89.57 on 1 and 48 DF,  p-value: 1.49e-12</code></pre>
+</div>
+<div id="réaliser-un-graph-de-la-relation-bivariée" class="section level2">
+<h2>Réaliser un graph de la relation bivariée</h2>
+<p>On peut également réaliser un graph de cette relation bivariée. Rappelez-vous l’utilisation de <em>ggplot()</em> que je vous ai brièvement présenté en <a href="https://yanndav.github.io/descartes-econometrie/td2.html#Les_graphs_ggplot">TD2</a>. Ce magnifique package va nous permettre de faire un joli graphique de la relation entre la distance et la vitesse.</p>
+<p>Pour ce faire, on initialise d’abord le chargement du package ggplot</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1"><span class="co"># install.packages(&#39;ggplot2&#39;)</span></a>
+<a class="sourceLine" id="cb50-2" title="2"><span class="kw">library</span>(ggplot2)</a></code></pre></div>
+<p>Ensuite :</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>On crée l’objet ggplot, on lui assigne la base de donnée et la variable d’ordonnée et d’abcisse.</li>
+</ol></li>
+<li>On utilise le signe “+” pour ajouter des options à notre graph</li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>On crée un nuage de points avec la fonction <em>geom_point()</em></li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>On peut ajouter une ligne de régression à ce graph en utilisant la fonction <em>geom_smooth()</em> et le paramètre <em>method=“lm”</em>.</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li>On définit les titres du graph.</li>
+</ol></li>
+</ul>
+<p>Voici le résultat !</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="kw">ggplot</span>(cars, <span class="kw">aes</span>(<span class="dt">x=</span>dist, <span class="dt">y=</span>speed))<span class="op">+</span><span class="st"> </span><span class="co">#(1)</span></a>
+<a class="sourceLine" id="cb51-2" title="2"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span><span class="st"> </span><span class="co"># (2)</span></a>
+<a class="sourceLine" id="cb51-3" title="3"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&#39;lm&#39;</span>)<span class="op">+</span><span class="st"> </span><span class="co">#(3)</span></a>
+<a class="sourceLine" id="cb51-4" title="4"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&#39;Speed versus Distance&#39;</span>, <span class="co">#(4)</span></a>
+<a class="sourceLine" id="cb51-5" title="5">       <span class="dt">x=</span><span class="st">&#39;Distance&#39;</span>,</a>
+<a class="sourceLine" id="cb51-6" title="6">       <span class="dt">y=</span><span class="st">&#39;Speed&#39;</span>)</a></code></pre></div>
+<p><img src="td4_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>Bonne fin de semaine à toutes et tous.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

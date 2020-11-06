@@ -38,8 +38,8 @@ Vous allez rédiger un rapport en partant du [modèle défini](https://drive.goo
  * [__Séance 1__](https://yanndav.github.io/descartes-econometrie/td1.html) : Présentation des consignes relatives au projet d'économétrie, découverte des bases de données de l'OCDE, importation d'une base dans R.
 * [__Séance 2__](https://yanndav.github.io/descartes-econometrie/td2.html) : Création des groupes et exploration des données et analyses descriptives
 * [__Séance 3__](https://yanndav.github.io/descartes-econometrie/td3.html) : Recherche bibliographique pour alimenter la réflexion sur le thème retenu. Définition question de recherche.
-* __Séance 4__ : Arriver en début de séance avec une question de recherche finalisée. Séance de réflexion sur le modèle: première approche par analyse bivariée
-* __Séance 4__ : Séance d'élaboration du modèle. Analyses multivariées. Présentations des résultats préliminaires.
+* [__Séance 4__](https://yanndav.github.io/descartes-econometrie/td4.html): Arriver en début de séance avec une question de recherche finalisée. Séance de réflexion sur le modèle: première approche par analyse bivariée
+* [__Séance 5__](https://yanndav.github.io/descartes-econometrie/td5.html): Séance d'élaboration du modèle. Analyses multivariées. Présentations des résultats préliminaires.
 * __Séance 6__ : Point méthodo contenu du rapport + tests de robustesse du modèle retenu.
 * __Séance 7__ : Point méthodo contenu présentation orale + analyses de sensibilité.
 * __Séance 8__ : Structuration des résultats finaux, questions/réponses
