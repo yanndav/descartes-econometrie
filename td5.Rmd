@@ -18,13 +18,13 @@ J'ai pu, au cas par cas, suggérer quelques pistes d'avancement et nous avons d�
 
 Pour faciliter ce travail, je vous propose sur cette page quelques éléments de réponses aux questions que vous vous poserez probablement.
 
-# Comment rédiger sa question de recherche ?
+#Comment rédiger sa question de recherche ?
 Pour rappel, c'est un point que nous avons abordé lors de la [séance 3](https://yanndav.github.io/descartes-econometrie/td3.html). Pour faire court, la question commence par "Comment" et finit par un point d'interrogation. On cherche donc à expliquer les facteurs qui influencent le phénomène étudié. Dans la question de recherche, on peut mentionner clairement ces facteurs, ou bien laisser la question ouverte.
 
 _Exemples: Comment la part du capital dans le revenu national influence-t-elle les inégalités ? Comment la part de population urbaine d'un État influe-t-elle sur la productivité de son agriculture ? Comment l'ouverture d'un pays au commerce mondial est-elle déterminée par la structure de son économie ?_
 
-# Comment écrire son modèle économétrique ?
-## De l'hypothèse au modèle économétrique
+#Comment écrire son modèle économétrique ?
+##De l'hypothèse au modèle économétrique
 On cherche à comprendre comment différents facteurs (les variables explicatives -> X) déterminent un phénomène (la variable expliquée -> Y).
 
 Le modèle prend la forme : 
@@ -32,31 +32,31 @@ $Y_i = \beta_0 + \beta_1 \times X_{1i} + \beta_2 \times X_{2i} + \epsilon_i$
 
 Dans ce modèle, on explique le phénomène Y par deux facteurs X1 et X2.
 
-Ca vous fait sans doute une belle jambe - car ça ne répond probablement pas à la question que vous vous posiez. J'en convient. Alors comment passer d'une hypothèse à une modèle économétrique ?
+Ca vous fait sans doute une belle jambe - car ça ne répond probablement pas à la question que vous vous posiez. J'en conviens. Alors comment passer d'une hypothèse à une modèle économétrique ?
 
-Le plus simple est sans doute de sortir du descriptif pour aborder du concret. Admettons que dans les exemples de question de recherche précédents, je me pense sur le lien entre part de la population urbaine et productivité agricole. 
+Le plus simple est sans doute de sortir du descriptif pour aborder du concret. Admettons que dans les exemples de question de recherche précédents, je me penche sur le lien entre part de la population urbaine et productivité agricole. 
 
 Mon hypothèse et que lorsque la population urbaine augmente, au moins deux canaux feront que la productivité agricole se devra d'augmenter :
 
 * Si l'augmentation de la part de la population urbaine provient simplement d'un excès de natalité en ville par rapport à la campagne (ce qui, disons le au passage, est rarement voir jamais observé), alors la demande pour les denrées alimentaires augmentera - ce qui poussera les prix vers le haut et entrainera soit de nouveaux entrants sur le marché soit poussera les exploitations agricoles à se moderniser pour répondre à la demande.
-* Si l'augmentation de la part de la population urbaine provient d'un exode rurale, alors la demande augmentera comme dans le cas précédent. Ce qui change cependant, c'est que les exploitants agricoles devront produire plus avec moins de moyens, puisqu'une partie de la main d'oeuvre s'est réfugiée en ville. On peut faire l'hypothèse que ce deuxième scénario sera d'autant plus favorable à une mécanisation de l'agriculture.
+* Si l'augmentation de la part de la population urbaine provient d'un exode rurale, alors la demande augmentera comme dans le cas précédent. Ce qui change cependant, c'est que les exploitants agricoles devront produire plus avec moins de main d'oeuvre, puisqu'une partie de celle-ci sera partie en ville. On peut faire l'hypothèse que ce deuxième scénario sera d'autant plus favorable à une mécanisation de l'agriculture.
 
-Voici deux hypothèses, qui je suis certain vous paraissent imparfaites ! C'est juste. On pourrait en faire plein d'autres - et elles resteraient aux oreilles de certains imparfaites. Alors comment tester nos conjectures ? Et bien en utilisant des données disponibles ! Avant de se pencher sur le mécanisme à l'oeuvre, il faut d'abord regarder si l'hypothèse centrale d'un lien positif entre part de la population urbaine et rendement agricole tient la route.
+Voici deux hypothèses, qui je suis certain vous paraissent imparfaites ! C'est juste. On pourrait en faire plein d'autres - et elles resteraient probablement incomplètes. Alors comment tester nos conjectures ? Et bien en utilisant des données disponibles ! Avant de se pencher sur le mécanisme à l'oeuvre, il faut d'abord regarder si l'hypothèse centrale d'un lien positif entre part de la population urbaine et rendement agricole tient la route.
 
 Le modèle économétrique est donc : 
 
 $rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i$ 
 
 * $\beta_0$ capture le rendement agricole quand la part de la population vivant en ville est égale à 0.
-* $\beta_1$ capture l'impact sur le rendement agricole du passage d'une population 100% rurale à une population 100% urbaine.
+* $\beta_1$ capture l'impact sur le rendement agricole de l'augmentation d'1% de la part de la population totale qui habite en ville.
 
 Je suis donc passé d'une hypothèse à une équation toute simple: notre modèle économétrique.
 
-## Combien de facteurs intégrer dans son modèle ?
+##Combien de facteurs intégrer dans son modèle ?
 
-Dans mon exemple précédent, je n'ai considéré qu'un seul facteur affectant la productivité agricole. Evidémment, dans la réalité, il ne fait aucun doute que d'avantage de facteurs imapactent la productivité agricole. Alors combien et pourquoi intégrer d'autres facteurs ? Trois considérations à prendre en compte pour vous apporter une réponse complète :
+Dans mon exemple précédent, je n'ai considéré qu'un seul facteur affectant la productivité agricole. Evidémment, dans la réalité, il ne fait aucun doute que d'avantage de facteurs impactent la productivité agricole. Alors combien et pourquoi intégrer d'autres facteurs ? Trois considérations à prendre en compte pour vous apporter une réponse complète :
 
-* Je pense tout d'abord qu'on peut distinguer deux types de facteurs explicatifs. On peut considérer qu'il y a des facteurs d'intérêt et des facteurs de contrôle. La première catégorie de variable va être au coeur de votre analyse - c'est à ces facteurs que vous vous intéressez. Par exemple si vous voulez analyser la relation entre part de population urbaine et productivité agricole, les variables qui vous intéressent sont celles qui regroupent des informations sur la densité urbaine. C'est leur coefficient que vous allez analyser en priorité. Pour autant, il fait peu de doute que seule la part de population urbaine ne peut pas expliquer la productivité agricole. D'autres facteurs, qui sont nos fameux facteurs de contrôle doivent donc être insérés au modèle. Ne pas intégrer ces contrôles c'est commettre un biais de variable omise. Cela signifie que le coefficient de la densité urbaine capturera l'effet de ces variables omises. La conséquence et que vous pouvez soit surestimer, soit sous-estimer l'impact réel de la densité urbaine sur la productivité agricole. Alors quelles variables de contrôle intégrer ? On pourrait en effet penser qu'une infinité de facteurs de contrôle vont avoir un impact sur l'agriculture. Je pense qu'une bonne manière de procéder et de distinguer votre modèle théorique, dans lequel vous pouvez intégrer plein de variables de contrôle qui vous semblent pertinentes, et votre modèle empirique.
+* Je pense tout d'abord qu'on peut distinguer deux types de facteurs explicatifs. On peut considérer qu'il y a des facteurs d'__intérêt__ et des facteurs de __contrôle__. La première catégorie de variable va être au coeur de votre analyse - c'est à ces facteurs que vous vous intéressez. Par exemple si vous voulez analyser la relation entre part de population urbaine et productivité agricole, les variables qui vous intéressent sont celles qui regroupent des informations sur la population urbaine. C'est leur coefficient que vous allez analyser en priorité. Pour autant, il fait peu de doute que seule la part de population urbaine ne peut pas expliquer la productivité agricole. D'autres facteurs, qui sont nos fameux facteurs de __contrôle__, doivent donc être insérés au modèle. Ne pas intégrer ces contrôles c'est commettre un biais de variable omise. Cela signifie que le coefficient de la densité urbaine capturera l'effet de ces variables omises. La conséquence et que vous pouvez soit surestimer, soit sous-estimer l'impact réel de la densité urbaine sur la productivité agricole. Alors quelles variables de contrôle intégrer ? On pourrait en effet penser qu'une infinité de facteurs de contrôle vont avoir un impact sur l'agriculture. Je pense qu'une bonne manière de procéder et de distinguer votre modèle théorique, dans lequel vous pouvez intégrer plein de variables de contrôle qui vous semblent pertinentes, et votre modèle empirique.
 * Ainsi, c'est le deuxième point, je vous conseille d'écrire un modèle théorique le plus complet possible. Toutefois, quand vous passer au travail de données, commencez par l'essentiel : analyser d'abord la relation entre le phénomène étudié et les facteurs explicatifs d'intérêt. Ainsi, dans l'exemple que je citais précédemment, cela impliquerait que je ne prête attention qu'à la relation entre part de population urbaine et productivité agricole pour commencer. Vous ajouterez ensuite progressivement des données de contrôle à votre base de données... en fonction du temps qui vous reste.
 
 Un premier modèle théorique pourrait donc être :
@@ -68,15 +68,15 @@ $rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i$
 
 * Le dernier point à garder à l'esprit, c'est que votre modèle économétrique ne peut pas avoir plus de facteurs explicatifs (K) que d'observations (N) moins une. Ainsi la règle d'or en économétrie est K+1 < N. Pourquoi ? Essayez de résoudre un système d'équations à trois inconnues avec deux équations seulement. Il vous manque une équation pour réaliser cette opération. Malheureusement, l'ordinateur n'est pas plus brillant que nous - il est juste plus rapide. Cela signifie que même si théoriquement vous pensez à une infinité de facteurs explicatifs, vous serez limités par votre nombre d'observations. C'est pour cela que je vous recommande d'avoir un échantillon le plus large possible : ne vous restreignez pas trop sur la couverture temporelle et/ou spatiale.
 
-# Combien d'observations intégrer dans ma base de données ?
-Nous parlions justement du nombre d'observation. Comme nous venons de le voir, plus vous considérez de facteurs dans votre modèle, plus vou avez intérêt à intégrer un grand nombre d'observations.
+#Combien d'observations intégrer dans ma base de données ?
+Nous parlions justement du nombre d'observation. Comme nous venons de le voir, plus vous considérez de facteurs dans votre modèle, plus vous avez intérêt à intégrer un grand nombre d'observations.
 
 Mais il existe une raison plus essentielle qui doit vous pousser à intégrer le plus grand nombre d'observations possibles : la variance de vos estimateurs. Rappelez-vous la formule de la variance vue en cours:
 $\hat{\sigma}^2 = \frac{\sum_i (y_i - \hat{y}_i)^2}{N-K-1}$
-Plus vous allez avoir d'observations (N), plus votre variance va être réduite. Pourquoi est-ce une bonne chose ? Car cela signifie que votre estimation sera plus précise ! Et qui dit précision dit inférence statistique. Ce qui nous intéresse au fond n'est pas tant le coefficient que vous obtenez, mais plus de savoir s'il y a des chances que sa vraie valeur soit en réalité de zéro. C'est la fameuse _significativité statistique_ des résultats à laquelle je fais ici référence. Si vous souhaitez un rappel plus poussé sur ce point, je vous renvoie aux diapositives 91 à 100 de votre leçon 4 sur les modèles bivariés et multiples. 
+Plus vous allez avoir d'observations (N), plus votre variance va être réduite. Pourquoi est-ce une bonne chose ? Car cela signifie que votre estimation sera plus précise ! Et qui dit précision dit inférence statistique. Ce qui nous intéresse au fond n'est pas tant le coefficient que vous obtenez, mais plus de savoir s'il y a des chances que sa vraie valeur soit en réalité de zéro. C'est la fameuse _significativité statistique_ des résultats à laquelle je fais ici référence. Si vous souhaitez un rappel plus poussé sur ce point, je vous renvoie aux diapositives 91 à 100 de votre leçon 4 sur les modèles bivariés. 
 
 
-# Un exemple d'analyse : 
+#Un exemple d'analyse
 
 Je vous propose de démontrer mon propos avec un modèle sur les rendements agricoles et la part de la population urbaine. J'ai un peu triché car j'ai téléchargé les données nécessaires à mon analyse sur le site de la Banque Mondiale. 
 
@@ -90,7 +90,7 @@ $rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i$
 
 Dans ce qui suit, je montre tout mon protocole, du chargement de données à l'estimation du modèle. Si vous avez attéri içi dans le but d'avoir plus de précision concernant cette histoire de variance et de précision, aller directement à la section correspondante. 
 
-## Chargement des données 
+##Chargement des données 
 Tout d'abord, je charge mes packages et j'initialise le chemin d'accès à mes données.
 
 ```{r setup, echo=FALSE}
@@ -131,13 +131,13 @@ head(urba)
 ````{r}
 head(agri)
 ````
-On constate donc que ce sont des données longitudinales : pour une variable donnée et par pays, nous pouvons suivre son évolution par année. C'est chouette, mais ça ne correspond pas au format de donnée que l'on souhaite. En effet, on cherche à avoir des données structurées comme on l'a [présenté lors du TD 4](https://yanndav.github.io/descartes-econometrie/td4.html). Pour reprendre le vocabulaire que l'on utilisait alors, c'est comme si les deux bases que je souhaite utiliser était "larges". C'est à dire qu'elles prennent pour _identifiant_ le pays et l'indicateur (rendement ou populaiton urbaine), tandisque le _facteur_ devient l'année. Hors, on souhaiterait au contraire utiliser l'année et le pays comme _identifiant_ et le rendement et la population urbaine comme _facteurs_. 
+On constate donc que ce sont des données longitudinales : pour une variable donnée et par pays, nous pouvons suivre son évolution par année. C'est chouette, mais ça ne correspond pas au format de donnée que l'on souhaite. En effet, on cherche à avoir des données structurées comme on l'a [présenté lors du TD 4](https://yanndav.github.io/descartes-econometrie/td4.html). Pour reprendre le vocabulaire que l'on utilisait alors, c'est comme si les deux bases téléchargées sur le site de la Banque Mondiale étaient "larges". C'est à dire qu'elles prennent pour _identifiants_ le pays et l'indicateur (rendement ou population urbaine), tandis que le _facteur_ est l'année. Or, on souhaiterait au contraire utiliser l'année et le pays comme _identifiants_ et le rendement et la population urbaine comme _facteurs_. 
 
 Pour se faire on va se reporter à la _méthode 2_ du TD4. C'est à dire qu'on va d'abord réordonner les deux bases indépendemment avant de les assembler horizontalement.
 
 Commençons.
 
-## Réordonner et nettoyer les deux bases de données indépendemment.
+##Réordonner et nettoyer les deux bases de données indépendemment.
 Pour obtenir des bases de données propre, je réalise deux opérations successives :
 
 * Tout d'abord je fait pivoter mes bases de données afin de passer d'un format large à un format long. J'utilise la fonction _pivot\_longer()_ qui fait le travail exactement opposé à la fonction _pivot\_wider()_ que je vous ai présenté en TD4. Comment cette fonction fonctionne-t-elle ? Elle prend trois paramètres. _cols_ indique la plage de colonnes que R doit faire pivoter. _names\_to_ indique le nom de la colonne qui va contenir comme valeur le nom des anciennes colonnes. Ici je choisi de nommer cette colonne "YEAR". Elle stockera donc le nom des anciennes colonnes définis dans la plage _cols_. Finalement, _values\_to_ me demande d'inventer un nom de colonne dans laquelle sera stockée  l'ensemble des valeurs associées à chaque pays par année. J'ai choisi "Urban Pop" ou "Yield" en fonction de la base. Notez que j'ai choisi ces noms de colonne, et que j'aurai pu les nommer autrement, en fonction de mon humeur.
@@ -164,7 +164,7 @@ head(agri_clean)
 ````{r}
 head(urba_clean)
 ```` 
-## Assembler les bases de données
+##Assembler les bases de données
 Il semblerait qu'il ne nous reste plus qu'à assembler les bases de données et nous pourrons procéder à l'analyse.
 
 On va réaliser cette jonction en utilisant la fonction _inner\_join()_ présentée dans le TD4 dans la méthode 2. Notez que je supprime les pays/années qui ont une donnée manquante pour le rendement ou la population urbaine.
@@ -183,12 +183,12 @@ head(base_final)
 
 Passons à l'analyse.
 
-## Analyse de la relation entre les variables
+##Analyse de la relation entre les variables
 Comment procéder à l'analyse ? 
 
 La première chose est dans doute de réaliser des statistiques descriptives de nos données.
 
-### Statistiques descriptives
+###Statistiques descriptives
 On peut tout d'abord regarder combien d'observations on a par année:
 ````{r}
 
@@ -256,7 +256,7 @@ ggplot(base_annuelle, aes(y= rendement,
 
 Il semblerait qu'il existe donc une association entre les deux phénomènes. On peut à présent revenir sur l'échantillon total et regarder comment cette relation se comporte.
 
-### Analyse de la relation bivariée
+###Analyse de la relation bivariée
 Dans la continuité de ce que l'on a fait jusqu'à présent, on peut réaliser un graph de nuage de points sur la relation entre les deux variables. J'y ajoute une ligne dont la pente est le coefficient de régression entre les deux variables. 
 
 ````{r}
@@ -274,7 +274,7 @@ reg1 = lm(Yield ~`Urban Pop` ,data = base_final)
 summary(reg1)
 ````
 
-## Qu'est-ce qui se passe lorsque l'échantillon diminue ?
+#Qu'est-ce qui se passe lorsque l'échantillon diminue ?
 Je vais à présent vous montrer ce qu'il se passe lorsque l'on réduit l'échantillon à peau de chagrin.
 
 Commençons par réduire l'échantillon à l'ensemble des pays, mais pour l'unique année 1970.
@@ -315,7 +315,7 @@ summary(reg3)
 ````
 J'espère que cette demonstration empirique vous convaincra de ne pas trop restreindre la taille de votre échantillon.
 
-## Comment faire pour comparer les coefficients entre pays ?
+#Comment faire pour comparer les coefficients entre pays ?
 Une autre question sur laquelle je souhaiterais m'attarder concerne la construction d'un modèle lorsque l'on souhaite comparer différents pays. Admettons que je veuille comparer le Botswana avec la France et les Etat-Unis. La tentation serait de construire trois bases de données distinctes et d'estimer la régression pour chaque pays séparement. Le problème c'est que l'on obtiendra ainsi des coefficients différents, mais il nous sera difficile de les comparer statistiquement.
 
 Alors comment faire ? Tout simplement en assemblant toutes les données dans une même base et en intégrant dans le modèle des __effet fixes__ et des __interactions__ qui captureront respectivement l'effet propre à chaque pays sur le phénomène analysé et l'effet singulier dans chaque pays de l'augmentation du facteur explicatif.
@@ -355,9 +355,12 @@ summary(reg_pays)
 ````
 Analysons ces résultats:
 
-* __L'Intercept__ nous indique que le rendement moyen au Botswana, lorsque la population est 100% rurale est égal à 326 kg/hectare. Ce résultat est significatif à 5%. 
+* __L'Intercept__ nous indique que le rendement moyen au Botswana, lorsque la population est 100% rurale est égal à 326 kg/hectare. Ce résultat est significatif à un niveau de confiance de 95%. 
 * __Urban Pop__ nous indique qu'une augmentation de 1% de la population urbaine au Botswana est associée à une augmentation de rendement de 1 kg/hec, toutes choses égales par ailleurs. Cependant ce résultat n'est pas statistiquement significatif, on ne peut donc pas rejeter l'hypothèse nulle que ce coefficient est en réalité égal à 0.
 * Les coefficients de __USA__ et __FRA__ nous indique que la différence avec le Botswana du rendement moyen en l'absence de population urbaine est significativement négatif. Même en additionnant ces coefficients avec celui de l'intercept, on obtient un rendement négatif en l'absence d'urbanisation. Quoi ? Un rendement négatif en l'absence de population urbaine ? C'est du n'importe quoi me direz-vous. Attention ! ce résultat est probablement draîné par le fait que sur la période analysée, le taux d'urbanisation de ces deux pays a été très important et a grimpé très vite. Il n'y a donc jamais eu de niveau d'urbanisation proche de 0, ce qui explique les résultats... surprenants. Je vous rappelle que l'intercept capture l'origine de la droite de régression. Si les données observés pour les USA et la France ne portent que sur des taux d'urbanisation supérieurs à 50% et que la pente de régression est très raide et positive, alors si l'on trace la droite jusqu'à son origine, on attéri dans l'univers des nombre réels négatifs... Voici pourquoi l'intercept n'est pas toujours très intéressant.
-* Commentons à présent les coefficients de __`Urban Pop`:USA __ et __`Urban Pop`:FRA__. Ils nous indiquent que l'association entre rendement agricole et augmentation d'1% de la population urbaine est positivement et significativement plus importante qu'au Botwsana. Ainsi, par rapport à l'augmentation observée au Botswana un pourcent de population urbaine supplémentaire aux USA est associé à 437 kg/hectare d'augmentation du rendement des céréales. De plus, cette différence est significativement différente de 0, avec une probabilité de 99%. 
+* Commentons à présent les coefficients de __`Urban Pop`:USA __ et __`Urban Pop`:FRA__. Ils nous indiquent que l'association entre rendement agricole et augmentation d'1% de la population urbaine est positivement et significativement plus importante qu'au Botwsana. Ainsi, par rapport à l'augmentation observée au Botswana un pourcent de population urbaine supplémentaire aux USA est associé à 437 kg/hectare d'augmentation du rendement des céréales. De plus, cette différence est significativement différente de 0, avec un niveau de confiance de 99%. 
 
-Je vais m'arrrêter à ça pour aujourd'hui. Bonne semaine asynchrone à toutes et tous !
+Reste une question : ces associations sont-elles causales ? (non) Sont-elles intéressantes ? (oui). Pourquoi ? À vous de me le dire...
+
+
+Je vais m'arrrêter à ça pour aujourd'hui. Bonne semaine asynchrone à toutes et tous et au plaisir de vous retrouver en semaine 7 !
