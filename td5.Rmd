@@ -23,8 +23,8 @@ Pour rappel, c'est un point que nous avons abordé lors de la [séance 3](https:
 
 _Exemples: Comment la part du capital dans le revenu national influence-t-elle les inégalités ? Comment la part de population urbaine d'un État influe-t-elle sur la productivité de son agriculture ? Comment l'ouverture d'un pays au commerce mondial est-elle déterminée par la structure de son économie ?_
 
-#Comment écrire son modèle économétrique ?
-##De l'hypothèse au modèle économétrique
+# Comment écrire son modèle économétrique ?
+## De l'hypothèse au modèle économétrique
 On cherche à comprendre comment différents facteurs (les variables explicatives -> X) déterminent un phénomène (la variable expliquée -> Y).
 
 Le modèle prend la forme : 
@@ -52,7 +52,7 @@ $rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i$
 
 Je suis donc passé d'une hypothèse à une équation toute simple: notre modèle économétrique.
 
-##Combien de facteurs intégrer dans son modèle ?
+## Combien de facteurs intégrer dans son modèle ?
 
 Dans mon exemple précédent, je n'ai considéré qu'un seul facteur affectant la productivité agricole. Evidémment, dans la réalité, il ne fait aucun doute que d'avantage de facteurs impactent la productivité agricole. Alors combien et pourquoi intégrer d'autres facteurs ? Trois considérations à prendre en compte pour vous apporter une réponse complète :
 
@@ -68,7 +68,7 @@ $rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i$
 
 * Le dernier point à garder à l'esprit, c'est que votre modèle économétrique ne peut pas avoir plus de facteurs explicatifs (K) que d'observations (N) moins une. Ainsi la règle d'or en économétrie est K+1 < N. Pourquoi ? Essayez de résoudre un système d'équations à trois inconnues avec deux équations seulement. Il vous manque une équation pour réaliser cette opération. Malheureusement, l'ordinateur n'est pas plus brillant que nous - il est juste plus rapide. Cela signifie que même si théoriquement vous pensez à une infinité de facteurs explicatifs, vous serez limités par votre nombre d'observations. C'est pour cela que je vous recommande d'avoir un échantillon le plus large possible : ne vous restreignez pas trop sur la couverture temporelle et/ou spatiale.
 
-#Combien d'observations intégrer dans ma base de données ?
+# Combien d'observations intégrer dans ma base de données ?
 Nous parlions justement du nombre d'observation. Comme nous venons de le voir, plus vous considérez de facteurs dans votre modèle, plus vous avez intérêt à intégrer un grand nombre d'observations.
 
 Mais il existe une raison plus essentielle qui doit vous pousser à intégrer le plus grand nombre d'observations possibles : la variance de vos estimateurs. Rappelez-vous la formule de la variance vue en cours:
@@ -76,7 +76,7 @@ $\hat{\sigma}^2 = \frac{\sum_i (y_i - \hat{y}_i)^2}{N-K-1}$
 Plus vous allez avoir d'observations (N), plus votre variance va être réduite. Pourquoi est-ce une bonne chose ? Car cela signifie que votre estimation sera plus précise ! Et qui dit précision dit inférence statistique. Ce qui nous intéresse au fond n'est pas tant le coefficient que vous obtenez, mais plus de savoir s'il y a des chances que sa vraie valeur soit en réalité de zéro. C'est la fameuse _significativité statistique_ des résultats à laquelle je fais ici référence. Si vous souhaitez un rappel plus poussé sur ce point, je vous renvoie aux diapositives 91 à 100 de votre leçon 4 sur les modèles bivariés. 
 
 
-#Un exemple d'analyse
+# Un exemple d'analyse
 
 Je vous propose de démontrer mon propos avec un modèle sur les rendements agricoles et la part de la population urbaine. J'ai un peu triché car j'ai téléchargé les données nécessaires à mon analyse sur le site de la Banque Mondiale. 
 
@@ -90,7 +90,7 @@ $rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i$
 
 Dans ce qui suit, je montre tout mon protocole, du chargement de données à l'estimation du modèle. Si vous avez attéri içi dans le but d'avoir plus de précision concernant cette histoire de variance et de précision, aller directement à la section correspondante. 
 
-##Chargement des données 
+## Chargement des données 
 Tout d'abord, je charge mes packages et j'initialise le chemin d'accès à mes données.
 
 ```{r setup, echo=FALSE}
@@ -137,7 +137,7 @@ Pour se faire on va se reporter à la _méthode 2_ du TD4. C'est à dire qu'on v
 
 Commençons.
 
-##Réordonner et nettoyer les deux bases de données indépendemment.
+## Réordonner et nettoyer les deux bases de données indépendemment.
 Pour obtenir des bases de données propre, je réalise deux opérations successives :
 
 * Tout d'abord je fait pivoter mes bases de données afin de passer d'un format large à un format long. J'utilise la fonction _pivot\_longer()_ qui fait le travail exactement opposé à la fonction _pivot\_wider()_ que je vous ai présenté en TD4. Comment cette fonction fonctionne-t-elle ? Elle prend trois paramètres. _cols_ indique la plage de colonnes que R doit faire pivoter. _names\_to_ indique le nom de la colonne qui va contenir comme valeur le nom des anciennes colonnes. Ici je choisi de nommer cette colonne "YEAR". Elle stockera donc le nom des anciennes colonnes définis dans la plage _cols_. Finalement, _values\_to_ me demande d'inventer un nom de colonne dans laquelle sera stockée  l'ensemble des valeurs associées à chaque pays par année. J'ai choisi "Urban Pop" ou "Yield" en fonction de la base. Notez que j'ai choisi ces noms de colonne, et que j'aurai pu les nommer autrement, en fonction de mon humeur.
@@ -164,7 +164,7 @@ head(agri_clean)
 ````{r}
 head(urba_clean)
 ```` 
-##Assembler les bases de données
+## Assembler les bases de données
 Il semblerait qu'il ne nous reste plus qu'à assembler les bases de données et nous pourrons procéder à l'analyse.
 
 On va réaliser cette jonction en utilisant la fonction _inner\_join()_ présentée dans le TD4 dans la méthode 2. Notez que je supprime les pays/années qui ont une donnée manquante pour le rendement ou la population urbaine.
@@ -183,12 +183,12 @@ head(base_final)
 
 Passons à l'analyse.
 
-##Analyse de la relation entre les variables
+## Analyse de la relation entre les variables
 Comment procéder à l'analyse ? 
 
 La première chose est dans doute de réaliser des statistiques descriptives de nos données.
 
-###Statistiques descriptives
+### Statistiques descriptives
 On peut tout d'abord regarder combien d'observations on a par année:
 ````{r}
 
@@ -274,7 +274,7 @@ reg1 = lm(Yield ~`Urban Pop` ,data = base_final)
 summary(reg1)
 ````
 
-#Qu'est-ce qui se passe lorsque l'échantillon diminue ?
+# Qu'est-ce qui se passe lorsque l'échantillon diminue ?
 Je vais à présent vous montrer ce qu'il se passe lorsque l'on réduit l'échantillon à peau de chagrin.
 
 Commençons par réduire l'échantillon à l'ensemble des pays, mais pour l'unique année 1970.
@@ -315,7 +315,7 @@ summary(reg3)
 ````
 J'espère que cette demonstration empirique vous convaincra de ne pas trop restreindre la taille de votre échantillon.
 
-#Comment faire pour comparer les coefficients entre pays ?
+# Comment faire pour comparer les coefficients entre pays ?
 Une autre question sur laquelle je souhaiterais m'attarder concerne la construction d'un modèle lorsque l'on souhaite comparer différents pays. Admettons que je veuille comparer le Botswana avec la France et les Etat-Unis. La tentation serait de construire trois bases de données distinctes et d'estimer la régression pour chaque pays séparement. Le problème c'est que l'on obtiendra ainsi des coefficients différents, mais il nous sera difficile de les comparer statistiquement.
 
 Alors comment faire ? Tout simplement en assemblant toutes les données dans une même base et en intégrant dans le modèle des __effet fixes__ et des __interactions__ qui captureront respectivement l'effet propre à chaque pays sur le phénomène analysé et l'effet singulier dans chaque pays de l'augmentation du facteur explicatif.

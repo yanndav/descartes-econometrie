@@ -544,7 +544,11 @@ div.tocify {
 <p>Pour faciliter ce travail, je vous propose sur cette page quelques éléments de réponses aux questions que vous vous poserez probablement.</p>
 <p>#Comment rédiger sa question de recherche ? Pour rappel, c’est un point que nous avons abordé lors de la <a href="https://yanndav.github.io/descartes-econometrie/td3.html">séance 3</a>. Pour faire court, la question commence par “Comment” et finit par un point d’interrogation. On cherche donc à expliquer les facteurs qui influencent le phénomène étudié. Dans la question de recherche, on peut mentionner clairement ces facteurs, ou bien laisser la question ouverte.</p>
 <p><em>Exemples: Comment la part du capital dans le revenu national influence-t-elle les inégalités ? Comment la part de population urbaine d’un État influe-t-elle sur la productivité de son agriculture ? Comment l’ouverture d’un pays au commerce mondial est-elle déterminée par la structure de son économie ?</em></p>
-<p>#Comment écrire son modèle économétrique ? ##De l’hypothèse au modèle économétrique On cherche à comprendre comment différents facteurs (les variables explicatives -&gt; X) déterminent un phénomène (la variable expliquée -&gt; Y).</p>
+<div id="comment-écrire-son-modèle-économétrique" class="section level1">
+<h1>Comment écrire son modèle économétrique ?</h1>
+<div id="de-lhypothèse-au-modèle-économétrique" class="section level2">
+<h2>De l’hypothèse au modèle économétrique</h2>
+<p>On cherche à comprendre comment différents facteurs (les variables explicatives -&gt; X) déterminent un phénomène (la variable expliquée -&gt; Y).</p>
 <p>Le modèle prend la forme : <span class="math inline">\(Y_i = \beta_0 + \beta_1 \times X_{1i} + \beta_2 \times X_{2i} + \epsilon_i\)</span></p>
 <p>Dans ce modèle, on explique le phénomène Y par deux facteurs X1 et X2.</p>
 <p>Ca vous fait sans doute une belle jambe - car ça ne répond probablement pas à la question que vous vous posiez. J’en conviens. Alors comment passer d’une hypothèse à une modèle économétrique ?</p>
@@ -562,7 +566,9 @@ div.tocify {
 <li><span class="math inline">\(\beta_1\)</span> capture l’impact sur le rendement agricole de l’augmentation d’1% de la part de la population totale qui habite en ville.</li>
 </ul>
 <p>Je suis donc passé d’une hypothèse à une équation toute simple: notre modèle économétrique.</p>
-<p>##Combien de facteurs intégrer dans son modèle ?</p>
+</div>
+<div id="combien-de-facteurs-intégrer-dans-son-modèle" class="section level2">
+<h2>Combien de facteurs intégrer dans son modèle ?</h2>
 <p>Dans mon exemple précédent, je n’ai considéré qu’un seul facteur affectant la productivité agricole. Evidémment, dans la réalité, il ne fait aucun doute que d’avantage de facteurs impactent la productivité agricole. Alors combien et pourquoi intégrer d’autres facteurs ? Trois considérations à prendre en compte pour vous apporter une réponse complète :</p>
 <ul>
 <li>Je pense tout d’abord qu’on peut distinguer deux types de facteurs explicatifs. On peut considérer qu’il y a des facteurs d’<strong>intérêt</strong> et des facteurs de <strong>contrôle</strong>. La première catégorie de variable va être au coeur de votre analyse - c’est à ces facteurs que vous vous intéressez. Par exemple si vous voulez analyser la relation entre part de population urbaine et productivité agricole, les variables qui vous intéressent sont celles qui regroupent des informations sur la population urbaine. C’est leur coefficient que vous allez analyser en priorité. Pour autant, il fait peu de doute que seule la part de population urbaine ne peut pas expliquer la productivité agricole. D’autres facteurs, qui sont nos fameux facteurs de <strong>contrôle</strong>, doivent donc être insérés au modèle. Ne pas intégrer ces contrôles c’est commettre un biais de variable omise. Cela signifie que le coefficient de la densité urbaine capturera l’effet de ces variables omises. La conséquence et que vous pouvez soit surestimer, soit sous-estimer l’impact réel de la densité urbaine sur la productivité agricole. Alors quelles variables de contrôle intégrer ? On pourrait en effet penser qu’une infinité de facteurs de contrôle vont avoir un impact sur l’agriculture. Je pense qu’une bonne manière de procéder et de distinguer votre modèle théorique, dans lequel vous pouvez intégrer plein de variables de contrôle qui vous semblent pertinentes, et votre modèle empirique.</li>
@@ -573,9 +579,15 @@ div.tocify {
 <ul>
 <li>Le dernier point à garder à l’esprit, c’est que votre modèle économétrique ne peut pas avoir plus de facteurs explicatifs (K) que d’observations (N) moins une. Ainsi la règle d’or en économétrie est K+1 &lt; N. Pourquoi ? Essayez de résoudre un système d’équations à trois inconnues avec deux équations seulement. Il vous manque une équation pour réaliser cette opération. Malheureusement, l’ordinateur n’est pas plus brillant que nous - il est juste plus rapide. Cela signifie que même si théoriquement vous pensez à une infinité de facteurs explicatifs, vous serez limités par votre nombre d’observations. C’est pour cela que je vous recommande d’avoir un échantillon le plus large possible : ne vous restreignez pas trop sur la couverture temporelle et/ou spatiale.</li>
 </ul>
-<p>#Combien d’observations intégrer dans ma base de données ? Nous parlions justement du nombre d’observation. Comme nous venons de le voir, plus vous considérez de facteurs dans votre modèle, plus vous avez intérêt à intégrer un grand nombre d’observations.</p>
+</div>
+</div>
+<div id="combien-dobservations-intégrer-dans-ma-base-de-données" class="section level1">
+<h1>Combien d’observations intégrer dans ma base de données ?</h1>
+<p>Nous parlions justement du nombre d’observation. Comme nous venons de le voir, plus vous considérez de facteurs dans votre modèle, plus vous avez intérêt à intégrer un grand nombre d’observations.</p>
 <p>Mais il existe une raison plus essentielle qui doit vous pousser à intégrer le plus grand nombre d’observations possibles : la variance de vos estimateurs. Rappelez-vous la formule de la variance vue en cours: <span class="math inline">\(\hat{\sigma}^2 = \frac{\sum_i (y_i - \hat{y}_i)^2}{N-K-1}\)</span> Plus vous allez avoir d’observations (N), plus votre variance va être réduite. Pourquoi est-ce une bonne chose ? Car cela signifie que votre estimation sera plus précise ! Et qui dit précision dit inférence statistique. Ce qui nous intéresse au fond n’est pas tant le coefficient que vous obtenez, mais plus de savoir s’il y a des chances que sa vraie valeur soit en réalité de zéro. C’est la fameuse <em>significativité statistique</em> des résultats à laquelle je fais ici référence. Si vous souhaitez un rappel plus poussé sur ce point, je vous renvoie aux diapositives 91 à 100 de votre leçon 4 sur les modèles bivariés.</p>
-<p>#Un exemple d’analyse</p>
+</div>
+<div id="un-exemple-danalyse" class="section level1">
+<h1>Un exemple d’analyse</h1>
 <p>Je vous propose de démontrer mon propos avec un modèle sur les rendements agricoles et la part de la population urbaine. J’ai un peu triché car j’ai téléchargé les données nécessaires à mon analyse sur le site de la Banque Mondiale.</p>
 <p>Mes deux variables sont :</p>
 <ul>
@@ -584,7 +596,9 @@ div.tocify {
 </ul>
 <p>Je cherche à estimer ce modèle : <span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i\)</span></p>
 <p>Dans ce qui suit, je montre tout mon protocole, du chargement de données à l’estimation du modèle. Si vous avez attéri içi dans le but d’avoir plus de précision concernant cette histoire de variance et de précision, aller directement à la section correspondante.</p>
-<p>##Chargement des données Tout d’abord, je charge mes packages et j’initialise le chemin d’accès à mes données.</p>
+<div id="chargement-des-données" class="section level2">
+<h2>Chargement des données</h2>
+<p>Tout d’abord, je charge mes packages et j’initialise le chemin d’accès à mes données.</p>
 <pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.6.3</code></pre>
 <pre><code>## -- Attaching packages ------------------------------------------------------------- tidyverse 1.3.0 --</code></pre>
 <pre><code>## v ggplot2 3.2.1     v purrr   0.3.3
@@ -627,7 +641,10 @@ div.tocify {
 <p>On constate donc que ce sont des données longitudinales : pour une variable donnée et par pays, nous pouvons suivre son évolution par année. C’est chouette, mais ça ne correspond pas au format de donnée que l’on souhaite. En effet, on cherche à avoir des données structurées comme on l’a <a href="https://yanndav.github.io/descartes-econometrie/td4.html">présenté lors du TD 4</a>. Pour reprendre le vocabulaire que l’on utilisait alors, c’est comme si les deux bases téléchargées sur le site de la Banque Mondiale étaient “larges”. C’est à dire qu’elles prennent pour <em>identifiants</em> le pays et l’indicateur (rendement ou population urbaine), tandis que le <em>facteur</em> est l’année. Or, on souhaiterait au contraire utiliser l’année et le pays comme <em>identifiants</em> et le rendement et la population urbaine comme <em>facteurs</em>.</p>
 <p>Pour se faire on va se reporter à la <em>méthode 2</em> du TD4. C’est à dire qu’on va d’abord réordonner les deux bases indépendemment avant de les assembler horizontalement.</p>
 <p>Commençons.</p>
-<p>##Réordonner et nettoyer les deux bases de données indépendemment. Pour obtenir des bases de données propre, je réalise deux opérations successives :</p>
+</div>
+<div id="réordonner-et-nettoyer-les-deux-bases-de-données-indépendemment." class="section level2">
+<h2>Réordonner et nettoyer les deux bases de données indépendemment.</h2>
+<p>Pour obtenir des bases de données propre, je réalise deux opérations successives :</p>
 <ul>
 <li>Tout d’abord je fait pivoter mes bases de données afin de passer d’un format large à un format long. J’utilise la fonction <em>pivot_longer()</em> qui fait le travail exactement opposé à la fonction <em>pivot_wider()</em> que je vous ai présenté en TD4. Comment cette fonction fonctionne-t-elle ? Elle prend trois paramètres. <em>cols</em> indique la plage de colonnes que R doit faire pivoter. <em>names_to</em> indique le nom de la colonne qui va contenir comme valeur le nom des anciennes colonnes. Ici je choisi de nommer cette colonne “YEAR”. Elle stockera donc le nom des anciennes colonnes définis dans la plage <em>cols</em>. Finalement, <em>values_to</em> me demande d’inventer un nom de colonne dans laquelle sera stockée l’ensemble des valeurs associées à chaque pays par année. J’ai choisi “Urban Pop” ou “Yield” en fonction de la base. Notez que j’ai choisi ces noms de colonne, et que j’aurai pu les nommer autrement, en fonction de mon humeur.</li>
 <li>La deuxième opération que je réalise et avec laquelle vous êtes maitenant familières et familiers est de sélectionner les variables que je vais conserver. J’utilise <em>select()</em> donc le fonctionnement a été expliqué dans le TD2.</li>
@@ -656,7 +673,10 @@ div.tocify {
 {"columns":[{"label":["Country.Name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Country.Code"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Urban Pop"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Aruba","2":"ABW","3":"X1960","4":"50.776"},{"1":"Aruba","2":"ABW","3":"X1961","4":"50.761"},{"1":"Aruba","2":"ABW","3":"X1962","4":"50.746"},{"1":"Aruba","2":"ABW","3":"X1963","4":"50.730"},{"1":"Aruba","2":"ABW","3":"X1964","4":"50.715"},{"1":"Aruba","2":"ABW","3":"X1965","4":"50.700"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<p>##Assembler les bases de données Il semblerait qu’il ne nous reste plus qu’à assembler les bases de données et nous pourrons procéder à l’analyse.</p>
+</div>
+<div id="assembler-les-bases-de-données" class="section level2">
+<h2>Assembler les bases de données</h2>
+<p>Il semblerait qu’il ne nous reste plus qu’à assembler les bases de données et nous pourrons procéder à l’analyse.</p>
 <p>On va réaliser cette jonction en utilisant la fonction <em>inner_join()</em> présentée dans le TD4 dans la méthode 2. Notez que je supprime les pays/années qui ont une donnée manquante pour le rendement ou la population urbaine.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">base_final =<span class="st"> </span><span class="kw">inner_join</span>(urba_clean,agri_clean) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb12-2" title="2"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(Yield) <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(<span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span>))</a></code></pre></div>
@@ -670,9 +690,14 @@ div.tocify {
   </script>
 </div>
 <p>Passons à l’analyse.</p>
-<p>##Analyse de la relation entre les variables Comment procéder à l’analyse ?</p>
+</div>
+<div id="analyse-de-la-relation-entre-les-variables" class="section level2">
+<h2>Analyse de la relation entre les variables</h2>
+<p>Comment procéder à l’analyse ?</p>
 <p>La première chose est dans doute de réaliser des statistiques descriptives de nos données.</p>
-<p>###Statistiques descriptives On peut tout d’abord regarder combien d’observations on a par année:</p>
+<div id="statistiques-descriptives" class="section level3">
+<h3>Statistiques descriptives</h3>
+<p>On peut tout d’abord regarder combien d’observations on a par année:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">ggplot</span>(base_final, <span class="kw">aes</span>(<span class="dt">x=</span> YEAR))<span class="op">+</span></a>
 <a class="sourceLine" id="cb15-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>()</a></code></pre></div>
 <p><img src="td5_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
@@ -1276,7 +1301,12 @@ div.tocify {
 ## Residual standard error: 1660 on 11773 degrees of freedom
 ## Multiple R-squared:  0.2192, Adjusted R-squared:  0.2191 
 ## F-statistic:  3305 on 1 and 11773 DF,  p-value: &lt; 2.2e-16</code></pre>
-<p>#Qu’est-ce qui se passe lorsque l’échantillon diminue ? Je vais à présent vous montrer ce qu’il se passe lorsque l’on réduit l’échantillon à peau de chagrin.</p>
+</div>
+</div>
+</div>
+<div id="quest-ce-qui-se-passe-lorsque-léchantillon-diminue" class="section level1">
+<h1>Qu’est-ce qui se passe lorsque l’échantillon diminue ?</h1>
+<p>Je vais à présent vous montrer ce qu’il se passe lorsque l’on réduit l’échantillon à peau de chagrin.</p>
 <p>Commençons par réduire l’échantillon à l’ensemble des pays, mais pour l’unique année 1970.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1">base_<span class="dv">1970</span> =<span class="st"> </span>base_final <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb30-2" title="2"><span class="st">  </span><span class="kw">filter</span>(YEAR <span class="op">==</span><span class="st"> &quot;1970&quot;</span>)</a></code></pre></div>
@@ -1338,7 +1368,10 @@ div.tocify {
 ## Multiple R-squared:  0.9913, Adjusted R-squared:  0.9826 
 ## F-statistic: 113.7 on 1 and 1 DF,  p-value: 0.05952</code></pre>
 <p>J’espère que cette demonstration empirique vous convaincra de ne pas trop restreindre la taille de votre échantillon.</p>
-<p>#Comment faire pour comparer les coefficients entre pays ? Une autre question sur laquelle je souhaiterais m’attarder concerne la construction d’un modèle lorsque l’on souhaite comparer différents pays. Admettons que je veuille comparer le Botswana avec la France et les Etat-Unis. La tentation serait de construire trois bases de données distinctes et d’estimer la régression pour chaque pays séparement. Le problème c’est que l’on obtiendra ainsi des coefficients différents, mais il nous sera difficile de les comparer statistiquement.</p>
+</div>
+<div id="comment-faire-pour-comparer-les-coefficients-entre-pays" class="section level1">
+<h1>Comment faire pour comparer les coefficients entre pays ?</h1>
+<p>Une autre question sur laquelle je souhaiterais m’attarder concerne la construction d’un modèle lorsque l’on souhaite comparer différents pays. Admettons que je veuille comparer le Botswana avec la France et les Etat-Unis. La tentation serait de construire trois bases de données distinctes et d’estimer la régression pour chaque pays séparement. Le problème c’est que l’on obtiendra ainsi des coefficients différents, mais il nous sera difficile de les comparer statistiquement.</p>
 <p>Alors comment faire ? Tout simplement en assemblant toutes les données dans une même base et en intégrant dans le modèle des <strong>effet fixes</strong> et des <strong>interactions</strong> qui captureront respectivement l’effet propre à chaque pays sur le phénomène analysé et l’effet singulier dans chaque pays de l’augmentation du facteur explicatif.</p>
 <p>Soyons plus clairs, passons à un exemple. Pour comparer le Botswana, les USA et la France sur le lien entre rendement agricole et population urbaine, je vous propose le modèle suivant : <span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times USA_i + \beta_3 \times FRA_i + \beta_4 \times USA_i \times part\_urbaine_i + \beta_5 \times USA_i \times part\_urbaine_i + \epsilon_i\)</span></p>
 <p>Première observation, j’ai exclus le Botswana du modèle. Pourquoi ? Car si j’intègre la variable “BWA” alors nous aurons un problème de “multicolinéarité parfaite” entre les facteurs (diapositive 36 de votre CM 5 sur les régressions multiples). Cela implique que tout le modèle est basé sur la comparaison par rapport à la situation du Botswana. Je m’explique :</p>
@@ -1400,6 +1433,7 @@ div.tocify {
 </ul>
 <p>Reste une question : ces associations sont-elles causales ? (non) Sont-elles intéressantes ? (oui). Pourquoi ? À vous de me le dire…</p>
 <p>Je vais m’arrrêter à ça pour aujourd’hui. Bonne semaine asynchrone à toutes et tous et au plaisir de vous retrouver en semaine 7 !</p>
+</div>
 
 
 
