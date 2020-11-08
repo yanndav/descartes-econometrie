@@ -1274,7 +1274,10 @@ div.tocify {
 <a class="sourceLine" id="cb26-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
 <p><img src="td5_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p>Il semblerait qu’il existe donc une association entre les deux phénomènes. On peut à présent revenir sur l’échantillon total et regarder comment cette relation se comporte.</p>
-<p>###Analyse de la relation bivariée Dans la continuité de ce que l’on a fait jusqu’à présent, on peut réaliser un graph de nuage de points sur la relation entre les deux variables. J’y ajoute une ligne dont la pente est le coefficient de régression entre les deux variables.</p>
+</div>
+<div id="analyse-de-la-relation-bivariée" class="section level3">
+<h3>Analyse de la relation bivariée</h3>
+<p>Dans la continuité de ce que l’on a fait jusqu’à présent, on peut réaliser un graph de nuage de points sur la relation entre les deux variables. J’y ajoute une ligne dont la pente est le coefficient de régression entre les deux variables.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">ggplot</span>(base_final, <span class="kw">aes</span>(<span class="dt">x=</span> <span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span>,</a>
 <a class="sourceLine" id="cb27-2" title="2">                       <span class="dt">y=</span>Yield))<span class="op">+</span></a>
 <a class="sourceLine" id="cb27-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>

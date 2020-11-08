@@ -256,7 +256,7 @@ ggplot(base_annuelle, aes(y= rendement,
 
 Il semblerait qu'il existe donc une association entre les deux phénomènes. On peut à présent revenir sur l'échantillon total et regarder comment cette relation se comporte.
 
-###Analyse de la relation bivariée
+### Analyse de la relation bivariée
 Dans la continuité de ce que l'on a fait jusqu'à présent, on peut réaliser un graph de nuage de points sur la relation entre les deux variables. J'y ajoute une ligne dont la pente est le coefficient de régression entre les deux variables. 
 
 ````{r}
