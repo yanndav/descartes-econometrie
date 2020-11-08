@@ -61,6 +61,7 @@ Dans mon exemple précédent, je n'ai considéré qu'un seul facteur affectant l
 
 Un premier modèle théorique pourrait donc être :
 $rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times PIB\_hab_{i} + \beta_3 \times fertilité\_sols_i + \beta_4 \times pluviométrie_i + \beta_5 \times surface\_agricole\_utile_i + \epsilon_i$ 
+
 Le premier modèle empirique que j'estimerai sera cependant :
 $rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i$
 
@@ -194,6 +195,7 @@ On peut tout d'abord regarder combien d'observations on a par année:
 ggplot(base_final, aes(x= YEAR))+
   geom_bar()
 ````
+
 Ce n'est pas terrible. Comment faire mieux ? Peut être en modifiant le nom des années qui ne semblent toutes avoir un 'X' devant et en effectuant une rotation des années sur l'axe de 'X'.
 
 ````{r}
@@ -212,10 +214,12 @@ ggplot(base_final, aes(x= Country.Code))+
   geom_bar()+
   theme(axis.text.x = element_text(angle = 90))
 ````
-C'est un beau bazarre. Bon, ce n'est par conséquent probablement pas la meilleur façon de visualiser cette information. On peut réaliser une table du nombre d'occurences plutôt.
+
+C'est un beau bazar. Bon, ce n'est par conséquent probablement pas la meilleur façon de visualiser cette information. On peut réaliser une table du nombre d'occurences plutôt.
 ````{r}
 table(base_final$Country.Name)
 ````
+
 Pour le coup, c'est presque trop précis. Difficile d'en tirer des conclusions. 
 
 On peut également regarder la moyenne des rendements, et la moyenne de la population urbaine :
@@ -242,12 +246,14 @@ ggplot(base_annuelle, aes(y= ville,
   geom_point()+
   theme(axis.text.x = element_text(angle = 90))
 ````
+
 On observe donc que les deux phénomènes que l'on souhaite étudier ont évolués dans la même direction. On peut également faire un graph qui croise ces deux données :
 ````{r}
 ggplot(base_annuelle, aes(y= rendement,
                        x=ville))+
   geom_point()
 ````
+
 Il semblerait qu'il existe donc une association entre les deux phénomènes. On peut à présent revenir sur l'échantillon total et regarder comment cette relation se comporte.
 
 ### Analyse de la relation bivariée
@@ -261,6 +267,7 @@ ggplot(base_final, aes(x= `Urban Pop`,
   geom_smooth(method = "lm")
 
 ````
+
 On observe une association positive entre les deux variables. Cette observation est confirmée lorsque l'on estime les coefficients de régression avec la fonction _lm()_ :
 ````{r}
 reg1 = lm(Yield ~`Urban Pop` ,data = base_final)
@@ -283,6 +290,7 @@ ggplot(base_1970, aes(x= `Urban Pop`,
   geom_point()+
   geom_smooth(method = "lm")
 ````
+
 Si, de manière un peu plus rigoureuse, on estime le modèle avec la fonction _lm()_, on observe que l'écart-type augmente significativement.
 ````{r}
 reg2 = lm(Yield ~`Urban Pop` ,data = base_1970)
@@ -298,6 +306,7 @@ ggplot(base_1970_USA_BWA, aes(x= `Urban Pop`,
   geom_point()+
   geom_smooth(method = "lm")
 ````
+
 L'écart-type a ici tellement augmenté que la significativité des résultats s'en trouve à présent sensiblement amoindrie. 
 ````{r}
 reg3 = lm(Yield ~`Urban Pop` ,data = base_1970_USA_BWA)

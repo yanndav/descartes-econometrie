@@ -577,7 +577,8 @@ div.tocify {
 <li>Je pense tout d’abord qu’on peut distinguer deux types de facteurs explicatifs. On peut considérer qu’il y a des facteurs d’intérêt et des facteurs de contrôle. La première catégorie de variable va être au coeur de votre analyse - c’est à ces facteurs que vous vous intéressez. Par exemple si vous voulez analyser la relation entre part de population urbaine et productivité agricole, les variables qui vous intéressent sont celles qui regroupent des informations sur la densité urbaine. C’est leur coefficient que vous allez analyser en priorité. Pour autant, il fait peu de doute que seule la part de population urbaine ne peut pas expliquer la productivité agricole. D’autres facteurs, qui sont nos fameux facteurs de contrôle doivent donc être insérés au modèle. Ne pas intégrer ces contrôles c’est commettre un biais de variable omise. Cela signifie que le coefficient de la densité urbaine capturera l’effet de ces variables omises. La conséquence et que vous pouvez soit surestimer, soit sous-estimer l’impact réel de la densité urbaine sur la productivité agricole. Alors quelles variables de contrôle intégrer ? On pourrait en effet penser qu’une infinité de facteurs de contrôle vont avoir un impact sur l’agriculture. Je pense qu’une bonne manière de procéder et de distinguer votre modèle théorique, dans lequel vous pouvez intégrer plein de variables de contrôle qui vous semblent pertinentes, et votre modèle empirique.</li>
 <li>Ainsi, c’est le deuxième point, je vous conseille d’écrire un modèle théorique le plus complet possible. Toutefois, quand vous passer au travail de données, commencez par l’essentiel : analyser d’abord la relation entre le phénomène étudié et les facteurs explicatifs d’intérêt. Ainsi, dans l’exemple que je citais précédemment, cela impliquerait que je ne prête attention qu’à la relation entre part de population urbaine et productivité agricole pour commencer. Vous ajouterez ensuite progressivement des données de contrôle à votre base de données… en fonction du temps qui vous reste.</li>
 </ul>
-<p>Un premier modèle théorique pourrait donc être : <span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times PIB\_hab_{i} + \beta_3 \times fertilité\_sols_i + \beta_4 \times pluviométrie_i + \beta_5 \times surface\_agricole\_utile_i + \epsilon_i\)</span> Le premier modèle empirique que j’estimerai sera cependant : <span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i\)</span></p>
+<p>Un premier modèle théorique pourrait donc être : <span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times PIB\_hab_{i} + \beta_3 \times fertilité\_sols_i + \beta_4 \times pluviométrie_i + \beta_5 \times surface\_agricole\_utile_i + \epsilon_i\)</span></p>
+<p>Le premier modèle empirique que j’estimerai sera cependant : <span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i\)</span></p>
 <ul>
 <li>Le dernier point à garder à l’esprit, c’est que votre modèle économétrique ne peut pas avoir plus de facteurs explicatifs (K) que d’observations (N) moins une. Ainsi la règle d’or en économétrie est K+1 &lt; N. Pourquoi ? Essayez de résoudre un système d’équations à trois inconnues avec deux équations seulement. Il vous manque une équation pour réaliser cette opération. Malheureusement, l’ordinateur n’est pas plus brillant que nous - il est juste plus rapide. Cela signifie que même si théoriquement vous pensez à une infinité de facteurs explicatifs, vous serez limités par votre nombre d’observations. C’est pour cela que je vous recommande d’avoir un échantillon le plus large possible : ne vous restreignez pas trop sur la couverture temporelle et/ou spatiale.</li>
 </ul>
@@ -702,7 +703,8 @@ div.tocify {
 <p>On peut tout d’abord regarder combien d’observations on a par année:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">ggplot</span>(base_final, <span class="kw">aes</span>(<span class="dt">x=</span> YEAR))<span class="op">+</span></a>
 <a class="sourceLine" id="cb15-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>()</a></code></pre></div>
-<p><img src="td5_files/figure-html/unnamed-chunk-10-1.png" width="672" /> Ce n’est pas terrible. Comment faire mieux ? Peut être en modifiant le nom des années qui ne semblent toutes avoir un ‘X’ devant et en effectuant une rotation des années sur l’axe de ‘X’.</p>
+<p><img src="td5_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Ce n’est pas terrible. Comment faire mieux ? Peut être en modifiant le nom des années qui ne semblent toutes avoir un ‘X’ devant et en effectuant une rotation des années sur l’axe de ‘X’.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">base_final =<span class="st"> </span>base_final <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb16-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">YEAR =</span> <span class="kw">str_remove</span>(YEAR, <span class="st">&quot;X&quot;</span>))</a>
 <a class="sourceLine" id="cb16-3" title="3"></a>
@@ -715,7 +717,8 @@ div.tocify {
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">ggplot</span>(base_final, <span class="kw">aes</span>(<span class="dt">x=</span> Country.Code))<span class="op">+</span></a>
 <a class="sourceLine" id="cb17-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>()<span class="op">+</span></a>
 <a class="sourceLine" id="cb17-3" title="3"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>))</a></code></pre></div>
-<p><img src="td5_files/figure-html/unnamed-chunk-12-1.png" width="672" /> C’est un beau bazarre. Bon, ce n’est par conséquent probablement pas la meilleur façon de visualiser cette information. On peut réaliser une table du nombre d’occurences plutôt.</p>
+<p><img src="td5_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>C’est un beau bazar. Bon, ce n’est par conséquent probablement pas la meilleur façon de visualiser cette information. On peut réaliser une table du nombre d’occurences plutôt.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">table</span>(base_final<span class="op">$</span>Country.Name)</a></code></pre></div>
 <pre><code>## 
 ##                                          Afghanistan 
@@ -1267,11 +1270,13 @@ div.tocify {
 <a class="sourceLine" id="cb25-2" title="2">                       <span class="dt">x=</span>YEAR))<span class="op">+</span></a>
 <a class="sourceLine" id="cb25-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>
 <a class="sourceLine" id="cb25-4" title="4"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>))</a></code></pre></div>
-<p><img src="td5_files/figure-html/unnamed-chunk-16-1.png" width="672" /> On observe donc que les deux phénomènes que l’on souhaite étudier ont évolués dans la même direction. On peut également faire un graph qui croise ces deux données :</p>
+<p><img src="td5_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>On observe donc que les deux phénomènes que l’on souhaite étudier ont évolués dans la même direction. On peut également faire un graph qui croise ces deux données :</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">ggplot</span>(base_annuelle, <span class="kw">aes</span>(<span class="dt">y=</span> rendement,</a>
 <a class="sourceLine" id="cb26-2" title="2">                       <span class="dt">x=</span>ville))<span class="op">+</span></a>
 <a class="sourceLine" id="cb26-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="td5_files/figure-html/unnamed-chunk-17-1.png" width="672" /> Il semblerait qu’il existe donc une association entre les deux phénomènes. On peut à présent revenir sur l’échantillon total et regarder comment cette relation se comporte.</p>
+<p><img src="td5_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>Il semblerait qu’il existe donc une association entre les deux phénomènes. On peut à présent revenir sur l’échantillon total et regarder comment cette relation se comporte.</p>
 </div>
 <div id="analyse-de-la-relation-bivariée" class="section level3">
 <h3>Analyse de la relation bivariée</h3>
@@ -1280,7 +1285,8 @@ div.tocify {
 <a class="sourceLine" id="cb27-2" title="2">                       <span class="dt">y=</span>Yield))<span class="op">+</span></a>
 <a class="sourceLine" id="cb27-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>
 <a class="sourceLine" id="cb27-4" title="4"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</a></code></pre></div>
-<p><img src="td5_files/figure-html/unnamed-chunk-18-1.png" width="672" /> On observe une association positive entre les deux variables. Cette observation est confirmée lorsque l’on estime les coefficients de régression avec la fonction <em>lm()</em> :</p>
+<p><img src="td5_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>On observe une association positive entre les deux variables. Cette observation est confirmée lorsque l’on estime les coefficients de régression avec la fonction <em>lm()</em> :</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1">reg1 =<span class="st"> </span><span class="kw">lm</span>(Yield <span class="op">~</span><span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span> ,<span class="dt">data =</span> base_final)</a>
 <a class="sourceLine" id="cb28-2" title="2"><span class="kw">summary</span>(reg1)</a></code></pre></div>
 <pre><code>## 
@@ -1314,7 +1320,8 @@ div.tocify {
 <a class="sourceLine" id="cb31-2" title="2">                       <span class="dt">y=</span>Yield))<span class="op">+</span></a>
 <a class="sourceLine" id="cb31-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>
 <a class="sourceLine" id="cb31-4" title="4"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</a></code></pre></div>
-<p><img src="td5_files/figure-html/unnamed-chunk-21-1.png" width="672" /> Si, de manière un peu plus rigoureuse, on estime le modèle avec la fonction <em>lm()</em>, on observe que l’écart-type augmente significativement.</p>
+<p><img src="td5_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>Si, de manière un peu plus rigoureuse, on estime le modèle avec la fonction <em>lm()</em>, on observe que l’écart-type augmente significativement.</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1">reg2 =<span class="st"> </span><span class="kw">lm</span>(Yield <span class="op">~</span><span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span> ,<span class="dt">data =</span> base_<span class="dv">1970</span>)</a>
 <a class="sourceLine" id="cb32-2" title="2"><span class="kw">summary</span>(reg2)</a></code></pre></div>
 <pre><code>## 
@@ -1343,7 +1350,8 @@ div.tocify {
 <a class="sourceLine" id="cb34-5" title="5">                      <span class="dt">y=</span>Yield))<span class="op">+</span></a>
 <a class="sourceLine" id="cb34-6" title="6"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>
 <a class="sourceLine" id="cb34-7" title="7"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</a></code></pre></div>
-<p><img src="td5_files/figure-html/unnamed-chunk-23-1.png" width="672" /> L’écart-type a ici tellement augmenté que la significativité des résultats s’en trouve à présent sensiblement amoindrie.</p>
+<p><img src="td5_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p>L’écart-type a ici tellement augmenté que la significativité des résultats s’en trouve à présent sensiblement amoindrie.</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">reg3 =<span class="st"> </span><span class="kw">lm</span>(Yield <span class="op">~</span><span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span> ,<span class="dt">data =</span> base_<span class="dv">1970</span>_USA_BWA)</a>
 <a class="sourceLine" id="cb35-2" title="2"><span class="kw">summary</span>(reg3)</a></code></pre></div>
 <pre><code>## 
