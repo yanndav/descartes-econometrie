@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>TD5 et TD6 - Novembre 2020</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      a.sourceLine { display: inline-block; line-height: 1.25; }
+  a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+  a.sourceLine:empty { height: 1.2em; }
+  .sourceCode { overflow: visible; }
+  code.sourceCode { white-space: pre; position: relative; }
+  div.sourceCode { margin: 1em 0; }
+  pre.sourceCode { margin: 0; }
+  @media screen {
+  div.sourceCode { overflow: auto; }
+  }
+  @media print {
+  code.sourceCode { white-space: pre-wrap; }
+  a.sourceLine { text-indent: -1em; padding-left: 1em; }
+  }
+  pre.numberSource a.sourceLine
+    { position: relative; left: -4em; }
+  pre.numberSource a.sourceLine::before
+    { content: attr(title);
+      position: relative; left: -1em; text-align: right; vertical-align: baseline;
+      border: none; pointer-events: all; display: inline-block;
+      -webkit-touch-callout: none; -webkit-user-select: none;
+      -khtml-user-select: none; -moz-user-select: none;
+      -ms-user-select: none; user-select: none;
+      padding: 0 4px; width: 4em;
+      color: #aaaaaa;
+    }
+  pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+  div.sourceCode
+    {  }
+  @media screen {
+  a.sourceLine::before { text-decoration: underline; }
+  }
+  code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+  code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+  code span.at { color: #7d9029; } /* Attribute */
+  code span.bn { color: #40a070; } /* BaseN */
+  code span.bu { } /* BuiltIn */
+  code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+  code span.ch { color: #4070a0; } /* Char */
+  code span.cn { color: #880000; } /* Constant */
+  code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+  code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+  code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+  code span.dt { color: #902000; } /* DataType */
+  code span.dv { color: #40a070; } /* DecVal */
+  code span.er { color: #ff0000; font-weight: bold; } /* Error */
+  code span.ex { } /* Extension */
+  code span.fl { color: #40a070; } /* Float */
+  code span.fu { color: #06287e; } /* Function */
+  code span.im { } /* Import */
+  code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+  code span.op { color: #666666; } /* Operator */
+  code span.ot { color: #007020; } /* Other */
+  code span.pp { color: #bc7a00; } /* Preprocessor */
+  code span.sc { color: #4070a0; } /* SpecialChar */
+  code span.ss { color: #bb6688; } /* SpecialString */
+  code span.st { color: #4070a0; } /* String */
+  code span.va { color: #19177c; } /* Variable */
+  code span.vs { color: #4070a0; } /* VerbatimString */
+  code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    </style>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Accueil</a>
+</li>
+<li>
+  <a href="td1.html">TD1 - 09/10</a>
+</li>
+<li>
+  <a href="td2.html">TD2 - 16/10</a>
+</li>
+<li>
+  <a href="td3.html">TD3 - 23/10</a>
+</li>
+<li>
+  <a href="td4.html">TD4 - 30/10</a>
+</li>
+<li>
+  <a href="td5.html">TD5/TD6 - 13/11</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">TD5 et TD6 - Novembre 2020</h1>
+<h3 class="subtitle">Objectifs pour la semaine asynchrone et réponses à vos questions</h3>
+
+</div>
+
+
+<p>Lors du TD5 nous avons profité de nos trois heures pour prendre le temps de faire le point de l’avancement de chaque groupe. Les problématiques rencontrées portaient principalement sur :</p>
+<ul>
+<li>La précision de la question de recherche et la définition exacte du phénomène à étudier</li>
+<li>La difficulté de définir son modèle économétrique</li>
+<li>Des problèmes dans R pour charger, modifier et assembler des bases</li>
+</ul>
+<p>J’ai pu, au cas par cas, suggérer quelques pistes d’avancement et nous avons défini un agenda commun d’objectifs à atteindre durant la semaine 6 asynchrone :</p>
+<ol style="list-style-type: decimal">
+<li>Définir avec précision votre question de recherche</li>
+<li>Ecrire un premier modèle économétrique qui répond à votre question de recherche</li>
+<li>Construire une première base de données</li>
+</ol>
+<p>Pour faciliter ce travail, je vous propose sur cette page quelques éléments de réponses aux questions que vous vous poserez probablement.</p>
+<div id="comment-rédiger-sa-question-de-recherche" class="section level1">
+<h1>Comment rédiger sa question de recherche ?</h1>
+<p>Pour rappel, c’est un point que nous avons abordé lors de la <a href="https://yanndav.github.io/descartes-econometrie/td3.html">séance 3</a>. Pour faire court, la question commence par “Comment” et finit par un point d’interrogation. On cherche donc à expliquer les facteurs qui influencent le phénomène étudié. Dans la question de recherche, on peut mentionner clairement ces facteurs, ou bien laisser la question ouverte.</p>
+<p><em>Exemples: Comment la part du capital dans le revenu national influence-t-elle les inégalités ? Comment la part de population urbaine d’un État influe-t-elle sur la productivité de son agriculture ? Comment l’ouverture d’un pays au commerce mondial est-elle déterminée par la structure de son économie ?</em></p>
+</div>
+<div id="comment-écrire-son-modèle-économétrique" class="section level1">
+<h1>Comment écrire son modèle économétrique ?</h1>
+<div id="de-lhypothèse-au-modèle-économétrique" class="section level2">
+<h2>De l’hypothèse au modèle économétrique</h2>
+<p>On cherche à comprendre comment différents facteurs (les variables explicatives -&gt; X) déterminent un phénomène (la variable expliquée -&gt; Y).</p>
+<p>Le modèle prend la forme : <span class="math inline">\(Y_i = \beta_0 + \beta_1 \times X_{1i} + \beta_2 \times X_{2i} + \epsilon_i\)</span></p>
+<p>Dans ce modèle, on explique le phénomène Y par deux facteurs X1 et X2.</p>
+<p>Ca vous fait sans doute une belle jambe - car ça ne répond probablement pas à la question que vous vous posiez. J’en convient. Alors comment passer d’une hypothèse à une modèle économétrique ?</p>
+<p>Le plus simple est sans doute de sortir du descriptif pour aborder du concret. Admettons que dans les exemples de question de recherche précédents, je me pense sur le lien entre part de la population urbaine et productivité agricole.</p>
+<p>Mon hypothèse et que lorsque la population urbaine augmente, au moins deux canaux feront que la productivité agricole se devra d’augmenter :</p>
+<ul>
+<li>Si l’augmentation de la part de la population urbaine provient simplement d’un excès de natalité en ville par rapport à la campagne (ce qui, disons le au passage, est rarement voir jamais observé), alors la demande pour les denrées alimentaires augmentera - ce qui poussera les prix vers le haut et entrainera soit de nouveaux entrants sur le marché soit poussera les exploitations agricoles à se moderniser pour répondre à la demande.</li>
+<li>Si l’augmentation de la part de la population urbaine provient d’un exode rurale, alors la demande augmentera comme dans le cas précédent. Ce qui change cependant, c’est que les exploitants agricoles devront produire plus avec moins de moyens, puisqu’une partie de la main d’oeuvre s’est réfugiée en ville. On peut faire l’hypothèse que ce deuxième scénario sera d’autant plus favorable à une mécanisation de l’agriculture.</li>
+</ul>
+<p>Voici deux hypothèses, qui je suis certain vous paraissent imparfaites ! C’est juste. On pourrait en faire plein d’autres - et elles resteraient aux oreilles de certains imparfaites. Alors comment tester nos conjectures ? Et bien en utilisant des données disponibles ! Avant de se pencher sur le mécanisme à l’oeuvre, il faut d’abord regarder si l’hypothèse centrale d’un lien positif entre part de la population urbaine et rendement agricole tient la route.</p>
+<p>Le modèle économétrique est donc :</p>
+<p><span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i\)</span></p>
+<ul>
+<li><span class="math inline">\(\beta_0\)</span> capture le rendement agricole quand la part de la population vivant en ville est égale à 0.</li>
+<li><span class="math inline">\(\beta_1\)</span> capture l’impact sur le rendement agricole du passage d’une population 100% rurale à une population 100% urbaine.</li>
+</ul>
+<p>Je suis donc passé d’une hypothèse à une équation toute simple: notre modèle économétrique.</p>
+</div>
+<div id="combien-de-facteurs-intégrer-dans-son-modèle" class="section level2">
+<h2>Combien de facteurs intégrer dans son modèle ?</h2>
+<p>Dans mon exemple précédent, je n’ai considéré qu’un seul facteur affectant la productivité agricole. Evidémment, dans la réalité, il ne fait aucun doute que d’avantage de facteurs imapactent la productivité agricole. Alors combien et pourquoi intégrer d’autres facteurs ? Trois considérations à prendre en compte pour vous apporter une réponse complète :</p>
+<ul>
+<li>Je pense tout d’abord qu’on peut distinguer deux types de facteurs explicatifs. On peut considérer qu’il y a des facteurs d’intérêt et des facteurs de contrôle. La première catégorie de variable va être au coeur de votre analyse - c’est à ces facteurs que vous vous intéressez. Par exemple si vous voulez analyser la relation entre part de population urbaine et productivité agricole, les variables qui vous intéressent sont celles qui regroupent des informations sur la densité urbaine. C’est leur coefficient que vous allez analyser en priorité. Pour autant, il fait peu de doute que seule la part de population urbaine ne peut pas expliquer la productivité agricole. D’autres facteurs, qui sont nos fameux facteurs de contrôle doivent donc être insérés au modèle. Ne pas intégrer ces contrôles c’est commettre un biais de variable omise. Cela signifie que le coefficient de la densité urbaine capturera l’effet de ces variables omises. La conséquence et que vous pouvez soit surestimer, soit sous-estimer l’impact réel de la densité urbaine sur la productivité agricole. Alors quelles variables de contrôle intégrer ? On pourrait en effet penser qu’une infinité de facteurs de contrôle vont avoir un impact sur l’agriculture. Je pense qu’une bonne manière de procéder et de distinguer votre modèle théorique, dans lequel vous pouvez intégrer plein de variables de contrôle qui vous semblent pertinentes, et votre modèle empirique.</li>
+<li>Ainsi, c’est le deuxième point, je vous conseille d’écrire un modèle théorique le plus complet possible. Toutefois, quand vous passer au travail de données, commencez par l’essentiel : analyser d’abord la relation entre le phénomène étudié et les facteurs explicatifs d’intérêt. Ainsi, dans l’exemple que je citais précédemment, cela impliquerait que je ne prête attention qu’à la relation entre part de population urbaine et productivité agricole pour commencer. Vous ajouterez ensuite progressivement des données de contrôle à votre base de données… en fonction du temps qui vous reste.</li>
+</ul>
+<p>Un premier modèle théorique pourrait donc être : <span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times PIB\_hab_{i} + \beta_3 \times fertilité\_sols_i + \beta_4 \times pluviométrie_i + \beta_5 \times surface\_agricole\_utile_i + \epsilon_i\)</span> Le premier modèle empirique que j’estimerai sera cependant : <span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i\)</span></p>
+<ul>
+<li>Le dernier point à garder à l’esprit, c’est que votre modèle économétrique ne peut pas avoir plus de facteurs explicatifs (K) que d’observations (N) moins une. Ainsi la règle d’or en économétrie est K+1 &lt; N. Pourquoi ? Essayez de résoudre un système d’équations à trois inconnues avec deux équations seulement. Il vous manque une équation pour réaliser cette opération. Malheureusement, l’ordinateur n’est pas plus brillant que nous - il est juste plus rapide. Cela signifie que même si théoriquement vous pensez à une infinité de facteurs explicatifs, vous serez limités par votre nombre d’observations. C’est pour cela que je vous recommande d’avoir un échantillon le plus large possible : ne vous restreignez pas trop sur la couverture temporelle et/ou spatiale.</li>
+</ul>
+</div>
+</div>
+<div id="combien-dobservations-intégrer-dans-ma-base-de-données" class="section level1">
+<h1>Combien d’observations intégrer dans ma base de données ?</h1>
+<p>Nous parlions justement du nombre d’observation. Comme nous venons de le voir, plus vous considérez de facteurs dans votre modèle, plus vou avez intérêt à intégrer un grand nombre d’observations.</p>
+<p>Mais il existe une raison plus essentielle qui doit vous pousser à intégrer le plus grand nombre d’observations possibles : la variance de vos estimateurs. Rappelez-vous la formule de la variance vue en cours: <span class="math inline">\(\hat{\sigma}^2 = \frac{\sum_i (y_i - \hat{y}_i)^2}{N-K-1}\)</span> Plus vous allez avoir d’observations (N), plus votre variance va être réduite. Pourquoi est-ce une bonne chose ? Car cela signifie que votre estimation sera plus précise ! Et qui dit précision dit inférence statistique. Ce qui nous intéresse au fond n’est pas tant le coefficient que vous obtenez, mais plus de savoir s’il y a des chances que sa vraie valeur soit en réalité de zéro. C’est la fameuse <em>significativité statistique</em> des résultats à laquelle je fais ici référence. Si vous souhaitez un rappel plus poussé sur ce point, je vous renvoie aux diapositives 91 à 100 de votre leçon 4 sur les modèles bivariés et multiples.</p>
+</div>
+<div id="un-exemple-danalyse" class="section level1">
+<h1>Un exemple d’analyse :</h1>
+<p>Je vous propose de démontrer mon propos avec un modèle sur les rendements agricoles et la part de la population urbaine. J’ai un peu triché car j’ai téléchargé les données nécessaires à mon analyse sur le site de la Banque Mondiale.</p>
+<p>Mes deux variables sont :</p>
+<ul>
+<li>Le rendement moyen en kilogrammes de blé par hectare par pays par année</li>
+<li>La part de la population urbaine sur la population totale par pays par année</li>
+</ul>
+<p>Je cherche à estimer ce modèle : <span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i\)</span></p>
+<p>Dans ce qui suit, je montre tout mon protocole, du chargement de données à l’estimation du modèle. Si vous avez attéri içi dans le but d’avoir plus de précision concernant cette histoire de variance et de précision, aller directement à la section correspondante.</p>
+<div id="chargement-des-données" class="section level2">
+<h2>Chargement des données</h2>
+<p>Tout d’abord, je charge mes packages et j’initialise le chemin d’accès à mes données.</p>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.6.3</code></pre>
+<pre><code>## -- Attaching packages ------------------------------------------------------------- tidyverse 1.3.0 --</code></pre>
+<pre><code>## v ggplot2 3.2.1     v purrr   0.3.3
+## v tibble  2.1.3     v dplyr   0.8.3
+## v tidyr   1.0.0     v stringr 1.4.0
+## v readr   1.3.1     v forcats 0.4.0</code></pre>
+<pre><code>## -- Conflicts ---------------------------------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># 01. PACKAGES ------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co"># install.packages(&#39;tidyverse&#39;)</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb5-4" title="4"></a>
+<a class="sourceLine" id="cb5-5" title="5"></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co"># 02. CHEMIN D&#39;ACCES AUX FICHIERS -----------------------------------------</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co"># ctrl + Majuscule + R: windows -&gt; créer un chapite</span></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co"># cmd + Shift + R</span></a>
+<a class="sourceLine" id="cb5-9" title="9">chemin =<span class="st"> &quot;D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut&quot;</span></a>
+<a class="sourceLine" id="cb5-10" title="10"></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="kw">setwd</span>(chemin)</a></code></pre></div>
+<p>À présent je charge les deux bases de données:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">urba  =<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;API_SP.URB.TOTL.IN.ZS_DS2_en_csv_v2_1622878.csv&quot;</span>,</a>
+<a class="sourceLine" id="cb6-2" title="2">                 <span class="dt">skip =</span> <span class="dv">4</span>) </a>
+<a class="sourceLine" id="cb6-3" title="3"></a>
+<a class="sourceLine" id="cb6-4" title="4">agri =<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;API_AG.YLD.CREL.KG_DS2_en_csv_v2_1624305.csv&quot;</span>,</a>
+<a class="sourceLine" id="cb6-5" title="5">                <span class="dt">skip =</span> <span class="dv">4</span>)</a></code></pre></div>
+<p>Les quatres premières lignes du fichier source ne contiennent pas d’information et je demande donc à la fonction <em>read.csv()</em> de les sauter. Regardons à quoi ressemble ces bases:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">head</span>(urba)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Country.Name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Country.Code"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["Indicator.Name"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["Indicator.Code"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["X1960"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["X1961"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["X1962"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["X1963"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["X1964"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["X1965"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["X1966"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["X1967"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["X1968"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["X1969"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["X1970"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["X1971"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["X1972"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["X1973"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["X1974"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["X1975"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["X1976"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["X1977"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["X1978"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["X1979"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["X1980"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["X1981"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["X1982"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["X1983"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["X1984"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["X1985"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["X1986"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["X1987"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["X1988"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["X1989"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["X1990"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["X1991"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["X1992"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["X1993"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["X1994"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["X1995"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["X1996"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["X1997"],"name":[42],"type":["dbl"],"align":["right"]},{"label":["X1998"],"name":[43],"type":["dbl"],"align":["right"]},{"label":["X1999"],"name":[44],"type":["dbl"],"align":["right"]},{"label":["X2000"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["X2001"],"name":[46],"type":["dbl"],"align":["right"]},{"label":["X2002"],"name":[47],"type":["dbl"],"align":["right"]},{"label":["X2003"],"name":[48],"type":["dbl"],"align":["right"]},{"label":["X2004"],"name":[49],"type":["dbl"],"align":["right"]},{"label":["X2005"],"name":[50],"type":["dbl"],"align":["right"]},{"label":["X2006"],"name":[51],"type":["dbl"],"align":["right"]},{"label":["X2007"],"name":[52],"type":["dbl"],"align":["right"]},{"label":["X2008"],"name":[53],"type":["dbl"],"align":["right"]},{"label":["X2009"],"name":[54],"type":["dbl"],"align":["right"]},{"label":["X2010"],"name":[55],"type":["dbl"],"align":["right"]},{"label":["X2011"],"name":[56],"type":["dbl"],"align":["right"]},{"label":["X2012"],"name":[57],"type":["dbl"],"align":["right"]},{"label":["X2013"],"name":[58],"type":["dbl"],"align":["right"]},{"label":["X2014"],"name":[59],"type":["dbl"],"align":["right"]},{"label":["X2015"],"name":[60],"type":["dbl"],"align":["right"]},{"label":["X2016"],"name":[61],"type":["dbl"],"align":["right"]},{"label":["X2017"],"name":[62],"type":["dbl"],"align":["right"]},{"label":["X2018"],"name":[63],"type":["dbl"],"align":["right"]},{"label":["X2019"],"name":[64],"type":["dbl"],"align":["right"]},{"label":["X2020"],"name":[65],"type":["lgl"],"align":["right"]},{"label":["X"],"name":[66],"type":["lgl"],"align":["right"]}],"data":[{"1":"Aruba","2":"ABW","3":"Urban population (% of total population)","4":"SP.URB.TOTL.IN.ZS","5":"50.77600","6":"50.76100","7":"50.74600","8":"50.7300","9":"50.7150","10":"50.7000","11":"50.68500","12":"50.67000","13":"50.65400","14":"50.63900","15":"50.62400","16":"50.60900","17":"50.593","18":"50.57800","19":"50.56300","20":"50.54800","21":"50.53200","22":"50.51700","23":"50.50200","24":"50.48700","25":"50.47200","26":"50.45600","27":"50.44100","28":"50.42600","29":"50.4110","30":"50.39500","31":"50.38000","32":"50.36500","33":"50.35000","34":"50.33500","35":"50.31900","36":"50.30400","37":"49.99800","38":"49.58800","39":"49.17700","40":"48.76700","41":"48.35600","42":"47.94600","43":"47.53600","44":"47.12700","45":"46.7170","46":"46.33900","47":"45.97200","48":"45.60600","49":"45.24000","50":"44.87500","51":"44.51100","52":"44.14700","53":"43.78300","54":"43.42100","55":"43.05900","56":"42.94000","57":"42.95700","58":"42.99000","59":"43.04100","60":"43.10800","61":"43.19200","62":"43.29300","63":"43.41100","64":"43.54600","65":"NA","66":"NA","_rn_":"1"},{"1":"Afghanistan","2":"AFG","3":"Urban population (% of total population)","4":"SP.URB.TOTL.IN.ZS","5":"8.40100","6":"8.68400","7":"8.97600","8":"9.2760","9":"9.5860","10":"9.9040","11":"10.23300","12":"10.57000","13":"10.91800","14":"11.27500","15":"11.64300","16":"12.02100","17":"12.410","18":"12.80900","19":"13.21900","20":"13.64100","21":"14.07400","22":"14.51700","23":"14.97300","24":"15.44200","25":"15.99500","26":"16.56200","27":"17.14700","28":"17.74700","29":"18.3650","30":"18.99700","31":"19.64700","32":"20.31400","33":"20.99800","34":"21.08800","35":"21.17700","36":"21.26600","37":"21.35500","38":"21.44400","39":"21.53400","40":"21.62400","41":"21.71400","42":"21.80500","43":"21.89500","44":"21.98600","45":"22.0780","46":"22.16900","47":"22.26100","48":"22.35300","49":"22.50000","50":"22.70300","51":"22.90700","52":"23.11300","53":"23.32000","54":"23.52800","55":"23.73700","56":"23.94800","57":"24.16000","58":"24.37300","59":"24.58700","60":"24.80300","61":"25.02000","62":"25.25000","63":"25.49500","64":"25.75400","65":"NA","66":"NA","_rn_":"2"},{"1":"Angola","2":"AGO","3":"Urban population (% of total population)","4":"SP.URB.TOTL.IN.ZS","5":"10.43500","6":"10.79800","7":"11.20400","8":"11.6240","9":"12.0580","10":"12.5040","11":"12.96500","12":"13.44100","13":"13.93200","14":"14.43600","15":"14.95700","16":"15.63200","17":"16.455","18":"17.31000","19":"18.20200","20":"19.12800","21":"20.09200","22":"21.08800","23":"22.12200","24":"23.19200","25":"24.29800","26":"25.43700","27":"26.61200","28":"27.82100","29":"29.0650","30":"30.33800","31":"31.64300","32":"32.97800","33":"34.34300","34":"35.73100","35":"37.14400","36":"38.58000","37":"40.03900","38":"41.51100","39":"43.00000","40":"44.16900","41":"45.34600","42":"46.52500","43":"47.71000","44":"48.89700","45":"50.0870","46":"51.27400","47":"52.46100","48":"53.64500","49":"54.82700","50":"56.00000","51":"56.76400","52":"57.52400","53":"58.28200","54":"59.03400","55":"59.78300","56":"60.52800","57":"61.26800","58":"62.00200","59":"62.73100","60":"63.44600","61":"64.14900","62":"64.83900","63":"65.51400","64":"66.17700","65":"NA","66":"NA","_rn_":"3"},{"1":"Albania","2":"ALB","3":"Urban population (% of total population)","4":"SP.URB.TOTL.IN.ZS","5":"30.70500","6":"30.94300","7":"31.01500","8":"31.0860","9":"31.1580","10":"31.2300","11":"31.30200","12":"31.37400","13":"31.44600","14":"31.54800","15":"31.74000","16":"31.93300","17":"32.127","18":"32.32100","19":"32.51600","20":"32.71200","21":"32.90800","22":"33.10500","23":"33.30200","24":"33.50000","25":"33.76200","26":"34.02400","27":"34.28700","28":"34.55200","29":"34.8170","30":"35.08300","31":"35.35000","32":"35.61900","33":"35.88800","34":"36.15800","35":"36.42800","36":"36.70000","37":"37.24900","38":"37.79900","39":"38.35400","40":"38.91100","41":"39.47300","42":"40.03500","43":"40.60100","44":"41.16900","45":"41.7410","46":"42.43500","47":"43.50100","48":"44.57300","49":"45.65100","50":"46.73100","51":"47.81500","52":"48.90200","53":"49.99100","54":"51.07600","55":"52.16300","56":"53.24700","57":"54.33000","58":"55.38700","59":"56.42300","60":"57.43400","61":"58.42100","62":"59.38300","63":"60.31900","64":"61.22900","65":"NA","66":"NA","_rn_":"4"},{"1":"Andorra","2":"AND","3":"Urban population (% of total population)","4":"SP.URB.TOTL.IN.ZS","5":"58.45000","6":"60.98300","7":"63.46200","8":"65.8720","9":"68.2050","10":"70.4450","11":"72.59300","12":"74.64100","13":"76.58800","14":"78.42400","15":"80.15500","16":"81.78000","17":"83.301","18":"84.71600","19":"86.03200","20":"87.25200","21":"88.38200","22":"89.42000","23":"90.37800","24":"91.25700","25":"92.06400","26":"92.80000","27":"93.47400","28":"94.08900","29":"94.6490","30":"95.15900","31":"95.32500","32":"95.17800","33":"95.02700","34":"94.87200","35":"94.71200","36":"94.53000","37":"94.32400","38":"94.11100","39":"93.89000","40":"93.66100","41":"93.42500","42":"93.18000","43":"92.92700","44":"92.66600","45":"92.3950","46":"92.05600","47":"91.64100","48":"91.20700","49":"90.75100","50":"90.28500","51":"89.80700","52":"89.30800","53":"89.00400","54":"88.91200","55":"88.81900","56":"88.72600","57":"88.63100","58":"88.53700","59":"88.44100","60":"88.34500","61":"88.24800","62":"88.15000","63":"88.06200","64":"87.98400","65":"NA","66":"NA","_rn_":"5"},{"1":"Arab World","2":"ARB","3":"Urban population (% of total population)","4":"SP.URB.TOTL.IN.ZS","5":"31.23414","6":"31.97992","7":"32.72913","8":"33.5016","9":"34.3036","10":"35.1477","11":"35.94979","12":"36.64106","13":"37.34396","14":"38.05621","15":"38.78067","16":"39.49124","17":"40.224","18":"40.94649","19":"41.59529","20":"42.20191","21":"42.77174","22":"43.29348","23":"43.80172","24":"44.30974","25":"44.84658","26":"45.40674","27":"45.97464","28":"46.57489","29":"47.2167","30":"47.83321","31":"48.44034","32":"48.97988","33":"49.43882","34":"49.84502","35":"50.39525","36":"50.78305","37":"50.77871","38":"51.15121","39":"51.40942","40":"51.89568","41":"52.06257","42":"52.26407","43":"52.49702","44":"52.74085","45":"52.9893","46":"53.25144","47":"53.51562","48":"53.80117","49":"54.10558","50":"54.47031","51":"54.86574","52":"55.14908","53":"55.57908","54":"56.00977","55":"56.44088","56":"56.79195","57":"57.09854","58":"57.40094","59":"57.69248","60":"58.03147","61":"58.34528","62":"58.64148","63":"58.92542","64":"59.20165","65":"NA","66":"NA","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">head</span>(agri)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Country.Name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Country.Code"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["Indicator.Name"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["Indicator.Code"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["X1960"],"name":[5],"type":["lgl"],"align":["right"]},{"label":["X1961"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["X1962"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["X1963"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["X1964"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["X1965"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["X1966"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["X1967"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["X1968"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["X1969"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["X1970"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["X1971"],"name":[16],"type":["dbl"],"align":["right"]},{"label":["X1972"],"name":[17],"type":["dbl"],"align":["right"]},{"label":["X1973"],"name":[18],"type":["dbl"],"align":["right"]},{"label":["X1974"],"name":[19],"type":["dbl"],"align":["right"]},{"label":["X1975"],"name":[20],"type":["dbl"],"align":["right"]},{"label":["X1976"],"name":[21],"type":["dbl"],"align":["right"]},{"label":["X1977"],"name":[22],"type":["dbl"],"align":["right"]},{"label":["X1978"],"name":[23],"type":["dbl"],"align":["right"]},{"label":["X1979"],"name":[24],"type":["dbl"],"align":["right"]},{"label":["X1980"],"name":[25],"type":["dbl"],"align":["right"]},{"label":["X1981"],"name":[26],"type":["dbl"],"align":["right"]},{"label":["X1982"],"name":[27],"type":["dbl"],"align":["right"]},{"label":["X1983"],"name":[28],"type":["dbl"],"align":["right"]},{"label":["X1984"],"name":[29],"type":["dbl"],"align":["right"]},{"label":["X1985"],"name":[30],"type":["dbl"],"align":["right"]},{"label":["X1986"],"name":[31],"type":["dbl"],"align":["right"]},{"label":["X1987"],"name":[32],"type":["dbl"],"align":["right"]},{"label":["X1988"],"name":[33],"type":["dbl"],"align":["right"]},{"label":["X1989"],"name":[34],"type":["dbl"],"align":["right"]},{"label":["X1990"],"name":[35],"type":["dbl"],"align":["right"]},{"label":["X1991"],"name":[36],"type":["dbl"],"align":["right"]},{"label":["X1992"],"name":[37],"type":["dbl"],"align":["right"]},{"label":["X1993"],"name":[38],"type":["dbl"],"align":["right"]},{"label":["X1994"],"name":[39],"type":["dbl"],"align":["right"]},{"label":["X1995"],"name":[40],"type":["dbl"],"align":["right"]},{"label":["X1996"],"name":[41],"type":["dbl"],"align":["right"]},{"label":["X1997"],"name":[42],"type":["dbl"],"align":["right"]},{"label":["X1998"],"name":[43],"type":["dbl"],"align":["right"]},{"label":["X1999"],"name":[44],"type":["dbl"],"align":["right"]},{"label":["X2000"],"name":[45],"type":["dbl"],"align":["right"]},{"label":["X2001"],"name":[46],"type":["dbl"],"align":["right"]},{"label":["X2002"],"name":[47],"type":["dbl"],"align":["right"]},{"label":["X2003"],"name":[48],"type":["dbl"],"align":["right"]},{"label":["X2004"],"name":[49],"type":["dbl"],"align":["right"]},{"label":["X2005"],"name":[50],"type":["dbl"],"align":["right"]},{"label":["X2006"],"name":[51],"type":["dbl"],"align":["right"]},{"label":["X2007"],"name":[52],"type":["dbl"],"align":["right"]},{"label":["X2008"],"name":[53],"type":["dbl"],"align":["right"]},{"label":["X2009"],"name":[54],"type":["dbl"],"align":["right"]},{"label":["X2010"],"name":[55],"type":["dbl"],"align":["right"]},{"label":["X2011"],"name":[56],"type":["dbl"],"align":["right"]},{"label":["X2012"],"name":[57],"type":["dbl"],"align":["right"]},{"label":["X2013"],"name":[58],"type":["dbl"],"align":["right"]},{"label":["X2014"],"name":[59],"type":["dbl"],"align":["right"]},{"label":["X2015"],"name":[60],"type":["dbl"],"align":["right"]},{"label":["X2016"],"name":[61],"type":["dbl"],"align":["right"]},{"label":["X2017"],"name":[62],"type":["dbl"],"align":["right"]},{"label":["X2018"],"name":[63],"type":["lgl"],"align":["right"]},{"label":["X2019"],"name":[64],"type":["lgl"],"align":["right"]},{"label":["X2020"],"name":[65],"type":["lgl"],"align":["right"]},{"label":["X"],"name":[66],"type":["lgl"],"align":["right"]}],"data":[{"1":"Aruba","2":"ABW","3":"Cereal yield (kg per hectare)","4":"AG.YLD.CREL.KG","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA","15":"NA","16":"NA","17":"NA","18":"NA","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"NA","43":"NA","44":"NA","45":"NA","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"NA","55":"NA","56":"NA","57":"NA","58":"NA","59":"NA","60":"NA","61":"NA","62":"NA","63":"NA","64":"NA","65":"NA","66":"NA","_rn_":"1"},{"1":"Afghanistan","2":"AFG","3":"Cereal yield (kg per hectare)","4":"AG.YLD.CREL.KG","5":"NA","6":"1115.1000","7":"1079.000","8":"985.800","9":"1082.8000","10":"1098.900","11":"1012.3000","12":"1224.500","13":"1287.500","14":"1310.40","15":"1105.100","16":"976.200","17":"1006.900","18":"1279.6000","19":"1301.900","20":"1316.400","21":"1362.400","22":"1224.0000","23":"1291.90","24":"1323.70","25":"1349.000","26":"1338.300","27":"1330.200","28":"1355.600","29":"1334.100","30":"1331.700","31":"1314.000","32":"1359.800","33":"1285.7","34":"1237.600","35":"1200.600","36":"1160.40","37":"1097.800","38":"1132.900","39":"1140.400","40":"1214.500","41":"1204.400","42":"1348.800","43":"1388.00","44":"1285.70","45":"806.300","46":"1006.700","47":"1669.800","48":"1458.000","49":"1334.800","50":"1790.400","51":"1551.700","52":"1915.300","53":"1455.400","54":"2040.700","55":"2011.100","56":"1659.900","57":"2029.600","58":"2048.500","59":"2017.500","60":"2133.000","61":"1981.600","62":"2024.700","63":"NA","64":"NA","65":"NA","66":"NA","_rn_":"2"},{"1":"Angola","2":"AGO","3":"Cereal yield (kg per hectare)","4":"AG.YLD.CREL.KG","5":"NA","6":"828.0000","7":"830.300","8":"798.400","9":"875.8000","10":"932.000","11":"824.3000","12":"814.600","13":"805.700","14":"898.90","15":"911.300","16":"805.700","17":"780.300","18":"764.0000","19":"712.600","20":"773.900","21":"775.500","22":"603.1000","23":"667.10","24":"509.20","25":"617.900","26":"451.100","27":"450.600","28":"484.600","29":"466.000","30":"449.100","31":"379.800","32":"381.200","33":"332.4","34":"277.400","35":"320.900","36":"417.50","37":"397.100","38":"268.000","39":"298.400","40":"401.500","41":"653.100","42":"567.400","43":"701.60","44":"620.40","45":"564.400","46":"585.400","47":"627.200","48":"646.100","49":"491.700","50":"583.400","51":"445.900","52":"464.300","53":"652.700","54":"571.400","55":"629.300","56":"662.400","57":"552.000","58":"814.400","59":"888.300","60":"982.000","61":"934.100","62":"904.500","63":"NA","64":"NA","65":"NA","66":"NA","_rn_":"3"},{"1":"Albania","2":"ALB","3":"Cereal yield (kg per hectare)","4":"AG.YLD.CREL.KG","5":"NA","6":"845.2000","7":"941.800","8":"982.300","9":"1023.3000","10":"1037.300","11":"1318.6000","12":"1464.100","13":"1553.700","14":"1639.80","15":"1646.100","16":"1753.600","17":"1768.700","18":"1843.0000","19":"1934.500","20":"2028.900","21":"2445.100","22":"2550.1000","23":"2620.20","24":"2634.80","25":"2364.000","26":"2500.600","27":"2715.200","28":"3046.000","29":"2966.300","30":"2900.600","31":"2990.300","32":"2965.600","33":"2875.0","34":"2961.700","35":"2794.400","36":"2071.90","37":"2158.600","38":"2685.000","39":"2460.900","40":"2841.500","41":"2450.900","42":"2833.300","43":"2872.10","44":"2798.10","45":"3175.100","46":"3030.800","47":"3291.900","48":"3185.700","49":"3466.300","50":"3462.100","51":"3602.600","52":"3728.400","53":"4081.200","54":"4315.300","55":"4761.800","56":"4750.700","57":"4883.800","58":"4949.800","59":"4892.600","60":"4873.800","61":"4716.400","62":"4813.000","63":"NA","64":"NA","65":"NA","66":"NA","_rn_":"4"},{"1":"Andorra","2":"AND","3":"Cereal yield (kg per hectare)","4":"AG.YLD.CREL.KG","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA","10":"NA","11":"NA","12":"NA","13":"NA","14":"NA","15":"NA","16":"NA","17":"NA","18":"NA","19":"NA","20":"NA","21":"NA","22":"NA","23":"NA","24":"NA","25":"NA","26":"NA","27":"NA","28":"NA","29":"NA","30":"NA","31":"NA","32":"NA","33":"NA","34":"NA","35":"NA","36":"NA","37":"NA","38":"NA","39":"NA","40":"NA","41":"NA","42":"NA","43":"NA","44":"NA","45":"NA","46":"NA","47":"NA","48":"NA","49":"NA","50":"NA","51":"NA","52":"NA","53":"NA","54":"NA","55":"NA","56":"NA","57":"NA","58":"NA","59":"NA","60":"NA","61":"NA","62":"NA","63":"NA","64":"NA","65":"NA","66":"NA","_rn_":"5"},{"1":"Arab World","2":"ARB","3":"Cereal yield (kg per hectare)","4":"AG.YLD.CREL.KG","5":"NA","6":"782.7931","7":"1139.948","8":"1058.281","9":"998.2132","10":"1048.709","11":"914.7651","12":"1023.386","13":"1247.852","14":"1124.99","15":"1047.043","16":"1180.148","17":"1302.401","18":"988.4791","19":"1163.978","20":"1158.056","21":"1216.302","22":"969.8989","23":"1150.79","24":"1077.59","25":"1277.715","26":"1165.942","27":"1273.073","28":"1152.106","29":"1185.781","30":"1370.522","31":"1526.891","32":"1381.033","33":"1766.8","34":"1471.583","35":"1577.809","36":"1784.72","37":"1598.684","38":"1646.613","39":"1937.829","40":"1738.905","41":"2020.641","42":"1859.857","43":"1850.62","44":"1845.47","45":"1766.194","46":"2010.623","47":"2290.249","48":"2321.069","49":"2250.007","50":"2092.246","51":"2452.069","52":"2104.587","53":"2295.869","54":"2615.316","55":"2241.254","56":"2523.282","57":"2031.372","58":"1966.458","59":"1795.737","60":"2119.373","61":"1744.945","62":"2023.717","63":"NA","64":"NA","65":"NA","66":"NA","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>On constate donc que ce sont des données longitudinales : pour une variable donnée et par pays, nous pouvons suivre son évolution par année. C’est chouette, mais ça ne correspond pas au format de donnée que l’on souhaite. En effet, on cherche à avoir des données structurées comme on l’a <a href="https://yanndav.github.io/descartes-econometrie/td4.html">présenté lors du TD 4</a>. Pour reprendre le vocabulaire que l’on utilisait alors, c’est comme si les deux bases que je souhaite utiliser était “larges”. C’est à dire qu’elles prennent pour <em>identifiant</em> le pays et l’indicateur (rendement ou populaiton urbaine), tandisque le <em>facteur</em> devient l’année. Hors, on souhaiterait au contraire utiliser l’année et le pays comme <em>identifiant</em> et le rendement et la population urbaine comme <em>facteurs</em>.</p>
+<p>Pour se faire on va se reporter à la <em>méthode 2</em> du TD4. C’est à dire qu’on va d’abord réordonner les deux bases indépendemment avant de les assembler horizontalement.</p>
+<p>Commençons.</p>
+</div>
+<div id="réordonner-et-nettoyer-les-deux-bases-de-données-indépendemment." class="section level2">
+<h2>Réordonner et nettoyer les deux bases de données indépendemment.</h2>
+<p>Pour obtenir des bases de données propre, je réalise deux opérations successives :</p>
+<ul>
+<li>Tout d’abord je fait pivoter mes bases de données afin de passer d’un format large à un format long. J’utilise la fonction <em>pivot_longer()</em> qui fait le travail exactement opposé à la fonction <em>pivot_wider()</em> que je vous ai présenté en TD4. Comment cette fonction fonctionne-t-elle ? Elle prend trois paramètres. <em>cols</em> indique la plage de colonnes que R doit faire pivoter. <em>names_to</em> indique le nom de la colonne qui va contenir comme valeur le nom des anciennes colonnes. Ici je choisi de nommer cette colonne “YEAR”. Elle stockera donc le nom des anciennes colonnes définis dans la plage <em>cols</em>. Finalement, <em>values_to</em> me demande d’inventer un nom de colonne dans laquelle sera stockée l’ensemble des valeurs associées à chaque pays par année. J’ai choisi “Urban Pop” ou “Yield” en fonction de la base. Notez que j’ai choisi ces noms de colonne, et que j’aurai pu les nommer autrement, en fonction de mon humeur.</li>
+<li>La deuxième opération que je réalise et avec laquelle vous êtes maitenant familières et familiers est de sélectionner les variables que je vais conserver. J’utilise <em>select()</em> donc le fonctionnement a été expliqué dans le TD2.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">urba_clean  =<span class="st"> </span>urba <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="st">&quot;X1960&quot;</span><span class="op">:</span><span class="st">&quot;X2020&quot;</span>,</a>
+<a class="sourceLine" id="cb9-3" title="3">               <span class="dt">names_to =</span> <span class="st">&quot;YEAR&quot;</span>,</a>
+<a class="sourceLine" id="cb9-4" title="4">               <span class="dt">values_to =</span> <span class="st">&quot;Urban Pop&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb9-5" title="5"><span class="st">  </span><span class="kw">select</span>(<span class="st">&quot;Country.Name&quot;</span>,<span class="st">&quot;Country.Code&quot;</span>,<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;Urban Pop&quot;</span>)</a>
+<a class="sourceLine" id="cb9-6" title="6"></a>
+<a class="sourceLine" id="cb9-7" title="7">agri_clean =<span class="st"> </span>agri<span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb9-8" title="8"><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="st">&quot;X1960&quot;</span><span class="op">:</span><span class="st">&quot;X2020&quot;</span>,</a>
+<a class="sourceLine" id="cb9-9" title="9">               <span class="dt">names_to =</span> <span class="st">&quot;YEAR&quot;</span>,</a>
+<a class="sourceLine" id="cb9-10" title="10">               <span class="dt">values_to =</span> <span class="st">&quot;Yield&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb9-11" title="11"><span class="st">  </span><span class="kw">select</span>(<span class="st">&quot;Country.Name&quot;</span>,<span class="st">&quot;Country.Code&quot;</span>,<span class="st">&quot;YEAR&quot;</span>,<span class="st">&quot;Yield&quot;</span>)</a></code></pre></div>
+<p>Voyons ce que nous obtenons ainsi:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">head</span>(agri_clean)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Country.Name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Country.Code"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Yield"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Aruba","2":"ABW","3":"X1960","4":"NA"},{"1":"Aruba","2":"ABW","3":"X1961","4":"NA"},{"1":"Aruba","2":"ABW","3":"X1962","4":"NA"},{"1":"Aruba","2":"ABW","3":"X1963","4":"NA"},{"1":"Aruba","2":"ABW","3":"X1964","4":"NA"},{"1":"Aruba","2":"ABW","3":"X1965","4":"NA"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">head</span>(urba_clean)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Country.Name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Country.Code"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Urban Pop"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"Aruba","2":"ABW","3":"X1960","4":"50.776"},{"1":"Aruba","2":"ABW","3":"X1961","4":"50.761"},{"1":"Aruba","2":"ABW","3":"X1962","4":"50.746"},{"1":"Aruba","2":"ABW","3":"X1963","4":"50.730"},{"1":"Aruba","2":"ABW","3":"X1964","4":"50.715"},{"1":"Aruba","2":"ABW","3":"X1965","4":"50.700"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="assembler-les-bases-de-données" class="section level2">
+<h2>Assembler les bases de données</h2>
+<p>Il semblerait qu’il ne nous reste plus qu’à assembler les bases de données et nous pourrons procéder à l’analyse.</p>
+<p>On va réaliser cette jonction en utilisant la fonction <em>inner_join()</em> présentée dans le TD4 dans la méthode 2. Notez que je supprime les pays/années qui ont une donnée manquante pour le rendement ou la population urbaine.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">base_final =<span class="st"> </span><span class="kw">inner_join</span>(urba_clean,agri_clean) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(Yield) <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(<span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span>))</a></code></pre></div>
+<pre><code>## Joining, by = c(&quot;Country.Name&quot;, &quot;Country.Code&quot;, &quot;YEAR&quot;)</code></pre>
+<p>R nous indique que les bases ont été jointes, parfait !</p>
+<p>Voici un extrait du résultat :</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">head</span>(base_final)</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Country.Name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Country.Code"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Urban Pop"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Yield"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Afghanistan","2":"AFG","3":"X1961","4":"8.684","5":"1115.1"},{"1":"Afghanistan","2":"AFG","3":"X1962","4":"8.976","5":"1079.0"},{"1":"Afghanistan","2":"AFG","3":"X1963","4":"9.276","5":"985.8"},{"1":"Afghanistan","2":"AFG","3":"X1964","4":"9.586","5":"1082.8"},{"1":"Afghanistan","2":"AFG","3":"X1965","4":"9.904","5":"1098.9"},{"1":"Afghanistan","2":"AFG","3":"X1966","4":"10.233","5":"1012.3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Passons à l’analyse.</p>
+</div>
+<div id="analyse-de-la-relation-entre-les-variables" class="section level2">
+<h2>Analyse de la relation entre les variables</h2>
+<p>Comment procéder à l’analyse ?</p>
+<p>La première chose est dans doute de réaliser des statistiques descriptives de nos données.</p>
+<div id="statistiques-descriptives" class="section level3">
+<h3>Statistiques descriptives</h3>
+<p>On peut tout d’abord regarder combien d’observations on a par année:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">ggplot</span>(base_final, <span class="kw">aes</span>(<span class="dt">x=</span> YEAR))<span class="op">+</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>()</a></code></pre></div>
+<p><img src="td5_files/figure-html/unnamed-chunk-10-1.png" width="672" /> Ce n’est pas terrible. Comment faire mieux ? Peut être en modifiant le nom des années qui ne semblent toutes avoir un ‘X’ devant et en effectuant une rotation des années sur l’axe de ‘X’.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">base_final =<span class="st"> </span>base_final <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">YEAR =</span> <span class="kw">str_remove</span>(YEAR, <span class="st">&quot;X&quot;</span>))</a>
+<a class="sourceLine" id="cb16-3" title="3"></a>
+<a class="sourceLine" id="cb16-4" title="4"></a>
+<a class="sourceLine" id="cb16-5" title="5"><span class="kw">ggplot</span>(base_final, <span class="kw">aes</span>(<span class="dt">x=</span> YEAR))<span class="op">+</span></a>
+<a class="sourceLine" id="cb16-6" title="6"><span class="st">  </span><span class="kw">geom_bar</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb16-7" title="7"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>))</a></code></pre></div>
+<p><img src="td5_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>On peut réaliser le même type de graph avec le nombre d’observations par Pays:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">ggplot</span>(base_final, <span class="kw">aes</span>(<span class="dt">x=</span> Country.Code))<span class="op">+</span></a>
+<a class="sourceLine" id="cb17-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb17-3" title="3"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>))</a></code></pre></div>
+<p><img src="td5_files/figure-html/unnamed-chunk-12-1.png" width="672" /> C’est un beau bazarre. Bon, ce n’est par conséquent probablement pas la meilleur façon de visualiser cette information. On peut réaliser une table du nombre d’occurences plutôt.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">table</span>(base_final<span class="op">$</span>Country.Name)</a></code></pre></div>
+<pre><code>## 
+##                                          Afghanistan 
+##                                                   57 
+##                                              Albania 
+##                                                   57 
+##                                              Algeria 
+##                                                   57 
+##                                       American Samoa 
+##                                                    0 
+##                                              Andorra 
+##                                                    0 
+##                                               Angola 
+##                                                   57 
+##                                  Antigua and Barbuda 
+##                                                   52 
+##                                           Arab World 
+##                                                   57 
+##                                            Argentina 
+##                                                   57 
+##                                              Armenia 
+##                                                   26 
+##                                                Aruba 
+##                                                    0 
+##                                            Australia 
+##                                                   57 
+##                                              Austria 
+##                                                   57 
+##                                           Azerbaijan 
+##                                                   26 
+##                                         Bahamas, The 
+##                                                   57 
+##                                              Bahrain 
+##                                                    0 
+##                                           Bangladesh 
+##                                                   57 
+##                                             Barbados 
+##                                                   57 
+##                                              Belarus 
+##                                                   26 
+##                                              Belgium 
+##                                                   18 
+##                                               Belize 
+##                                                   57 
+##                                                Benin 
+##                                                   57 
+##                                              Bermuda 
+##                                                    0 
+##                                               Bhutan 
+##                                                   57 
+##                                              Bolivia 
+##                                                   57 
+##                               Bosnia and Herzegovina 
+##                                                   26 
+##                                             Botswana 
+##                                                   57 
+##                                               Brazil 
+##                                                   57 
+##                               British Virgin Islands 
+##                                                    0 
+##                                    Brunei Darussalam 
+##                                                   57 
+##                                             Bulgaria 
+##                                                   57 
+##                                         Burkina Faso 
+##                                                   57 
+##                                              Burundi 
+##                                                   57 
+##                                           Cabo Verde 
+##                                                   57 
+##                                             Cambodia 
+##                                                   57 
+##                                             Cameroon 
+##                                                   57 
+##                                               Canada 
+##                                                   57 
+##                               Caribbean small states 
+##                                                   57 
+##                                       Cayman Islands 
+##                                                    0 
+##                             Central African Republic 
+##                                                   57 
+##                       Central Europe and the Baltics 
+##                                                   57 
+##                                                 Chad 
+##                                                   57 
+##                                      Channel Islands 
+##                                                    0 
+##                                                Chile 
+##                                                   57 
+##                                                China 
+##                                                   57 
+##                                             Colombia 
+##                                                   57 
+##                                              Comoros 
+##                                                   57 
+##                                     Congo, Dem. Rep. 
+##                                                   57 
+##                                          Congo, Rep. 
+##                                                   57 
+##                                           Costa Rica 
+##                                                   57 
+##                                        Cote d&#39;Ivoire 
+##                                                   57 
+##                                              Croatia 
+##                                                   26 
+##                                                 Cuba 
+##                                                   57 
+##                                              Curacao 
+##                                                    0 
+##                                               Cyprus 
+##                                                   57 
+##                                       Czech Republic 
+##                                                   25 
+##                                              Denmark 
+##                                                   57 
+##                                             Djibouti 
+##                                                   37 
+##                                             Dominica 
+##                                                   57 
+##                                   Dominican Republic 
+##                                                   57 
+##                           Early-demographic dividend 
+##                                                   57 
+##                                  East Asia &amp; Pacific 
+##                                                   57 
+##          East Asia &amp; Pacific (excluding high income) 
+##                                                   57 
+##           East Asia &amp; Pacific (IDA &amp; IBRD countries) 
+##                                                   57 
+##                                              Ecuador 
+##                                                   57 
+##                                     Egypt, Arab Rep. 
+##                                                   57 
+##                                          El Salvador 
+##                                                   57 
+##                                    Equatorial Guinea 
+##                                                    0 
+##                                              Eritrea 
+##                                                   19 
+##                                              Estonia 
+##                                                   26 
+##                                             Eswatini 
+##                                                   57 
+##                                             Ethiopia 
+##                                                   25 
+##                                            Euro area 
+##                                                   57 
+##                                Europe &amp; Central Asia 
+##                                                   57 
+##        Europe &amp; Central Asia (excluding high income) 
+##                                                   57 
+##         Europe &amp; Central Asia (IDA &amp; IBRD countries) 
+##                                                   57 
+##                                       European Union 
+##                                                   57 
+##                                        Faroe Islands 
+##                                                    0 
+##                                                 Fiji 
+##                                                   57 
+##                                              Finland 
+##                                                   57 
+##             Fragile and conflict affected situations 
+##                                                   57 
+##                                               France 
+##                                                   57 
+##                                     French Polynesia 
+##                                                    0 
+##                                                Gabon 
+##                                                   57 
+##                                          Gambia, The 
+##                                                   57 
+##                                              Georgia 
+##                                                   26 
+##                                              Germany 
+##                                                   57 
+##                                                Ghana 
+##                                                   57 
+##                                            Gibraltar 
+##                                                    0 
+##                                               Greece 
+##                                                   57 
+##                                            Greenland 
+##                                                    0 
+##                                              Grenada 
+##                                                   57 
+##                                                 Guam 
+##                                                   57 
+##                                            Guatemala 
+##                                                   57 
+##                                               Guinea 
+##                                                   57 
+##                                        Guinea-Bissau 
+##                                                   57 
+##                                               Guyana 
+##                                                   57 
+##                                                Haiti 
+##                                                   57 
+##               Heavily indebted poor countries (HIPC) 
+##                                                   57 
+##                                          High income 
+##                                                   57 
+##                                             Honduras 
+##                                                   57 
+##                                 Hong Kong SAR, China 
+##                                                   50 
+##                                              Hungary 
+##                                                   57 
+##                                            IBRD only 
+##                                                   57 
+##                                              Iceland 
+##                                                    0 
+##                                     IDA &amp; IBRD total 
+##                                                   57 
+##                                            IDA blend 
+##                                                   57 
+##                                             IDA only 
+##                                                   57 
+##                                            IDA total 
+##                                                   57 
+##                                                India 
+##                                                   57 
+##                                            Indonesia 
+##                                                   57 
+##                                   Iran, Islamic Rep. 
+##                                                   57 
+##                                                 Iraq 
+##                                                   57 
+##                                              Ireland 
+##                                                   57 
+##                                          Isle of Man 
+##                                                    0 
+##                                               Israel 
+##                                                   57 
+##                                                Italy 
+##                                                   57 
+##                                              Jamaica 
+##                                                   57 
+##                                                Japan 
+##                                                   57 
+##                                               Jordan 
+##                                                   57 
+##                                           Kazakhstan 
+##                                                   26 
+##                                                Kenya 
+##                                                   57 
+##                                             Kiribati 
+##                                                    0 
+##                          Korea, Dem. Peopleâ\200\231s Rep. 
+##                                                   57 
+##                                          Korea, Rep. 
+##                                                   57 
+##                                               Kosovo 
+##                                                    0 
+##                                               Kuwait 
+##                                                   50 
+##                                      Kyrgyz Republic 
+##                                                   26 
+##                                              Lao PDR 
+##                                                   57 
+##                            Late-demographic dividend 
+##                                                   57 
+##                            Latin America &amp; Caribbean 
+##                                                   57 
+##    Latin America &amp; Caribbean (excluding high income) 
+##                                                   57 
+## Latin America &amp; the Caribbean (IDA &amp; IBRD countries) 
+##                                                   57 
+##                                               Latvia 
+##                                                   26 
+##         Least developed countries: UN classification 
+##                                                   57 
+##                                              Lebanon 
+##                                                   57 
+##                                              Lesotho 
+##                                                   57 
+##                                              Liberia 
+##                                                   57 
+##                                                Libya 
+##                                                   57 
+##                                        Liechtenstein 
+##                                                    0 
+##                                            Lithuania 
+##                                                   26 
+##                                  Low &amp; middle income 
+##                                                   57 
+##                                           Low income 
+##                                                   57 
+##                                  Lower middle income 
+##                                                   57 
+##                                           Luxembourg 
+##                                                   18 
+##                                     Macao SAR, China 
+##                                                    0 
+##                                           Madagascar 
+##                                                   57 
+##                                               Malawi 
+##                                                   57 
+##                                             Malaysia 
+##                                                   57 
+##                                             Maldives 
+##                                                   57 
+##                                                 Mali 
+##                                                   57 
+##                                                Malta 
+##                                                   57 
+##                                     Marshall Islands 
+##                                                    0 
+##                                           Mauritania 
+##                                                   57 
+##                                            Mauritius 
+##                                                   57 
+##                                               Mexico 
+##                                                   57 
+##                                Micronesia, Fed. Sts. 
+##                                                   27 
+##                           Middle East &amp; North Africa 
+##                                                   57 
+##   Middle East &amp; North Africa (excluding high income) 
+##                                                   57 
+##    Middle East &amp; North Africa (IDA &amp; IBRD countries) 
+##                                                   57 
+##                                        Middle income 
+##                                                   57 
+##                                              Moldova 
+##                                                   26 
+##                                               Monaco 
+##                                                    0 
+##                                             Mongolia 
+##                                                   57 
+##                                           Montenegro 
+##                                                   12 
+##                                              Morocco 
+##                                                   57 
+##                                           Mozambique 
+##                                                   57 
+##                                              Myanmar 
+##                                                   57 
+##                                              Namibia 
+##                                                   57 
+##                                                Nauru 
+##                                                    0 
+##                                                Nepal 
+##                                                   57 
+##                                          Netherlands 
+##                                                   57 
+##                                        New Caledonia 
+##                                                   57 
+##                                          New Zealand 
+##                                                   57 
+##                                            Nicaragua 
+##                                                   57 
+##                                                Niger 
+##                                                   57 
+##                                              Nigeria 
+##                                                   57 
+##                                        North America 
+##                                                   57 
+##                                      North Macedonia 
+##                                                   25 
+##                             Northern Mariana Islands 
+##                                                    0 
+##                                               Norway 
+##                                                   57 
+##                                       Not classified 
+##                                                    0 
+##                                         OECD members 
+##                                                   57 
+##                                                 Oman 
+##                                                   57 
+##                                   Other small states 
+##                                                   57 
+##                          Pacific island small states 
+##                                                   57 
+##                                             Pakistan 
+##                                                   57 
+##                                                Palau 
+##                                                    0 
+##                                               Panama 
+##                                                   57 
+##                                     Papua New Guinea 
+##                                                   57 
+##                                             Paraguay 
+##                                                   57 
+##                                                 Peru 
+##                                                   57 
+##                                          Philippines 
+##                                                   57 
+##                                               Poland 
+##                                                   57 
+##                                             Portugal 
+##                                                   57 
+##                            Post-demographic dividend 
+##                                                   57 
+##                             Pre-demographic dividend 
+##                                                   57 
+##                                          Puerto Rico 
+##                                                   57 
+##                                                Qatar 
+##                                                   47 
+##                                              Romania 
+##                                                   57 
+##                                   Russian Federation 
+##                                                   26 
+##                                               Rwanda 
+##                                                   57 
+##                                                Samoa 
+##                                                    0 
+##                                           San Marino 
+##                                                    0 
+##                                Sao Tome and Principe 
+##                                                   57 
+##                                         Saudi Arabia 
+##                                                   57 
+##                                              Senegal 
+##                                                   57 
+##                                               Serbia 
+##                                                   12 
+##                                           Seychelles 
+##                                                    0 
+##                                         Sierra Leone 
+##                                                   57 
+##                                            Singapore 
+##                                                    0 
+##                            Sint Maarten (Dutch part) 
+##                                                    0 
+##                                      Slovak Republic 
+##                                                   25 
+##                                             Slovenia 
+##                                                   26 
+##                                         Small states 
+##                                                   57 
+##                                      Solomon Islands 
+##                                                   54 
+##                                              Somalia 
+##                                                   57 
+##                                         South Africa 
+##                                                   57 
+##                                           South Asia 
+##                                                   57 
+##                              South Asia (IDA &amp; IBRD) 
+##                                                   57 
+##                                          South Sudan 
+##                                                    6 
+##                                                Spain 
+##                                                   57 
+##                                            Sri Lanka 
+##                                                   57 
+##                                  St. Kitts and Nevis 
+##                                                    0 
+##                                            St. Lucia 
+##                                                   19 
+##                             St. Martin (French part) 
+##                                                    0 
+##                       St. Vincent and the Grenadines 
+##                                                   57 
+##                                   Sub-Saharan Africa 
+##                                                   57 
+##           Sub-Saharan Africa (excluding high income) 
+##                                                   57 
+##            Sub-Saharan Africa (IDA &amp; IBRD countries) 
+##                                                   57 
+##                                                Sudan 
+##                                                    6 
+##                                             Suriname 
+##                                                   57 
+##                                               Sweden 
+##                                                   57 
+##                                          Switzerland 
+##                                                   57 
+##                                 Syrian Arab Republic 
+##                                                   57 
+##                                           Tajikistan 
+##                                                   26 
+##                                             Tanzania 
+##                                                   57 
+##                                             Thailand 
+##                                                   57 
+##                                          Timor-Leste 
+##                                                   57 
+##                                                 Togo 
+##                                                   57 
+##                                                Tonga 
+##                                                    0 
+##                                  Trinidad and Tobago 
+##                                                   57 
+##                                              Tunisia 
+##                                                   57 
+##                                               Turkey 
+##                                                   57 
+##                                         Turkmenistan 
+##                                                   26 
+##                             Turks and Caicos Islands 
+##                                                    0 
+##                                               Tuvalu 
+##                                                    0 
+##                                               Uganda 
+##                                                   57 
+##                                              Ukraine 
+##                                                   26 
+##                                 United Arab Emirates 
+##                                                   41 
+##                                       United Kingdom 
+##                                                   57 
+##                                        United States 
+##                                                   57 
+##                                  Upper middle income 
+##                                                   57 
+##                                              Uruguay 
+##                                                   57 
+##                                           Uzbekistan 
+##                                                   26 
+##                                              Vanuatu 
+##                                                   57 
+##                                        Venezuela, RB 
+##                                                   57 
+##                                              Vietnam 
+##                                                   57 
+##                                Virgin Islands (U.S.) 
+##                                                    0 
+##                                   West Bank and Gaza 
+##                                                   23 
+##                                                World 
+##                                                   57 
+##                                          Yemen, Rep. 
+##                                                   57 
+##                                               Zambia 
+##                                                   57 
+##                                             Zimbabwe 
+##                                                   57</code></pre>
+<p>Pour le coup, c’est presque trop précis. Difficile d’en tirer des conclusions.</p>
+<p>On peut également regarder la moyenne des rendements, et la moyenne de la population urbaine :</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">mean</span>(base_final<span class="op">$</span><span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span>)</a></code></pre></div>
+<pre><code>## [1] 47.24018</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">mean</span>(base_final<span class="op">$</span>Yield)</a></code></pre></div>
+<pre><code>## [1] 2371.508</code></pre>
+<p>Une analyse intéressante serait d’avoir une vision dynamique de cette moyenne: comment a-t-elle évoluée par année ? Pour ce faire, on peut créer une petite base qui va donner par année la moyenne des deux indicateurs :</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1">base_annuelle =<span class="st"> </span>base_final <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb24-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(YEAR) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb24-3" title="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">rendement =</span> <span class="kw">mean</span>(Yield),</a>
+<a class="sourceLine" id="cb24-4" title="4">            <span class="dt">ville =</span> <span class="kw">mean</span>(<span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span>)) </a>
+<a class="sourceLine" id="cb24-5" title="5"></a>
+<a class="sourceLine" id="cb24-6" title="6"><span class="kw">ggplot</span>(base_annuelle, <span class="kw">aes</span>(<span class="dt">y=</span> rendement,</a>
+<a class="sourceLine" id="cb24-7" title="7">                       <span class="dt">x=</span>YEAR))<span class="op">+</span></a>
+<a class="sourceLine" id="cb24-8" title="8"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb24-9" title="9"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>))</a></code></pre></div>
+<p><img src="td5_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">ggplot</span>(base_annuelle, <span class="kw">aes</span>(<span class="dt">y=</span> ville,</a>
+<a class="sourceLine" id="cb25-2" title="2">                       <span class="dt">x=</span>YEAR))<span class="op">+</span></a>
+<a class="sourceLine" id="cb25-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb25-4" title="4"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>))</a></code></pre></div>
+<p><img src="td5_files/figure-html/unnamed-chunk-16-1.png" width="672" /> On observe donc que les deux phénomènes que l’on souhaite étudier ont évolués dans la même direction. On peut également faire un graph qui croise ces deux données :</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">ggplot</span>(base_annuelle, <span class="kw">aes</span>(<span class="dt">y=</span> rendement,</a>
+<a class="sourceLine" id="cb26-2" title="2">                       <span class="dt">x=</span>ville))<span class="op">+</span></a>
+<a class="sourceLine" id="cb26-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>()</a></code></pre></div>
+<p><img src="td5_files/figure-html/unnamed-chunk-17-1.png" width="672" /> Il semblerait qu’il existe donc une association entre les deux phénomènes. On peut à présent revenir sur l’échantillon total et regarder comment cette relation se comporte.</p>
+</div>
+<div id="analyse-de-la-relation-bivariée" class="section level3">
+<h3>Analyse de la relation bivariée</h3>
+<p>Dans la continuité de ce que l’on a fait jusqu’à présent, on peut réaliser un graph de nuage de points sur la relation entre les deux variables. J’y ajoute une ligne dont la pente est le coefficient de régression entre les deux variables.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">ggplot</span>(base_final, <span class="kw">aes</span>(<span class="dt">x=</span> <span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span>,</a>
+<a class="sourceLine" id="cb27-2" title="2">                       <span class="dt">y=</span>Yield))<span class="op">+</span></a>
+<a class="sourceLine" id="cb27-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb27-4" title="4"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</a></code></pre></div>
+<p><img src="td5_files/figure-html/unnamed-chunk-18-1.png" width="672" /> On observe une association positive entre les deux variables. Cette observation est confirmée lorsque l’on estime les coefficients de régression avec la fonction <em>lm()</em> :</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1">reg1 =<span class="st"> </span><span class="kw">lm</span>(Yield <span class="op">~</span><span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span> ,<span class="dt">data =</span> base_final)</a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="kw">summary</span>(reg1)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Yield ~ `Urban Pop`, data = base_final)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3048.1  -913.5  -267.6   600.1 25188.2 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   579.04      34.73   16.67   &lt;2e-16 ***
+## `Urban Pop`    37.94       0.66   57.49   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1660 on 11773 degrees of freedom
+## Multiple R-squared:  0.2192, Adjusted R-squared:  0.2191 
+## F-statistic:  3305 on 1 and 11773 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<div id="quest-ce-qui-se-passe-lorsque-léchantillon-diminue" class="section level2">
+<h2>Qu’est-ce qui se passe lorsque l’échantillon diminue ?</h2>
+<p>Je vais à présent vous montrer ce qu’il se passe lorsque l’on réduit l’échantillon à peau de chagrin.</p>
+<p>Commençons par réduire l’échantillon à l’ensemble des pays, mais pour l’unique année 1970.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1">base_<span class="dv">1970</span> =<span class="st"> </span>base_final <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb30-2" title="2"><span class="st">  </span><span class="kw">filter</span>(YEAR <span class="op">==</span><span class="st"> &quot;1970&quot;</span>)</a></code></pre></div>
+<p>Regardons à présent ce qu’il se passe sur la variance de notre coefficient. La petite bande grise autour de la ligne de régression correspond à l’écart-type, c’est à dire la racine carrée de la variance. On ne l’observait pas dans le précédent graph, car elle était bien plus petite.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="kw">ggplot</span>(base_<span class="dv">1970</span>, <span class="kw">aes</span>(<span class="dt">x=</span> <span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span>,</a>
+<a class="sourceLine" id="cb31-2" title="2">                       <span class="dt">y=</span>Yield))<span class="op">+</span></a>
+<a class="sourceLine" id="cb31-3" title="3"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb31-4" title="4"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</a></code></pre></div>
+<p><img src="td5_files/figure-html/unnamed-chunk-21-1.png" width="672" /> Si, de manière un peu plus rigoureuse, on estime le modèle avec la fonction <em>lm()</em>, on observe que l’écart-type augmente significativement.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1">reg2 =<span class="st"> </span><span class="kw">lm</span>(Yield <span class="op">~</span><span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span> ,<span class="dt">data =</span> base_<span class="dv">1970</span>)</a>
+<a class="sourceLine" id="cb32-2" title="2"><span class="kw">summary</span>(reg2)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Yield ~ `Urban Pop`, data = base_1970)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1743.1  -533.7  -115.6   472.4  2823.4 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  799.965    109.227   7.324 6.56e-12 ***
+## `Urban Pop`   20.897      2.506   8.340 1.46e-14 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 763.6 on 191 degrees of freedom
+## Multiple R-squared:  0.2669, Adjusted R-squared:  0.2631 
+## F-statistic: 69.55 on 1 and 191 DF,  p-value: 1.455e-14</code></pre>
+<p>Si l’on pousse le vice un peu plus loin encore et que l’on ne se focalise plus que sur trois pays pour l’année 1970, on observe que l’écart-type explose.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1">base_<span class="dv">1970</span>_USA_BWA =<span class="st"> </span>base_<span class="dv">1970</span> <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb34-2" title="2"><span class="st">  </span><span class="kw">filter</span>(Country.Code <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;BWA&quot;</span>,<span class="st">&quot;USA&quot;</span>,<span class="st">&quot;FRA&quot;</span>))</a>
+<a class="sourceLine" id="cb34-3" title="3"></a>
+<a class="sourceLine" id="cb34-4" title="4"><span class="kw">ggplot</span>(base_<span class="dv">1970</span>_USA_BWA, <span class="kw">aes</span>(<span class="dt">x=</span> <span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span>,</a>
+<a class="sourceLine" id="cb34-5" title="5">                      <span class="dt">y=</span>Yield))<span class="op">+</span></a>
+<a class="sourceLine" id="cb34-6" title="6"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb34-7" title="7"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</a></code></pre></div>
+<p><img src="td5_files/figure-html/unnamed-chunk-23-1.png" width="672" /> L’écart-type a ici tellement augmenté que la significativité des résultats s’en trouve à présent sensiblement amoindrie.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">reg3 =<span class="st"> </span><span class="kw">lm</span>(Yield <span class="op">~</span><span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span> ,<span class="dt">data =</span> base_<span class="dv">1970</span>_USA_BWA)</a>
+<a class="sourceLine" id="cb35-2" title="2"><span class="kw">summary</span>(reg3)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Yield ~ `Urban Pop`, data = base_1970_USA_BWA)
+## 
+## Residuals:
+##        1        2        3 
+##   -6.823  176.175 -169.352 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)  -317.61     274.85  -1.156   0.4541  
+## `Urban Pop`    49.48       4.64  10.665   0.0595 .
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 244.5 on 1 degrees of freedom
+## Multiple R-squared:  0.9913, Adjusted R-squared:  0.9826 
+## F-statistic: 113.7 on 1 and 1 DF,  p-value: 0.05952</code></pre>
+<p>J’espère que cette demonstration empirique vous convaincra de ne pas trop restreindre la taille de votre échantillon.</p>
+</div>
+<div id="comment-faire-pour-comparer-les-coefficients-entre-pays" class="section level2">
+<h2>Comment faire pour comparer les coefficients entre pays ?</h2>
+<p>Une autre question sur laquelle je souhaiterais m’attarder concerne la construction d’un modèle lorsque l’on souhaite comparer différents pays. Admettons que je veuille comparer le Botswana avec la France et les Etat-Unis. La tentation serait de construire trois bases de données distinctes et d’estimer la régression pour chaque pays séparement. Le problème c’est que l’on obtiendra ainsi des coefficients différents, mais il nous sera difficile de les comparer statistiquement.</p>
+<p>Alors comment faire ? Tout simplement en assemblant toutes les données dans une même base et en intégrant dans le modèle des <strong>effet fixes</strong> et des <strong>interactions</strong> qui captureront respectivement l’effet propre à chaque pays sur le phénomène analysé et l’effet singulier dans chaque pays de l’augmentation du facteur explicatif.</p>
+<p>Soyons plus clairs, passons à un exemple. Pour comparer le Botswana, les USA et la France sur le lien entre rendement agricole et population urbaine, je vous propose le modèle suivant : <span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times USA_i + \beta_3 \times FRA_i + \beta_4 \times USA_i \times part\_urbaine_i + \beta_5 \times USA_i \times part\_urbaine_i + \epsilon_i\)</span></p>
+<p>Première observation, j’ai exclus le Botswana du modèle. Pourquoi ? Car si j’intègre la variable “BWA” alors nous aurons un problème de “multicolinéarité parfaite” entre les facteurs (diapositive 36 de votre CM 5 sur les régressions multiples). Cela implique que tout le modèle est basé sur la comparaison par rapport à la situation du Botswana. Je m’explique :</p>
+<ul>
+<li><span class="math inline">\(\beta_0\)</span> capture le rendement agricole moyen au Botswana, si la population urbaine est de 0%, toute chose égale par ailleurs.</li>
+<li><span class="math inline">\(\beta_1\)</span> capture l’effet pour le Botswana de l’augmentation de la population urbaine d’1% sur le rendement agricole, toutes choses égale par ailleurs.</li>
+<li><span class="math inline">\(\beta_2\)</span> capture le rendement agricole américain moyen additionel à celui du Botswana, quand la population urbaine américaine est de 0%, toutes choses égale par ailleurs. Cela signifie que pour obtenir le rendement agricole moyen des USA quand il y a 0% de population urbaine, il faut additionner <span class="math inline">\(\beta_0 + \beta_2\)</span>.</li>
+<li>De la manière, <span class="math inline">\(\beta_3\)</span> capture la différence du rendement agricole français moyen par rapport à celui du Botswana, quand la population urbaine est égale à 0%, toutes choses égales par ailleurs. Pour obtenir le rendement moyen français quand la population est 100% agricole, il faut donc addtionner <span class="math inline">\(\beta_0 + \beta_3\)</span>.</li>
+<li><span class="math inline">\(\beta_4\)</span> capture quand à lui la différence entre les USA et le Botswana de l’impact de l’augmentation de la part d’urbain de 1%, toutes choses égales par ailleurs. Ce coefficient capture donc la spécificité des USA par rapport à notre pays référence qu’est le Botswana. La p-value de ce coefficient nous permet de savoir si l’effet de la population urbaine est significativement différent pour les USA de l’effet observé au Botswana.</li>
+<li><span class="math inline">\(\beta_5\)</span> capture finalement la différence de l’effet de l’augmentation de la population urbaine d’1% pour la France par rapport à l’effet observé au Botswana. Encore une fois, nous pouvons, grâce à la p-value en déduire la significativité statistique de cette différence.</li>
+</ul>
+<p>Ce modèle nous permet donc de comparer les résultats entre pays à partir d’un pays de référence ! Pas mal non ?</p>
+<p>Mais à quoi correspondent ces variables <em>USA</em> et <em>FRA</em> ? Et bien ce sont les fameuses variables <em>indicatrices</em> que vous avez découvert diapositive 136 de la leçon 3 sur les modèles bivariés. Voyons comment la construire. USA prendra la valeur 1 quand l’observation correspondra à une valeur américaine et la valeur 0 autrement. Il en est de même pour la variable FRA.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">base_analyse =<span class="st"> </span>base_final  <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="st">  </span><span class="kw">filter</span>(Country.Code <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;BWA&quot;</span>,<span class="st">&quot;USA&quot;</span>,<span class="st">&quot;FRA&quot;</span>)) <span class="op">%&gt;%</span><span class="st">  </span><span class="co"># Je ne garde que les données pour les trois pays</span></a>
+<a class="sourceLine" id="cb37-3" title="3"><span class="st">  </span><span class="co"># Je crée une variable FRA qui prend une valeur en fonction de la valeur de Country.Code</span></a>
+<a class="sourceLine" id="cb37-4" title="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">FRA =</span> <span class="kw">ifelse</span>(Country.Code <span class="op">==</span><span class="st"> &quot;FRA&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>), </a>
+<a class="sourceLine" id="cb37-5" title="5">  <span class="co"># Idem, USA prend la valeur 1 si Country.Code == 1, sinon elle prend la valeur 0</span></a>
+<a class="sourceLine" id="cb37-6" title="6">         <span class="dt">USA =</span> <span class="kw">ifelse</span>(Country.Code <span class="op">==</span><span class="st"> &quot;USA&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>))</a></code></pre></div>
+<p>Voici le résultat :</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1">base_analyse</a></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Country.Name"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Country.Code"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["YEAR"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Urban Pop"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Yield"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["FRA"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["USA"],"name":[7],"type":["dbl"],"align":["right"]}],"data":[{"1":"Botswana","2":"BWA","3":"1961","4":"3.097","5":"341.8","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1962","4":"3.134","5":"339.6","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1963","4":"3.171","5":"382.8","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1964","4":"3.318","5":"275.9","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1965","4":"3.839","5":"329.8","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1966","4":"4.437","5":"439.9","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1967","4":"5.124","5":"316.9","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1968","4":"5.912","5":"261.6","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1969","4":"6.810","5":"309.6","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1970","4":"7.834","5":"63.2","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1971","4":"8.998","5":"448.0","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1972","4":"9.695","5":"948.5","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1973","4":"10.381","5":"275.6","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1974","4":"11.110","5":"691.0","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1975","4":"11.884","5":"446.2","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1976","4":"12.705","5":"643.2","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1977","4":"13.572","5":"415.1","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1978","4":"14.489","5":"268.7","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1979","4":"15.457","5":"132.3","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1980","4":"16.479","5":"237.2","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1981","4":"17.552","5":"275.2","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1982","4":"19.489","5":"287.9","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1983","4":"21.723","5":"265.3","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1984","4":"24.139","5":"150.7","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1985","4":"26.724","5":"200.7","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1986","4":"29.483","5":"198.5","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1987","4":"32.401","5":"190.7","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1988","4":"35.467","5":"375.6","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1989","4":"38.648","5":"288.9","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1990","4":"41.933","5":"265.5","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1991","4":"45.292","5":"381.3","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1992","4":"46.443","5":"288.7","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1993","4":"47.286","5":"424.3","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1994","4":"48.133","5":"223.8","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1995","4":"48.981","5":"458.4","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1996","4":"49.830","5":"323.4","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1997","4":"50.677","5":"276.8","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1998","4":"51.525","5":"246.7","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"1999","4":"52.372","5":"228.5","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2000","4":"53.219","5":"152.6","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2001","4":"54.062","5":"554.4","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2002","4":"54.570","5":"357.3","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2003","4":"55.029","5":"1214.5","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2004","4":"55.488","5":"274.3","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2005","4":"55.944","5":"438.6","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2006","4":"56.400","5":"372.4","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2007","4":"57.928","5":"639.2","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2008","4":"59.444","5":"360.8","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2009","4":"60.937","5":"363.6","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2010","4":"62.412","5":"371.6","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2011","4":"63.865","5":"452.3","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2012","4":"64.768","5":"367.2","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2013","4":"65.572","5":"217.6","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2014","4":"66.368","5":"304.6","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2015","4":"67.155","5":"934.8","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2016","4":"67.933","5":"477.9","6":"0","7":"0"},{"1":"Botswana","2":"BWA","3":"2017","4":"68.700","5":"400.9","6":"0","7":"0"},{"1":"France","2":"FRA","3":"1961","4":"62.607","5":"2275.9","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1962","4":"63.489","5":"2689.7","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1963","4":"64.702","5":"2769.4","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1964","4":"65.898","5":"2823.4","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1965","4":"67.071","5":"3106.5","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1966","4":"68.225","5":"2908.1","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1967","4":"69.357","5":"3476.7","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1968","4":"70.238","5":"3570.9","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1969","4":"70.648","5":"3532.1","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1970","4":"71.055","5":"3374.4","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1971","4":"71.459","5":"3875.5","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1972","4":"71.860","5":"4168.7","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1973","4":"72.256","5":"4407.5","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1974","4":"72.650","5":"4179.3","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1975","4":"72.926","5":"3696.6","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1976","4":"72.997","5":"3440.8","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1977","4":"73.068","5":"4051.4","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1978","4":"73.140","5":"4630.5","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1979","4":"73.211","5":"4516.0","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1980","4":"73.282","5":"4854.2","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1981","4":"73.352","5":"4729.1","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1982","4":"73.425","5":"5007.5","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1983","4":"73.500","5":"4949.9","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1984","4":"73.575","5":"5976.8","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1985","4":"73.650","5":"5742.8","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1986","4":"73.725","5":"5301.6","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1987","4":"73.800","5":"5706.2","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1988","4":"73.875","5":"6080.8","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1989","4":"73.950","5":"6099.1","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1990","4":"74.056","5":"6082.6","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1991","4":"74.229","5":"6536.2","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1992","4":"74.401","5":"6485.4","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1993","4":"74.572","5":"6512.6","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1994","4":"74.743","5":"6542.6","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1995","4":"74.912","5":"6456.5","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1996","4":"75.082","5":"7082.4","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1997","4":"75.250","5":"6890.3","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1998","4":"75.417","5":"7415.4","6":"1","7":"0"},{"1":"France","2":"FRA","3":"1999","4":"75.614","5":"7260.4","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2000","4":"75.871","5":"7231.5","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2001","4":"76.127","5":"6729.2","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2002","4":"76.380","5":"7453.0","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2003","4":"76.632","5":"6125.3","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2004","4":"76.883","5":"7518.7","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2005","4":"77.130","5":"6965.4","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2006","4":"77.377","5":"6800.5","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2007","4":"77.621","5":"6520.6","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2008","4":"77.868","5":"7252.8","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2009","4":"78.117","5":"7412.4","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2010","4":"78.369","5":"7068.6","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2011","4":"78.622","5":"6919.3","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2012","4":"78.878","5":"7254.5","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2013","4":"79.135","5":"7084.8","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2014","4":"79.394","5":"7556.0","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2015","4":"79.655","5":"7570.0","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2016","4":"79.917","5":"5686.6","6":"1","7":"0"},{"1":"France","2":"FRA","3":"2017","4":"80.180","5":"6875.2","6":"1","7":"0"},{"1":"United States","2":"USA","3":"1961","4":"70.377","5":"2522.3","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1962","4":"70.757","5":"2683.1","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1963","4":"71.134","5":"2800.6","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1964","4":"71.508","5":"2639.3","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1965","4":"71.879","5":"3040.8","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1966","4":"72.247","5":"3016.7","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1967","4":"72.612","5":"3161.2","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1968","4":"72.974","5":"3212.8","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1969","4":"73.333","5":"3464.3","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1970","4":"73.602","5":"3154.9","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1971","4":"73.613","5":"3725.6","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1972","4":"73.623","5":"3908.2","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1973","4":"73.633","5":"3683.2","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1974","4":"73.643","5":"2997.5","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1975","4":"73.653","5":"3461.3","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1976","4":"73.663","5":"3533.0","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1977","4":"73.673","5":"3683.2","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1978","4":"73.682","5":"4109.8","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1979","4":"73.692","5":"4426.2","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1980","4":"73.738","5":"3771.9","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1981","4":"73.890","5":"4256.7","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1982","4":"74.042","5":"4370.6","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1983","4":"74.194","5":"3535.9","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1984","4":"74.344","5":"4374.1","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1985","4":"74.494","5":"4763.3","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1986","4":"74.644","5":"4698.9","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1987","4":"74.793","5":"4735.4","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1988","4":"74.942","5":"3706.9","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1989","4":"75.089","5":"4473.9","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1990","4":"75.300","5":"4755.1","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1991","4":"75.701","5":"4507.6","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1992","4":"76.097","5":"5357.8","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1993","4":"76.488","5":"4298.8","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1994","4":"76.875","5":"5560.0","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1995","4":"77.257","5":"4644.8","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1996","4":"77.636","5":"5175.3","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1997","4":"78.008","5":"5275.3","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1998","4":"78.377","5":"5676.5","6":"0","7":"1"},{"1":"United States","2":"USA","3":"1999","4":"78.742","5":"5736.5","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2000","4":"79.057","5":"5854.3","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2001","4":"79.234","5":"5891.1","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2002","4":"79.409","5":"5546.8","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2003","4":"79.583","5":"6023.7","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2004","4":"79.757","5":"6851.1","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2005","4":"79.928","5":"6450.7","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2006","4":"80.099","5":"6400.4","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2007","4":"80.269","5":"6704.4","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2008","4":"80.438","5":"6598.3","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2009","4":"80.606","5":"7226.2","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2010","4":"80.772","5":"6978.1","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2011","4":"80.944","5":"6803.5","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2012","4":"81.119","5":"5911.9","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2013","4":"81.299","5":"7300.9","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2014","4":"81.483","5":"7638.1","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2015","4":"81.671","5":"7430.5","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2016","4":"81.862","5":"8144.6","6":"0","7":"1"},{"1":"United States","2":"USA","3":"2017","4":"82.058","5":"8280.8","6":"0","7":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>On peut donc faire la régression que l’on souhaitait :</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1">reg_pays =<span class="st"> </span><span class="kw">lm</span>(Yield <span class="op">~</span><span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span><span class="op">+</span>USA <span class="op">+</span><span class="st"> </span>FRA <span class="op">+</span><span class="st"> </span>USA<span class="op">*</span><span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span> <span class="op">+</span><span class="st"> </span>FRA<span class="op">*</span><span class="st">`</span><span class="dt">Urban Pop</span><span class="st">`</span> ,<span class="dt">data =</span> base_analyse)</a>
+<a class="sourceLine" id="cb39-2" title="2"><span class="kw">summary</span>(reg_pays)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Yield ~ `Urban Pop` + USA + FRA + USA * `Urban Pop` + 
+##     FRA * `Urban Pop`, data = base_analyse)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1961.60  -214.61   -29.74   303.67  1365.65 
+## 
+## Coefficients:
+##                   Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)        326.775    127.055   2.572    0.011 *  
+## `Urban Pop`          1.280      3.051   0.419    0.675    
+## USA             -28917.636   1574.914 -18.361   &lt;2e-16 ***
+## FRA             -21066.057   1311.641 -16.061   &lt;2e-16 ***
+## `Urban Pop`:USA    437.730     20.786  21.059   &lt;2e-16 ***
+## `Urban Pop`:FRA    353.932     17.890  19.784   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 523.2 on 165 degrees of freedom
+## Multiple R-squared:  0.9618, Adjusted R-squared:  0.9607 
+## F-statistic: 831.5 on 5 and 165 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Analysons ces résultats:</p>
+<ul>
+<li><strong>L’Intercept</strong> nous indique que le rendement moyen au Botswana, lorsque la population est 100% rurale est égal à 326 kg/hectare. Ce résultat est significatif à 5%.</li>
+<li><strong>Urban Pop</strong> nous indique qu’une augmentation de 1% de la population urbaine au Botswana est associée à une augmentation de rendement de 1 kg/hec, toutes choses égales par ailleurs. Cependant ce résultat n’est pas statistiquement significatif, on ne peut donc pas rejeter l’hypothèse nulle que ce coefficient est en réalité égal à 0.</li>
+<li>Les coefficients de <strong>USA</strong> et <strong>FRA</strong> nous indique que la différence avec le Botswana du rendement moyen en l’absence de population urbaine est significativement négatif. Même en additionnant ces coefficients avec celui de l’intercept, on obtient un rendement négatif en l’absence d’urbanisation. Quoi ? Un rendement négatif en l’absence de population urbaine ? C’est du n’importe quoi me direz-vous. Attention ! ce résultat est probablement draîné par le fait que sur la période analysée, le taux d’urbanisation de ces deux pays a été très important et a grimpé très vite. Il n’y a donc jamais eu de niveau d’urbanisation proche de 0, ce qui explique les résultats… surprenants. Je vous rappelle que l’intercept capture l’origine de la droite de régression. Si les données observés pour les USA et la France ne portent que sur des taux d’urbanisation supérieurs à 50% et que la pente de régression est très raide et positive, alors si l’on trace la droite jusqu’à son origine, on attéri dans l’univers des nombre réels négatifs… Voici pourquoi l’intercept n’est pas toujours très intéressant.</li>
+<li>Commentons à présent les coefficients de <strong><code>Urban Pop</code>:USA </strong> et <strong><code>Urban Pop</code>:FRA</strong>. Ils nous indiquent que l’association entre rendement agricole et augmentation d’1% de la population urbaine est positivement et significativement plus importante qu’au Botwsana. Ainsi, par rapport à l’augmentation observée au Botswana un pourcent de population urbaine supplémentaire aux USA est associé à 437 kg/hectare d’augmentation du rendement des céréales. De plus, cette différence est significativement différente de 0, avec une probabilité de 99%.</li>
+</ul>
+<p>Je vais m’arrrêter à ça pour aujourd’hui. Bonne semaine asynchrone à toutes et tous !</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

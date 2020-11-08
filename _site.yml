@@ -13,6 +13,8 @@ navbar:
       href: td3.html
     - text: "TD4 - 30/10"
       href: td4.html
+    - text: "TD5/TD6 - 13/11"
+      href: td5.html
       
 output: 
   html_document:
