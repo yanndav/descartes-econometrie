@@ -83,6 +83,7 @@ library(tidyverse)
 ````
 ### Méthode 1 : Assemblage vertical puis pivotement
 Pour cette première méthode d'assemblage vertical, il nous faut d'abord nous assurer que les bases de données contiennent bien la même structure de variables : le même nombre de colonnes et les mêmes noms de colonnes. On procède tout d'abord à un nettoyage des bases de données.
+
 #### Etape 1 : Nettoyage des bases de données
 Après avoir regardé les différents noms de colonnes, je décide de ne conserver que les colonnes:
 
@@ -225,7 +226,7 @@ head(base_large_fin)
 ````
 VOilà qui est mieux, même si notre base est réduite à peau de chagrin car elle ne contient des informations sur les violences sexistes et sexuelles que pour trois pays sur une unique année. Ce n'est pas la meilleur base pour faire une analayse économétrique - mais c'était une super base pour vous montrer plein d'opérations sur R ! 
 
-### Méthode 2: 
+### Méthode 2: Pivotement puis assemblage horizontal
 Comme promis dans la partie introductive de ce TD, il existe une deuxième façon d'assembler deux bases de données : en réalisant d'abord le pivotement puis en assemblant les bases horizontalement. Je prends le temps de vous présenter cette autre méthode car je pense qu'elle a le potentiel de vous être utile en temps voulu. Le raisonnement peut aussi sembler moins compliqué que l'autre méthode pour certaines et certains.
 
 Je pars du principe que vous avez initialisé le package _tidyverse_ et que vos bases de données sont chargées. 

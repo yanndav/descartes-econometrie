@@ -583,17 +583,21 @@ div.tocify {
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># install.packages(&#39;tidyverse&#39;)</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 <pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.6.3</code></pre>
-<pre><code>## -- Attaching packages --- tidyverse 1.3.0 --</code></pre>
-<pre><code>## v tibble  2.1.3     v purrr   0.3.3
+<pre><code>## -- Attaching packages ------------------------------------------------ tidyverse 1.3.0 --</code></pre>
+<pre><code>## v ggplot2 3.2.1     v purrr   0.3.3
+## v tibble  2.1.3     v dplyr   0.8.3
 ## v tidyr   1.0.0     v stringr 1.4.0
 ## v readr   1.3.1     v forcats 0.4.0</code></pre>
-<pre><code>## -- Conflicts ------ tidyverse_conflicts() --
+<pre><code>## -- Conflicts --------------------------------------------------- tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 </div>
 <div id="méthode-1-assemblage-vertical-puis-pivotement" class="section level3">
 <h3>Méthode 1 : Assemblage vertical puis pivotement</h3>
-<p>Pour cette première méthode d’assemblage vertical, il nous faut d’abord nous assurer que les bases de données contiennent bien la même structure de variables : le même nombre de colonnes et les mêmes noms de colonnes. On procède tout d’abord à un nettoyage des bases de données. #### Etape 1 : Nettoyage des bases de données Après avoir regardé les différents noms de colonnes, je décide de ne conserver que les colonnes:</p>
+<p>Pour cette première méthode d’assemblage vertical, il nous faut d’abord nous assurer que les bases de données contiennent bien la même structure de variables : le même nombre de colonnes et les mêmes noms de colonnes. On procède tout d’abord à un nettoyage des bases de données.</p>
+<div id="etape-1-nettoyage-des-bases-de-données" class="section level4">
+<h4>Etape 1 : Nettoyage des bases de données</h4>
+<p>Après avoir regardé les différents noms de colonnes, je décide de ne conserver que les colonnes:</p>
 <ul>
 <li>“Pays”, (variable <em>identifiant</em>)</li>
 <li>“ï..COUNTRY”, (variable <em>identifiant</em>)</li>
@@ -636,6 +640,7 @@ div.tocify {
 <pre><code>## [1] &quot;LOCATION&quot;  &quot;Pays&quot;      &quot;Value&quot;     &quot;Variables&quot; &quot;YEAR&quot;</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">colnames</span>(emploi_net)</a></code></pre></div>
 <pre><code>## [1] &quot;Pays&quot;      &quot;LOCATION&quot;  &quot;Variables&quot; &quot;YEAR&quot;      &quot;Value&quot;</code></pre>
+</div>
 <div id="etape-2-assemblage-vertical-des-bases-de-données" class="section level4">
 <h4>Etape 2 : Assemblage vertical des bases de données</h4>
 <p>Génial ! Si l’on se rappelle ce qui était expliqué plus haut, cela signifie qu’il faut à présent procéder à l’assemblage vertical. Pour ce faire on utilise la fonction <em>rbind</em> qui est le diminutif de “row bind”, c’est à dire “assemblage par les lignes”.</p>
@@ -733,8 +738,8 @@ div.tocify {
 <p>VOilà qui est mieux, même si notre base est réduite à peau de chagrin car elle ne contient des informations sur les violences sexistes et sexuelles que pour trois pays sur une unique année. Ce n’est pas la meilleur base pour faire une analayse économétrique - mais c’était une super base pour vous montrer plein d’opérations sur R !</p>
 </div>
 </div>
-<div id="méthode-2" class="section level3">
-<h3>Méthode 2:</h3>
+<div id="méthode-2-pivotement-puis-assemblage-horizontal" class="section level3">
+<h3>Méthode 2: Pivotement puis assemblage horizontal</h3>
 <p>Comme promis dans la partie introductive de ce TD, il existe une deuxième façon d’assembler deux bases de données : en réalisant d’abord le pivotement puis en assemblant les bases horizontalement. Je prends le temps de vous présenter cette autre méthode car je pense qu’elle a le potentiel de vous être utile en temps voulu. Le raisonnement peut aussi sembler moins compliqué que l’autre méthode pour certaines et certains.</p>
 <p>Je pars du principe que vous avez initialisé le package <em>tidyverse</em> et que vos bases de données sont chargées.</p>
 <div id="etape-1-pivotement" class="section level4">

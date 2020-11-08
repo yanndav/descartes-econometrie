@@ -18,7 +18,7 @@ J'ai pu, au cas par cas, suggérer quelques pistes d'avancement et nous avons d�
 
 Pour faciliter ce travail, je vous propose sur cette page quelques éléments de réponses aux questions que vous vous poserez probablement.
 
-#Comment rédiger sa question de recherche ?
+# Comment rédiger sa question de recherche ?
 Pour rappel, c'est un point que nous avons abordé lors de la [séance 3](https://yanndav.github.io/descartes-econometrie/td3.html). Pour faire court, la question commence par "Comment" et finit par un point d'interrogation. On cherche donc à expliquer les facteurs qui influencent le phénomène étudié. Dans la question de recherche, on peut mentionner clairement ces facteurs, ou bien laisser la question ouverte.
 
 _Exemples: Comment la part du capital dans le revenu national influence-t-elle les inégalités ? Comment la part de population urbaine d'un État influe-t-elle sur la productivité de son agriculture ? Comment l'ouverture d'un pays au commerce mondial est-elle déterminée par la structure de son économie ?_
