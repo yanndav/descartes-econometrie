@@ -15,7 +15,8 @@ navbar:
       href: td4.html
     - text: "TD5/TD6 - 13/11"
       href: td5.html
-      
+    - text: "TD7 - 20/11"
+      href: td7.html
 output: 
   html_document:
     toc: true

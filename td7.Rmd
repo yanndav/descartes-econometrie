@@ -1,0 +1,227 @@
+---
+title: "TD 7 - 20 Novembre 2020"
+subtitle: "Statistiques Descriptives et Analyse des Estimations Econométriques"
+
+---
+
+Cette semaine nous passons à l'analyse des données que vous avez assemblées, en application du modèle que vous avez défini. Dans ce résumé en ligne, nous allons regarder différentes _formes fonctionelles_ de modèle économétrique ainsi que leur interprétation.
+
+# Les données et le modèle
+Nous reprenons la recherche initiée dans le TD5/6 où j'essayais de mesurer la relation entre productivité agricole et densité urbaine. Cette fois-ci, j'ai ajouté quelques facteurs de contrôle supplémentaires à ma base de donnée. 
+
+Le modèle linéaire que je souhaite estimer est donc :
+
+$rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times VA\_agri_i + \beta_3 \times SAU_i + \beta_4 \times PIB\_hab_i + \epsilon_i$ 
+
+Où les variables sont : 
+
+* $rendement\_agricole_i$ : Le rendement moyen des en kilogramme de cérales par hectare
+* $part\_urbaine_i$ : La part de la population urbaine sur la population totale
+* $VA\_agri_i$ : La part de l'agriculture dans la valeur ajoutée totale
+* $SAU_i$ : La part de l'espace agricole utilisable sur la surface totale du pays
+* $PIB\_hab_i$ : Le PIB par habitant
+
+Toutes ces variables sont définis par pays par année.
+```{r setup, echo=FALSE, message=FALSE,error=FALSE, warning=FALSE}
+chemin = "D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut"
+knitr::opts_knit$set(root.dir = chemin)
+require(tidyverse)
+require(ggplot2)
+```
+
+J'ai compilé toutes ces données dans la base suivante :
+```{r}
+chemin = "D:/OneDrive - sciencespo.fr/Suivi Descartes/Projet/donnees/brut"
+setwd(chemin)
+
+base_agri = readRDS(file='base_agri.RDS')
+base_agri
+```
+Je peux obtenir des statistiques descriptives de mes données:
+```{r}
+summary(base_agri)
+```
+Passons maintenant aux différentes formes fonctionnelles et à leurs implications:
+
+# Modèle linéaire
+Commençons par estimer le modèle défini précédemment dans son plus simple appareil, sous une forme linéaire : 
+$rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times VA\_agri_i + \beta_3 \times SAU_i + \beta_4 \times PIB\_hab_i + \epsilon_i$ 
+
+Avec ce modèle, on fait l'hypothèse que la relation entre les facteurs explicatifs et les rendements agricoles est linéraire. On estime le modèle avec la régression suivante :
+```{r}
+reg_lineaire = lm(Yield ~ `Urban Pop` + Share +
+                    agri_ad_val + gdp_cap, 
+                  data=base_agri)
+
+summary(reg_lineaire)
+```
+Les coefficients s'interprètent comme tel:
+
+* _Intercept_ : Les rendements agricoles moyens, lorsque tous les autres facteurs valent 0, sont de 825.10 kg/hectares. Ce résultat est significativement de zéro avec un niveau de confiance de 99.999%.
+* _Urban Pop_ : Une augmentation d'un point de pourcentage de la part urbaine de la population est associée à une augmentation moyenne de 22.35 kg/ha de rendement en céréales, toutes choses égales par ailleurs. Ce résultat est également hautement significatif.
+* _Share_ : Une augmentation d'un point de pourcentage de la part de la surface totale du territoire consacrée à l'agriculture est associée à une augmentation moyenne de 2.9 kg/ha de rendements agricoles, toutes choses égales par ailleurs.
+* _agri\_ad\_val_ : Une augmentation d'un point de pourcentage de de la part de l'agriculture dans la valeur ajoutée d'un pays est associée à une diminution moyenne de 4.75 kg/ha de céréales, toutes choses égales par ailleurs. Ce résultat est statistiquement significatif à un niveau de confiance de 95%.
+* _gdp_cap_ : Une augmentation de 1$ du pib par habitant est associé à une augmentation moyenne de 0.04 kg de céréales, toutes choses égales par ailleurs. Cette estimation est significativement différentes de zéro à un niveau de confiance de près de 100%.
+
+
+# Modèle Polynomial
+Passons maintenant à ce que l'on appelle un modèle polynomial.
+
+L'idée d'une modèle polynomial est d'adapter le modèle à une potentielle relation quadratique entre une variable explicative et la variable expliquée. Vous vous demandez probablement ce que l'on entend par _relation quadratique_. Très intuitivement c'est lorsque l'on considère que la relation entre les deux variables ne va pas être constante: elle va être convexe ou concave, c'est à dire que les effets marginaux ne seront pas constants. Par exemple, on peut faire l'hypothèse qu'en partant de zéro, lorsque le PIB par habitant va augmenter, on va d'abord constater une augmentation de la productivité agricole. Hors, à force que la richesse par habitant augmentera, l'augmentation de la productivité agricole va progressivement se stabiliser. Ici, on observera donc une relation concave ! C'est à dire que l'effet marginal d'une augmentation du PIB par habitant est de moins en moins important.  On va utiliser la forme quadratique pour savoir si la relation entre la variable explicative et la variable expliquée est de nature convexe ou concave. 
+
+Revenons à nos données. Ci-dessous je présente un graph de nuage en point avec le PIB par habitant en abcisse et les rendements agricoles en ordonnée. Je trace également deux courbes de régression:
+
+* La courbe en rouge représente un ajustement linéaire
+* La courbe en bleu représente un ajustement quadratique
+
+Une question important pour la construction de notre modèle est de savoir quelle est l'ajustement qui capture le mieux la distribution des données. Ici, on peut dire raisonnablement qu'aucune des deux formes ne semblent parfaitement capturer la nature de la distribution des données. Toutefois, la forme quadratique semble mieux prendre en compte le fait que la relation entre pib par habitant et productivité agricole est de nature concave. L'effet marginal du pib par habitant sur les rendements agricoles semble en effet décroissant.
+
+```{r}
+ggplot(data = base_agri,
+       aes(x=gdp_cap,
+           y=Yield))+
+  geom_point()+
+  geom_smooth(method = "lm", formula = y ~ x + I(x^2))+
+  geom_smooth(method = 'lm', colour="red")+
+  theme_light()
+```
+Comment s'assurer que notre interprétation des données est juste ? En révisant notre modèle pour tester cette hypothèse de concavité en intégrant un terme quadratique de la variable gdp\_cap dans notre modèle : 
+
+$rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times VA\_agri_i + \beta_3 \times SAU_i + \beta_4 \times PIB\_hab_i  + \beta_5 \times PIB\_hab_i^2 + \epsilon_i$ 
+
+Que vont signifier nos deux coefficients $\beta_4$ et $\beta_5$ ?
+
+* Le signe de $\beta_4$ va nous indiquer si la relation entre pib par habitant et rendement agricole est positive ou négative. Si l'estimation est significativement différente de zéro on connaîtra ainsi le signe de la courbe.
+* Le signe de $beta_5$ va nous indiquer quel est l'effet marginal d'une augmentation du PIB par habitant sur les rendements. Si le signe de ce coefficient est négatif, les effets marginaux sont décroissants et la relation est concave. Si les effets marginaux sont croissants, le signe est positif et la courbe sera convexe. 
+
+Plus généralement, l'effet de l'augmentation d'une unité de pib par habitant sur les rendements dépend dès lors de la valeur du pib par habitant de référence: $\frac{\Delta Y}{\Delta X} = \beta_1 + 2\times \beta_2 X$
+
+On peut ainsi estimer le pib par habitant qui maximise les rendements agricoles. C'est en effet lorsque l'effet marginal d'une augmentation de X sur l'augmentation marginale de Y est égale à 0 :
+$\frac{\Delta Y}{\Delta X} = \beta_1 + 2\times \beta_2 X = 0 \iff X = \frac{- \beta_1}{2 \beta_2}$  
+
+En données, cela donne : 
+
+```{r}
+reg_quadratique = lm(Yield ~ `Urban Pop` + Share +
+                    agri_ad_val + gdp_cap + I(gdp_cap^2), 
+                  data=base_agri)
+
+summary(reg_quadratique)
+```
+* _gdp\_cap_ est $\beta_4$. Son signe étant positif est significativement différent de zéro, cela signifie qu'une augmentation du pib/hab est associé à une augmentation des rendements de céréales par hectare, toutes choses égales par ailleurs.
+* _I(gdp\_cap^2) _ est $\beta_5$. Son coefficient nous indique une valeur très légèrement négative, mais significativement différente de zéro à tous les niveaux de confiance. On peut en déduire que la relation est croissante et très légèrement concave.
+
+Si l'on veut calculer l'effet d'une augmentation du PIB/HAB sur les rendements en céréales, cela donne:
+$\frac{\Delta Y}{\Delta X} = 1.108 \times 10^{-01} + 2\times -7.875 \times 10^{-07} X$
+
+On peut donc calculer le PIB/HAB qui est associé au rendement moyen maximal:
+$X = \frac{- \beta_1}{2 \beta_2} =\frac{1.108 \times 10^{-01} }{2 \times -7.875 \times 10^{-07}} = 70320.47$
+
+```{r}
+GDP_CAP_MAX = - coefficients(reg_quadratique)['gdp_cap']/(2*coefficients(reg_quadratique)['I(gdp_cap^2)'])
+print(GDP_CAP_MAX)
+```
+
+# Modèle Niveau-Log
+Nous passons à présent dans la galaxie des Log, qui nous permettent de mesurer des variations en pourcentage. Attention, $log(0)=\infty$ ce type de modèle n'est pas réalisable lorsque la variable a log-transformé prend la valeur zéro.
+
+Un modèle Niveau-Log nous permet de connaître l'effet d'une augmentation d'un pourcent du facteur explicatif sur le nombre d'unités du facteur expliqué. Pour comprendre, le plus simple est probablement de revenir à notre exemple. Nous allons maintenant l'écrire: 
+$rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times VA\_agri_i + \beta_3 \times SAU_i + \beta_4 \times log(PIB\_hab_i) + \epsilon_i$ 
+
+
+L'interprétation de $\beta_4$ va se faire comme suit :
+$\frac{\Delta rendement\_agricole_i}{\% \Delta PIB\_hab_i} = \frac{\beta_4}{100}$ 
+
+Une augmentation de 1% de PIB/Hab sera associé à une variation des rendements agricoles de $\frac{\beta_4}{100}$ unités.
+
+Estimons-le à présent : 
+```{r}
+reg_log = lm(Yield ~ `Urban Pop` + Share +
+                    agri_ad_val + log(gdp_cap), 
+                  data=base_agri)
+
+summary(reg_log)
+```
+Les coefficients $\beta_0$ à $\beta_3$ s'interprètent comme jusqu'alors. Seule l'explication de $\beta_4$ change:
+
+* _log(gdp_cap)_ : Une augmentation de 1% du PIB/HAB est associé à une augmentation moyenne de 5.67 kg de rendement céréaliers, toutes choses égales par ailleurs. On note que ce résultat est significativement différent de zéro à tous les niveaux de confiance statistique. 
+
+
+
+
+# Modèle Log-Niveau
+Un autre modèle, courament utilisé est le modèle Log-Niveau. Il permet de capturer l'effet d'une unité de changement du facteur explicatif sur la variation en pourcentage du facteur dépendant.
+
+Le modèle s'écrira : 
+$log(rendement\_agricole_i) = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times VA\_agri_i + \beta_3 \times SAU_i + \beta_4 \times PIB\_hab_i + \epsilon_i$ 
+
+Chaque coefficient s'interprétera dès lors comme :
+$\frac{\% \Delta Y}{ \Delta X} = 100 \times \beta_1$  
+
+L'augmentation d'une unité de X sera associée à l'augmentation de $100 \times \beta_1$% de Y.
+
+Passons sans plus attendre à la pratique:
+
+```{r}
+reg_log_niveau = lm(log(Yield) ~ `Urban Pop` + Share +
+                    agri_ad_val + gdp_cap, 
+                  data=base_agri)
+
+summary(reg_log_niveau)
+```
+Ici, l'interprétation de tous nos coefficients change par rapport à ce que l'on avait précédement :
+
+* _(Intercept)_ : La constante est à présent définie sur une échelle logarithmique. Pour obtenir son niveau en valeur réelle il faut calculer son exponentielle (exp(beta0)).
+* _Urban Pop_ : Une augmentation d'un point de pourcentage de population urbaine est associée à une augmentation moyenne de 1.4% d'augmentation des rendements agricoles, toutes choses égales par ailleurs. Cette estimation est significativement différente de zéro à tous les niveaux de confiance. 
+* _Share_ : Une augmentation d'un point de pourcentage de la part des surfaces agricoles est associée à une augmentation moyenne de 0.3% des rendements agricoles, toutes choses égales par ailleurs. Cette estimation est significativement différente de zéro à tous les niveaux de confiance. 
+* _agr\_ad\_val : On ne peut pas rejeter l'hypothèse nulle que ce coefficient vaut zéro, à tous les niveaux de significativité.
+* _gdp\_cap_ : Une augmentation de 1$ de PIB/HAB est associée à une augmentation de 0.001% d'augmentation des rendements agricoles, toutes choses égales par ailleurs. Ce coefficient est significativement différent de zéro pour tous les niveaux de confiance. 
+
+
+```{r}
+print(paste('Population urbaine : ', coefficients(reg_log_niveau)['`Urban Pop`']*100,' | ',
+'Surface Agricole : ', coefficients(reg_log_niveau)['Share']*100,' | ',
+'PIB/HAB : ', coefficients(reg_log_niveau)['gdp_cap']*100))
+
+```
+
+
+# Modèle Log-Log
+Une dernière forme fonctionnelle possible est la forme _Log-Log_. 
+
+On utilise cette forme lorsque l'on souhaite calculer une élasticité, c'est à dire l'effet d'un poucent d'augmentation du facteur explicatif sur le pourcentage d'augmentation du facteur expliqué.
+
+Le modèle linéaire utilisé au début de cette page pourra alors s'écrire : 
+$log(rendement\_agricole_i) = \beta_0 + \beta_1 \times part\_urbaine_i + \beta_2 \times VA\_agri_i + \beta_3 \times SAU_i + \beta_4 \times log(PIB\_hab_i) + \epsilon_i$ 
+
+L'interprétation de $\beta_5$ sera comme suit : 
+ $\frac{\% \Delta Y}{\% \Delta X} = \beta_5$ 
+
+Il s'estime comme suit:
+```{r}
+reg_log_log = lm(log(Yield) ~ `Urban Pop` + Share +
+                    agri_ad_val + log(gdp_cap), 
+                  data=base_agri)
+
+summary(reg_log_log)
+```
+
+L'interprétation des variables explicatives non log-transformées sera la même que celle vue dans le modèle Log-Niveau. Seul l'interprétation de $\beta_5$ change:
+
+* log(gdp_cap): Une augmentation de 1% du PIB/HAB est associé à une augmentation moyenne de 0.19% des rendements agricoles, toutes choses égales par ailleurs. Ce résultat est significatif à tous les niveaux de confiance.
+
+
+# Résumé des modèles et de leur interprétation
+
+| Type de modèle   |      Variable dépendante      |  Variable explicative | Interprétation du coefficient $\beta_1$|
+|------------------|:-----------------------------:|:---------------------:|---------------------------------------:|
+| Niveau-Niveau    |              $Y$              |          $X$          | $\frac{\Delta Y}{\Delta X} = \beta_1$      |
+| Quadratique      |              $Y$              |  $X$ et $X^2$         | $\frac{\Delta Y}{\Delta X} = \beta_1 + 2\times \beta_2 X$   |
+| Log-Log          |              $log(Y)$         |  $log(X)$             | $\frac{\% \Delta Y}{\% \Delta X} = \beta_1$   |
+| Log-Niveau       |              $log(Y)$         |  $X$                  | $\frac{\% \Delta Y}{ \Delta X} = 100 \times \beta_1$   |
+| Niveau-Log       |              $Y$              |  $log(X)$             | $\frac{\Delta Y}{\% \Delta X} = \frac{\beta_1}{100}$   |
+
+_Source: J. Wooldridge (2009), Introductory Econometrics. A Modern Approach, South Western, 4ème édition_
+
+Plus de détails sur l'explication mathématique (simple) en [cliquant ici](https://www.parisschoolofeconomics.eu/docs/yin-remi/interpretation-des-coefficients.pdf)
+
