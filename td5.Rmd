@@ -316,11 +316,87 @@ summary(reg3)
 J'espère que cette demonstration empirique vous convaincra de ne pas trop restreindre la taille de votre échantillon.
 
 # Comment faire pour comparer les coefficients entre pays ?
+[La vidéo associée à cette section](https://u-paris.zoom.us/rec/play/LQB3tYxHorHo69tju-yeoGy6RJgXRtiBuzB-8C0uICOWudTTH5UHl2VcGc90R1X5f0UK3d7j-uDTyLEH.Iba8KDCvVaV8NZ4V). _MEA CULPA : Je mélange Botswana et Rwanda dans mes explications, veuillez m'en excuser._
+
+
 Une autre question sur laquelle je souhaiterais m'attarder concerne la construction d'un modèle lorsque l'on souhaite comparer différents pays. Admettons que je veuille comparer le Botswana avec la France et les Etat-Unis. La tentation serait de construire trois bases de données distinctes et d'estimer la régression pour chaque pays séparement. Le problème c'est que l'on obtiendra ainsi des coefficients différents, mais il nous sera difficile de les comparer statistiquement.
 
-Alors comment faire ? Tout simplement en assemblant toutes les données dans une même base et en intégrant dans le modèle des __effet fixes__ et des __interactions__ qui captureront respectivement l'effet propre à chaque pays sur le phénomène analysé et l'effet singulier dans chaque pays de l'augmentation du facteur explicatif.
+Alors comment faire ? Tout simplement en assemblant toutes les données dans une même base et en intégrant dans le modèle des __effet fixes__ et des __interactions__ qui captureront respectivement l'effet propre à chaque pays sur le phénomène analysé et l'effet singulier dans chaque pays de l'augmentation du facteur explicatif. Avant de nous plonger dans la comparaison du Botswana, de la France et des Etats-Unis, commençons par simplement comparer la France et le Botswana afin de nous initier aux concepts d'__interactions__ et d'__effets fixes__.
 
-Soyons plus clairs, passons à un exemple. Pour comparer le Botswana, les USA et la France sur le lien entre rendement agricole et population urbaine, je vous propose le modèle suivant : 
+Le modèle que l'on va donc tout d'abord estimer sera :
+$rendement\_agricole_i = \beta_0 +  \beta_1 \times part\_urbaine_i + \epsilon_i$
+
+## Une régression avec des effets fixes
+_Qu'est-ce qu'un effet fixe ?_
+[La vidéo associée à cette section](https://u-paris.zoom.us/rec/play/ZWOjTLDQfdQHi1bC_e3wKZqNgMn21PNktiqLoT8cWX9PuPd8alZ9b-BasLh21Ct48DFFmCKPprYrnj3h.qX7aG3tSqZM4B1UM)
+
+
+C'est en effet une question centrale que je me dois d'eclaircir avant d'aller plus loin. Ce que l'on appelle un "effet fixe" est un variable de notre modèle qui va capturer l'effet propre à une catégorie sur le phénomène étudié. Par exemple si j'inclus un "effet fixe" pour la France dans le modèle juste au dessus, j'obtiendrai:
+$rendement\_agricole_i = \beta_0 +  \beta_1 \times part\_urbaine_i + \beta_2 \times FRA_i + \epsilon_i$
+
+$FRA_i$ sera une variable binaire qui prendra pour valeur 1 lorsque l'observation du modèle sera la France, et 0 lorsque celle ci sera rattachée au Botswana. 
+
+$\beta_2$ s'interprétera dès lors comme l'effet propre (fixe) de la France sur les rendements agricoles, toutes choses égales par ailleurs (c'est à dire lorsque la part de la population urbaine est de 0).
+
+Attention ! L'inclusion de l'effet fixe dans le modèle change l'interprétation de $\beta_0$. En effet, $\beta_0$ n'est plus le rendement agricole moyen quand la population urbaine égale 0, mais devient le rendement agricole moyen lorsque la population urbaine est égale à zéro et quand la variable $FRA_i$ vaut 0. Cela veut donc dire que $\beta_0$ s'interprète à présent comme le rendement agricole moyen pour le Botswana ($FRA_i=0$) lorsque la part de la population urbaine est de 0 ($part\_urbaine_i=0$).
+
+Ce que l'on vient de faire est l'inclusion d'une variable nominale que vous avez vu dans le cours 4, pages 137 à 138. Tout comme indiqué dans le cours, vous ne pouvez pas mettre un effet fixe pour le Botswana et un effet fixe pour la France. __On doit en effet omettre une modalité (ici un pays) afin d'éviter la colinéarité parfaite entre les facteurs__. Le pays omis devient le pays de référence : $\beta_0$ est le rendement agricole moyen au Botswana lorsque la part de la population urbaine est de 0. Pour obtenir le rendement agricole moyen pour la France lorsque la part de la population urbaine est de 0 il faut additionner $\beta_0 + \beta_2$. En d'autres termes $\beta_2$ capture la différence de constante entre le Botswana et la France. Si ce coefficient est significativement différent de zéro pour un seuil de confiance donné, alors on peut rejeter l'hypothèse nulle que les deux pays ont la même constante.
+
+
+## Les interactions avec les effets fixes
+[La vidéo associée à cette section](https://u-paris.zoom.us/rec/play/fV2pxgzDjg66kj-hZ8-Z61mIN2zOMjY7J1hTEeJFVaQjRM3D5wT_5uTXrU6SySbwHgObnMfXbEmTud_D.ey2LR41qHaMNJH4Q)
+
+
+Compliquons à présent le modèle. Maintenant que l'on a vu que l'on pouvait estimer la différence entre les constantes des différents pays, pourquoi ne pas mesurer des effets différents d'une augmentation de la population urbaine par pays ?
+
+Pour ce faire, on va insérer une nouvelle variable à notre modèle: une interaction. On va en fait multiplier la variable binaire $FRA_i$ que l'on a créée pour la France avec la variable $part\_urbaine_i$ et ainsi écrire le modèle :
+
+$rendement\_agricole_i = \beta_0 +  \beta_1 \times part\_urbaine_i + \beta_2 \times FRA_i + \beta_3 \times part\_urbaine_i \times FRA_i + \epsilon_i$
+
+Détaillons les implications de la multiplication de notre variable binaire avec la part urbaine de la population. Cette nouvelle variable aura pour valeur zéro pour toutes les observations du Botswana et prendra les valeurs de la part urbaine de la France lorsque l'observation appartiendra à la France. Alors que vont capturer nos coefficients $\beta_1$ et $\beta_3$ ? Le plus simple est peut être de passer par les maths pour en avoir le coeur net. On cherche à savoir quel est l'effet de l'augmentation d'une unité de $part\_urbaine_i$ sur $rendements\_agricoles_i$. Comme vous vous rappelez, cet effet est calculé, "toutes choses égales par ailleurs", c'est-à-dire lorsque l'on dérive $rendements\_agricoles_i$ par $part\_urbaine_i$. On obtient dès lors:
+$\frac{\Delta rendements\_agricoles_i}{\Delta part\_urbaine_i} = \beta_1 + \beta_3\times FRA_i$
+
+Qu'observe-ton ? Que la variation des rendements agricoles ne dépend plus que de $\beta_1$ mais également de $\beta_3\times FRA_i$. Comme $FRA_i=0$ pour le Botswana, cela veut dire que le coefficient qui capture l'effet moyen d'une unité d'augmentation de la part de population urbaine pour le Botswana est $\beta_1$. $\beta_3$ capture donc la différence entre la France et le Botswana de l'effet d'une unité d'augmentation de la part de la part de la population. Comme pour les effets fixes plus haut, l'effet total pour la France est donc $\beta_1 + \beta_3$. De plus, si $\beta_3$ est significativement différent de zéro, cela implique de l'effet de l'augmentation d'une unité de part urbaine pour la France est significativement différent de l'effet pour le Botswana.
+
+
+## En pratique, de retour sur R:
+[La vidéo associée à cette section](https://u-paris.zoom.us/rec/play/Fi66F_XktyJlAv7v_wgyU-8K0hHFJ8rZrin_s2ByKPQUmDBkJUB5Sgfo46KDti_sW1tolRICf9oxtWep.06gXPfEsVt_-r48H)
+
+
+On va tout d'abord charger la base et la restreindre aux observations du Botswana et de la France : 
+```{r}
+base_analyse_bi = base_final  %>% 
+  filter(Country.Code %in% c("BWA","FRA"))
+```
+
+À présent, je vais créer ma variable binaire qui prendra pour valeure 1 lorsque le pays sera la France. Pour ce faire, je crée une nouvelle colonne __FRA__ grâce à la fonction _mutate()_ puis j'utilise la fonction ifelse pour assigner à cette colonne la valeur 1 si le code du pays correspond bien à la France et 0 autrement. La fonctione _ifelse()_ prend pour premier paramètre la condition, ici _Country.Code == "FRA"_, puis comme second paramètre la valeur si la condition est remplie et enfin comme troisième paramètre la valeur si la condition n'est pas remplie.
+
+```{r}
+base_analyse_bi = base_analyse_bi  %>% 
+  mutate(FRA = ifelse(Country.Code == "FRA",1,0))
+  # FRA prend la valeur 1 si Country.Code == 1, sinon elle prend la valeur 0
+```
+Voyons à quoi ressemble la base : 
+
+```{r}
+head(base_analyse_bi)
+```
+Comme vous le voyez, j'ai bien créée une colonne "FRA" qui prend pour valeur 1 si Country.Code == "FRA".
+
+Passons maintenant à l'estimation du modèle : 
+```{r}
+reg_fe = lm(Yield ~`Urban Pop`+ FRA + FRA*`Urban Pop` ,data = base_analyse_bi)
+summary(reg_fe)
+```
+Comment interpréter ces coefficients ?
+
+* _(Intercept)_ : Ce coefficient capture le rendement agricole moyen quand tous les autres facteurs valent 0: quand la part urbaine vaut zéro et quand FRA vaut 0. En d'autres termes, cette constante capture le rendement agricole moyen au Botswana toutes choses égales à 0.
+* _Urban Pop_ : Ce coefficient capture l'effet moyen d'une unité d'augmentation de la part de population urbaine, toutes choses égales par ailleurs. Cela veut donc dire que si toutes les autres choses sont maintenues constantes, FRA = 0. Donc on capture ici l'effet moyen d'une unité d'augmentation de la production agricole pour le Botswana, toutes choses égales par ailleurs.
+* _FRA_ : Ce coefficient capture la différence entre la constante française et la constante du Botswana. Pour obtenir la constante française on doit donc faire la somme de _(Intercept)_ et _FRA_. On note que cette différence est significativement différente de zéro, à un seuil de confiance de 99.9%. Cela veut dire que le rendement moyen de la France, lorsque la part de la population urbaine est de 0, est significativement plus faible que celui du Botswana.
+* _Urban Pop*FRA_ : Capture quant à lui la différence entre la France et le Botswana de l'effet d'une unité d'augmentation de la part urbaine sur les rendements agricoles. On constante que cette différence est positive et significativement différente de zéro à tous les niveaux de confiance. 
+
+## Le modèle complet en incluant les Etats-Unis
+Revenons-en à présent à notre idée départ : comparer le Botswana, les USA et la France sur le lien entre rendement agricole et population urbaine. En suivant la logique de ce qui a été montré précedemment je vous propose le modèle suivant : 
 $rendement\_agricole_i = \beta_0 +  \beta_1 \times part\_urbaine_i + \beta_2 \times USA_i + \beta_3 \times FRA_i + \beta_4 \times USA_i \times part\_urbaine_i + \beta_5 \times FRA_i \times part\_urbaine_i + \epsilon_i$
 
 Première observation, j'ai exclus le Botswana du modèle. Pourquoi ? Car si j'intègre la variable "BWA" alors nous aurons un problème de "multicolinéarité parfaite" entre les facteurs (diapositive 36 de votre CM 5 sur les régressions multiples). Cela implique que tout le modèle est basé sur la comparaison par rapport à la situation du Botswana. Je m'explique : 
