@@ -41,5 +41,5 @@ Vous allez rédiger un rapport en partant du [modèle défini](https://drive.goo
 * [__Séance 4__](https://yanndav.github.io/descartes-econometrie/td4.html): Arriver en début de séance avec une question de recherche finalisée. Séance de réflexion sur le modèle: première approche par analyse bivariée
 * [__Séance 5 et 6__](https://yanndav.github.io/descartes-econometrie/td5.html): Finalisation de la construction de la base de données et réalisation de la première analyse bivariée. Semaine 6 en asynchrone.
 * [__Séance 7__](https://yanndav.github.io/descartes-econometrie/td7.html) : Point méthodologique - présentation orale et écrite de votre analyse. Finalisation de l'analyse sur R.
-* __Séance 8__ : Structuration de la présentation des résultats finaux, questions/réponses.
+* [__Séance 8__](https://yanndav.github.io/descartes-econometrie/td8.html) : Structuration de la présentation des résultats finaux, questions/réponses.
 * __Séances 9 et 10__ : Remise du rapport final + présentations orales

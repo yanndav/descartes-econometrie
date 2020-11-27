@@ -11,7 +11,7 @@
 
 
 
-<title>TD3 - Seance du 23 Octobre 2020</title>
+<title>TD 8 - 27 Novembre 2020</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -377,61 +377,58 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">TD3 - Seance du 23 Octobre 2020</h1>
-<h3 class="subtitle">Trouver sa question de recherche</h3>
+<h1 class="title toc-ignore">TD 8 - 27 Novembre 2020</h1>
+<h3 class="subtitle">Biais de Variable Omise</h3>
 
 </div>
 
 
-<p>L’objectif de la séance du jour est pour vous de trouver votre question de recherche. Pour ce faire, nous allons d’abord voir comment définir un thème de recherche puis comment nourrir votre réflexion d’une recherche bibliographique.</p>
-<div id="du-thème-de-recherche-à-la-question-de-recherche-en-économie" class="section level2">
-<h2>Du thème de recherche à la question de recherche en économie</h2>
-<div id="etape-0-trouver-un-thème-de-recherche" class="section level3">
-<h3>Etape 0: <strong>Trouver un thème de recherche</strong></h3>
-<p>Vous avez normalement réalisé cette étape la semaine dernière lors de vos travaux de groupe. <em>Exemple: L’impact environnemental de l’agriculture</em></p>
-</div>
-<div id="etape-1-construire-un-cadre-conceptuel" class="section level3">
-<h3>Etape 1: <strong>Construire un cadre conceptuel</strong></h3>
-<p>Définir les concepts théoriques auquels se rattache le sujet d’intérêt. Comment la recherche économique aborde-t-elle ce sujet ?</p>
-<p><em>Exemple: En économie environnementale le concept d’externalité négative</em></p>
-</div>
-<div id="etape-2-définir-la-les-hypothèses-à-tester" class="section level3">
-<h3>Etape 2: <strong>Définir (la) les hypothèses à tester</strong></h3>
-<p>Il s’agit à présent de se focaliser sur une seule des théories existantes dans la littérature économique. Quelle hypothèse peut-on formuler concernant les données que l’on cherche à analyser ? L’objectif va être d’émettre des hypothèses sur les relations causales entre les paramètres du modèle que l’on estime.</p>
-<p><em>Exemple: L’intensité du traitement aux produits phytopharmaceutiques réduit l’abondance de la biodiversité</em></p>
-</div>
-<div id="etape-3-définir-la-question-de-recherche" class="section level3">
-<h3>Etape 3: <strong>Définir la question de recherche</strong></h3>
-<p>Pour définir notre question de recherche, on peut adopter trois stratégies:</p>
+<p>Dernière étape avant les présentations de vos projets. Il me semble important de bien préciser un point de votre cours avant que vous réalisiez l’analyse de vos résultats. Parlons du <strong>biais de variable omise</strong>.</p>
+<div id="le-biais-de-variable-omise" class="section level1">
+<h1>Le biais de variable omise</h1>
+<p>Qu’est ce qu’un biais de variable omise ? C’est l’existence d’un biais (positif ou négatif) dans les coefficients estimés qui provient de l’omission d’une variable correlée avec Y et les X. Mais encore ?</p>
+<p>Partons d’un exemple ! Tout sera plus clair.</p>
+<p>Imaginons, pour la dernière fois du semestre je vous le promet, que l’on veut estimer… la relation entre la part de la population urbaine et les rendements agricoles. La relation bivariée s’écrira :</p>
+<p><span class="math inline">\(rendement\_agricole_i = \beta_0 + \beta_1 \times part\_urbaine_i + \epsilon_i\)</span></p>
+<p>Comme vous pourrez facilement le noter, la part de la population urbaine n’est pas le seul facteur qui va influencer les rendements agricoles. Il existe une multitude de facteurs qui affectent les rendements agricoles - c’est à dire qui sont <strong>corrélés avec les rendements agricoles</strong>. Prenons l’exemple du niveau de richesse par habitant d’un pays: le PIB/hab. Si cette variable à un impact sur le niveau de rendements agricoles, alors le vrai modèle s’écrit :</p>
+<p><span class="math inline">\(rendement\_agricole_i = \tilde{\beta_0} + \tilde{\beta_1} \times part\_urbaine_i + \tilde{\beta_2} \times pib\_hab_i + u_i\)</span>.</p>
+<p>En conséquence, l’effet du PIB/hab sur les rendements agricoles était capturé dans le premiere modèle par <span class="math inline">\(\epsilon_i = \tilde{\beta_2} \times pib\_hab_i + u_i\)</span></p>
+<p>Rappelons nous que l’une des hypothèses de Gauss-Markov, qui garantie que la relation est causale, est : <span class="math inline">\(cov(\epsilon_i,X_i)=0\)</span></p>
+<p>Or, s’il existe une relation entre le PIB/habitant et la part urbaine de la population, alors <span class="math inline">\(cov(\epsilon_i,X_i) \neq 0\)</span>. Cela va induire que l’on ne pourra pas isoler l’effet des rendements agricoles, mais que celui-ci capturera également une partie de l’effet du pib/hab qui n’a pas été inclus dans le modèle.</p>
+<p>La question que l’on se pose, c’est donc de comprendre l’impact de l’omission du PIB/hab sur le coefficient <span class="math inline">\(\beta_1\)</span> que l’on a estimé.</p>
+<p>Deux cas de figure :</p>
 <ol style="list-style-type: decimal">
-<li>Construire un nouveau modèle d’analyse</li>
-<li>S’inspirer et approfondir un modèle existant</li>
-<li>Adapater un modèle déjà existant aux réalités du problème</li>
+<li><p>Admettons tout d’abord qu’il n’existe aucune corrélation entre la part de la population urbaine et le PIB/hab. On vérifie donc bien la relation <span class="math inline">\(cov(\epsilon_i,X_i)=0\)</span>. Notre coefficient <span class="math inline">\(\beta_1\)</span> ne sera pas biaisé, mais l’omission de la variable PIB/hab entraînera un plus petit R-carré - c’est à dire que notre modèle sera moins précis pour prédire les variations des rendements agricoles. <img src="td8/nonbiasee.jpg" width="100px" /></p></li>
+<li><p>Admettons maintenant qu’il existe une corrélation entre le part urbaine de la population et le PIB/hab. Cela veut dire que <span class="math inline">\(cov(\epsilon_i,part\_urbaine_i) \neq 0\)</span>, c’est-à-dire que les erreurs sont corrélées avec la part urbaine car <span class="math inline">\(cov(pib\_hab_i,part\_urbaine_i) \neq 0\)</span>. Dans ce cas cas de figure on a donc un <strong>biais de variable omise</strong>. On ne peut pas isoler l’effet de la part urbaine sur les rendements agricoles, et <span class="math inline">\(\beta_1\)</span> va être biaisé. Il va soit <em>surestimer</em> la relation réelle entre part urbaine et rendements, soit la <em>sous-estimer</em>. En effet, comme on le voit ci-dessous, l’effet du pib/hab va être en partie capturé par la part urbaine via laquelle il transite pour impacter les rendements agricoles. Or, nous aimerions isoler l’effet de la part urbaine.</p></li>
 </ol>
-<p>La question de recherche doit répondre à plusieurs caractéristiques :</p>
+<p><img src="td8/biasee.jpg" width="300px" /></p>
+<p>Comment savoir si <span class="math inline">\(\beta_1\)</span> souffre d’un biais positif ou négatif ? La réponse va dépendre du signe de la relation entre la part urbaine et le pib/hab mais également du signe de la relation entre les rendements agricoles et le pib/hab.</p>
 <ul>
-<li><em>“Orienté problème”</em> : la question doit être ouverte afin de permettre une réflexion autour des mécanismes que l’on cherche à expliquer</li>
-<li><em>Analytique</em> : la question pousse à expliquer plutôt que de décrire le mécanisme</li>
-<li><em>Intéressante et pertinente</em> : la question apporte une réponse qui constitue un apport à la science économique</li>
+<li>Si <span class="math inline">\(\beta_2\)</span> est positif, c’est-à-dire qu’il existe une relation positive entre pib/hab et rendements agricoles, alors <span class="math inline">\(\beta_1\)</span> sera baisé <em>positivement</em> si la part urbaine et le pib/hab ont une corrélation positive, tandis que <span class="math inline">\(\beta_1\)</span> sera baisé <em>négativement</em> si la part urbaine et le pib/hab ont une corrélation négative.</li>
+<li>Si <span class="math inline">\(\beta_2\)</span> est négatif, c’est-à-dire qu’il existe une relation négative entre pib/hab et rendements agricoles, alors <span class="math inline">\(\beta_1\)</span> sera baisé <em>négativement</em> si la part urbaine et le pib/hab ont une corrélation positive, tandis que <span class="math inline">\(\beta_1\)</span> sera baisé <em>positivement</em> si la part urbaine et le pib/hab ont une corrélation négative.</li>
 </ul>
-<p><em>Exemple: Comment l’intensité de traitement en produits phytosanitaires influe-t-elle sur la biodiversité ?</em></p>
-</div>
-</div>
-<div id="réaliser-une-recherche-bibliographique-à-lappui-des-étapes-1-et-2" class="section level2">
-<h2>Réaliser une recherche bibliographique à l’appui des étapes 1 et 2</h2>
-<p>Pour réaliser vos recherches, les outils à disposition:</p>
-<ul>
-<li><a href="https://scholar.google.com/">Google scholar</a>: très utile pour trouver la littérature scientifique disponible sur le thème qui vous intéresse</li>
-<li><a href="http://www.bu.parisdescartes.fr/">BU Paris Descartes</a></li>
-<li><a href="https://ezproxy.u-paris.fr/login?url=https://www.cairn.info/">Cairn</a></li>
-</ul>
-</div>
-<div id="références" class="section level2">
-<h2>Références</h2>
-<ul>
-<li><a href="https://www.cairn.info/revue-marche-et-organisations-2007-3-page-101.htm#s1n2https://www.cairn.info/revue-marche-et-organisations-2007-3-page-101.htm#s1n2">De la méthode de recherche économique, Dimitri Uzunidis, 2007</a></li>
-<li><a href="https://www.economicsnetwork.ac.uk/handbook/ugresearch/31">The Form of the Research Process</a></li>
-</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="left"><span class="math inline">\(corr(pib\_hab_i,part\_urbaine_i)&gt;0\)</span></th>
+<th align="left"><span class="math inline">\(corr(pib\_hab_i,part\_urbaine_i)&lt;0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><span class="math inline">\(\beta_2&gt;0\)</span></td>
+<td align="left">Biais positif</td>
+<td align="left">Biais négatif</td>
+</tr>
+<tr class="even">
+<td align="right"><span class="math inline">\(\beta_2&lt;0\)</span></td>
+<td align="left">Biais négatif</td>
+<td align="left">Biais positif</td>
+</tr>
+</tbody>
+</table>
+<p>Le biais de variable omise est donc un outil utile pour choisir les variables de son modèle et aussi pour avoir un regard critique sur celui que l’on a construit.</p>
 </div>
 
 
