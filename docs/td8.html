@@ -363,7 +363,7 @@ div.tocify {
   <a href="td7.html">TD7 - 20/11</a>
 </li>
 <li>
-  <a href="td7.html">TD8 - 27/11</a>
+  <a href="td8.html">TD8 - 27/11</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -398,11 +398,16 @@ div.tocify {
 <p>La question que l’on se pose, c’est donc de comprendre l’impact de l’omission du PIB/hab sur le coefficient <span class="math inline">\(\beta_1\)</span> que l’on a estimé.</p>
 <p>Deux cas de figure :</p>
 <ol style="list-style-type: decimal">
-<li><p>Admettons tout d’abord qu’il n’existe aucune corrélation entre la part de la population urbaine et le PIB/hab. On vérifie donc bien la relation <span class="math inline">\(cov(\epsilon_i,X_i)=0\)</span>. Notre coefficient <span class="math inline">\(\beta_1\)</span> ne sera pas biaisé, mais l’omission de la variable PIB/hab entraînera un plus petit R-carré - c’est à dire que notre modèle sera moins précis pour prédire les variations des rendements agricoles. <img src="td8/nonbiasee.jpg" width="100px" /></p></li>
-<li><p>Admettons maintenant qu’il existe une corrélation entre le part urbaine de la population et le PIB/hab. Cela veut dire que <span class="math inline">\(cov(\epsilon_i,part\_urbaine_i) \neq 0\)</span>, c’est-à-dire que les erreurs sont corrélées avec la part urbaine car <span class="math inline">\(cov(pib\_hab_i,part\_urbaine_i) \neq 0\)</span>. Dans ce cas cas de figure on a donc un <strong>biais de variable omise</strong>. On ne peut pas isoler l’effet de la part urbaine sur les rendements agricoles, et <span class="math inline">\(\beta_1\)</span> va être biaisé. Il va soit <em>surestimer</em> la relation réelle entre part urbaine et rendements, soit la <em>sous-estimer</em>. En effet, comme on le voit ci-dessous, l’effet du pib/hab va être en partie capturé par la part urbaine via laquelle il transite pour impacter les rendements agricoles. Or, nous aimerions isoler l’effet de la part urbaine.</p></li>
+<li>Admettons tout d’abord qu’il n’existe aucune corrélation entre la part de la population urbaine et le PIB/hab. On vérifie donc bien la relation <span class="math inline">\(cov(\epsilon_i,X_i)=0\)</span>. Notre coefficient <span class="math inline">\(\beta_1\)</span> ne sera pas biaisé, mais l’omission de la variable PIB/hab entraînera un plus petit R-carré - c’est à dire que notre modèle sera moins précis pour prédire les variations des rendements agricoles.</li>
 </ol>
-<p><img src="td8/biasee.jpg" width="300px" /></p>
-<p>Comment savoir si <span class="math inline">\(\beta_1\)</span> souffre d’un biais positif ou négatif ? La réponse va dépendre du signe de la relation entre la part urbaine et le pib/hab mais également du signe de la relation entre les rendements agricoles et le pib/hab.</p>
+<div class="figure">
+<img src="td8/nonbiasee.jpg" alt="Pas de biais de variable omise" />
+<p class="caption">Pas de biais de variable omise</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Admettons maintenant qu’il existe une corrélation entre le part urbaine de la population et le PIB/hab. Cela veut dire que <span class="math inline">\(cov(\epsilon_i,part\_urbaine_i) \neq 0\)</span>, c’est-à-dire que les erreurs sont corrélées avec la part urbaine car <span class="math inline">\(cov(pib\_hab_i,part\_urbaine_i) \neq 0\)</span>. Dans ce cas cas de figure on a donc un <strong>biais de variable omise</strong>. On ne peut pas isoler l’effet de la part urbaine sur les rendements agricoles, et <span class="math inline">\(\beta_1\)</span> va être biaisé. Il va soit <em>surestimer</em> la relation réelle entre part urbaine et rendements, soit la <em>sous-estimer</em>. En effet, comme on le voit ci-dessous, l’effet du pib/hab va être en partie capturé par la part urbaine via laquelle il transite pour impacter les rendements agricoles. Or, nous aimerions isoler l’effet de la part urbaine.</li>
+</ol>
+<p><img src="td8/biaisee.jpg" alt="Biais de variable omise" /> Comment savoir si <span class="math inline">\(\beta_1\)</span> souffre d’un biais positif ou négatif ? La réponse va dépendre du signe de la relation entre la part urbaine et le pib/hab mais également du signe de la relation entre les rendements agricoles et le pib/hab.</p>
 <ul>
 <li>Si <span class="math inline">\(\beta_2\)</span> est positif, c’est-à-dire qu’il existe une relation positive entre pib/hab et rendements agricoles, alors <span class="math inline">\(\beta_1\)</span> sera baisé <em>positivement</em> si la part urbaine et le pib/hab ont une corrélation positive, tandis que <span class="math inline">\(\beta_1\)</span> sera baisé <em>négativement</em> si la part urbaine et le pib/hab ont une corrélation négative.</li>
 <li>Si <span class="math inline">\(\beta_2\)</span> est négatif, c’est-à-dire qu’il existe une relation négative entre pib/hab et rendements agricoles, alors <span class="math inline">\(\beta_1\)</span> sera baisé <em>négativement</em> si la part urbaine et le pib/hab ont une corrélation positive, tandis que <span class="math inline">\(\beta_1\)</span> sera baisé <em>positivement</em> si la part urbaine et le pib/hab ont une corrélation négative.</li>
