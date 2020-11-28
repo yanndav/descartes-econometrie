@@ -16,13 +16,13 @@ groupe_présentation = function(liste_groupes,nb_a_trouver){
 
 
 # Paramètres pour la fonction : 
-nb = 3 # Il manque trois groupes
+nb = 2 # Il manque trois groupes
 
 # Liste des groupes préférant la S10:
 liste_potentielle = groupes$`Groupe n°`[groupes$`Semaine 9`!="préferée" | is.na(groupes$`Semaine 9`)] 
 
 # Exécution de la fonction : 
-set.seed(68109) # Graîne d'aléatoire pour retrouver nos résultats
+set.seed(82619) # Graîne d'aléatoire pour retrouver nos résultats
 groupes_select = groupe_présentation(liste_groupes = liste_potentielle, # Fonction !
                     nb_a_trouver = nb)
 
@@ -40,7 +40,7 @@ cat("Séance 9, groupes supplémentaires :",
 liste_9 = c(groupes$`Groupe n°`[groupes$`Semaine 9`=="préferée" & !is.na(groupes$`Semaine 9`)],
             groupes_select)
 
-set.seed(68109) # Graîne d'aléatoire pour retrouver nos résultats
+set.seed(82619) # Graîne d'aléatoire pour retrouver nos résultats
 ordre_seance_9 = groupe_présentation(liste_groupes = liste_9, # Fonction !
                                      nb_a_trouver = length(liste_9))
 
@@ -54,7 +54,7 @@ cat("Séance 9, ordre de passage :",
 # Séance 10:
 liste_10 = groupes$`Groupe n°`[!(groupes$`Groupe n°`%in%liste_9)]
 
-set.seed(68109) # Graîne d'aléatoire pour retrouver nos résultats
+set.seed(82619) # Graîne d'aléatoire pour retrouver nos résultats
 ordre_seance_10 = groupe_présentation(liste_groupes = liste_10, # Fonction !
                                      nb_a_trouver = length(liste_10))
 
